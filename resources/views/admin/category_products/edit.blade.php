@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tạo Danh Mục Sản Phẩm
+    Sửa Danh Mục Sản Phẩm
 @endsection
 @section('content')
     <div class="col-md-12 flash-message">
@@ -11,19 +11,20 @@
         @endforeach
     </div> <!-- end .flash-message -->
     <div class="col-md-12">
-        <form action="{{route('category_prd_save')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('category_prd_edit_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="col-md-8">
                 <label>Tên Danh Mục <span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục ..." value="{{old('name')}}">
+                    <input type="hidden" name="id" class="form-control" value="{{$category['id']}}">
+                    <input type="text" name="name" class="form-control" value="{{$category['name']}}">
                 </div>
                 @if ($errors->has('name'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('name') }}</p>
                 @endif
             </div>
             <div class=" col-md-8" style="margin-top: 20px">
-                <button type="submit" class="btn btn-primary"> Tạo Danh Mục</button>
+                <button type="submit" class="btn btn-primary"> Sửa Danh Mục</button>
             </div>
         </form>
     </div>
@@ -54,12 +55,12 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($category as $value)
+                                            @foreach($categoryList as $value)
                                                 <tr role="row">
                                                     <td>{{$value['name']}}</td>
                                                     <td>{{$value['created_at']}}</td>
                                                     <td>
-                                                        <a href="{{route('category_prd_edit', $value['id'])}}">
+                                                        <a href="">
                                                             <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Sửa</button>
                                                         </a>
                                                         <a href="{{route('category_prd_delete', $value['id'])}}">

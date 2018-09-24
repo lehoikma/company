@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/tao-danh-muc', 'CategoryProductsController@index')->name('category_prd_index');
     Route::post('/luu-danh-muc', 'CategoryProductsController@save')->name('category_prd_save');
     Route::get('/sua-danh-muc/{id}', 'CategoryProductsController@edit')->name('category_prd_edit');
+    Route::post('/luu-sua-danh-muc', 'CategoryProductsController@editSave')->name('category_prd_edit_save');
     Route::get('/xoa-danh-muc/{id}', 'CategoryProductsController@delete')->name('category_prd_delete');
     Route::get('/tao-san-pham', 'ProductsController@index')->name('prd_index');
     Route::post('/luu-san-pham', 'ProductsController@save')->name('prd_save');
