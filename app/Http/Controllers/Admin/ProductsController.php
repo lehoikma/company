@@ -56,4 +56,38 @@ class ProductsController extends Controller
         }
         return redirect()->route('prd_listPrd');
     }
+
+    public function editSave(Request $request) {
+        if (!empty($request->file('fileToUpload'))) {
+            $image = $request->file('fileToUpload');
+            $filename = time() . '.' . $image->extension();
+            $image->move('upload/', $filename);
+        } else{
+            $products = Products::where('id', $request['id'])->first();
+            $filename = $products['image'];
+        }
+
+        $newsEdit = Products::where('id', $request['id'])
+            ->update([
+                'name' => $request['name'],
+                'content' => $request['content'],
+                'price' => $request['price'],
+                'image' => $filename,
+                'status' => 1
+            ]);
+        if ($newsEdit) {
+            \Session::flash('alert-success', 'Sửa Sản Phẩm Thành Công');
+        } else {
+            \Session::flash('alert-warning', 'Sửa Sản Phẩm Lỗi');
+        }
+        return redirect()->route('prd_listPrd');
+    }
+
+    public function edit($id) {
+        $prd = Products::find($id);
+        if (!empty($prd)) {
+            return view('admin.products.edit', ['prd' => $prd]);
+        }
+        return redirect()->route('prd_listPrd');
+    }
 }

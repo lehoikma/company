@@ -32,6 +32,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/tao-san-pham', 'ProductsController@index')->name('prd_index');
     Route::post('/luu-san-pham', 'ProductsController@save')->name('prd_save');
     Route::get('/danh-sach-san-pham', 'ProductsController@listPrd')->name('prd_listPrd');
+    Route::get('/sua-san-pham/{id}', 'ProductsController@edit')->name('prd_edit');
+    Route::post('/luu-sua-san-pham', 'ProductsController@editSave')->name('prd_edit_save');
     Route::get('/xoa-san-pham/{id}', 'ProductsController@delete')->name('prd_delete');
 
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
