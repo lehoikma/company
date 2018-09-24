@@ -24,14 +24,14 @@
             </div>
             <div class="col-md-12" style="margin-top: 15px">
                 <label>Mô tả về sản phẩm <span style="color: red">(*)</span></label>
-                <textarea id="editor1" name="description" rows="7" class="form-control ckeditor">{{old('description')}}</textarea>
+                <textarea id="editor1" name="content" rows="7" class="form-control ckeditor">{{old('content')}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor1' );
                 </script>
-                @if ($errors->has('description'))
-                    <p class="help-block text-left" style="color: red">{{ $errors->first('description') }}</p>
+                @if ($errors->has('content'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('content') }}</p>
                 @endif
             </div>
             <div class="col-md-4" style="margin-top: 15px">

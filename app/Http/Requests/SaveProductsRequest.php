@@ -15,7 +15,7 @@ class SaveProductsRequest extends Request
 
         return [
             'name' => 'required',
-            'description' => 'required',
+            'content' => 'required',
             'fileToUpload' => 'required | mimes:jpeg,jpg,png'
         ];
     }
@@ -24,7 +24,7 @@ class SaveProductsRequest extends Request
     {
         return [
             'name.required' => 'Vui lòng nhập tên sản phẩm ',
-            'description.required' => 'Vui lòng nhập mô tả sản phẩm ',
+            'content.required' => 'Vui lòng nhập mô tả sản phẩm ',
             'fileToUpload.required' => 'Vui lòng chọn hình ảnh',
             'fileToUpload.mimes' => 'Vui lòng chọn hình lại định dạng file ảnh',
         ];
