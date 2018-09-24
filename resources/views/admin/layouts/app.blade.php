@@ -85,7 +85,7 @@
                     <ul class="treeview-menu">
                         <li><a href="{{route('category_prd_index')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Sản Phẩm</a></li>
                         <li><a href="{{route('prd_index')}}"><i class="fa fa-circle-o"></i> Tạo Sản Phẩm</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Danh Sách Sản Phẩm</a></li>
+                        <li><a href="{{route('prd_listPrd')}}"><i class="fa fa-circle-o"></i> Danh Sách Sản Phẩm</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

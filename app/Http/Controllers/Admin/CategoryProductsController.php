@@ -29,4 +29,18 @@ class CategoryProductsController extends Controller
 
         return redirect()->route('category_prd_index');
     }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function delete($id)
+    {
+        $categoryPrd = CategoryProducts::find($id);
+        if (!empty($categoryPrd)) {
+            $categoryPrd->delete();
+        }
+        return redirect()->route('category_prd_index');
+    }
 }

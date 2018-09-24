@@ -48,4 +48,12 @@ class ProductsController extends Controller
         $listPrd = Products::all();
         return view('admin.products.listPrd', ['listPrd' => $listPrd]);
     }
+
+    public function delete($id) {
+        $prd = Products::find($id);
+        if (!empty($prd)) {
+            $prd->delete();
+        }
+        return redirect()->route('prd_listPrd');
+    }
 }

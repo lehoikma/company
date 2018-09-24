@@ -26,9 +26,12 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/top', 'IndexController@top')->name('admin_top');
     Route::get('/tao-danh-muc', 'CategoryProductsController@index')->name('category_prd_index');
     Route::post('/luu-danh-muc', 'CategoryProductsController@save')->name('category_prd_save');
+    Route::get('/sua-danh-muc/{id}', 'CategoryProductsController@edit')->name('category_prd_edit');
+    Route::get('/xoa-danh-muc/{id}', 'CategoryProductsController@delete')->name('category_prd_delete');
     Route::get('/tao-san-pham', 'ProductsController@index')->name('prd_index');
     Route::post('/luu-san-pham', 'ProductsController@save')->name('prd_save');
     Route::get('/danh-sach-san-pham', 'ProductsController@listPrd')->name('prd_listPrd');
+    Route::get('/xoa-san-pham/{id}', 'ProductsController@delete')->name('prd_delete');
 
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });

@@ -39,9 +39,9 @@
                                                 <td>{{$value['created_at']}}</td>
                                                 <td>
                                                     <a href="">
-                                                        <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
+                                                        <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Sửa</button>
                                                     </a>
-                                                    <a href="">
+                                                    <a href="{{route('prd_delete', $value['id'])}}">
                                                         <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>
                                                     </a>
                                                 </td>
