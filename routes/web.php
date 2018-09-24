@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test', function(){
+//    Artisan::call('migrate');
+    Artisan::call('db:seed');
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
+    Route::get('/', 'IndexController@index')->name('home_admin');
+    Route::get('login', 'IndexController@formLogin')->name('form_login');
+    Route::post('login', 'IndexController@login')->name('admin_login');
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/top', 'IndexController@top')->name('admin_top');
+
+    Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });
