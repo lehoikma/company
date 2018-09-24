@@ -24,6 +24,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/top', 'IndexController@top')->name('admin_top');
+    Route::get('/tao-danh-muc', 'CategoryProductsController@index')->name('category_prd_index');
+    Route::post('/luu-danh-muc', 'CategoryProductsController@save')->name('category_prd_save');
+    Route::get('/tao-san-pham', 'ProductsController@index')->name('prd_index');
+    Route::post('/luu-san-pham', 'ProductsController@save')->name('prd_save');
 
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });

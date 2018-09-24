@@ -77,14 +77,15 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-th"></i> <span>Tin Tức</span>
+                        <i class="fa fa-th"></i> <span>Sản Phẩm</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tạo Tin</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Danh Sách Tin</a></li>
+                        <li><a href="{{route('category_prd_index')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Sản Phẩm</a></li>
+                        <li><a href="{{route('prd_index')}}"><i class="fa fa-circle-o"></i> Tạo Sản Phẩm</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Danh Sách Sản Phẩm</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
