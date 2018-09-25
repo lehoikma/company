@@ -64,17 +64,7 @@
                         <span class="pull-right-container"></span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>Giới Thiệu</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tạo, Sửa</a></li>
-                    </ul>
-                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-th"></i> <span>Sản Phẩm</span>
@@ -90,43 +80,15 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>Món Ăn</span>
+                        <i class="fa fa-th"></i> <span>Tin Tức</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        {{--<li><a href=""><i class="fa fa-circle-o"></i> Tạo Danh Mục Sản Phẩm</a></li>--}}
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tạo Món Ăn</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Danh Sách Món Ăn</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="">
-                        <i class="fa fa-laptop"></i>
-                        <span>Slide</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tạo Slide</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Danh Sách Slide</a></li>
-                    </ul>
-                </li>
-
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>Videos</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tạo Videos</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Tất cả Videos</a></li>
+                        <li><a href="{{route('register_category_news')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Tin Tức</a></li>
+                        <li><a href="{{route('form_create_news')}}"><i class="fa fa-circle-o"></i> Tạo Tin</a></li>
+                        <li><a href="{{route('list_news')}}"><i class="fa fa-circle-o"></i> Danh Sách Tin</a></li>
                     </ul>
                 </li>
 
