@@ -13,14 +13,20 @@
     <div class="col-md-12">
         <form action="{{route('category_prd_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            <div class="col-md-8">
-                <label>Tên Danh Mục <span style="color: red">(*)</span></label>
+            <div class="col-md-6">
+                <label>Tên Danh Mục ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Nhập tên danh mục ..." value="{{old('name')}}">
+                    <input type="text" name="name[]" class="form-control" placeholder="Nhập tên danh mục ..." value="{{old('name')}}">
                 </div>
                 @if ($errors->has('name'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('name') }}</p>
                 @endif
+            </div>
+            <div class="col-md-6">
+                <label>Tên Danh Mục (Tiếng Anh)</label>
+                <div class="form-group">
+                    <input type="text" name="name[]" class="form-control" placeholder="Nhập tên danh mục tiếng anh..." value="{{old('name')}}">
+                </div>
             </div>
             <div class=" col-md-8" style="margin-top: 20px">
                 <button type="submit" class="btn btn-primary"> Tạo Danh Mục</button>
@@ -45,7 +51,7 @@
                                             <thead>
                                             <tr role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
-                                                    Name
+                                                    Tên
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                     Ngày tạo
@@ -59,10 +65,10 @@
                                                     <td>{{$value['name']}}</td>
                                                     <td>{{$value['created_at']}}</td>
                                                     <td>
-                                                        <a href="{{route('category_prd_edit', $value['id'])}}">
+                                                        <a href="{{route('category_prd_edit', $value['category_products_id'])}}">
                                                             <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Sửa</button>
                                                         </a>
-                                                        <a href="{{route('category_prd_delete', $value['id'])}}">
+                                                        <a href="{{route('category_prd_delete', $value['category_products_id'])}}">
                                                             <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>
                                                         </a>
                                                     </td>

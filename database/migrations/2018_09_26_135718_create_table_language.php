@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCategoryProduct extends Migration
+class CreateTableLanguage extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateTableCategoryProduct extends Migration
      */
     public function up()
     {
-        Schema::create('category_products', function (Blueprint $table) {
+        Schema::create('languages', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('alias');
+            $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -27,6 +29,6 @@ class CreateTableCategoryProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_products');
+        Schema::dropIfExists('languages');
     }
 }

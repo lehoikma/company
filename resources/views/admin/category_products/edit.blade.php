@@ -13,11 +13,21 @@
     <div class="col-md-12">
         <form action="{{route('category_prd_edit_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            <div class="col-md-8">
-                <label>Tên Danh Mục <span style="color: red">(*)</span></label>
+            <div class="col-md-6">
+                <label>Tên Danh Mục ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="hidden" name="id" class="form-control" value="{{$category['id']}}">
-                    <input type="text" name="name" class="form-control" value="{{$category['name']}}">
+                    <input type="hidden" name="id[]" class="form-control" value="{{$category[0]['id'] }}">
+                    <input type="text" name="name[]" class="form-control" value="{{$category[0]['name'] or ''}}">
+                </div>
+                @if ($errors->has('name'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('name') }}</p>
+                @endif
+            </div>
+            <div class="col-md-6">
+                <label>Tên Danh Mục (Tiếng Anh)</label>
+                <div class="form-group">
+                    <input type="hidden" name="id[]" class="form-control" value="{{$category[1]['id'] }}">
+                    <input type="text" name="name[]" class="form-control" value="{{$category[1]['name'] or ''}}">
                 </div>
                 @if ($errors->has('name'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('name') }}</p>
@@ -60,10 +70,10 @@
                                                     <td>{{$value['name']}}</td>
                                                     <td>{{$value['created_at']}}</td>
                                                     <td>
-                                                        <a href="">
+                                                        <a href="{{route('category_prd_edit', $value['category_products_id'])}}">
                                                             <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Sửa</button>
                                                         </a>
-                                                        <a href="{{route('category_prd_delete', $value['id'])}}">
+                                                        <a href="{{route('category_prd_delete', $value['category_products_id'])}}">
                                                             <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>
                                                         </a>
                                                     </td>
