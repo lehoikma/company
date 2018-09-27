@@ -1,6 +1,6 @@
 <div class="container">
     <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="/image/logo5.png"/>
+        <img id="profile-img" class="profile-img-card" src="/image/logo_admin.png"/>
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" method="post" action="{{route('admin_login')}}">
             {{csrf_field()}}
@@ -16,7 +16,7 @@
     body, html {
         height: 100%;
         background-repeat: no-repeat;
-        background-color: #b53e3e;
+        background-color: #cecece;
     }
 
     .card-container.card {

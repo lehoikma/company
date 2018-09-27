@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SaveProductsRequest;
 use App\Models\CategoryProducts;
 use App\Models\Products;
+use App\Models\ProductsLanguages;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -23,18 +25,29 @@ class ProductsController extends Controller
 
     public function save(SaveProductsRequest $request)
     {
+        DB::beginTransaction();
+        try {
+            $image = $request->file('fileToUpload');
+            $filename = time() . '.' . $image->extension();
+            $image->move('upload/', $filename);
 
-        $image = $request->file('fileToUpload');
-        $filename = time() . '.' . $image->extension();
-        $image->move('upload/', $filename);
+            $products = Products::create();
+            for ($i=0 ; $i<2; $i++) {
+                $saveProducts = ProductsLanguages::create([
+                    'products_id' => $products['id'],
+                    'languages_id' => $i+1,
+                    'name' => $request['name'][$i],
+                    'content' => $request['content'][$i],
+                    'price' => $request['price'],
+                    'image' => $filename,
+                    'status' => 1
+                ]);
+            }
+            DB::commit();
 
-        $saveProducts = Products::create([
-            'name' => $request['name'],
-            'content' => $request['content'],
-            'price' => $request['price'],
-            'image' => $filename,
-            'status' => 1
-        ]);
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
 
         if ($saveProducts) {
             \Session::flash('alert-success', 'Tạo Sản Phẩm Thành Công');
@@ -45,7 +58,7 @@ class ProductsController extends Controller
     }
 
     public function listPrd() {
-        $listPrd = Products::all();
+        $listPrd = ProductsLanguages::admin()->get();
         return view('admin.products.listPrd', ['listPrd' => $listPrd]);
     }
 
@@ -57,36 +70,41 @@ class ProductsController extends Controller
         return redirect()->route('prd_listPrd');
     }
 
-    public function editSave(Request $request) {
-        if (!empty($request->file('fileToUpload'))) {
-            $image = $request->file('fileToUpload');
-            $filename = time() . '.' . $image->extension();
-            $image->move('upload/', $filename);
-        } else{
-            $products = Products::where('id', $request['id'])->first();
-            $filename = $products['image'];
-        }
-
-        $newsEdit = Products::where('id', $request['id'])
-            ->update([
-                'name' => $request['name'],
-                'content' => $request['content'],
-                'price' => $request['price'],
-                'image' => $filename,
-                'status' => 1
-            ]);
-        if ($newsEdit) {
-            \Session::flash('alert-success', 'Sửa Sản Phẩm Thành Công');
-        } else {
-            \Session::flash('alert-warning', 'Sửa Sản Phẩm Lỗi');
+    public function edit($id) {
+        $prd = ProductsLanguages::where('products_id', $id)->get();
+        if (!empty($prd)) {
+            return view('admin.products.edit', ['prd' => $prd]);
         }
         return redirect()->route('prd_listPrd');
     }
 
-    public function edit($id) {
-        $prd = Products::find($id);
-        if (!empty($prd)) {
-            return view('admin.products.edit', ['prd' => $prd]);
+    public function editSave(Request $request) {
+        if (($request['name'][0] != "" || $request['name'][1] != "") && ($request['content'][0] != "" || $request['content'][1] != "")) {
+            if (!empty($request->file('fileToUpload'))) {
+                $image = $request->file('fileToUpload');
+                $filename = time() . '.' . $image->extension();
+                $image->move('upload/', $filename);
+            } else{
+                $products = ProductsLanguages::where('id', $request['id'])->first();
+                $filename = $products['image'];
+            }
+
+            for ($i=0; $i<2; $i++) {
+                $newsEdit = ProductsLanguages::where('id', $request['id'][$i])->update([
+                    'languages_id' => $i+1,
+                    'name' => $request['name'][$i],
+                    'content' => $request['content'][$i],
+                    'price' => $request['price'],
+                    'image' => $filename,
+                    'status' => 1
+                ]);
+            }
+        }
+
+        if ($newsEdit) {
+            \Session::flash('alert-success', 'Sửa Sản Phẩm Thành Công');
+        } else {
+            \Session::flash('alert-warning', 'Sửa Sản Phẩm Lỗi');
         }
         return redirect()->route('prd_listPrd');
     }

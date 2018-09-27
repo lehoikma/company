@@ -13,28 +13,47 @@
     <div class="col-md-12">
         <form action="{{route('prd_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            <div class="col-md-8">
-                <label>Tên Danh Mục <span style="color: red">(*)</span></label>
+            <div class="col-md-6">
+                <label>Tên Sản Phẩm (Tiếng Việt)<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="Nhập tên sản phẩm..." value="{{old('name')}}">
+                    <input type="text" name="name[0]" class="form-control" placeholder="Nhập tên sản phẩm..." value="">
                 </div>
-                @if ($errors->has('name'))
-                    <p class="help-block text-left" style="color: red">{{ $errors->first('name') }}</p>
+            </div>
+            <div class="col-md-6">
+                <label>Tên Sản Phẩm( Tiếng Anh)</label>
+                <div class="form-group">
+                    <input type="text" name="name[1]" class="form-control" placeholder="Nhập tên sản phẩm tiếng anh..." value="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                @if ($errors->has('name.0'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('name.0') }}</p>
                 @endif
             </div>
-            <div class="col-md-12" style="margin-top: 15px">
+            <div class="col-md-6" style="margin-top: 15px">
                 <label>Mô tả về sản phẩm <span style="color: red">(*)</span></label>
-                <textarea id="editor1" name="content" rows="7" class="form-control ckeditor">{{old('content')}}</textarea>
+                <textarea id="editor1" name="content[0]" rows="7" class="form-control ckeditor">{{old('content.0')}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
                 <script type="text/javascript">
                     CKEDITOR.replace( 'editor1' );
                 </script>
-                @if ($errors->has('content'))
-                    <p class="help-block text-left" style="color: red">{{ $errors->first('content') }}</p>
+            </div>
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Mô tả về sản phẩm <span style="color: red">(*)</span></label>
+                <textarea id="editor2" name="content[1]" rows="7" class="form-control ckeditor">{{old('content.1')}}</textarea>
+                <script src="/ckeditor/ckeditor.js"></script>
+
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor2' );
+                </script>
+            </div>
+            <div class="col-md-12">
+                @if ($errors->has('content.0'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('content.0') }}</p>
                 @endif
             </div>
-            <div class="col-md-4" style="margin-top: 15px">
+            <div class="col-md-6" style="margin-top: 15px">
                 <label>Giá Bán :</label>
                 <div class="form-group">
                     <input type="text" name="price" class="form-control" placeholder="Nhập giá" value="{{old('price')}}">

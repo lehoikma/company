@@ -38,10 +38,10 @@
                                                 <td>{{$value['price']}}</td>
                                                 <td>{{$value['created_at']}}</td>
                                                 <td>
-                                                    <a href="{{route('prd_edit', $value['id'])}}">
+                                                    <a href="{{route('prd_edit', $value['products_id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Sửa</button>
                                                     </a>
-                                                    <a href="{{route('prd_delete', $value['id'])}}">
+                                                    <a href="{{route('prd_delete', $value['products_id'])}}">
                                                         <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>
                                                     </a>
                                                 </td>
