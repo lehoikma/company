@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Trang Ch?
+    Trang Chủ
 @endsection
 @section('content')
     <div class="col-lg-3 col-xs-6">
@@ -8,7 +8,7 @@
         <div class="small-box bg-aqua">
             <div class="inner">
                 <h3> 12 </h3>
-                <p>Gi?i Thi?u</p>
+                <p></p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -23,7 +23,7 @@
             <div class="inner">
                 <h3>33</h3>
 
-                <p>Tin T?c</p>
+                <p>Tin Tức</p>
             </div>
             <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -38,7 +38,7 @@
             <div class="inner">
                 <h3>3</h3>
 
-                <p>S?n Ph?m</p>
+                <p>Sản Phẩm</p>
             </div>
             <div class="icon">
                 <i class="ion ion-person-add"></i>

@@ -39,9 +39,9 @@ class NewsController extends Controller
             'title' => $request['title_news']
         ]);
         if ($newsCompany) {
-            \Session::flash('alert-success', 'T?o Tin T?c Th«¢nh C«Ông');
+            \Session::flash('alert-success', 'Táº¡o tin tá»©c thÃ nh cÃ´ng');
         } else {
-            \Session::flash('alert-warning', 'T?o Tin T?c L?i');
+            \Session::flash('alert-warning', 'Táº¡o tin tá»©c lá»—i');
         }
         return redirect()->route('list_news');
     }
@@ -92,9 +92,9 @@ class NewsController extends Controller
                 'title' => $request['title_news']
             ]);
         if ($newsEdit) {
-            \Session::flash('alert-success', 'S?a Tin T?c Th«¢nh C«Ông');
+            \Session::flash('alert-success', 'Sá»­a tin tá»©c thÃ nh cÃ´ng');
         } else {
-            \Session::flash('alert-warning', 'S?a Tin T?c L?i');
+            \Session::flash('alert-warning', 'Sá»­a tin tá»©c lá»—i');
         }
         return redirect()->route('list_news');
 
@@ -105,9 +105,9 @@ class NewsController extends Controller
         $news = News::find($id);
         $delete = $news->delete();
         if ($delete) {
-            \Session::flash('alert-success', 'Xo«¡ Tin T?c Th«¢nh C«Ông');
+            \Session::flash('alert-success', 'XoÃ¡ tin tá»©c thÃ nh cÃ´ng');
         } else {
-            \Session::flash('alert-warning', 'Xo«¡ Tin T?c L?i');
+            \Session::flash('alert-warning', 'XoÃ¡ tin tá»©c lá»—i');
         }
         return redirect()->route('list_news');
     }
