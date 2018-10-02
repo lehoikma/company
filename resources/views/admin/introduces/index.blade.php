@@ -13,11 +13,11 @@
     <div class="col-md-12">
         <form action="{{route('save_introduces')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
-            <input name="id[0]" value="{{$introduces[0]['id']}}" type="hidden">
-            <input name="id[1]" value="{{$introduces[1]['id']}}" type="hidden">
+            <input name="id[0]" value="{{$introduces[0]['id'] or ''}}" type="hidden">
+            <input name="id[1]" value="{{$introduces[1]['id'] or ''}}" type="hidden">
             <div class="col-md-12" style="margin-top: 15px">
                 <label>Mô tả ( Tiếng Việt ):  <span style="color: red">(*)</span></label>
-                <textarea id="editor1" name="content[0]" rows="7" class="form-control ckeditor">{{$introduces[0]['content']}}</textarea>
+                <textarea id="editor1" name="content[0]" rows="7" class="form-control ckeditor">{{$introduces[0]['content'] or ''}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
                 <script type="text/javascript">
@@ -30,7 +30,7 @@
 
             <div class="col-md-12" style="margin-top: 15px">
                 <label>Mô tả ( Tiếng Anh ):  <span style="color: red">(*)</span></label>
-                <textarea id="editor2" name="content[1]" rows="7" class="form-control ckeditor">{{$introduces[1]['content']}}</textarea>
+                <textarea id="editor2" name="content[1]" rows="7" class="form-control ckeditor">{{$introduces[1]['content'] or ''}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
                 <script type="text/javascript">

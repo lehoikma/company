@@ -39,11 +39,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/xoa-san-pham/{id}', 'ProductsController@delete')->name('prd_delete');
 
     // Tin-Tuc
-    Route::get('/tao-danh-muc-tin-tuc', 'NewsCategoryController@registerNewsCategory')->name('register_category_news');
-    Route::post('/save-danh-muc-tin-tuc', 'NewsCategoryController@saveNewsCategory')->name('save_category_news');
-    Route::get('/xoa-danh-muc-tin-tuc/{id}', 'NewsCategoryController@deleteNewsCategory')->name('delete_category_news');
-    Route::get('/sua-danh-muc-tin-tuc/{id}', 'NewsCategoryController@showEditNewsCategory')->name('show_edit_category_news');
-    Route::post('/sua-danh-muc-tin-tuc', 'NewsCategoryController@editNewsCategory')->name('edit_category_news');
+    Route::get('/tao-danh-muc-tin', 'CategoryNewsController@index')->name('category_news_index');
+    Route::post('/luu-danh-muc-tin', 'CategoryNewsController@save')->name('category_news_save');
+    Route::get('/sua-danh-muc-tin/{id}', 'CategoryNewsController@edit')->name('category_news_edit');
+    Route::post('/luu-sua-danh-muc-tin', 'CategoryNewsController@editSave')->name('category_news_edit_save');
+    Route::get('/xoa-danh-muc-tin/{id}', 'CategoryNewsController@delete')->name('category_news_delete');
 
     Route::get('/tao-tin-tuc', 'NewsController@formCreateNews')->name('form_create_news');
     Route::post('/tao-tin-tuc', 'NewsController@createNews')->name('create_news');

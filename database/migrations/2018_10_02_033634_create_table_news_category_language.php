@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableNewsCategory extends Migration
+class CreateTableNewsCategoryLanguage extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateTableNewsCategory extends Migration
      */
     public function up()
     {
-        Schema::create('categories_news', function (Blueprint $table) {
+        Schema::create('categories_news_language', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('news_category_id');
+            $table->integer('languages_id');
+            $table->string('name');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -27,6 +30,6 @@ class CreateTableNewsCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories_news');
+        Schema::dropIfExists('categories_news_language');
     }
 }
