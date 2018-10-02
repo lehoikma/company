@@ -79,6 +79,19 @@
 
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-th"></i> <span>Dah Sách Đặt Hàng</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('introduces')}}"><i class="fa fa-circle-o"></i> Danh Sách Mới Đặt</a></li>
+                        <li><a href="{{route('introduces')}}"><i class="fa fa-circle-o"></i> Danh Sách Đã Giao Hàng</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-th"></i> <span>Sản Phẩm</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
