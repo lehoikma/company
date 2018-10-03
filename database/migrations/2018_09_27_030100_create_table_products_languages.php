@@ -17,10 +17,10 @@ class CreateTableProductsLanguages extends Migration
             $table->increments('id');
             $table->integer('products_id');
             $table->integer('languages_id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('image');
             $table->string('price');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->integer('status'); // Còn hàng, hết hàng
             $table->softDeletes();
             $table->timestamps();

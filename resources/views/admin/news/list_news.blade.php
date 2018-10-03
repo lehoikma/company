@@ -46,10 +46,10 @@
                                                 <td>{{$value['author'] or 'Admin'}}</td>
                                                 <td>{{$value['created_at']}}</td>
                                                 <td>
-                                                    <a href="{{route('show_edit_news', $value['id'])}}">
+                                                    <a href="{{route('show_edit_news', $value['news_id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
                                                     </a>
-                                                    <a href="{{route('delete_news', $value['id'])}}">
+                                                    <a href="{{route('delete_news', $value['news_id'])}}">
                                                         <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>
                                                     </a>
                                                 </td>

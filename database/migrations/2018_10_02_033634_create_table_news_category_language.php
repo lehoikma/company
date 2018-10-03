@@ -17,7 +17,7 @@ class CreateTableNewsCategoryLanguage extends Migration
             $table->increments('id');
             $table->integer('news_category_id');
             $table->integer('languages_id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

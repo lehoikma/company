@@ -30,6 +30,7 @@ class CategoryNewsController extends Controller
 
             try {
                 $categoryNews = CategoriesNews::create();
+
                 foreach ($request['name'] as $key => $value) {
 
                     CategoriesNewsLanguage::create([

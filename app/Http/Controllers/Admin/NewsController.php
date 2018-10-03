@@ -6,9 +6,12 @@ use App\Http\Requests\EditNewsCompanyRequest;
 use App\Http\Requests\EditNewsRequest;
 use App\Http\Requests\SaveNewsRequest;
 use App\Models\CategoriesNews;
+use App\Models\CategoriesNewsLanguage;
 use App\Models\News;
 use App\Models\NewsCompany;
 use App\Http\Controllers\Controller;
+use App\Models\NewsLanguage;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -19,7 +22,7 @@ class NewsController extends Controller
      */
     public function formCreateNews()
     {
-        $categoryNews = CategoriesNews::all();
+        $categoryNews = CategoriesNewsLanguage::admin()->get();
         return view('admin.news.form_create_news', [
             'categoryNews' => $categoryNews
         ]);
@@ -27,28 +30,41 @@ class NewsController extends Controller
 
     public function createNews(SaveNewsRequest $request)
     {
-        $image = $request->file('fileToUpload');
-        $filename = time() . '.' . $image->extension();
-        $image->move('upload/', $filename);
+        DB::beginTransaction();
+        try {
+            $image = $request->file('fileToUpload');
+            $filename = time() . '.' . $image->extension();
+            $image->move('upload/', $filename);
 
-        $newsCompany = News::create([
-            'content' => $request['content_news'],
-            'category_news_id' => $request['select_cate_news'],
-            'image' => $filename,
-            'author' => $request['author'],
-            'title' => $request['title_news']
-        ]);
-        if ($newsCompany) {
+            $news = News::create();
+            for ($i=0 ; $i<2; $i++) {
+
+                NewsLanguage::create([
+                    'category_news_id' => $request['select_cate_news'],
+                    'news_id' => $news['id'],
+                    'languages_id' => $i+1,
+                    'content' => $request['content_news'][$i],
+                    'image' => $filename,
+                    'title' => $request['title_news'][$i]
+                ]);
+            }
+
+            DB::commit();
             \Session::flash('alert-success', 'Tạo tin tức thành công');
-        } else {
+
+        } catch (\Exception $e) {
+            dd($e->getMessage()); die;
+            DB::rollback();
             \Session::flash('alert-warning', 'Tạo tin tức lỗi');
         }
+
         return redirect()->route('list_news');
+
     }
 
     public function listNews()
     {
-        $news = News::orderBy('updated_at', 'desc')->get();
+        $news = NewsLanguage::admin()->orderBy('updated_at', 'desc')->get();
 
         return view('admin.news.list_news',[
             'news' => $news
@@ -102,6 +118,23 @@ class NewsController extends Controller
 
     public function deleteNews($id)
     {
+        DB::beginTransaction();
+        try {
+            $news = News::find($id);
+            if (!empty($news)) {
+                NewsLanguage::where('news_id', $news['id'])->delete();
+                $news->delete();
+            }
+
+            DB::commit();
+            \Session::flash('alert-success', 'Xoá tin tức thành công');
+        } catch (\Exception $e) {
+            DB::rollback();
+            \Session::flash('alert-warning', 'Xoá tin tức lỗi');
+        }
+
+        return redirect()->route('list_news');
+
         $news = News::find($id);
         $delete = $news->delete();
         if ($delete) {
