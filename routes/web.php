@@ -54,3 +54,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });
+
+Route::group(['namespace' => 'User'], function () {
+    Route::get('/', 'TopController@index')->name('user_top');
+});
