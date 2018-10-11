@@ -73,9 +73,9 @@ class NewsController extends Controller
 
     public function showEditNews($id)
     {
-        $news = News::find($id);
-        $categoryNews = CategoriesNews::all();
+        $news = NewsLanguage::where('news_id', $id)->get();
 
+        $categoryNews = CategoriesNewsLanguage::admin()->get();
         if (isset($news) && !empty($news)) {
 
             return view('admin.news.edit_news', [
@@ -90,23 +90,26 @@ class NewsController extends Controller
 
     public function editNews(EditNewsRequest $request)
     {
-        if (!empty($request->file('fileToUpload'))) {
-            $image = $request->file('fileToUpload');
-            $filename = time() . '.' . $image->extension();
-            $image->move('upload/', $filename);
-        } else{
-            $news = News::where('id', $request['news_id'])->first();
-            $filename = $news['image'];
+        if (($request['title_news'][0] != "" || $request['title_news'][1] != "") && ($request['content_news'][0] != "" || $request['content_news'][1] != "")) {
+            if (!empty($request->file('fileToUpload'))) {
+                $image = $request->file('fileToUpload');
+                $filename = time() . '.' . $image->extension();
+                $image->move('upload/', $filename);
+            } else {
+                $news = NewsLanguage::where('id', $request['news_id'])->first();
+                $filename = $news['image'];
+            }
+
+            for ($i=0; $i<2; $i++) {
+                $newsEdit = NewsLanguage::where('id', $request['news_id'][$i])->update([
+                    'content' => $request['content_news'][$i],
+                    'category_news_id' => $request['select_cate_news'],
+                    'title' => $request['title_news'][$i],
+                    'image' => $filename
+                ]);
+            }
         }
 
-        $newsEdit = News::where('id', $request['news_id'])
-            ->update([
-                'content' => $request['content_news'],
-                'category_news_id' => $request['select_cate_news'],
-                'image' => $filename,
-                'author' => $request['author'],
-                'title' => $request['title_news']
-            ]);
         if ($newsEdit) {
             \Session::flash('alert-success', 'Sửa tin tức thành công');
         } else {
