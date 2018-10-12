@@ -124,7 +124,25 @@
 	.mobiess {
 		display: none;
 	}
+	.header-logo {
+		text-align: center;
+		padding-top: 5px;
+	}
+	.collapse li a {
+		text-align: left;
+	}
+	.header-language {
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
+@media (min-width: 1200px) {
+	.header-language {
+		text-align: right;
+	}
+}
+
 .img-height{
 	height: 200px;
 	overflow: hidden;

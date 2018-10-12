@@ -14,11 +14,18 @@
 <body>
 <!-- header -->
 <div class="headers">
-    <div class="container" >
+    <div class="container">
 
         <!-- header -->
-        <div class="lg">
-            <img src="image/logo.jpg" width="100%" height="100px">
+        <div class="row col-md-12 lg header-all" style="margin: 0px; padding: 0px">
+            <div class="col-md-3 col-xs-12 header-logo">
+                <img src="image/logo.PNG" height="150px">
+            </div>
+            <div class="col-md-9 col-xs-12">
+                <div class="col-md-12 header-language">
+                    <a href="/en/"><img src="/image/en.jpg"></a>&nbsp;<a href="/vn/"><img src="/image/vn.jpg"></a>
+                </div>
+            </div>
         </div>
         <!-- menu -->
         <nav class="navbar navbar-expand-lg navbar-light col-md-12 " style="background-color: #EE9600; ">
@@ -59,10 +66,6 @@
                         <a id="clnav" class="nav-link" href="lienhe.html">Liên Hệ</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0" >
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 175px;">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0 " type="submit">Search</button>
-                </form>
             </div>
         </nav>
         <!-- menu -->
