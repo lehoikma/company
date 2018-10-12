@@ -55,6 +55,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });
 
-Route::group(['namespace' => 'User'], function () {
+Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+        ->name('user.change-language');
     Route::get('/', 'TopController@index')->name('user_top');
 });
+
