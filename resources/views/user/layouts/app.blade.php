@@ -95,9 +95,12 @@
                         <h3>
                             <span>{{trans('messages.news')}}</span>
                         </h3>
-                        <a href=""><li>Tư Vấn Phong Thủy</li></a>
-                        <a href=""><li>Thiết Kế Phong Thủy</li></a>
-                        <a href=""><li>Tư Vấn Tử Vi</li></a>
+                        <?php
+                            $cateNews = \App\Models\CategoriesNewsLanguage::User()->get();
+                        ?>
+                        @foreach($cateNews as $value)
+                            <a href=""><li>{{$value['name']}}</li></a>
+                        @endforeach
                     </div>
                     <div class="right">
                         <h3>
@@ -128,11 +131,12 @@
                     <div class="tin-1">
                         <div class="tin-11">
                             <h3>{{trans('messages.news-new')}}</h3>
-                            <li><a href="">ẤT MÙI NIÊN, XUẤT HÀNH, XU CÁT TỊ HUNG (tiếp)</a></li>
-                            <li><a href="">NĂM 2015 - ẤT MÙI XU CÁT TỊ HUNG</a></li>
-                            <li><a href="">XU CÁT TỊ HUNG CHO NĂM 2014 – GIÁP NGỌ</a></li>
-                            <li><a href="">LỚP PHONG THỦY SƠ TRUNG CẤP</a></li>
-                            <li><a href="">CHU TƯỚC HỮU DƯ TIẾN HÀ ẨM THỦY (Tiếp)</a></li>
+                            <?php
+                                $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
+                            ?>
+                            @foreach($news as $value)
+                                <li><a href="">{{strtoupper($value['title'])}}</a></li>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -140,40 +144,28 @@
                     <div class="tin-1">
                         <div class="tin-11">
                             <h3>{{trans('messages.products-new')}}</h3>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px dashed;">
+                            <?php
+                            $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(2)->get();
+                            ?>
+                            @foreach($catePrd1 as $value)
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px dashed;">
                                 <tbody>
                                 <tr align="center">
                                     <td>
-												<span>
-													CẦU THẠCH ANH
-												</span>
+                                        <span>
+                                            {{strtoupper($value['name'])}}
+                                        </span>
                                         <br>
                                         <a href="">
-                                            <img src="image/tanh.jpg">
+                                            <img src="/upload/{{$value['image']}}" style="width: 90px; height: 90px">
                                         </a>
                                         <br>
-                                        <a href="">gọi điện hỏi giá</a>
+                                        <a href="">{{$value['price'] ? number_format($value['price']). ' VNĐ' : 'Liên Hệ'}}</a>
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px dashed;">
-                                <tbody>
-                                <tr align="center">
-                                    <td>
-												<span>
-													La kinh tiếng việt 2013
-												</span>
-                                        <br>
-                                        <a href="">
-                                            <img src="image/lkinh.jpg">
-                                        </a>
-                                        <br>
-                                        <a href="">gọi điện hỏi giá</a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            @endforeach
                         </div>
                     </div>
                 </div>

@@ -2,98 +2,22 @@
 @section('slide')
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
         <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <div class="carousel-item col-md-3  ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 1" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide1.jpg" alt="slide 1">
-                        </a>
-                        <p>abc1</p>
+            <?php
+            $catePrd = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(10)->get();
+            ?>
+            @foreach($catePrd as $key=>$value)
+                <div class="carousel-item col-md-3 {{$key == 0 ? 'active' : ''}}">
+                    <div class="panel panel-default">
+                        <div class="panel-thumbnail">
+                            <a href="#" title="image 1" class="thumb">
+                                <img class="img-fluid mx-auto d-block" src="/upload/{{$value['image']}}">
+                            </a>
+                            <p>{{$value['name']}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item col-md-3 ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 3" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide2.jpg" alt="slide 2">
-                        </a>
-                        <p>abc2</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3 ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 4" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide3.jpg" alt="slide 3">
-                        </a>
-                        <p>abc3</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3 active">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 5" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide4.jpg" alt="slide 4">
-                        </a>
-                        <p>abc4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3 ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 6" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide5.jpg" alt="slide 5">
-                        </a>
-                        <p>abc5</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3 ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 7" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide6.jpg" alt="slide 6">
-                        </a>
-                        <p>abc6</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3 ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 8" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide7.jpg" alt="slide 7">
-                        </a>
-                        <p>abc7</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item col-md-3  ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 2" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide8.jpg" alt="slide 8">
-                        </a>
-                        <p>abc8</p>
-                    </div>
+            @endforeach
 
-                </div>
-            </div>
-            <div class="carousel-item col-md-3  ">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail">
-                        <a href="#" title="image 2" class="thumb">
-                            <img class="img-fluid mx-auto d-block" src="image/slide9.jpg" alt="slide 9">
-                        </a>
-                        <p>abc9</p>
-                    </div>
-
-                </div>
-            </div>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -107,84 +31,24 @@
 @endsection
 @section('content')
     <!-- san pham -->
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc1</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh1.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
+    <?php
+        $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(6)->get();
+    ?>
+    @foreach($catePrd1 as $key=>$value)
+        <div class="col-md-4 col-xs-12" >
+            <a class="title-name">{{$value['name']}}</a>
+            <div class="img-height">
+                <a href=""><img src="/upload/{{$value['image']}}" alt=""></a>
+            </div>
+            <div class="text-center">
+                <a class="promotional">{{$value['price'] ? number_format($value['price']).' VNĐ' : 'Liên Hệ'}}</a>
+            </div>
 
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
+            <div class="footer-product">
+                <a href="#" class="btn btn-outline-warning">{{trans('messages.order')}}</a>
+            </div>
         </div>
-    </div>
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc2</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh2.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
-
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc3</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh3.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
-
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc3</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh3.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
-
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc4</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh3.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
-
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-12" >
-        <a class="title-name">abc5</a>
-        <div class="img-height">
-            <a href=""><img src="image/anh3.jpg" alt=""></a>
-        </div>
-        <div class="text-center">
-            <a class="promotional">100.000Đ</a>
-        </div>
-
-        <div class="footer-product">
-            <a href="#" class="btn btn-outline-warning">Đặt Hàng</a>
-        </div>
-    </div>
+    @endforeach
     <!-- san pham -->
 
 

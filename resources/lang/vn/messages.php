@@ -9,4 +9,5 @@ return [
     'news-new' => 'Tin Tức Mới',
     'products-new' => 'Sản Phẩm Mới',
     'cart' => 'Giỏ Hàng',
+    'order' => 'Đặt Hàng',
 ];

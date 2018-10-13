@@ -22,4 +22,9 @@ class ProductsLanguages extends Model
     public function scopeAdmin($query) {
         return $query->where('languages_id', 1);
     }
+
+    public function scopeUser($query) {
+        $locateId = $this->getLocate(config('app.locale'));
+        return $query->where('languages_id', $locateId);
+    }
 }

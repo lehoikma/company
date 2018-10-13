@@ -9,4 +9,5 @@ return [
     'news-new' => 'News New',
     'products-new' => 'Products New',
     'cart' => 'Cart',
+    'order' => 'Order',
 ];
