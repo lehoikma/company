@@ -143,6 +143,9 @@
 	#myCarousel {
 		height: auto;
 	}
+	.footers {
+		padding-left: 0px !important;
+	}
 }
 @media (min-width: 1200px) {
 	.header-language {
@@ -150,6 +153,10 @@
 	}
 	.header-logo {
 		padding-left: 0px !important;
+	}
+	.pc-container {
+		padding-left: 0px!important;
+		padding-right: 0px!important;
 	}
 }
 

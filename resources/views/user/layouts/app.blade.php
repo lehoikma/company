@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <title>Trang chủ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    {{--<link rel="stylesheet" type="text/css" href="https://vadikom.github.io/smartmenus/src/css/sm-core-css.css">--}}
-    {{--<link rel="stylesheet" type="text/css" href="https://vadikom.github.io/smartmenus/src/css/sm-blue/sm-blue.css">--}}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -21,7 +19,7 @@
         <!-- header -->
         <div class="row col-md-12 lg header-all" style="margin: 0px; padding: 0px">
             <div class="col-md-3 col-xs-12 header-logo">
-                <img src="image/logo.PNG" height="150px">
+                <img src="/image/logo.PNG" height="150px">
             </div>
             <div class="col-md-9 col-xs-12">
                 <div class="col-md-12 header-language">
@@ -40,9 +38,9 @@
                     <span class="main-menu-btn-icon"></span> Toggle main menu visibility
                 </label>
                 <!-- Sample menu definition -->
-                <ul id="main-menu" class="sm sm-blue" style="border-radius:none">
+                <ul id="main-menu" class="sm sm-blue" style="border-radius:0">
                     <li>
-                        <a class="menu-active" href="">{{ trans('messages.home') }}</a>
+                        <a class="menu-active" href="{{route('user_top')}}">{{ trans('messages.home') }}</a>
                     </li>
                     <li>
                         <a class="menu-active" href="">{{ trans('messages.introduce') }}</a>
@@ -74,7 +72,7 @@
 <br>
 <!-- contents -->
 <div class="contents">
-    <div class="container">
+    <div class="container pc-container">
         <div class="row">
             <div class="col-md-3 mobiess">
                 <div style="background: #BB0000;">
@@ -122,9 +120,7 @@
                 </div>
             </div>
             <div class="col-md-7 col-sx-12" style="border-top: 1px solid #d4d4d4; padding-top: 10px">
-                <div class="row">
                     @yield('content')
-                </div>
             </div>
             <div class="col-md-2 mobiess">
                 <div class="tin">
@@ -178,7 +174,7 @@
                                 <tr align="center">
                                     <td>
                                         <a href="">
-                                            <img src="image/dh.gif">
+                                            <img src="/image/dh.gif">
                                         </a>
                                         <br>
                                         <p>Giỏ của bạn chưa có hàng</p>
@@ -196,7 +192,7 @@
 <!-- contents -->
 </div>
 <!-- footer -->
-<div class="footers" style="padding-left: 30px">
+<div class="footers">
     <div class="container" style="background: #ee9600; ">
         <div class="row">
             <div class="col-md-3">
@@ -215,8 +211,7 @@
                 </small>
                 <br>
                 <small>
-                    Copyright &copy; 2018 Phong Thuy Van Xuan. Modified by
-                    <a href="">Agriplus.vn</a>
+                    Copyright &copy; 2018 Agriplus.vn
                 </small>
                 <br>
             </div>
@@ -227,10 +222,6 @@
 <!-- footer -->
 </body>
 </html>
-
-
-
-
 
 
 <script language="javascript">
@@ -289,5 +280,5 @@
         subMenusSubOffsetY: -8
       });
     });
-
 </script>
+@yield('script')

@@ -51,13 +51,13 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/sua-tin-tuc/{id}', 'NewsController@showEditNews')->name('show_edit_news');
     Route::post('/sua-tin-tuc', 'NewsController@editNews')->name('edit_news');
     Route::get('/xoa-tin-tuc/{id}', 'NewsController@deleteNews')->name('delete_news');
-
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
+    Route::get('/', 'TopController@index')->name('user_top');
     Route::get('change-language/{language}', 'HomeController@changeLanguage')
         ->name('user.change-language');
-    Route::get('/', 'TopController@index')->name('user_top');
+    Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
 });
 
