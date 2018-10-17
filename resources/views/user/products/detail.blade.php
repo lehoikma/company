@@ -16,45 +16,21 @@
             {!! $product['content'] !!}
         </div>
         <p class="col-md-12" style="font-weight: bold;border-top: 1px solid #d4d4d4;padding-top: 10px;">BÀI CÙNG CHUYÊN MỤC</p>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
+        @foreach($prdFollows as$value)
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
             <div class="post-thumb">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2">
-                    <img style="width: 100%; height: 180px" src="http://rauantoandabaco.vn/upload/1519559592.jpeg" alt="" title="Hà Nội: Sợ bão số 4 gây mưa lớn, chung cư – biệt thự “tậu” bao cát chặn hầm chống ngập">
+                <a href="{{route('products_detail',['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
+                    <img style="width: 100%; height: 180px" src="/upload/{{$value['image']}}" alt="" title="{{$value['name']}}">
                 </a>
             </div>
 
             <h5 class="small-font">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2" style="color: #0a0a0a">
-                    Những chuỗi thực phẩm an toàn tại các tỉnh phía Bắc
+                <a href="{{route('products_detail',['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a">
+                    {{$value['name']}}
                 </a>
             </h5>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
-            <div class="post-thumb">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2">
-                    <img style="width: 100%; height: 180px" src="http://rauantoandabaco.vn/upload/1519559592.jpeg" alt="" title="Hà Nội: Sợ bão số 4 gây mưa lớn, chung cư – biệt thự “tậu” bao cát chặn hầm chống ngập">
-                </a>
-            </div>
-
-            <h5 class="small-font">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2">
-                    Những chuỗi thực phẩm an toàn tại các tỉnh phía Bắc
-                </a>
-            </h5>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
-            <div class="post-thumb">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2">
-                    <img style="width: 100%; height: 180px" src="http://rauantoandabaco.vn/upload/1519559592.jpeg" alt="" title="Hà Nội: Sợ bão số 4 gây mưa lớn, chung cư – biệt thự “tậu” bao cát chặn hầm chống ngập">
-                </a>
-            </div>
-
-            <h5 class="small-font">
-                <a href="http://rauantoandabaco.vn/tin-tuc/post/nhung-chuoi-thuc-pham-an-toan-tai-cac-tinh-phia-bac/2">
-                    Những chuỗi thực phẩm an toàn tại các tỉnh phía Bắc
-                </a>
-            </h5>
-        </div>
+        @endforeach
     </div>
 @endsection
 @section('script')

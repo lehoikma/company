@@ -15,6 +15,7 @@ class CreateTableProductsLanguages extends Migration
     {
         Schema::create('products_languages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_product_id');
             $table->integer('products_id');
             $table->integer('languages_id');
             $table->string('name')->nullable();

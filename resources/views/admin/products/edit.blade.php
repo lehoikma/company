@@ -27,6 +27,15 @@
                     <input type="text" name="name[1]" class="form-control" placeholder="Nhập tên sản phẩm tiếng anh..." value="{{$prd[1]['name']}}">
                 </div>
             </div>
+            <div class="col-md-8">
+                <label>Danh Mục Tin Tức:</label>
+                <select class="form-control" id="sel1" name="select_cate_prd">
+                    <option value=""></option>
+                    @foreach($categoryPrd as $value)
+                        <option value="{{$value['id']}}" {{ $value['id']==$prd[0]['category_product_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="col-md-6" style="margin-top: 15px">
                 <label>Mô tả về sản phẩm <span style="color: red">(*)</span></label>
                 <textarea id="editor1" name="content[0]" rows="7" class="form-control ckeditor">{{$prd[0]['content']}}</textarea>

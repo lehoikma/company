@@ -25,6 +25,18 @@
                     <input type="text" name="name[1]" class="form-control" placeholder="Nhập tên sản phẩm tiếng anh..." value="">
                 </div>
             </div>
+            <div class="col-md-8">
+                <label>Danh Mục Tin Tức:  <span style="color: red">(*)</span></label>
+                <select class="form-control" id="sel1" name="select_cate_prd">
+                    <option value=""></option>
+                    @foreach($categoryProducts as $value)
+                        <option value="{{$value['id']}}">{{$value['name']}}</option>
+                    @endforeach
+                </select>
+                @if ($errors->has('select_cate_news'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('select_cate_news') }}</p>
+                @endif
+            </div>
             <div class="col-md-12">
                 @if ($errors->has('name.0'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('name.0') }}</p>

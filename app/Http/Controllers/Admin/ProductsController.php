@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SaveProductsRequest;
 use App\Models\CategoryProducts;
+use App\Models\CategoryProductsLanguages;
 use App\Models\Products;
 use App\Models\ProductsLanguages;
 use Illuminate\Http\Request;
@@ -20,7 +21,11 @@ class ProductsController extends Controller
     public function index()
     {
         $category = CategoryProducts::all();
-        return view('admin.products.index', ['category' => $category]);
+        $categoryProducts = CategoryProductsLanguages::admin()->get();
+        return view('admin.products.index', [
+            'category' => $category,
+            'categoryProducts' => $categoryProducts
+        ]);
     }
 
     public function save(SaveProductsRequest $request)
@@ -35,6 +40,7 @@ class ProductsController extends Controller
             for ($i=0 ; $i<2; $i++) {
                 $saveProducts = ProductsLanguages::create([
                     'products_id' => $products['id'],
+                    'category_product_id' => $request['select_cate_prd'],
                     'languages_id' => $i+1,
                     'name' => $request['name'][$i],
                     'content' => $request['content'][$i],
@@ -72,8 +78,12 @@ class ProductsController extends Controller
 
     public function edit($id) {
         $prd = ProductsLanguages::where('products_id', $id)->get();
+        $categoryPrd = CategoryProductsLanguages::admin()->get();
         if (!empty($prd)) {
-            return view('admin.products.edit', ['prd' => $prd]);
+            return view('admin.products.edit', [
+                'prd' => $prd,
+                'categoryPrd' => $categoryPrd
+            ]);
         }
         return redirect()->route('prd_listPrd');
     }
@@ -93,6 +103,7 @@ class ProductsController extends Controller
                 $newsEdit = ProductsLanguages::where('id', $request['id'][$i])->update([
                     'languages_id' => $i+1,
                     'name' => $request['name'][$i],
+                    'category_product_id' => $request['select_cate_prd'],
                     'content' => $request['content'][$i],
                     'price' => $request['price'],
                     'image' => $filename,

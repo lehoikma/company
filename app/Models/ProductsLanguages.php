@@ -17,7 +17,7 @@ class ProductsLanguages extends Base
      * @var array
      */
     protected $fillable = [
-        'products_id', 'languages_id', 'name', 'image' , 'price', 'content', 'status'
+        'products_id', 'languages_id', 'name', 'image' , 'price', 'content', 'status', 'category_product_id'
     ];
 
     public function scopeAdmin($query) {
