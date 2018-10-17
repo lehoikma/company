@@ -56,8 +56,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/', 'TopController@index')->name('user_top');
-    Route::get('change-language/{language}', 'HomeController@changeLanguage')
-        ->name('user.change-language');
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+    Route::get('tin-tuc/{title}/{id}', 'NewsController@detail')->name('news_detail');
+    Route::get('danh-sach-tin-tuc/{title}/{id}', 'NewsController@listCategory')->name('news_list');
     Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
+    Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list');
 });
 

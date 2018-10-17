@@ -86,7 +86,8 @@
 
                         ?>
                         @foreach($catePrd as $value)
-                            <a href=""><li>{{$value['name']}}</li></a>
+                            <a href="{{route('products_list', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li>
+                            </a>
                         @endforeach
                     </div>
                     <div class="right">
@@ -97,7 +98,7 @@
                             $cateNews = \App\Models\CategoriesNewsLanguage::User()->get();
                         ?>
                         @foreach($cateNews as $value)
-                            <a href=""><li>{{$value['name']}}</li></a>
+                            <a href="{{route('news_list', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li></a>
                         @endforeach
                     </div>
                     <div class="right">
@@ -131,7 +132,7 @@
                                 $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
                             ?>
                             @foreach($news as $value)
-                                <li><a href="">{{strtoupper($value['title'])}}</a></li>
+                                <li><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{strtoupper($value['title'])}}</a></li>
                             @endforeach
                         </div>
                     </div>
@@ -162,26 +163,6 @@
                                 </tbody>
                             </table>
                             @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="tin">
-                    <div class="tin-1">
-                        <div class="tin-11">
-                            <h3>{{trans('messages.cart')}}</h3>
-                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                <tbody>
-                                <tr align="center">
-                                    <td>
-                                        <a href="">
-                                            <img src="/image/dh.gif">
-                                        </a>
-                                        <br>
-                                        <p>Giỏ của bạn chưa có hàng</p>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>

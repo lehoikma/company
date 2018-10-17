@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <label>Danh Mục Tin Tức:</label>
+                <label>Danh Mục Sản Phẩm:</label>
                 <select class="form-control" id="sel1" name="select_cate_prd">
                     <option value=""></option>
                     @foreach($categoryPrd as $value)
