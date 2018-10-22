@@ -24,7 +24,7 @@
                 </a>
             </div>
 
-            <h5 class="small-font">
+            <h5 class="small-font" style="text-align: center;margin-top: 10px;">
                 <a href="{{route('products_detail',['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a">
                     {{$value['name']}}
                 </a>

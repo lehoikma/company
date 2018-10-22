@@ -43,7 +43,7 @@
                         <a class="menu-active" href="{{route('user_top')}}">{{ trans('messages.home') }}</a>
                     </li>
                     <li>
-                        <a class="menu-active" href="">{{ trans('messages.introduce') }}</a>
+                        <a class="menu-active" href="{{route('introduce')}}">{{ trans('messages.introduce') }}</a>
                     </li>
                     <li>
                         <a class="menu-active" href="">{{ trans('messages.news') }}</a>
@@ -153,11 +153,11 @@
                                             {{strtoupper($value['name'])}}
                                         </span>
                                         <br>
-                                        <a href="">
+                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
                                             <img src="/upload/{{$value['image']}}" style="width: 90px; height: 90px">
                                         </a>
                                         <br>
-                                        <a href="">{{$value['price'] ? number_format($value['price']). ' VNĐ' : 'Liên Hệ'}}</a>
+                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">{{$value['price'] ? number_format($value['price']). ' VNĐ' : 'Liên Hệ'}}</a>
                                     </td>
                                 </tr>
                                 </tbody>

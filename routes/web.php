@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/top', 'IndexController@top')->name('admin_top');
-    Route::get('/gioi-thieu', 'IntroducesController@index')->name('introduces');
+    Route::get('/tao-gioi-thieu', 'IntroducesController@index')->name('introduces');
     Route::post('/save-gioi-thieu', 'IntroducesController@saveIntroduces')->name('save_introduces');
     Route::get('/tao-danh-muc', 'CategoryProductsController@index')->name('category_prd_index');
     Route::post('/luu-danh-muc', 'CategoryProductsController@save')->name('category_prd_save');
@@ -61,5 +61,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('danh-sach-tin-tuc/{title}/{id}', 'NewsController@listCategory')->name('news_list');
     Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
     Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list');
+
+    Route::get('gioi-thieu', 'IntroducesController@index')->name('introduce');
 });
 
