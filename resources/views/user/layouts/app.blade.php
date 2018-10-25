@@ -249,8 +249,8 @@
       var href = window.location.href;
       $('a.menu-active').each(function(e,i) {
         if (href.indexOf($(this).attr('href')) >= 0) {
-          $('li a.active').removeClass('active');
-          $(this).addClass('active');
+          $('li a.active1').removeClass('active1');
+          $(this).addClass('active1');
         }
       });
     });
@@ -263,3 +263,4 @@
     });
 </script>
 @yield('script')
+
