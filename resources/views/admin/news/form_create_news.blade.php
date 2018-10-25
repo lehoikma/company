@@ -36,7 +36,7 @@
                 <select class="form-control" id="sel1" name="select_cate_news">
                     <option value=""></option>
                     @foreach($categoryNews as $value)
-                        <option value="{{$value['id']}}">{{$value['name']}}</option>
+                        <option value="{{$value['news_category_id']}}">{{$value['name']}}</option>
                     @endforeach
                 </select>
                 @if ($errors->has('select_cate_news'))
