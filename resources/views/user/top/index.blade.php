@@ -106,7 +106,6 @@ console.log(childPic);
       function onPicOver(d)
       {
         var inp=document.getElementById(d);
-        console.log(d);
         var src="http://fengshui.local/"+ inp.value;
         var img="<img src='"+ src +"' width='350px' />";
         Tip(img);

@@ -46,13 +46,13 @@
                         <a class="menu-active" href="{{route('introduce')}}">{{ trans('messages.introduce') }}</a>
                     </li>
                     <li>
-                        <a class="menu-active" href="">{{ trans('messages.news') }}</a>
+                        <a class="menu-active" href="{{route('news_list')}}">{{ trans('messages.news') }}</a>
                     </li>
                     <li>
-                        <a class="menu-active" href="">{{ trans('messages.products') }}</a>
+                        <a class="menu-active" href="{{route('products_list')}}">{{ trans('messages.products') }}</a>
                     </li>
                     <li>
-                        <a class="menu-active" href="">{{ trans('messages.contact') }}</a>
+                        <a class="menu-active" href="{{route('contacts')}}">{{ trans('messages.contact') }}</a>
                     </li>
                 </ul>
             </nav>
@@ -86,7 +86,7 @@
 
                         ?>
                         @foreach($catePrd as $value)
-                            <a href="{{route('products_list', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li>
+                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li>
                             </a>
                         @endforeach
                     </div>
@@ -98,7 +98,7 @@
                             $cateNews = \App\Models\CategoriesNewsLanguage::User()->get();
                         ?>
                         @foreach($cateNews as $value)
-                            <a href="{{route('news_list', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li></a>
+                            <a href="{{route('news_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li></a>
                         @endforeach
                     </div>
                     <div class="right">
@@ -201,6 +201,25 @@
     </div>
 </div>
 <!-- footer -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1986711764923054',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/vi_VN/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-customerchat" page_id="113193379515028"></div>
+
 </body>
 </html>
 

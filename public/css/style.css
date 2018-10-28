@@ -12,7 +12,7 @@
 }
 
 .active1 {
-	background: #8fcc6d !important;
+	background: #b90711 !important;
 	color: #ffffff !important;
 }
 /*-------------------------menu-------------------------*/
@@ -577,8 +577,8 @@ div.tin-11 li a:hover{
 	padding: 10px 20px;
 	/* make room for the toggle button (sub indicator) */
 	padding-right: 58px;
-	background: #b90711;
-	background-image: linear-gradient(to bottom, #b90711, #b90711);
+	background: #f09700;
+	background-image: linear-gradient(to bottom, #f09700, #f09700);
 	color: #fff;
 	font-family: "PT Sans Narrow", "Arial Narrow", Arial, Helvetica, sans-serif;
 	font-size: 18px;

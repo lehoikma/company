@@ -11,7 +11,7 @@ class ProductsController extends Controller
     public function detail($title, $id) {
         $product = ProductsLanguages::User()->where('products_id', $id)->first();
         $prdFollows = ProductsLanguages::User()->where('category_product_id', $product['category_product_id'])->limit(3)->inRandomOrder()->get();
-//var_dump($id); die;
+
         return view('user.products.detail', [
             'product' => $product,
             'prdFollows' => $prdFollows
@@ -23,6 +23,13 @@ class ProductsController extends Controller
         return view('user.products.list',[
             'title' => $title,
             'listProductCategory' => $listProductCategory
+        ]);
+    }
+
+    public function listProduct() {
+        $data = ProductsLanguages::User()->paginate(30);
+        return view('user.products.list1',[
+            'data' => $data
         ]);
     }
 }

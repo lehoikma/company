@@ -26,4 +26,11 @@ class NewsController extends Controller
             'listNewsCategory' => $listNewsCategory
         ]);
     }
+
+    public function listNews() {
+        $listNews = NewsLanguage::User()->paginate(30);
+        return view('user.news.list1',[
+            'listNews' => $listNews
+        ]);
+    }
 }

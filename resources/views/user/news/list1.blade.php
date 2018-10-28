@@ -3,9 +3,9 @@
 @section('content')
     <div class="row">
         <div class="col-md-12" style="padding-bottom: 15px;
-    border-bottom: 1px solid #fff3f3;">Trang Chủ > Tin Tức > {{$title}}</div>
+    border-bottom: 1px solid #fff3f3;">Trang Chủ > Tin Tức</div>
         <h3 class="col-md-12" style="margin-bottom: 20px">Danh Sách Tin Tức</h3>
-            @foreach($listNewsCategory as $value)
+            @foreach($listNews as $value)
                 <div class="col-xs-12" style="margin-bottom: 30px; float: left">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float: left">
                         <a href="{{route('news_detail', ['title' => $value['title'], 'id' => $value['id']])}}">
@@ -22,5 +22,5 @@
                 </div>
             @endforeach
     </div>
-    <div class="text-center">{{$listNewsCategory->links()}}</div>
+    <div class="text-center">{{$listNews->links()}}</div>
 @endsection

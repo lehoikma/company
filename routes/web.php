@@ -58,10 +58,13 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/', 'TopController@index')->name('user_top');
     Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
     Route::get('tin-tuc/{title}/{id}', 'NewsController@detail')->name('news_detail');
-    Route::get('danh-sach-tin-tuc/{title}/{id}', 'NewsController@listCategory')->name('news_list');
+    Route::get('danh-sach-tin-tuc/{title}/{id}', 'NewsController@listCategory')->name('news_list_ctg');
     Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
-    Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list');
+    Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list_ctg');
 
     Route::get('gioi-thieu', 'IntroducesController@index')->name('introduce');
+    Route::get('san-pham', 'ProductsController@listProduct')->name('products_list');
+    Route::get('lien-he', 'ContactsController@index')->name('contacts');
+    Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
 });
 
