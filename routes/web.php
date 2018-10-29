@@ -66,5 +66,6 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('san-pham', 'ProductsController@listProduct')->name('products_list');
     Route::get('lien-he', 'ContactsController@index')->name('contacts');
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
+    Route::get('tim-kiem', 'SearchController@index')->name('search');
 });
 

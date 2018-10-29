@@ -38,7 +38,7 @@
                     <span class="main-menu-btn-icon"></span> Toggle main menu visibility
                 </label>
                 <!-- Sample menu definition -->
-                <ul id="main-menu" class="sm sm-blue" style="border-radius:0">
+                <ul id="main-menu" class="sm sm-blue col-md-9" style="border-radius: 0;background: none;padding-left: 0px;padding-right: 0px;">
                     <li>
                         <a class="menu-active" href="{{route('user_top')}}">{{ trans('messages.home') }}</a>
                     </li>
@@ -55,6 +55,10 @@
                         <a class="menu-active" href="{{route('contacts')}}">{{ trans('messages.contact') }}</a>
                     </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0" style="padding-top: 5px" method="get" action="{{route('search')}}">
+                    <input name="key" class="form-control1 form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 175px;">
+                    <button class="btn-outline-secondary1 btn btn-outline-secondary my-2 my-sm-0 " type="submit">Search</button>
+                </form>
             </nav>
 
         </div>

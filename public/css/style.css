@@ -151,6 +151,13 @@
 	.footers {
 		padding-left: 0px !important;
 	}
+	.form-control1 {
+		width: 210px !important;
+		margin-left: 10px;
+	}
+	.btn-outline-secondary{
+		margin-left: 20px;
+	}
 }
 @media (min-width: 1200px) {
 	.header-language {
@@ -897,6 +904,12 @@ div.tin-11 li a:hover{
 
 .carousel-control-prev-icon {
 	background-image: url(/image/re-left.gif) !important;
+}
+.carousel-control-next-icon {
+	background-image: url(/image/re-right.gif) !important;
+}
+.carousel-control-next-icon {
+
 }
 .carousel-control-next, .carousel-control-prev {
 	width: auto !important;
