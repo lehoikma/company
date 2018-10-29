@@ -6,7 +6,7 @@
     border-bottom: 1px solid #fff3f3;">Trang Chủ > Tin Tức</div>
         <h3 class="col-md-12" style="margin-bottom: 20px">Danh Sách Tin Tức</h3>
             @foreach($listNews as $value)
-                <div class="col-xs-12" style="margin-bottom: 30px; float: left">
+                <div class="col-xs-12" style="margin-bottom: 30px; float: left; width: 100%;">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="float: left">
                         <a href="{{route('news_detail', ['title' => $value['title'], 'id' => $value['id']])}}">
                             <img src="/upload/{{$value['image']}}" style="width: 200px; height: 150px">

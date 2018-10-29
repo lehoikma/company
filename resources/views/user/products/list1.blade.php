@@ -6,18 +6,17 @@
     border-bottom: 1px solid #fff3f3;">Trang Chủ > Sản Phẩm</div>
         <h3 class="col-md-12" style="margin-bottom: 20px">Danh Sách Sản Phẩm</h3>
         @foreach($data as $value)
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
-                <div class="post-thumb">
-                    <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['id']])}}">
-                        <img style="width: 100%; height: 180px" src="/upload/{{$value['image']}}" alt="" title="{{$value['name']}}">
+            <div class="col-md-4 col-xs-12" style="margin-bottom: 15px">
+                <a class="title-name">{{$value['name']}}</a>
+                <div class="img-height">
+                    <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
+                        <img src="/upload/{{$value['image']}}" alt="">
                     </a>
                 </div>
-
-                <h5 class="small-font" style="text-align: center;margin-top: 10px;">
-                    <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['id']])}}" style="color: #0a0a0a">
-                        {{$value['name']}}
-                    </a>
-                </h5>
+                <div class="text-center" style="    border: 1px solid #ee9600;padding: 4px; border-radius: 5px;">
+                    <a class="promotional">Giá : {{$value['price']}} VNĐ</a>
+                </div>
+                <input id="3" type="hidden" value="/upload/1539769298.jpeg">
             </div>
         @endforeach
     </div>

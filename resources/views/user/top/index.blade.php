@@ -70,15 +70,17 @@
             </a>
             @if(count($newsLanguage) > 0)
                 <div class="tt-text">
-                    <a class="linkss" href="">{{$newsLanguage[0]['title']}}</a>
-                    <p>{{substr($newsLanguage[0]['content'], 0, 80)}} ...</p>
+                    {{--<a class="linkss" href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">--}}
+                        {{--{{$newsLanguage[0]['title']}}--}}
+                    {{--</a>--}}
+                    {{--<p>{{substr($newsLanguage[0]['content'], 0, 80)}} ...</p>--}}
                     <ul>
                         @foreach($newsLanguage as $key=>$valueNews)
-                            @if($key == 0)
-                                @continue
-                            @endif
+                            {{--@if($key == 0)--}}
+                                {{--@continue--}}
+                            {{--@endif--}}
                             <li>
-                                <a href="">
+                                <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
                                     <ins>{{$valueNews['title']}}</ins>
                                 </a>
                             </li>
