@@ -3,9 +3,10 @@
 @section('content')
     <div class="row">
         <div class="col-md-12" style="padding-bottom: 15px;
-    border-bottom: 1px solid #fff3f3;">Trang Chủ > Sản Phẩm</div>
-        <h3 class="col-md-12" style="margin-bottom: 20px">Danh Sách Sản Phẩm</h3>
-        @foreach($data as $value)
+    border-bottom: 1px solid #fff3f3;">Trang Chủ > Tìm Kiếm</div>
+        <h5 class="col-md-12" style="margin-bottom: 20px"> Từ Khóa tìm kiếm : {{$key}}</h5>
+        
+        @foreach($dataSearch as $value)
             <div class="col-md-4 col-xs-12" style="margin-bottom: 15px">
                 <a class="title-name">{{$value['name']}}</a>
                 <div class="img-height">
@@ -19,5 +20,5 @@
             </div>
         @endforeach
     </div>
-    <div class="text-center">{{$data->links()}}</div>
+    <div class="text-center">{{$dataSearch->links()}}</div>
 @endsection
