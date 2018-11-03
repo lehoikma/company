@@ -191,14 +191,13 @@
                         <a class="nav-link" href="#">Liên Hệ</a>
                     </li>
                 </ul>
-                <small style="color: red">
-                    Chúng tôi bán hàng trực tuyến. Vui lòng liên hệ: abc@phongthuyvanxuan.vn - 0999999999
-                </small>
-                <br>
-                <small>
+                <p style="color: red;margin-left: 15px;font-size: 14px;">
+                    Địa chỉ: Số 11 Ngõ Trạm, Hoàn Kiếm, Hà Nội<br>
+                    Website: vanxuanphongthuy.vn - vanxuanphongthuy.com - phongthuyvanxuan.net<br>
+                    Tel: 0943.887.956 - 0903.210.818<br>
+                    Facebook: phongthuyvanxuan & vanxuanphongthuy<br>
                     Copyright &copy; 2018 Agriplus.vn
-                </small>
-                <br>
+                </p>
             </div>
         </div>
 
