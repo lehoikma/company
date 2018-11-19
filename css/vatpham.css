@@ -1,0 +1,194 @@
+/*-------------------------menu-------------------------*/
+.collapse li {
+	width: 113px;
+}
+#clnav {
+	color: white;
+}
+.collapse li a {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+}
+/*-------------------------menu-------------------------*/
+
+
+
+
+
+
+/*------------------------mobie-------------------------*/
+@media (max-width: 600px) {
+	.mobiess {
+		display: none;
+	}
+}
+/*------------------------mobie-------------------------*/
+
+
+
+/*-------------------------content-------------------------*/
+.n-hang li{
+	list-style: none; 
+	font-size: 12px;
+	line-height: 30px;
+}
+.n-hang li a{
+	text-decoration: none;
+	color: #1B57B1;
+}
+.n-hang li a:hover{
+	text-decoration: underline;
+	color: red;
+}
+.img-height{
+	height: 200px;
+	overflow: hidden;
+	box-shadow: 10px;
+}
+.img-height img {
+	width: 100%;
+	height: 200px;
+}
+
+.title-name{
+	color: black;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+}
+.text-center{
+	text-align: center;
+	padding-bottom: 10px;
+}
+.promotional{
+	color: lightcoral;
+	text-align: center;
+	font-size: 20px;
+}
+.textt{
+	text-align: center;
+	padding-bottom: 10px;
+}
+.textt-tx{
+	color: lightcoral;
+	text-align: center;
+	font-size: 15px;
+}
+
+.footer-product{
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.right{
+	padding: 0 15px 15px;
+}
+.right h3{
+	margin: 0 -15px 5px;
+	padding: 8px 15px;
+	color: #FFFF00;
+	background: #630000;
+	text-transform: uppercase;
+	font-size: 17px;
+}
+.right a {
+	font-weight: bold;
+	text-decoration: none;
+}
+.right li{
+	color: #EEEEEE;
+	padding: 5px 0 6px 15px;
+	width: 90%;
+
+	font-size: 12px;
+	list-style: none;
+	list-style-type: disc;
+}
+.right li:hover{
+	color: #EEEEEE;
+	background: #EE0000;
+	text-decoration: none;
+}
+.right a:hover{
+	text-decoration: none;
+}
+
+.tin {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 5px 0 10px;
+}
+.tin-1 {
+	padding: 0; 
+	clear: both;
+	width: 100%;
+}
+.tin-11 {
+	padding: 8px 15px 15px;
+}
+div.tin-11 h3{
+	border-bottom: 1px solid #DDDDDD; 
+	color: #EA0000; 
+	margin: 0 -14px 5px; 
+	padding: 0 14px 8px;
+	font-size: 15px; 
+	line-height: normal; 
+	text-transform: uppercase;
+}
+div.tin-11 li{
+	list-style: none; 
+	list-style-type: disc; 
+	font-size: 11px;
+}
+div.tin-11 li a{
+	color: #1B57B1;
+	text-decoration: none;
+}
+div.tin-11 li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.tin-11 table td {
+	padding: 8px 5px;
+}
+.tin-11 table td span{
+	font-weight: bold; 
+	font-size: 12px;
+}
+.tin-11 table td a{
+	color: #1B57B1; 
+	text-decoration: none; 
+	font-weight: normal; 
+	font-size: 12px
+}
+.tin-11 table td p{
+	font-size: 12px
+}
+.tin-11 table td a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+
+
+/*-------------------------content-------------------------*/
+
+
+
+
+/*-------------------------footer---------------------------*/
+
+.fter li a {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #544F4C;
+}
+.fter li a:hover {
+	text-decoration: underline;
+}
+.fter small{
+	padding: 0 0 0 15px;
+}
+/*-------------------------footer---------------------------*/

@@ -65,7 +65,7 @@
             <div class="hdap col-md-6 col-sx-12">
             <a href="" class="hdaps" id="{{$value['news_category_id']}}">
                 <div class="title-hd">
-                    <h5> {{strtoupper($value['name'])}}</h5>
+                    <h5> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
                 </div>
             </a>
             @if(count($newsLanguage) > 0)
