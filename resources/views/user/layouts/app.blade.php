@@ -12,7 +12,7 @@
 
 
 </head>
-<body>
+<body style="background: #f3f3f3">
 <!-- header -->
 <div class="headers">
     <div class="container" style="padding: 0px">
@@ -21,7 +21,7 @@
             <div class="col-md-3 col-xs-12 header-logo">
                 <img src="/image/logo.PNG" height="150px">
             </div>
-            <div class="col-md-9 col-xs-12">
+            <div class="col-md-9 col-xs-12 banner-top">
                 <div class="col-md-12 header-language">
                     <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
                     <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
@@ -50,6 +50,9 @@
                     </li>
                     <li>
                         <a class="menu-active" href="{{route('products_list')}}">{{ trans('messages.products') }}</a>
+                    </li>
+                    <li>
+                        <a class="menu-active" href="{{route('videos')}}">Videos</a>
                     </li>
                     <li>
                         <a class="menu-active" href="{{route('contacts')}}">{{ trans('messages.contact') }}</a>
@@ -136,7 +139,7 @@
                                 $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
                             ?>
                             @foreach($news as $value)
-                                <li><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{mb_strtoupper(($value['title']), 'UTF-8')}}</a></li>
+                                <li style="font-size: 14px"><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{($value['title'])}}</a></li>
                             @endforeach
                         </div>
                     </div>
@@ -154,7 +157,7 @@
                                 <tr align="center">
                                     <td>
                                         <span>
-                                            {{strtoupper($value['name'])}}
+                                            {{mb_strtoupper($value['name'], 'UTF-8')}}
                                         </span>
                                         <br>
                                         <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
@@ -180,9 +183,10 @@
 <div class="footers">
     <div class="container" style="background: #ee9600; ">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 logo-bottom" style="    padding-top: 15px;">
+                <img src="/image/logo.PNG" height="150px">
             </div>
-            <div class="fter col-md-9 col-xs-12">
+            <div class="fter col-md-6 col-xs-12">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Trang Chủ</a>
@@ -198,6 +202,16 @@
                     Facebook: phongthuyvanxuan & vanxuanphongthuy<br>
                     Copyright &copy; 2018 Agriplus.vn
                 </p>
+            </div>
+            <div class=" fter col-md-3 col-xs-12" style="margin-bottom: 20px">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Fanpage facebook</a>
+                    </li>
+                </ul>
+                <div style="margin-left: 15px">
+                    <fb:like expr:href="data:post.canonicalUrl" layout="button_count" send="true" show_faces="false" font="arial" action="like" colorscheme="light" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Flinkstore.vn%2Fson-3ce-mood-recipe-matte-lip-color-117-chicful-sp1068&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 122px; height: 20px;"><iframe name="f3a23925ac3c048" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.6/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FiKWhU6BAGf7.js%3Fversion%3D42%23cb%3Df38fbd9b0c64cc%26domain%3Dlinkstore.vn%26origin%3Dhttp%253A%252F%252Flinkstore.vn%252Ff1caab3ad2badf4%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Flinkstore.vn%2Fson-3ce-mood-recipe-matte-lip-color-117-chicful-sp1068&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=true&amp;show_faces=false" style="border: none; visibility: visible; width: 122px; height: 20px;" class=""></iframe></span></fb:like>
+                </div>
             </div>
         </div>
 

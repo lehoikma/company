@@ -34,23 +34,34 @@
 
     <div id="ja-feature-products" class="row">
         <?php
-            $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(9)->get();
+        $catePrd = \App\Models\CategoryProductsLanguages::User()->get();
+
         ?>
-        @foreach($catePrd1 as $key=>$value)
-            <div class="col-md-4 col-xs-12" style="margin-bottom: 10px">
-                <a class="title-name">{{$value['name']}}</a>
-                <div class="img-height">
-                    <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
-                        <img src="/upload/{{$value['image']}}" alt="{{$value['id']}}">
-                    </a>
+        @foreach($catePrd as $value)
+            <div class="col-md-12" style="margin-top: 5px;padding-bottom: 3px;font-weight: bold;margin-bottom: 10px;">
+                <div class="title-hd">
+                    <h5> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
                 </div>
-                <div class="text-center" style="    border: 1px solid #ee9600;
-    padding: 4px;
-    border-radius: 5px;">
-                    <a class="promotional" style="font-size: 17px">Giá : {{$value['price'] ? $value['price'].' VNĐ' : 'Liên Hệ'}}</a>
-                </div>
-                <input id="{{$value['id']}}" type="hidden" value="/upload/{{$value['image']}}">
             </div>
+            <?php
+                $catePrd1 = \App\Models\ProductsLanguages::User()->where('category_product_id', $value['id'])->orderBy('updated_at', 'desc')->limit(3)->get();
+            ?>
+            @foreach($catePrd1 as $key=>$value)
+                <div class="col-md-4 col-xs-12" style="margin-bottom: 10px">
+                    <a class="title-name" style="font-size: 16px">{{$value['name']}}</a>
+                    <div class="img-height">
+                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
+                            <img src="/upload/{{$value['image']}}" alt="{{$value['id']}}">
+                        </a>
+                    </div>
+                    <div class="text-center" style="    border: 1px solid #ee9600;
+        padding: 4px;
+        border-radius: 5px;">
+                        <a class="promotional" style="font-size: 16px">Giá : {{$value['price'] ? $value['price'].' VNĐ' : 'Liên Hệ'}}</a>
+                    </div>
+                    <input id="{{$value['id']}}" type="hidden" value="/upload/{{$value['image']}}">
+                </div>
+            @endforeach
         @endforeach
     <!-- san pham -->
     </div>
@@ -114,13 +125,39 @@
             @endif
         </div>
         @endforeach
+
+            <div class="hdap col-md-6 col-sx-12">
+                <a href="" class="hdaps" id="1">
+                    <div class="title-hd">
+                        <h5> Videos</h5>
+                    </div>
+                </a>
+                <?php
+                    $videos = \App\Models\Videos::orderBy('id', 'desc')->limit(2)->get();
+                ?>
+                @foreach($videos as $k => $video)
+                    <div class="tt-text">
+                        <ul style="padding: 0px;" class="ul-news">
+                            <div class="first-news video-top">
+                                <li style="margin-top: 10px">
+                                    {!! $video['videos'] !!}
+                                </li>
+                                <li style="margin: 10px 0px;">
+                                    <a href="">
+                                        <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">Treo tranh Phong Thủy mang may mắn đến cho nhà bạn</ins>
+                                    </a>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                @endforeach
+            </div>
     </div>
     <!-- hoi dap -->
 @endsection
 @section('script')
     <script language="javascript">
       var childPic=document.getElementById("ja-feature-products").getElementsByTagName("img");
-console.log(childPic);
       for(var i=0;i<childPic.length;i++)
       {
         var alter='';
@@ -131,8 +168,10 @@ console.log(childPic);
 
       function onPicOver(d)
       {
+        var domain = document.location.hostname;
         var inp=document.getElementById(d);
-        var src="http://fengshui.local/"+ inp.value;
+        var src="http://"+domain+ inp.value;
+        console.log(src);
         var img="<img src='"+ src +"' width='350px' />";
         Tip(img);
       }

@@ -52,6 +52,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('/sua-tin-tuc', 'NewsController@editNews')->name('edit_news');
     Route::get('/xoa-tin-tuc/{id}', 'NewsController@deleteNews')->name('delete_news');
     Route::get('/logout', 'IndexController@logout')->name('admin_logout');
+
+    // Videos
+    Route::get('/tao-videos', 'VideosController@registerVideos')->name('register_videos');
+    Route::post('/luu-videos', 'VideosController@saveVideos')->name('save_register_videos');
+    Route::get('sua-videos/{id}', 'VideosController@formEditVideo')->name('form_edit_videos');
+    Route::post('/sua-videos', 'VideosController@editVideo')->name('save_edit_videos');
+    Route::get('/danh-sach-videos', 'VideosController@listVideos')->name('list_videos');
+    Route::get('/xoa-videos/{id}', 'VideosController@deleteVideos')->name('delete_videos');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -67,5 +75,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('lien-he', 'ContactsController@index')->name('contacts');
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
     Route::get('tim-kiem', 'SearchController@index')->name('search');
+
+    Route::get('/videos', 'VideosController@listVideos')->name('videos');
 });
 
