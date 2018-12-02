@@ -47,7 +47,7 @@
                 <div class="text-center" style="    border: 1px solid #ee9600;
     padding: 4px;
     border-radius: 5px;">
-                    <a class="promotional">Giá : {{$value['price'] ? number_format($value['price']).' VNĐ' : 'Liên Hệ'}}</a>
+                    <a class="promotional" style="font-size: 17px">Giá : {{$value['price'] ? $value['price'].' VNĐ' : 'Liên Hệ'}}</a>
                 </div>
                 <input id="{{$value['id']}}" type="hidden" value="/upload/{{$value['image']}}">
             </div>
@@ -68,22 +68,46 @@
                     <h5> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
                 </div>
             </a>
+
             @if(count($newsLanguage) > 0)
                 <div class="tt-text">
-                    {{--<a class="linkss" href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">--}}
-                        {{--{{$newsLanguage[0]['title']}}--}}
-                    {{--</a>--}}
-                    {{--<p>{{substr($newsLanguage[0]['content'], 0, 80)}} ...</p>--}}
-                    <ul>
+                    <ul style="padding: 0px;" class="ul-news">
                         @foreach($newsLanguage as $key=>$valueNews)
-                            {{--@if($key == 0)--}}
-                                {{--@continue--}}
-                            {{--@endif--}}
-                            <li>
-                                <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
-                                    <ins>{{$valueNews['title']}}</ins>
-                                </a>
-                            </li>
+                            @if($key == 0)
+                                <div class="first-news">
+                                    <li>
+                                        <a href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">
+                                            <img src="/upload/{{$newsLanguage[0]['image']}}" alt="" style="width: 100%; margin-top: 10px;">
+                                        </a>
+                                    </li>
+                                    <li style="margin: 10px 0px;">
+                                        <a href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">
+                                            <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$newsLanguage[0]['title']}}</ins>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <p>{{substr(strip_tags($newsLanguage[0]['content']), 0, 200)}} ...</p>
+                                    </li>
+                                </div>
+                                @continue;
+                            @endif
+                                @if($key < 5)
+                                <li style="float: left">
+                                    <div class="col-md-4 {{$key}}" style="float: left; padding: 0px">
+                                        <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
+                                        <img src="/upload/{{$valueNews['image']}}" alt="" style="width: 100%; margin-top: 10px;">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8" style="float: left">
+                                        <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
+                                            <ins style="    font-size: 12px;
+    color: #bb0000;
+    text-decoration: none;
+    font-weight: bold;">{{$valueNews['title']}}</ins>
+                                        </a>
+                                    </div>
+                                </li>
+                                @endif
                         @endforeach
                     </ul>
                 </div>

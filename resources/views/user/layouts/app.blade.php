@@ -136,7 +136,7 @@
                                 $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
                             ?>
                             @foreach($news as $value)
-                                <li><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{strtoupper($value['title'])}}</a></li>
+                                <li><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{mb_strtoupper(($value['title']), 'UTF-8')}}</a></li>
                             @endforeach
                         </div>
                     </div>
