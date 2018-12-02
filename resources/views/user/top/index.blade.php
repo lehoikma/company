@@ -39,8 +39,8 @@
         ?>
         @foreach($catePrd as $value)
             <div class="col-md-12" style="margin-top: 5px;padding-bottom: 3px;font-weight: bold;margin-bottom: 10px;">
-                <div class="title-hd">
-                    <h5> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
+                <div class="title-hd" style="height: 40px; background: #f09700;">
+                    <h5 style="font-size: 18px; padding-top: 10px"> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
                 </div>
             </div>
             <?php
@@ -75,8 +75,8 @@
             <?php $newsLanguage = \App\Models\NewsLanguage::User()->where('category_news_id', $value['news_category_id'])->get();?>
             <div class="hdap col-md-6 col-sx-12">
             <a href="" class="hdaps" id="{{$value['news_category_id']}}">
-                <div class="title-hd">
-                    <h5> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
+                <div class="title-hd" style="height: 40px; background: #f09700;">
+                    <h5 style="font-size: 18px; padding-top: 10px"> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
                 </div>
             </a>
 
@@ -128,8 +128,8 @@
 
             <div class="hdap col-md-6 col-sx-12">
                 <a href="" class="hdaps" id="1">
-                    <div class="title-hd">
-                        <h5> Videos</h5>
+                    <div class="title-hd" style="height: 40px; background: #f09700;">
+                        <h5 style="font-size: 18px; padding-top: 10px"> Videos</h5>
                     </div>
                 </a>
                 <?php
@@ -144,7 +144,7 @@
                                 </li>
                                 <li style="margin: 10px 0px;">
                                     <a href="">
-                                        <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">Treo tranh Phong Thủy mang may mắn đến cho nhà bạn</ins>
+                                        <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$video['name']}}</ins>
                                     </a>
                                 </li>
                             </div>
