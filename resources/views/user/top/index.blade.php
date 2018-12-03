@@ -127,13 +127,13 @@
         @endforeach
 
             <div class="hdap col-md-6 col-sx-12">
-                <a href="" class="hdaps" id="1">
+                <a href="{{route('videos')}}" class="hdaps" id="1">
                     <div class="title-hd" style="height: 40px; background: #f09700;">
                         <h5 style="font-size: 18px; padding-top: 10px"> Videos</h5>
                     </div>
                 </a>
                 <?php
-                    $videos = \App\Models\Videos::orderBy('id', 'desc')->limit(2)->get();
+                    $videos = \App\Models\Videos::orderBy('id', 'desc')->limit(1)->get();
                 ?>
                 @foreach($videos as $k => $video)
                     <div class="tt-text">
@@ -151,6 +151,27 @@
                         </ul>
                     </div>
                 @endforeach
+
+                <a href="{{route('list_image')}}" class="hdaps" id="1">
+                    <div class="title-hd" style="height: 40px; background: #f09700;">
+                        <h5 style="font-size: 18px; padding-top: 10px">{{trans('messages.image')}}</h5>
+                    </div>
+                </a>
+                <?php
+                    $image = \App\Models\Images::orderBy('id', 'desc')->first();
+                ?>
+                <div class="tt-text">
+                    <ul style="padding: 0px;" class="ul-news">
+                        <div class="first-news video-top">
+                            <li style="margin-top: 10px">
+                                <img src="upload/{{$image['image']}}" style="width: 100%; margin-bottom: 10px; margin-top:10px;"></br>
+                            </li>
+                            <li>
+                                <i style="font-size: 14px;text-decoration: none;">{{$image['description']}}</i>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
             </div>
     </div>
     <!-- hoi dap -->

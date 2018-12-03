@@ -115,6 +115,20 @@
                         <li><a href="{{route('list_videos')}}"><i class="fa fa-circle-o"></i> Tất cả Videos</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-laptop"></i>
+                        <span>Hình Ảnh</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('create_category_image')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Hình Ảnh</a></li>
+                        <li><a href="{{route('register_image')}}"><i class="fa fa-circle-o"></i> Tạo Hình Ảnh</a></li>
+                        <li><a href="{{route('list_images')}}"><i class="fa fa-circle-o"></i> Tất cả Hình Ảnh</a></li>
+                    </ul>
+                </li>
                 <li class="header"> </li>
                 <li>
                     <a href="{{route('admin_logout')}}">

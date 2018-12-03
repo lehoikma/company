@@ -12,8 +12,8 @@
 */
 
 Route::get('/test', function(){
-//    Artisan::call('migrate');
-    Artisan::call('db:seed');
+    Artisan::call('migrate');
+//    Artisan::call('db:seed');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
@@ -60,6 +60,20 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('/sua-videos', 'VideosController@editVideo')->name('save_edit_videos');
     Route::get('/danh-sach-videos', 'VideosController@listVideos')->name('list_videos');
     Route::get('/xoa-videos/{id}', 'VideosController@deleteVideos')->name('delete_videos');
+
+    //Images
+    Route::get('/tao-danh-muc-hinh-anh', 'ImagesController@createCategoryImage')->name('create_category_image');
+    Route::post('/save-danh-muc-hinh-anh', 'ImagesController@saveCategoryImage')->name('save_category_image');
+    Route::get('/xoa-danh-muc-hinh-anh/{id}', 'ImagesController@deleteCategoryImage')->name('delete_category_image');
+    Route::get('/sua-danh-muc-hinh-anh/{id}', 'ImagesController@showEditCategoryImage')->name('show_edit_category_image');
+    Route::post('/sua-danh-muc-hinh-anh', 'ImagesController@editCategoryImage')->name('edit_category_image');
+
+    Route::get('/tao-hinh-anh', 'ImagesController@registerImage')->name('register_image');
+    Route::post('/luu-hinh-anh', 'ImagesController@saveImage')->name('save_register_image');
+    Route::get('/danh-sach-hinh-anh', 'ImagesController@listImage')->name('list_images');
+    Route::get('/sua-hinh-anh/{id}', 'ImagesController@showEditImage')->name('show_edit_image');
+    Route::post('/sua-hinh-anh', 'ImagesController@editImage')->name('edit_image');
+    Route::get('/xoa-hinh-anh/{id}', 'ImagesController@deleteImage')->name('delete_image');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -75,6 +89,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('lien-he', 'ContactsController@index')->name('contacts');
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
     Route::get('tim-kiem', 'SearchController@index')->name('search');
+    Route::get('/hinh-anh', 'ImageController@listImage')->name('list_image');
 
     Route::get('/videos', 'VideosController@listVideos')->name('videos');
 });

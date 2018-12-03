@@ -55,6 +55,9 @@
                         <a class="menu-active" href="{{route('videos')}}">Videos</a>
                     </li>
                     <li>
+                        <a class="menu-active" href="{{route('list_image')}}">{{trans('messages.image')}}</a>
+                    </li>
+                    <li>
                         <a class="menu-active" href="{{route('contacts')}}">{{ trans('messages.contact') }}</a>
                     </li>
                 </ul>
@@ -164,7 +167,7 @@
                                             <img src="/upload/{{$value['image']}}" style="width: 90px; height: 90px">
                                         </a>
                                         <br>
-                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">{{$value['price'] ? number_format($value['price']). ' VNĐ' : 'Liên Hệ'}}</a>
+                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">{{$value['price'] ? $value['price']. ' VNĐ' : 'Liên Hệ'}}</a>
                                     </td>
                                 </tr>
                                 </tbody>

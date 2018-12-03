@@ -10,4 +10,5 @@ return [
     'products-new' => 'Products New',
     'cart' => 'Cart',
     'order' => 'Order',
+    'image' => 'Image',
 ];

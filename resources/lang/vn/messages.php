@@ -10,4 +10,5 @@ return [
     'products-new' => 'Sản Phẩm Mới',
     'cart' => 'Giỏ Hàng',
     'order' => 'Đặt Hàng',
+    'image' => 'Hình Ảnh',
 ];
