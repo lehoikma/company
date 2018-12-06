@@ -138,12 +138,10 @@
                     <ul style="padding: 0px;" class="ul-news">
                         <div class="first-news video-top">
                             <li style="margin-top: 10px">
-                                <img src="upload/{{$image['image']}}" style="width: 100%; margin-bottom: 10px; margin-top:10px;"></br>
+                                <img src="upload/{{$image['image']}}" style="width: 100%; margin-bottom: 10px;height: 190px;"></br>
                             </li>
                             <li style="margin: 10px 0px;">
-                                <a href="">
-                                    <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$image['description']}}</ins>
-                                </a>
+                                <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$image['description']}}</ins>
                             </li>
                         </div>
                     </ul>
