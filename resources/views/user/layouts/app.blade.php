@@ -19,7 +19,9 @@
         <!-- header -->
         <div class="row col-md-12 lg header-all" style="margin: 0px; padding: 0px">
             <div class="col-md-3 col-xs-12 header-logo">
-                <img src="/image/logo.PNG" height="150px">
+                <a href="{{route('user_top')}}">
+                    <img src="/image/logo.PNG" height="150px">
+                </a>
             </div>
             <div class="col-md-9 col-xs-12 banner-top">
                 <div class="col-md-12 header-language">
@@ -187,7 +189,9 @@
     <div class="container" style="background: #ee9600; ">
         <div class="row">
             <div class="col-md-3 logo-bottom" style="    padding-top: 15px;">
-                <img src="/image/logo.PNG" height="150px">
+                <a href="{{route('user_top')}}">
+                    <img src="/image/logo.PNG" height="150px">
+                </a>
             </div>
             <div class="fter col-md-6 col-xs-12">
                 <ul class="nav">

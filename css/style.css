@@ -160,7 +160,7 @@
 	}
 	.panel-thumbnail a img {
 		width: 100%;
-		height: 200px;
+		height: 300px;
 	}
 	#myCarousel {
 		height: auto;
@@ -196,7 +196,7 @@
 }
 .img-height img {
 	width: 100%;
-	height: 170px;
+	height: 200px;
 }
 
 .title-name{
