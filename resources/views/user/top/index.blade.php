@@ -88,7 +88,7 @@
                                 <div class="first-news">
                                     <li>
                                         <a href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">
-                                            <img src="/upload/{{$newsLanguage[0]['image']}}" alt="" style="width: 100%; margin-top: 10px;">
+                                            <img src="/upload/{{$newsLanguage[0]['image']}}" alt="" style="width: 100%; margin-top: 10px;height: 190px">
                                         </a>
                                     </li>
                                     <li style="margin: 10px 0px;">
@@ -102,7 +102,7 @@
                                 </div>
                                 @continue;
                             @endif
-                                @if($key < 5)
+                                @if($key < 4)
                                 <li style="float: left">
                                     <div class="col-md-4 {{$key}}" style="float: left; padding: 0px">
                                         <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">

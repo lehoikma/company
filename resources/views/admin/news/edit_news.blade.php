@@ -31,7 +31,7 @@
                 <select class="form-control" id="sel1" name="select_cate_news">
                     <option value=""></option>
                     @foreach($categoryNews as $value)
-                        <option value="{{$value['id']}}" {{ $value['id']==$news[0]['category_news_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
+                        <option value="{{$value['news_category_id']}}" {{ $value['category_news_id']==$news[0]['news_category_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
                     @endforeach
                 </select>
             </div>

@@ -26,6 +26,7 @@
 
 	.banner-top {
 		background: red;
+		background-image: url(/image/TOP.gif);
 	}
 	/* show 3 items */
 	.carousel-inner .active,
@@ -96,7 +97,7 @@
 
 /* Bootstrap Lightbox using Modal */
 
-#profile-grid { overflow: auto; white-space: normal; } 
+#profile-grid { overflow: auto; white-space: normal; }
 #profile-grid .profile { padding-bottom: 40px; }
 #profile-grid .panel { padding: 0 }
 #profile-grid .panel-body { padding: 15px }
@@ -106,12 +107,12 @@
 #profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
 
 #myCarousel{
-	height: 190px;
 	padding-top: 20px;
+	background: #bb0000;
 }
 .panel-thumbnail p {
 	text-align: center;
-	color: #000000;
+	color: #ffffff;
 	font-weight: bold;
 }
 .panel-thumbnail a img {
@@ -129,6 +130,16 @@
 
 /*-------------------------content-------------------------*/
 @media (max-width: 600px) {
+	.news-mobile a img{
+		width: 100% !important;
+		height: 240px !important;
+		margin-bottom: 10px;
+	}
+	.header-logo img {
+		width: 100%;
+		height: 200px !important;
+		border-radius: 10px;
+	}
 	.logo-bottom {
 		display: none !important;
 	}
@@ -247,7 +258,7 @@
 	margin: 5px 0 10px;
 }
 .tin-1 {
-	padding: 0; 
+	padding: 0;
 	clear: both;
 	width: 100%;
 }
@@ -255,17 +266,17 @@
 	padding: 8px 15px 15px;
 }
 div.tin-11 h3{
-	border-bottom: 1px solid #DDDDDD; 
-	color: #EA0000; 
-	margin: 0 -14px 5px; 
+	border-bottom: 1px solid #DDDDDD;
+	color: #EA0000;
+	margin: 0 -14px 5px;
 	padding: 0 14px 8px;
-	font-size: 15px; 
-	line-height: normal; 
+	font-size: 15px;
+	line-height: normal;
 	text-transform: uppercase;
 }
 div.tin-11 li{
-	list-style: none; 
-	list-style-type: disc; 
+	list-style: none;
+	list-style-type: disc;
 	font-size: 11px;
 }
 div.tin-11 li a{
@@ -280,13 +291,13 @@ div.tin-11 li a:hover{
 	padding: 8px 5px;
 }
 .tin-11 table td span{
-	font-weight: bold; 
+	font-weight: bold;
 	font-size: 12px;
 }
 .tin-11 table td a{
-	color: #1B57B1; 
-	text-decoration: none; 
-	font-weight: normal; 
+	color: #1B57B1;
+	text-decoration: none;
+	font-weight: normal;
 	font-size: 12px
 }
 .tin-11 table td p{
@@ -301,23 +312,23 @@ div.tin-11 li a:hover{
 	padding: 10px 0px 5px 0px;
 }
 .hdap .hdaps {
-	color: #000000; 
+	color: #000000;
 	text-decoration: none;
 }
 
 .title-hd{
 	width: 100%;
-	height: 30px; 
-	background: #ccc; 
+	height: 30px;
+	background: #ccc;
 	border-radius: 4px;
 }
 .title-hd h5 {
-	margin-left: 20px; 
-	font-size: 14px; 
+	margin-left: 20px;
+	font-size: 14px;
 	padding-top: 7px
 }
 .tt-text .linkss {
-	font-size: 13px; 
+	font-size: 13px;
 	/*margin-left: 20px*/
 }
 .tt-text .linkss:hover {
