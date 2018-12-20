@@ -7,7 +7,7 @@
         <h3 class="col-md-12" style="margin-bottom: 20px">Danh Sách Sản Phẩm</h3>
         @foreach($data as $value)
             <div class="col-md-4 col-xs-12" style="margin-bottom: 15px">
-                <a class="title-name">{{$value['name']}}</a>
+                <a class="title-name" style="font-size:16px">{{$value['name']}}</a>
                 <div class="img-height">
                     <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
                         <img src="/upload/{{$value['image']}}" alt="">

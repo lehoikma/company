@@ -56,6 +56,7 @@
                     </div>
                     <div class="text-center" style="    border: 1px solid #ee9600;
         padding: 4px;
+        margin-top:5px;
         border-radius: 5px;">
                         <a class="promotional" style="font-size: 16px">Giá : {{$value['price'] ? $value['price'].' VNĐ' : 'Liên Hệ'}}</a>
                     </div>

@@ -14,6 +14,7 @@
                 <p>
                     <strong>Địa chỉ:</strong> Số 11 Ngõ Trạm, Hoàn Kiếm, Hà Nội
                     <br>
+                    Cơ sở 2 - 99 Trương Chinh, TP Phủ Lý, Hà Nam<br>
                     <strong>Website:</strong> vanxuanphongthuy.vn - vanxuanphongthuy.com - phongthuyvanxuan.net<br>
                     <strong>Tel:</strong> 0943.887.956 - 0903.210.818<br>
                     <strong>Facebook:</strong> phongthuyvanxuan & vanxuanphongthuy<br>

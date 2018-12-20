@@ -9,7 +9,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
                 <div class="post-thumb">
                     <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['id']])}}">
-                        <img style="width: 100%; height: 180px" src="/upload/{{$value['image']}}" alt="" title="{{$value['name']}}">
+                        <img style="width: 100%; height: 200px" src="/upload/{{$value['image']}}" alt="" title="{{$value['name']}}">
                     </a>
                 </div>
 

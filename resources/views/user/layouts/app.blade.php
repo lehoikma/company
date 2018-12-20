@@ -20,7 +20,7 @@
         <div class="row col-md-12 lg header-all" style="margin: 0px; padding: 0px">
             <div class="col-md-3 col-xs-12 header-logo">
                 <a href="{{route('user_top')}}">
-                    <img src="/image/logo.PNG" height="150px">
+                    <img src="/image/logo.PNG" height="150px;" style="border-radius: 10px;">
                 </a>
             </div>
             <div class="col-md-9 col-xs-12 banner-top">
@@ -122,10 +122,6 @@
                         <a href=""><li>Lý Học Phương Đông</li></a>
                         <a href=""><li>Phần mềm Phù Đổng</li></a>
                         <a href=""><li>Việt lý số</li></a>
-                        <a href=""><li>Kiến trúc phong thủy Việt Linh</li></a>
-                        <a href=""><li>Ngũ Hành</li></a>
-                        <a href=""><li>Góc Phong Thủy</li></a>
-                        <a href=""><li>Blog SEOer Nghiệp dư</li></a>
                     </div>
                     <div class="right" style="height: 671px;">
 
@@ -154,7 +150,7 @@
                         <div class="tin-11">
                             <h3>{{trans('messages.products-new')}}</h3>
                             <?php
-                            $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(2)->get();
+                            $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(5)->get();
                             ?>
                             @foreach($catePrd1 as $value)
                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px dashed;">
@@ -190,7 +186,7 @@
         <div class="row">
             <div class="col-md-3 logo-bottom" style="    padding-top: 15px;">
                 <a href="{{route('user_top')}}">
-                    <img src="/image/logo.PNG" height="150px">
+                    <img src="/image/logo.PNG" height="150px;" style="border-radius: 10px;">
                 </a>
             </div>
             <div class="fter col-md-6 col-xs-12">
@@ -203,7 +199,8 @@
                     </li>
                 </ul>
                 <p style="color: red;margin-left: 15px;font-size: 14px;">
-                    Địa chỉ: Số 11 Ngõ Trạm, Hoàn Kiếm, Hà Nội<br>
+                    Địa chỉ: Cơ sở 1 - Số 11 Ngõ Trạm, Hoàn Kiếm, Hà Nội<br>
+                             Cơ sở 2 - 99 Trương Chinh, TP Phủ Lý, Hà Nam<br>
                     Website: vanxuanphongthuy.vn - vanxuanphongthuy.com - phongthuyvanxuan.net<br>
                     Tel: 0943.887.956 - 0903.210.818<br>
                     Facebook: phongthuyvanxuan & vanxuanphongthuy<br>
