@@ -98,7 +98,7 @@
 
                         ?>
                         @foreach($catePrd as $value)
-                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li>
+                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}"><li>{{$value['name']}}</li>
                             </a>
                         @endforeach
                     </div>
@@ -110,7 +110,7 @@
                             $cateNews = \App\Models\CategoriesNewsLanguage::User()->get();
                         ?>
                         @foreach($cateNews as $value)
-                            <a href="{{route('news_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['id']])}}"><li>{{$value['name']}}</li></a>
+                            <a href="{{route('news_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}"><li>{{$value['name']}}</li></a>
                         @endforeach
                     </div>
                     <div class="right">
@@ -140,7 +140,7 @@
                                 $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
                             ?>
                             @foreach($news as $value)
-                                <li style="font-size: 14px"><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['id']])}}">{{($value['title'])}}</a></li>
+                                <li style="font-size: 14px"><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['news_id']])}}">{{($value['title'])}}</a></li>
                             @endforeach
                         </div>
                     </div>

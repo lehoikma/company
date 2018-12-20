@@ -32,7 +32,7 @@
                 <select class="form-control" id="sel1" name="select_cate_prd">
                     <option value=""></option>
                     @foreach($categoryPrd as $value)
-                        <option value="{{$value['id']}}" {{ $value['id']==$prd[0]['category_product_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
+                        <option value="{{$value['category_products_id']}}" {{ $value['category_products_id']==$prd[0]['category_product_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
                     @endforeach
                 </select>
             </div>

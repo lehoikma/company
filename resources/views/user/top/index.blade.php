@@ -44,7 +44,7 @@
                 </div>
             </div>
             <?php
-                $catePrd1 = \App\Models\ProductsLanguages::User()->where('category_product_id', $value['id'])->orderBy('updated_at', 'desc')->limit(3)->get();
+                $catePrd1 = \App\Models\ProductsLanguages::User()->where('category_product_id', $value['category_products_id'])->orderBy('updated_at', 'desc')->limit(3)->get();
             ?>
             @foreach($catePrd1 as $key=>$value)
                 <div class="col-md-4 col-xs-12" style="margin-bottom: 10px">
