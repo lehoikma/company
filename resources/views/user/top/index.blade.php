@@ -1,208 +1,712 @@
-@extends('user.layouts.app')
-@section('slide')
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="4000">
-        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-            <?php
-            $catePrd = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(10)->get();
-            ?>
-            @foreach($catePrd as $key=>$value)
-                <div class="carousel-item col-md-3 {{$key == 0 ? 'active' : ''}}">
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail">
-                            <a href="#" title="image 1" class="thumb">
-                                <img class="img-fluid mx-auto d-block" src="/upload/{{$value['image']}}">
-                            </a>
-                            <p>{{$value['name']}}</p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Demo</title>
 
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next text-faded" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-@endsection
-@section('content')
-    <!-- san pham -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 
-    <div id="ja-feature-products" class="row">
-        <?php
-        $catePrd = \App\Models\CategoryProductsLanguages::User()->get();
+    <link rel="stylesheet" href="/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl-carousel/owl.theme.default.css">
 
-        ?>
-        @foreach($catePrd as $value)
-            <div class="col-md-12" style="margin-top: 5px;padding-bottom: 3px;font-weight: bold;margin-bottom: 10px;">
-                <div class="title-hd" style="height: 40px; background: #f09700;">
-                    <h5 style="font-size: 18px; padding-top: 10px"> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
-                </div>
-            </div>
-            <?php
-                $catePrd1 = \App\Models\ProductsLanguages::User()->where('category_product_id', $value['category_products_id'])->orderBy('updated_at', 'desc')->limit(3)->get();
-            ?>
-            @foreach($catePrd1 as $key=>$value)
-                <div class="col-md-4 col-xs-12" style="margin-bottom: 10px">
-                    <a class="title-name" style="font-size: 16px">{{$value['name']}}</a>
-                    <div class="img-height">
-                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
-                            <img src="/upload/{{$value['image']}}" alt="{{$value['id']}}">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/responsive.css"/>
+
+</head>
+<body class="full-width-content home header-v1 hide-topbar-mobile" data-template="mjcms_index">
+
+<div id="page" class="hfeed site">
+
+    <!--    navbar-->
+    <header id="masthead" class="site-header ">
+        <div class="header-main clearfix">
+            <div class="container">
+                <div class="row menu-row">
+                    <div class="site-logo col-lg-3 col-xs-9">
+                        <a href="index.html" class="logo">
+                            <img src="/styles/logo/logo.png" alt="Công ty CP thức ăn chăn nuôi Hà Nội Hanofeed"
+                                 class="logo"/>
                         </a>
-                    </div>
-                    <div class="text-center" style="    border: 1px solid #ee9600;
-        padding: 4px;
-        margin-top:5px;
-        border-radius: 5px;">
-                        <a class="promotional" style="font-size: 16px">Giá : {{$value['price'] ? $value['price'].' VNĐ' : 'Liên Hệ'}}</a>
-                    </div>
-                    <input id="{{$value['id']}}" type="hidden" value="/upload/{{$value['image']}}">
-                </div>
-            @endforeach
-        @endforeach
-    <!-- san pham -->
-    </div>
 
-    <!-- hoi dap -->
-    <div class="row">
-        <?php
-            $categoryNews = \App\Models\CategoriesNewsLanguage::User()->limit(2)->get();
-        ?>
-        @foreach($categoryNews as $key=>$value)
-            <?php $newsLanguage = \App\Models\NewsLanguage::User()->where('category_news_id', $value['news_category_id'])->get();?>
-            <div class="hdap col-md-6 col-sx-12">
-            <a href="" class="hdaps" id="{{$value['news_category_id']}}">
-                <div class="title-hd" style="height: 40px; background: #f09700;">
-                    <h5 style="font-size: 18px; padding-top: 10px"> {{mb_strtoupper($value['name'], 'UTF-8')}}</h5>
-                </div>
-            </a>
+                        <h2 class="site-description">Với tôn chỉ duy nhất: “LÀM HÀI LÒNG KHÁCH HÀNG LÀ GIÁ TRỊ SỐNG CÒN
+                            CỦA DOANH NGHIỆP” HANOFEED cam kết sẽ mang đến cho khách hàng những dịch vụ tốt nhất và chất
+                            lượng phục vụ hoàn hảo</h2>
+                    </div>
+                    <div class="header-content col-lg-9 col-md-12 col-xs-12 pull-right">
+                        <!-- top bar -->
+                        <div id="topbar" class="topbar ">
+                            <div class="topbar-widgets clearfix">
+                                <div class="widget">
+                                    <ul class="socials">
 
-            @if(count($newsLanguage) > 0)
-                <div class="tt-text">
-                    <ul style="padding: 0px;" class="ul-news">
-                        @foreach($newsLanguage as $key=>$valueNews)
-                            @if($key == 0)
-                                <div class="first-news">
-                                    <li>
-                                        <a href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">
-                                            <img src="/upload/{{$newsLanguage[0]['image']}}" alt="" style="width: 100%; margin-top: 10px;height: 190px">
-                                        </a>
-                                    </li>
-                                    <li style="margin: 10px 0px;">
-                                        <a href="{{route('news_detail', ['title' => str_slug($newsLanguage[0]['title']), 'id' => $newsLanguage[0]['news_id']])}}">
-                                            <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$newsLanguage[0]['title']}}</ins>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <p>{{substr(strip_tags($newsLanguage[0]['content']), 0, 200)}} ...</p>
-                                    </li>
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="facebook">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="google plus">
+                                                <i class="fa fa-google" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="youtube">
+                                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
                                 </div>
-                                @continue;
-                            @endif
-                                @if($key < 4)
-                                <li style="float: left">
-                                    <div class="col-md-4 {{$key}}" style="float: left; padding: 0px">
-                                        <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
-                                        <img src="/upload/{{$valueNews['image']}}" alt="" style="width: 100%; margin-top: 10px;">
-                                        </a>
+                                <div class="widget">
+                                    <div class="pull-left">
+                                        <span class="svg-icon"><i class="flaticon-call-answer"></i></span>
                                     </div>
-                                    <div class="col-md-8" style="float: left">
-                                        <a href="{{route('news_detail', ['title' => str_slug($valueNews['title']), 'id' => $valueNews['news_id']])}}">
-                                            <ins style="    font-size: 12px;
-    color: #bb0000;
-    text-decoration: none;
-    font-weight: bold;">{{$valueNews['title']}}</ins>
-                                        </a>
+                                    <div class="pull-right">
+                                        <div>Gọi ngay</div>
+                                        <div><a href="tel:0123456789" title="phone">012 345 6789</a></div>
                                     </div>
-                                </li>
-                                @endif
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        </div>
-        @endforeach
-            <div class="hdap col-md-6 col-sx-12">
-                <a href="{{route('list_image')}}" class="hdaps" id="1">
-                    <div class="title-hd" style="height: 40px; background: #f09700;">
-                        <h5 style="font-size: 18px; padding-top: 10px">{{trans('messages.image')}}</h5>
-                    </div>
-                </a>
-                <?php
-                $image = \App\Models\Images::orderBy('id', 'desc')->first();
-                ?>
-                <div class="tt-text">
-                    <ul style="padding: 0px;" class="ul-news">
-                        <div class="first-news video-top">
-                            <li style="margin-top: 10px">
-                                <img src="upload/{{$image['image']}}" style="width: 100%; margin-bottom: 10px;height: 190px;"></br>
-                            </li>
-                            <li style="margin: 10px 0px;">
-                                <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$image['description']}}</ins>
-                            </li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            <div class="hdap col-md-6 col-sx-12">
-                <a href="{{route('videos')}}" class="hdaps" id="1">
-                    <div class="title-hd" style="height: 40px; background: #f09700;">
-                        <h5 style="font-size: 18px; padding-top: 10px"> Videos</h5>
-                    </div>
-                </a>
-                <?php
-                    $videos = \App\Models\Videos::orderBy('id', 'desc')->limit(1)->get();
-                ?>
-                @foreach($videos as $k => $video)
-                    <div class="tt-text">
-                        <ul style="padding: 0px;" class="ul-news">
-                            <div class="first-news video-top">
-                                <li style="margin-top: 10px">
-                                    {!! $video['videos'] !!}
-                                </li>
-                                <li style="margin: 10px 0px;">
-                                    <a href="">
-                                        <ins style="font-size: 14px;color: #bb0000;text-decoration: none;font-weight: bold;">{{$video['name']}}</ins>
-                                    </a>
-                                </li>
+                                </div>
+                                <div class="widget">
+                                    <div class="pull-left">
+                                        <span class="svg-icon"><i class="flaticon-timer"></i></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="title">Thời gian làm việc</div>
+                                        <div class="sub-title">T.Hai - T.Bảy: 7.30 to 17.00</div>
+                                    </div>
+                                </div>
                             </div>
-                        </ul>
+                        </div>
+                        <!-- top bar -->
+                        <div class="site-menu">
+                            <nav id="site-navigation" class="main-nav primary-nav nav">
+                                <ul class="menu">
+                                    <li class="">
+                                        <a href="index.html" class=" " title="Trang chủ" data-xf-key="1"
+                                           data-nav-id="home">Trang chủ</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
+                                           data-nav-id="home">Lĩnh vực hoạt động</a>
+                                    </li>
+
+                                    <li class=" has-children">
+                                        <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">Sản Phẩm</a>
+                                        <ul class="sub-menu">
+                                            <li class="">
+                                                <a href="#" data-nav-id="2">Cám vịt ngan Hanofeed</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Cám cá Hanofeed</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class=" has-children">
+                                        <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="mjsProduct">Tin tức & sự kiện</a>
+                                        <ul class="sub-menu">
+                                            <li class="">
+                                                <a href="#" data-nav-id="2">Tin ngành</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Tin mavin</a>
+                                            </li>
+
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Mavin với cộng đồng</a>
+                                            </li>
+
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Góc báo chí</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="">
+                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
+                                           data-nav-id="mjcmsContact">Liên Hệ</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="#" class=" " title="Call" data-xf-key="5" data-nav-id="mjcmsContact">Call</a>
+                                    </li>
+
+                                    <li id="mf-active-menu" class="mf-active-menu"></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                @endforeach
+                    <div class="navbar-toggle col-xs-3">
+                        <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </header>
+    <!--  end navbar-->
+
+    <!--Slider-->
+    <section class="rev_slider_wrapper">
+        <div id="slider12" class="rev_slider" data-version="5.0">
+            <ul>
+
+                <!-- SLIDE 1 -->
+                <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default"
+                    data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="styles/image/slide1.jpg" data-rotate="0" data-fstransition="fade"
+                    data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"
+                    data-title="Make an Impact">
+                    <!-- MAIN IMAGE -->
+                    <img src="styles/image/slide1.jpg" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <a class="slider-link" href="#"></a>
+                    <!-- LAYERS -->
+                </li>
+
+                <!-- SLIDE 1 -->
+                <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default"
+                    data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="styles/image/slide2.jpg" data-rotate="0" data-fstransition="fade"
+                    data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"
+                    data-title="Make an Impact">
+                    <!-- MAIN IMAGE -->
+                    <img src="styles/image/slide2.jpg" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <a class="slider-link" href="#"></a>
+                    <!-- LAYERS -->
+                </li>
+
+
+            </ul>
+        </div>
+    </section>    <!--End Slider-->
+
+    <div class="introduction">
+        <div class="container">
+
+            <div class="intro-text">
+                Tập đoàn Mavin là Doanh nghiệp<br>được tin cậy nhất về chuỗi giá trị <strong>“<a href="#"
+                                                                                                 target="_blank">Từ Nông
+                        trại tới Bàn ăn</a>”</strong>. <br>Sứ mệnh của chúng tôi là cung cấp những sản phẩm<br><strong>“<a
+                            href="#">Sạch từ nguồn</a>”</strong>;
+                mang lại cuộc sống hạnh phúc và<br>trọn vẹn cho khách hàng. Ở bất kỳ lĩnh vực hoạt động nào, <br>Mavin
+                cũng đã và đang làm hết mình vì lợi ích<br>của khách hàng, xã hội, vì sự phát triển bền vững<br>của
+                ngành Nông nghiệp Việt Nam.
+            </div>
+            <div class="menu-items">
+
+                <div class="item item0">
+                    <figure>
+                        <a class="text" href='#' title=''>
+                            <img alt="" src="styles/image/thucancn.png"/>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="item item1">
+                    <figure>
+                        <a class="text" href='#' title=''>
+                            <img alt="" src="styles/image/channuoi.png"/>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="item item2">
+                    <figure>
+                        <a class="text" href='#' title=''>
+                            <img alt="" src="styles/image/duocthuy.png"/>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="item item3">
+                    <figure>
+                        <a class="text" href='#' title=''>
+                            <img alt="" src="styles/image/tpcb.png"/>
+                        </a>
+                    </figure>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    <!-- hoi dap -->
-@endsection
-@section('script')
-    <script language="javascript">
-      var childPic=document.getElementById("ja-feature-products").getElementsByTagName("img");
-      for(var i=0;i<childPic.length;i++)
-      {
-        var alter='';
-        alter=childPic[i].alt;
-        childPic[i].setAttribute("onmouseover","onPicOver('"+alter+"');");
-        childPic[i].setAttribute("onmouseout","onPicOut();");
-      }
 
-      function onPicOver(d)
-      {
-        var domain = document.location.hostname;
-        var inp=document.getElementById(d);
-        var src="http://"+domain+ inp.value;
-        console.log(src);
-        var img="<img src='"+ src +"' width='350px' />";
-        Tip(img);
-      }
+    <!--product & news-->
+    <div id="wrap">
+        <div id="inner" class="container">
+            <div id="content-sidebar-wrap">
+                <div id="content-home">
+                    <div id="code_widget-3" class="widget">
+                        <div class="widget-wrap">
+                            <h4 class="widgettitle"><span>Sản phẩm</span></h4>
+                            <div class="product-home">
 
-      function onPicOut()
-      {
-        UnTip();
-      }
+                                <div class="item-product-home" style="width: 50%">
+                                    <div class="img-product">
+                                        <a href="#" title="">
+                                            <img width="250" height="250" src="styles/image/e8317b90062bfe75a73a.jpg" class="" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p class="text-center ">
+                                        <a href="#" title=""> Nước Rửa Tay Ngọc Thảo
+                                        </a>
+                                    </p>
+                                </div>
 
-    </script>
-    <script src="/js/wz_tooltip.js" language="javascript" type="text/javascript"></script>
-@endsection
+                                <div class="item-product-home" style="width: 50%">
+                                    <div class="img-product">
+                                        <a href="#" title="">
+                                            <img width="250" height="227" src="styles/image/trai-huong-bien-264x240.png" class="" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p class="text-center ">
+                                        <a href="#" title="">
+                                            Nước Súc Miệng Hương Biển
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="item-product-home" style="width: 50%">
+                                    <div class="img-product">
+                                        <a href="#" title="">
+                                            <img width="250" height="208" src="styles/image/2-288x240.jpg" class="" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p class="text-center ">
+                                        <a href="#" title="">
+                                            Nước Súc Miệng Dược Liệu Ngọc Châu
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="item-product-home" style="width: 50%">
+                                    <div class="img-product">
+                                        <a href="#" title="">
+                                            <img width="250" height="208" src="styles/image/2-288x240.jpg" class="" alt=""/>
+                                        </a>
+                                    </div>
+                                    <p class="text-center ">
+                                        <a href="#" title="">
+                                            Nước Súc Miệng Dược Liệu Ngọc Châu
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget caia-post-list-widget">
+                        <div class="widget-wrap">
+                            <h4 class="widgettitle"><span>Tin tức</span></h4>
+                            <div class="main-posts">
+                                <div class="post entry">
+                                    <a href="#" title="" class="alignleft">
+                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
+                                    </a>
+                                    <h3 class="widget-item-title">
+                                        <a href="#">
+                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
+                                        </a>
+                                    </h3>
+                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
+                                    </p>
+                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="post entry">
+                                    <a href="#" title="" class="alignleft">
+                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
+                                    </a>
+                                    <h3 class="widget-item-title">
+                                        <a href="#">
+                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
+                                        </a>
+                                    </h3>
+                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
+                                    </p>
+                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="post entry">
+                                    <a href="#" title="" class="alignleft">
+                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
+                                    </a>
+                                    <h3 class="widget-item-title">
+                                        <a href="#">
+                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
+                                        </a>
+                                    </h3>
+                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
+                                    </p>
+                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <p class="more-from-category"><a href="#" title="Tin công ty">Xem thêm</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--product & news-->
+
+    <!--    video-->
+    <section class="module-event">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-event">
+
+                    <div class="box-title">
+                        <h2>
+                            <a class="text" href="#" target="_self">
+                                Mavin với Cộng Đồng
+                            </a>
+                        </h2>
+                    </div>
+                    <div class="n-items owl-carousel">
+
+                        <article class="n-item first">
+                            <div class="item-box">
+                                <figure>
+                                    <a href="#" title="" target="_self">
+                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
+                                    </a>
+                                </figure>
+                                <div class="n-title">
+                                    <a href="#" title="" class="title" target="_self">
+                                        <h3>Tặng gà giống hỗ trợ sinh kế cho nông dân</h3>
+                                    </a>
+                                </div>
+                                <div class="n-desc">
+                                    Ngày 18/5/2020, Tập đoàn Mavin đã trao tặng gà giống cho các hộ nông dân nghèo xã
+                                    Kháng Nhật (Tuyên Quang) nhằm hỗ trợ sinh kế và phát triển chăn nuôi.
+                                    <p>
+                                        <a class="more-link" href="#">
+                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="n-item normal">
+                            <div class="item-box">
+                                <figure>
+                                    <a href="#" title="" target="_self">
+                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
+                                    </a>
+                                </figure>
+                                <div class="n-title">
+                                    <a href="#" title="" class="title" target="_self">
+                                        <h3>Mavin tiếp sức phòng chống dịch Covid 19</h3>
+                                    </a>
+                                </div>
+                                <div class="n-desc">
+                                    Ngày 8/4/2020, Công ty TNHH Liên Doanh Mavin Austfeed  đã trao tặng số tiền 20 triệu
+                                    đồng cho lãnh đạo huyện Châu Thành - tỉnh Đồng Tháp, tiếp sức cho công tác phòng
+                                    chống dịch Covid...
+                                    <p>
+                                        <a class="more-link" href="">
+                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="n-item normal">
+                            <div class="item-box">
+                                <figure>
+                                    <a href="#" title="" target="_self">
+                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
+                                    </a>
+                                </figure>
+                                <div class="n-title">
+                                    <a href="#" title="" class="title" target="_self">
+                                        <h3>Mavin tiếp sức phòng chống dịch Covid 19</h3>
+                                    </a>
+                                </div>
+                                <div class="n-desc">
+                                    Ngày 8/4/2020, Công ty TNHH Liên Doanh Mavin Austfeed  đã trao tặng số tiền 20 triệu
+                                    đồng cho lãnh đạo huyện Châu Thành - tỉnh Đồng Tháp, tiếp sức cho công tác phòng
+                                    chống dịch Covid...
+                                    <p>
+                                        <a class="more-link" href="">
+                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-gallery">
+
+                    <div class="box-title">
+                        <h2>
+                            <a class="text" href="#" target="_self">
+                                Thư viện tư liệu
+                            </a>
+                        </h2>
+                    </div>
+
+                    <div class="group-library">
+                        <div class="gall-items">
+
+                            <iframe width="100%" height="285" src="https://www.youtube.com/embed/RwCNos-k5OM" frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen=""></iframe>
+                            <div class="owl-carousel"></div>
+
+                        </div>
+                        <div class="library">
+
+                            <div class="item">
+                                <figure>
+                                    <a href="#">
+                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
+                                    </a>
+                                </figure>
+                                <a class="text" href="#">
+                                    <h4>Thư viện ảnh</h4>
+                                </a>
+                            </div>
+
+                            <div class="item">
+                                <figure>
+                                    <a href="#">
+                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
+                                    </a>
+                                </figure>
+                                <a class="text" href="#">
+                                    <h4>Thư viện ảnh</h4>
+                                </a>
+                            </div>
+
+                            <div class="item">
+                                <figure>
+                                    <a href="#">
+                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
+                                    </a>
+                                </figure>
+                                <a class="text" href="#">
+                                    <h4>Thư viện ảnh</h4>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--    video-->
+
+    <!--    brands-->
+    <div class="container">
+        <section class="customer-logos slider">
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg">
+            </div>
+            <div class="slide">
+                <img src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg">
+            </div>
+        </section>
+    </div>
+    <!--    brands-->
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="subscribe">
+                <div class="subscribe-title">Đăng ký nhận tin</div>
+                <div class="subscribe-control">
+                    <div class="bao">
+                        <input class="input-email" id="txtsend" name="ctl00$ucEmail$txtsend"
+                               onkeypress="return EnterEmailEvent(event)"
+                               placeholder="Nhập email của bạn!" type="text"/>
+                        <input class="btn-subscribe" id="ctl00_ucEmail_lnkSend" name="ctl00$ucEmail$lnkSend"
+                               type="submit"
+                               value="Đăng ký"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social">
+                <span class="title">Kết nối với Tập đoàn Mavin</span>
+                <a href="#" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-google-plus-square"></i>
+                </a>
+                <a href="" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-youtube"></i>
+                </a>
+                <a href="#" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-facebook"></i>
+                </a>
+            </div>
+            <div class="copyright-content">
+
+                <ul>
+                    <li>
+                        <a href="#">Chính sách bảo mật thông tin</a>
+                        <a href="#"> Chính sách website</a>
+                        <a href="#"> Quy ước sử dụng website</a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="contact-footer">
+
+                <div class="main-item-ft">
+                    <div class="title">CÔNG TY CỔ PHẦN TẬP ĐOÀN MAVIN</div>
+                    <address><span class="add">VPĐD: Tầng 8 Tòa nhà Hudland số 6 Nguyễn Hữu Thọ, phường Hoàng Liệt, quận Hoàng Mai, Thành phố Hà Nội</span>
+                        <span class="add"><br>ĐC (viết hóa đơn): Thị tứ Bô Thời, Hồng Tiến, Khoái Châu, Hưng Yên.</span>
+                        <span class="phone"> <span><br>T: 0243 2033 666</span> <span>F: 0243 2033 111</span> <span><br>E: info@mavin-group.com</span> <span>W: www.mavin-group.com</span> </span>
+                        <span class="site"> <span><br> Giấy phép đăng ký kinh doanh số 0900841823 - Ngày cấp: 3/7/2012 - Nơi cấp: Sở Kế hoạch và Đầu tư tỉnh Hưng Yên.</span> </span>
+                    </address>
+                </div>
+
+            </div>
+            <div class="bocongthuong">
+
+                <a href="#" target="_blank">
+                    <img alt="" border="0" class="img-editor" src="styles/image/bocongthuong.png">
+                </a>
+
+                <div class="copyright">&copy; 2017 Bản quyền thuộc về <a href="index.html">Tập đoàn Mavin</a></div>
+                <div class="design"><a href="http://bicweb.vn/" target="_blank">Thiết kế website</a> bởi <a href=""
+                                                                                                            target="_blank">BICWeb.vn&trade;</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--nav mobie-->
+    <div class="primary-mobile-nav" id="primary-mobile-nav" role="navigation">
+        <div class="mobile-nav-content">
+            <a href="#" class="close-canvas-mobile-panel">×</a>
+            <ul class="menu">
+
+                <li class="">
+                    <a href="index.html" class=" " title="Trang chủ" data-nav-id="">Trang chủ</a>
+                </li>
+
+                <li class="">
+                    <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-nav-id="">Lĩnh vực hoạt động</a>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">Sản Phẩm</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Cám gà Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="1">Cám lợn Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="2">Cám vịt ngan Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="3">Cám cá Hanofeed</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="">Tin tức & sự kiện</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Tin ngành</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="1">Tin Mavin</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="2">Mavin với công đồng</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="3">Góc báo chí</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">Tin
+                        tức</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Truyền thông HanoFeed</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="1">Góc kỹ thuật</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="2">Tuyển Dụng</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="mjReviews">Chia Sẻ</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="" data-nav-id="">Liên Hệ</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <!--nav mobie-->
+</div>
+
+
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/touchSwipe.js" type="text/javascript"></script>
+<script src="/js/custom.js" type='text/javascript'></script>
+<script src="/js/navbar.min.js" type='text/javascript'></script>
+<script src='/js/slick.js' type='text/javascript'></script>
+<script src="/owl-carousel/owl.carousel.js"></script>
+
+</html>
