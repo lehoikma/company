@@ -2813,37 +2813,7 @@ img {
     margin: 0px 0px 40px 0px;
 }
 
-
-#back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background: #0580ea;
-    color: #000;
-    cursor: pointer;
-    border: 0;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: opacity 0.2s ease-out;
-    opacity: 0;
-    font-size: 30px;
-}
-#back-to-top:hover {
-    background: #e9ebec;
-}
-#back-to-top.show {
-    opacity: 1;
-}
-#content {
-    height: 2000px;
-}
-
-.slider {
+.sliderBanner {
     position: relative;
     width: 100%;
     height: auto;
@@ -2859,7 +2829,7 @@ img {
     margin: 0px -5px 0px -5px;
 }
 
-.slider img {
+.sliderBanner img {
     height: 324px;
 }
 
