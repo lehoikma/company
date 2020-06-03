@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row menu-row">
                     <div class="site-logo col-lg-3 col-xs-9">
-                        <a href="index.html" class="logo">
+                        <a href="/" class="logo">
                             <img src="/image/logo_amavet.png" class="logo" width="250"/>
                         </a>
 
@@ -41,7 +41,6 @@
                             <div class="topbar-widgets clearfix">
                                 <div class="widget">
                                     <ul class="socials">
-
                                         <li>
                                             <a target="_blank" rel="nofollow" href="#" title="facebook">
                                                 <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -64,20 +63,22 @@
                                 </div>
                                 <div class="widget">
                                     <div class="pull-left">
-                                        <span class="svg-icon"><i class="flaticon-call-answer"></i></span>
-                                    </div>
-                                    <div class="pull-right">
-                                        <div>Gọi ngay</div>
-                                        <div><a href="tel:0123456789" title="phone">012 345 6789</a></div>
-                                    </div>
-                                </div>
-                                <div class="widget">
-                                    <div class="pull-left">
                                         <span class="svg-icon"><i class="flaticon-timer"></i></span>
                                     </div>
                                     <div class="pull-right">
                                         <div class="title">Thời gian làm việc</div>
                                         <div class="sub-title">T.Hai - T.Bảy: 7.30 to 17.00</div>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <div class="pull-left">
+                                        <span class="svg-icon"><i class="flaticon-call-answer"></i></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div>
+                                            <a href="http://vanxuanphongthuy.com/change-language/en"><img src="/image/en.jpg"></a>&nbsp;
+                                            <a href="http://vanxuanphongthuy.com/change-language/vn"><img src="/image/vn.jpg"></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,6 +153,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-xs-12 language-custom" style="text-align: center;padding: 5px;display: none">
+            <div>
+                <a href="http://vanxuanphongthuy.com/change-language/en"><img src="/image/en.jpg"></a>&nbsp;
+                <a href="http://vanxuanphongthuy.com/change-language/vn"><img src="/image/vn.jpg"></a>
+            </div>
+        </div>
     </header>
     <!--  end navbar-->
 
@@ -159,45 +166,6 @@
 
     <footer class="footer">
         <div class="container">
-
-            <div class="subscribe">
-                <div class="subscribe-title">Đăng ký nhận tin</div>
-                <div class="subscribe-control">
-                    <div class="bao">
-                        <input class="input-email" id="txtsend" name="ctl00$ucEmail$txtsend"
-                               onkeypress="return EnterEmailEvent(event)"
-                               placeholder="Nhập email của bạn!" type="text"/>
-                        <input class="btn-subscribe" id="ctl00_ucEmail_lnkSend" name="ctl00$ucEmail$lnkSend"
-                               type="submit"
-                               value="Đăng ký"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="social">
-                <span class="title">Kết nối với Tập đoàn amavet</span>
-                <a href="#" rel="nofollow">
-                    <i aria-hidden="true" class="fa fa-google-plus-square"></i>
-                </a>
-                <a href="" rel="nofollow">
-                    <i aria-hidden="true" class="fa fa-youtube"></i>
-                </a>
-                <a href="#" rel="nofollow">
-                    <i aria-hidden="true" class="fa fa-facebook"></i>
-                </a>
-            </div>
-            <div class="copyright-content">
-
-                <ul>
-                    <li>
-                        <a href="#">Chính sách bảo mật thông tin</a>
-                        <a href="#"> Chính sách website</a>
-                        <a href="#"> Quy ước sử dụng website</a>
-                    </li>
-                </ul>
-
-
-            </div>
             <div class="contact-footer">
 
                 <div class="main-item-ft">

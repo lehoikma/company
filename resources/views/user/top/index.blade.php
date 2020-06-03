@@ -342,25 +342,25 @@
     <div class="container">
         <section class="customer-logos slider">
             <div class="slide">
-                <img src="/image/Deasung.gif" style="height: 60px">
+                <img src="/image/Deasung.gif" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/Innotech.png" style="height: 60px">
+                <img src="/image/Innotech.png" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/Formosa.jpg" style="height: 60px">
+                <img src="/image/Formosa.jpg" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/Dutchfarm.jpg" style="height: 60px">
+                <img src="/image/Dutchfarm.jpg" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/Samu.gif" style="height: 60px">
+                <img src="/image/Samu.gif" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/biogne.jpg" style="height: 60px">
+                <img src="/image/biogne.jpg" style="height: 70px">
             </div>
             <div class="slide">
-                <img src="/image/schauman.gif" style="height: 60px">
+                <img src="/image/schauman.gif" style="height: 70px">
             </div>
         </section>
     </div>

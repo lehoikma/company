@@ -430,7 +430,7 @@
 .footer {
     background: #00559a url(../styles/image/bg_footer.png) no-repeat bottom right;
     clear: both;
-    padding: 75px 0 35px;
+    padding: 25px 0 25px;
 }
 
 .subscribe {
@@ -1829,6 +1829,9 @@ body.header-sticky {
     .header-v1 .navbar-toggle {
         padding-right: 15px
     }
+    .language-custom {
+        display: block !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1838,7 +1841,7 @@ body.header-sticky {
     }
 
     .site-header .logo img {
-        width: 123px
+        width: 150px
     }
 }
 
@@ -2115,6 +2118,7 @@ img {
 .item-product-home .img-product img {
     width: 165px;
     margin: 0 auto;
+    margin-left: 50px;
 }
 
 #content-home .caia-post-list-widget .post h3 a {
