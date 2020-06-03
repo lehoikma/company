@@ -154,40 +154,11 @@
     <!--  end navbar-->
 
     <!--Slider-->
-    <section class="rev_slider_wrapper">
-        <div id="slider12" class="rev_slider" data-version="5.0">
-            <ul>
-
-                <!-- SLIDE 1 -->
-                <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default"
-                    data-easein="default" data-easeout="default" data-masterspeed="default"
-                    data-thumb="styles/image/slide1.jpg" data-rotate="0" data-fstransition="fade"
-                    data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"
-                    data-title="Make an Impact">
-                    <!-- MAIN IMAGE -->
-                    <img src="styles/image/slide1.jpg" data-bgposition="center center"
-                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <a class="slider-link" href="#"></a>
-                    <!-- LAYERS -->
-                </li>
-
-                <!-- SLIDE 1 -->
-                <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default"
-                    data-easein="default" data-easeout="default" data-masterspeed="default"
-                    data-thumb="styles/image/slide2.jpg" data-rotate="0" data-fstransition="fade"
-                    data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"
-                    data-title="Make an Impact">
-                    <!-- MAIN IMAGE -->
-                    <img src="styles/image/slide2.jpg" data-bgposition="center center"
-                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <a class="slider-link" href="#"></a>
-                    <!-- LAYERS -->
-                </li>
-
-
-            </ul>
-        </div>
-    </section>    <!--End Slider-->
+    <div class="slider sliderBanner">
+        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10004088_1491055334449687_1187165020_n.jpg" />
+        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10817863_856543214397968_517239188_n.jpg" />
+        <img src="https://www.maggiesadler.com/wp-content/uploads/2015/10/10919749_326992714172441_299394464_n.jpg" />
+    </div>
 
     <div class="introduction">
         <div class="container">
@@ -698,6 +669,9 @@
         </div>
     </div>
     <!--nav mobie-->
+
+    <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+
 </div>
 
 
@@ -708,5 +682,23 @@
 <script src="/js/navbar.min.js" type='text/javascript'></script>
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('.sliderBanner').slick({
+            dots: false,
+            infinite: true,
+            speed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
 
+        });
+    });
+
+</script>
+
+<style>
+</style>
 </html>
