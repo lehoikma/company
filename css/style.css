@@ -140,7 +140,7 @@
 }
 
 .module-event {
-    background: #ffc60b;
+    background: #009245;
     padding: 40px 0;
 }
 
@@ -765,10 +765,10 @@
 }
 
 .main-nav a {
-    font-weight: 500;
-    font-size: .875em;
+    font-weight: 600;
+    font-size: .975em;
     color: #2e2e2e;
-    display: block
+    display: block;
 }
 
 .main-nav a:hover {
@@ -2830,7 +2830,7 @@ img {
 }
 
 .sliderBanner img {
-    height: 324px;
+    /*height: 324px;*/
 }
 
 /* Slick Slider Styles -- Provided by https://kenwheeler.github.io/slick/ */

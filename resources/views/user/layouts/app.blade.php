@@ -1,307 +1,340 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Trang chủ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amavet</title>
 
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl-carousel/owl.theme.default.css">
+
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/responsive.css"/>
 
 </head>
-<body style="background: #f3f3f3">
-<!-- header -->
-<div class="headers">
-    <div class="container" style="padding: 0px">
-        <!-- header -->
-        <div class="row col-md-12 lg header-all" style="margin: 0px; padding: 0px">
-            <div class="col-md-3 col-xs-12 header-logo">
-                <a href="{{route('user_top')}}">
-                    <img src="/image/logo.PNG" height="150px;" style="border-radius: 10px;">
-                </a>
-            </div>
-            <div class="col-md-9 col-xs-12 banner-top">
-                <div class="col-md-12 header-language">
-                    <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
-                    <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
-                </div>
-            </div>
-        </div>
+<body class="full-width-content home header-v1 hide-topbar-mobile" data-template="mjcms_index">
 
-        <div class="custom-container" style="padding-top: 5px">
-            <nav class="main-nav" role="navigation" style="background: #ee9600;">
+<div id="page" class="hfeed site">
 
-                <!-- Mobile menu toggle button (hamburger/x icon) -->
-                <input id="main-menu-state" type="checkbox">
-                <label class="main-menu-btn" for="main-menu-state">
-                    <span class="main-menu-btn-icon"></span> Toggle main menu visibility
-                </label>
-                <!-- Sample menu definition -->
-                <ul id="main-menu" class="sm sm-blue col-md-9" style="border-radius: 0;background: none;padding-left: 0px;padding-right: 0px;">
-                    <li>
-                        <a class="menu-active" href="{{route('user_top')}}">{{ trans('messages.home') }}</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('introduce')}}">{{ trans('messages.introduce') }}</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('news_list')}}">{{ trans('messages.news') }}</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('products_list')}}">{{ trans('messages.products') }}</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('videos')}}">Videos</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('list_image')}}">{{trans('messages.image')}}</a>
-                    </li>
-                    <li>
-                        <a class="menu-active" href="{{route('contacts')}}">{{ trans('messages.contact') }}</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0" style="padding-top: 5px" method="get" action="{{route('search')}}">
-                    <input name="key" class="form-control1 form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 175px;">
-                    <button class="btn-outline-secondary1 btn btn-outline-secondary my-2 my-sm-0 " type="submit">Search</button>
-                </form>
-            </nav>
+    <!--    navbar-->
+    <header id="masthead" class="site-header ">
+        <div class="header-main clearfix">
+            <div class="container">
+                <div class="row menu-row">
+                    <div class="site-logo col-lg-3 col-xs-9">
+                        <a href="index.html" class="logo">
+                            <img src="/image/logo_amavet.png" class="logo" width="250"/>
+                        </a>
 
-        </div>
-
-        <!-- header -->
-
-        <!-- slide -->
-        @yield('slide')
-        <!-- slide -->
-    </div>
-</div>
-</div>
-<!-- header -->
-
-<br>
-<!-- contents -->
-<div class="contents">
-    <div class="container pc-container">
-        <div class="row">
-            <div class="col-md-3 mobiess">
-                <div style="background: #BB0000;">
-
-                    <div class="right">
-                        <h3>
-                            <span>{{trans('messages.products')}}</span>
-                        </h3>
-                        <?php
-                            $catePrd = \App\Models\CategoryProductsLanguages::User()->get();
-
-                        ?>
-                        @foreach($catePrd as $value)
-                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}"><li>{{$value['name']}}</li>
-                            </a>
-                        @endforeach
+                        <h2 class="site-description">Với tôn chỉ duy nhất: “LÀM HÀI LÒNG KHÁCH HÀNG LÀ GIÁ TRỊ SỐNG CÒN
+                            CỦA DOANH NGHIỆP” HANOFEED cam kết sẽ mang đến cho khách hàng những dịch vụ tốt nhất và chất
+                            lượng phục vụ hoàn hảo</h2>
                     </div>
-                    <div class="right">
-                        <h3>
-                            <span>{{trans('messages.news')}}</span>
-                        </h3>
-                        <?php
-                            $cateNews = \App\Models\CategoriesNewsLanguage::User()->get();
-                        ?>
-                        @foreach($cateNews as $value)
-                            <a href="{{route('news_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}"><li>{{$value['name']}}</li></a>
-                        @endforeach
-                    </div>
-                    <div class="right">
-                        <h3>
-                            <span>{{trans('messages.link-page')}}</span>
-                        </h3>
-                        <a href=""><li>Blog Laido</li></a>
-                        <a href=""><li>Lý Số Việt Nam</li></a>
-                        <a href=""><li>Lý Học Phương Đông</li></a>
-                        <a href=""><li>Phần mềm Phù Đổng</li></a>
-                        <a href=""><li>Việt lý số</li></a>
-                    </div>
-                    <div class="right" style="height: 671px;">
+                    <div class="header-content col-lg-9 col-md-12 col-xs-12 pull-right">
+                        <!-- top bar -->
+                        <div id="topbar" class="topbar ">
+                            <div class="topbar-widgets clearfix">
+                                <div class="widget">
+                                    <ul class="socials">
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-7 col-sx-12" style="border-top: 1px solid #d4d4d4; padding-top: 10px">
-                    @yield('content')
-            </div>
-            <div class="col-md-2 mobiess">
-                <div class="tin">
-                    <div class="tin-1">
-                        <div class="tin-11">
-                            <h3>{{trans('messages.news-new')}}</h3>
-                            <?php
-                                $news = \App\Models\NewsLanguage::User()->limit(5)->orderBy('updated_at', 'desc')->get();
-                            ?>
-                            @foreach($news as $value)
-                                <li style="font-size: 14px"><a href="{{route('news_detail',['title' => str_slug($value['title']), 'id' => $value['news_id']])}}">{{($value['title'])}}</a></li>
-                            @endforeach
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="facebook">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="google plus">
+                                                <i class="fa fa-google" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a target="_blank" rel="nofollow" href="#" title="youtube">
+                                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="widget">
+                                    <div class="pull-left">
+                                        <span class="svg-icon"><i class="flaticon-call-answer"></i></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div>Gọi ngay</div>
+                                        <div><a href="tel:0123456789" title="phone">012 345 6789</a></div>
+                                    </div>
+                                </div>
+                                <div class="widget">
+                                    <div class="pull-left">
+                                        <span class="svg-icon"><i class="flaticon-timer"></i></span>
+                                    </div>
+                                    <div class="pull-right">
+                                        <div class="title">Thời gian làm việc</div>
+                                        <div class="sub-title">T.Hai - T.Bảy: 7.30 to 17.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- top bar -->
+                        <div class="site-menu">
+                            <nav id="site-navigation" class="main-nav primary-nav nav">
+                                <ul class="menu">
+                                    <li class="">
+                                        <a href="/" class=" " title="Trang chủ" data-xf-key="1"
+                                           data-nav-id="home">Trang chủ</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="index.html" class=" " title="Trang chủ" data-xf-key="1"
+                                           data-nav-id="home">Giới Thiệu</a>
+                                        <ul class="sub-menu">
+                                            <li class="">
+                                                <a href="#" data-nav-id="2">Lịch sử</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Sứ mệnh</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Tầm nhìn</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
+                                           data-nav-id="home">Lĩnh vực hoạt động</a>
+                                    </li>
+
+                                    <li class=" has-children">
+                                        <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">Sản Phẩm</a>
+                                    </li>
+
+                                    <li class=" has-children">
+                                        <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="mjsProduct">Tin tức & sự kiện</a>
+                                        <ul class="sub-menu">
+                                            <li class="">
+                                                <a href="#" data-nav-id="2">Tin Amavet</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Tin kỹ thuật</a>
+                                            </li>
+
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Tin thị trường</a>
+                                            </li>
+
+                                            <li class="">
+                                                <a href="#" data-nav-id="3">Hoạt động xã hội</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="">
+                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
+                                           data-nav-id="mjcmsContact">Liên Hệ</a>
+                                    </li>
+
+                                    <li id="mf-active-menu" class="mf-active-menu"></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                </div>
-                <div class="tin">
-                    <div class="tin-1">
-                        <div class="tin-11">
-                            <h3>{{trans('messages.products-new')}}</h3>
-                            <?php
-                            $catePrd1 = \App\Models\ProductsLanguages::User()->orderBy('updated_at', 'desc')->limit(5)->get();
-                            ?>
-                            @foreach($catePrd1 as $value)
-                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-bottom: 1px dashed;">
-                                <tbody>
-                                <tr align="center">
-                                    <td>
-                                        <span>
-                                            {{mb_strtoupper($value['name'], 'UTF-8')}}
-                                        </span>
-                                        <br>
-                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
-                                            <img src="/upload/{{$value['image']}}" style="width: 90px; height: 90px">
-                                        </a>
-                                        <br>
-                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">{{$value['price'] ? $value['price']. ' VNĐ' : 'Liên Hệ'}}</a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            @endforeach
-                        </div>
+                    <div class="navbar-toggle col-xs-3">
+                        <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- contents -->
-</div>
-<!-- footer -->
-<div class="footers">
-    <div class="container" style="background: #ee9600; ">
-        <div class="row">
-            <div class="col-md-3 logo-bottom" style="    padding-top: 15px;">
-                <a href="{{route('user_top')}}">
-                    <img src="/image/logo.PNG" height="150px;" style="border-radius: 10px;">
+    </header>
+    <!--  end navbar-->
+
+    @yield('content')
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="subscribe">
+                <div class="subscribe-title">Đăng ký nhận tin</div>
+                <div class="subscribe-control">
+                    <div class="bao">
+                        <input class="input-email" id="txtsend" name="ctl00$ucEmail$txtsend"
+                               onkeypress="return EnterEmailEvent(event)"
+                               placeholder="Nhập email của bạn!" type="text"/>
+                        <input class="btn-subscribe" id="ctl00_ucEmail_lnkSend" name="ctl00$ucEmail$lnkSend"
+                               type="submit"
+                               value="Đăng ký"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social">
+                <span class="title">Kết nối với Tập đoàn amavet</span>
+                <a href="#" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-google-plus-square"></i>
+                </a>
+                <a href="" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-youtube"></i>
+                </a>
+                <a href="#" rel="nofollow">
+                    <i aria-hidden="true" class="fa fa-facebook"></i>
                 </a>
             </div>
-            <div class="fter col-md-6 col-xs-12">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trang Chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Liên Hệ</a>
+            <div class="copyright-content">
+
+                <ul>
+                    <li>
+                        <a href="#">Chính sách bảo mật thông tin</a>
+                        <a href="#"> Chính sách website</a>
+                        <a href="#"> Quy ước sử dụng website</a>
                     </li>
                 </ul>
-                <p style="color: red;margin-left: 15px;font-size: 14px;">
-                    Địa chỉ: Cơ sở 1 - Số 11 Ngõ Trạm, Hoàn Kiếm, Hà Nội<br>
-                             Cơ sở 2 - 99 Trương Chinh, TP Phủ Lý, Hà Nam<br>
-                    Website: vanxuanphongthuy.vn - vanxuanphongthuy.com - phongthuyvanxuan.net<br>
-                    Tel: 0943.887.956 - 0903.210.818<br>
-                    Facebook: phongthuyvanxuan & vanxuanphongthuy<br>
-                    Copyright &copy; 2018 Agriplus.vn
-                </p>
+
+
             </div>
-            <div class=" fter col-md-3 col-xs-12" style="margin-bottom: 20px">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fanpage facebook</a>
-                    </li>
-                </ul>
-                <div style="margin-left: 15px">
-                    <fb:like expr:href="data:post.canonicalUrl" layout="button_count" send="true" show_faces="false" font="arial" action="like" colorscheme="light" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Flinkstore.vn%2Fson-3ce-mood-recipe-matte-lip-color-117-chicful-sp1068&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=true&amp;show_faces=false"><span style="vertical-align: bottom; width: 122px; height: 20px;"><iframe name="f3a23925ac3c048" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.6/plugins/like.php?action=like&amp;app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FiKWhU6BAGf7.js%3Fversion%3D42%23cb%3Df38fbd9b0c64cc%26domain%3Dlinkstore.vn%26origin%3Dhttp%253A%252F%252Flinkstore.vn%252Ff1caab3ad2badf4%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=0&amp;font=arial&amp;href=http%3A%2F%2Flinkstore.vn%2Fson-3ce-mood-recipe-matte-lip-color-117-chicful-sp1068&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;send=true&amp;show_faces=false" style="border: none; visibility: visible; width: 122px; height: 20px;" class=""></iframe></span></fb:like>
+            <div class="contact-footer">
+
+                <div class="main-item-ft">
+                    <div class="title">CÔNG TY CỔ PHẦN TẬP ĐOÀN amavet</div>
+                    <address><span class="add">VPĐD: Tầng 8 Tòa nhà Hudland số 6 Nguyễn Hữu Thọ, phường Hoàng Liệt, quận Hoàng Mai, Thành phố Hà Nội</span>
+                        <span class="add"><br>ĐC (viết hóa đơn): Thị tứ Bô Thời, Hồng Tiến, Khoái Châu, Hưng Yên.</span>
+                        <span class="phone"> <span><br>T: 0243 2033 666</span> <span>F: 0243 2033 111</span> <span><br>E: info@amavet-group.com</span> <span>W: www.amavet-group.com</span> </span>
+                        <span class="site"> <span><br> Giấy phép đăng ký kinh doanh số 0900841823 - Ngày cấp: 3/7/2012 - Nơi cấp: Sở Kế hoạch và Đầu tư tỉnh Hưng Yên.</span> </span>
+                    </address>
+                </div>
+
+            </div>
+            <div class="bocongthuong">
+
+                <a href="#" target="_blank">
+                    <img alt="" border="0" class="img-editor" src="styles/image/bocongthuong.png">
+                </a>
+
+                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="index.html">Tập đoàn amavet</a></div>
+                <div class="design"><a href="http://bicweb.vn/" target="_blank">Thiết kế website</a> bởi <a href=""
+                                                                                                            target="_blank">BICWeb.vn&trade;</a>
                 </div>
             </div>
         </div>
+    </footer>
 
+    <!--nav mobie-->
+    <div class="primary-mobile-nav" id="primary-mobile-nav" role="navigation">
+        <div class="mobile-nav-content">
+            <a href="#" class="close-canvas-mobile-panel">×</a>
+            <ul class="menu">
+
+                <li class="">
+                    <a href="index.html" class=" " title="Trang chủ" data-nav-id="">Trang chủ</a>
+                </li>
+
+                <li class="">
+                    <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-nav-id="">Lĩnh vực hoạt động</a>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">Sản Phẩm</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Cám gà Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="1">Cám lợn Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="2">Cám vịt ngan Hanofeed</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="3">Cám cá Hanofeed</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="">Tin tức & sự kiện</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Tin ngành</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="1">Tin amavet</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="2">amavet với công đồng</a>
+                        </li>
+                        <li class="">
+                            <a href="#" data-nav-id="3">Góc báo chí</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">Tin
+                        tức</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#" data-nav-id="0">Truyền thông HanoFeed</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="1">Góc kỹ thuật</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="2">Tuyển Dụng</a>
+                        </li>
+
+                        <li class="">
+                            <a href="#" data-nav-id="mjReviews">Chia Sẻ</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="#" class="" data-nav-id="">Liên Hệ</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
+    <!--nav mobie-->
+
+    <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+
 </div>
-<div id="fb-root"></div>
-<!-- footer -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '1986711764923054',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-  };
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-<div class="fb-customerchat" page_id="248912325821252"></div>
+
 
 </body>
-</html>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/touchSwipe.js" type="text/javascript"></script>
+<script src="/js/custom.js" type='text/javascript'></script>
+<script src="/js/navbar.min.js" type='text/javascript'></script>
+<script src='/js/slick.js' type='text/javascript'></script>
+<script src="/owl-carousel/owl.carousel.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $('.sliderBanner').slick({
+            dots: false,
+            infinite: true,
+            speed: 3000,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
 
-
-<script language="javascript">
-    $('#myCarousel').on('slide.bs.carousel', function (e) {
-        var $e = $(e.relatedTarget);
-        var idx = $e.index();
-        var itemsPerSlide = 4;
-        var totalItems = $('.carousel-item').length;
-
-        if (idx >= totalItems-(itemsPerSlide-1)) {
-            var it = itemsPerSlide - (totalItems - idx);
-            for (var i=0; i<it; i++) {
-                // append slides to end
-                if (e.direction=="left") {
-                    $('.carousel-item').eq(i).appendTo('.carousel-inner');
-                }
-                else {
-                    $('.carousel-item').eq(0).appendTo('.carousel-inner');
-                }
-            }
-        }
-    });
-
-    $('#myCarousel').carousel({
-        interval: 4000
-    });
-
-
-    $(document).ready(function() {
-        /* show lightbox when clicking a thumbnail */
-        $('a.thumb').click(function(event){
-            event.preventDefault();
-            var content = $('.modal-body');
-            content.empty();
-            var title = $(this).attr("title");
-            $('.modal-title').html(title);
-            content.html($(this).html());
-            $(".modal-profile").modal({show:true});
         });
-
     });
 
-    $(function() {
-      var href = window.location.href;
-      $('a.menu-active').each(function(e,i) {
-        if (href.indexOf($(this).attr('href')) >= 0) {
-          $('li a.active1').removeClass('active1');
-          $(this).addClass('active1');
-        }
-      });
-    });
-
-    $(function() {
-      $('#main-menu').smartmenus({
-        subMenusSubOffsetX: 1,
-        subMenusSubOffsetY: -8
-      });
-    });
 </script>
-@yield('script')
 
+<style>
+</style>
+</html>
