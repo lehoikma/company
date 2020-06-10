@@ -100,7 +100,6 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('category_news_index')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Tin Tức</a></li>
                         <li><a href="{{route('form_create_news')}}"><i class="fa fa-circle-o"></i> Tạo Tin</a></li>
                         <li><a href="{{route('list_news')}}"><i class="fa fa-circle-o"></i> Danh Sách Tin</a></li>
                     </ul>

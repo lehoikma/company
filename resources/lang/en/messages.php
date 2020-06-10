@@ -2,7 +2,7 @@
 return [
     'home' => 'Home',
     'introduce' => 'Introduce',
-    'news' => 'News',
+    'news' => 'News & Event',
     'products' => 'Products',
     'contact' => 'Contact',
     'link-page' => 'Link Page',
@@ -11,4 +11,5 @@ return [
     'cart' => 'Cart',
     'order' => 'Order',
     'image' => 'Image',
+    'WORKING_TIME' => 'WORKING TIME',
 ];

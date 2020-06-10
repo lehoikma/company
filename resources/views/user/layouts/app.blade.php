@@ -66,7 +66,7 @@
                                         <span class="svg-icon"><i class="flaticon-timer"></i></span>
                                     </div>
                                     <div class="pull-right">
-                                        <div class="title">Thời gian làm việc</div>
+                                        <div class="title">{{ trans('messages.WORKING_TIME') }}</div>
                                         <div class="sub-title">T.Hai - T.Bảy: 7.30 to 17.00</div>
                                     </div>
                                 </div>
@@ -76,8 +76,8 @@
                                     </div>
                                     <div class="pull-right">
                                         <div>
-                                            <a href="http://vanxuanphongthuy.com/change-language/en"><img src="/image/en.jpg"></a>&nbsp;
-                                            <a href="http://vanxuanphongthuy.com/change-language/vn"><img src="/image/vn.jpg"></a>
+                                            <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
+                                            <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -89,11 +89,11 @@
                                 <ul class="menu">
                                     <li class="">
                                         <a href="/" class=" " title="Trang chủ" data-xf-key="1"
-                                           data-nav-id="home">Trang chủ</a>
+                                           data-nav-id="home">{{ trans('messages.home') }}</a>
                                     </li>
                                     <li class="">
                                         <a href="index.html" class=" " title="Trang chủ" data-xf-key="1"
-                                           data-nav-id="home">Giới Thiệu</a>
+                                           data-nav-id="home">{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
                                                 <a href="#" data-nav-id="2">Lịch sử</a>
@@ -113,33 +113,26 @@
                                     </li>
 
                                     <li class=" has-children">
-                                        <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">Sản Phẩm</a>
+                                        <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">{{ trans('messages.products') }}</a>
                                     </li>
 
                                     <li class=" has-children">
-                                        <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="mjsProduct">Tin tức & sự kiện</a>
+                                        <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="mjsProduct">{{ trans('messages.news') }}</a>
+                                        <?php
+                                        $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+                                        ?>
                                         <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="#" data-nav-id="2">Tin Amavet</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="#" data-nav-id="3">Tin kỹ thuật</a>
-                                            </li>
-
-                                            <li class="">
-                                                <a href="#" data-nav-id="3">Tin thị trường</a>
-                                            </li>
-
-                                            <li class="">
-                                                <a href="#" data-nav-id="3">Hoạt động xã hội</a>
-                                            </li>
+                                            @foreach($categoryNews as $value)
+                                                <li class="">
+                                                    <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2">{{$value['name']}}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
 
-
                                     <li class="">
                                         <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">Liên Hệ</a>
+                                           data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
                                     </li>
 
                                     <li id="mf-active-menu" class="mf-active-menu"></li>
