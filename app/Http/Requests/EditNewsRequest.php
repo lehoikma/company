@@ -16,17 +16,16 @@ class EditNewsRequest extends Request
         return [
             'title_news' => 'required',
             'content_news' => 'required',
-//            'fileToUpload' => 'required | mimes:jpeg,jpg,png'
+            'description_news' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'title_news.required' => 'Vui lè´“ng nh?p tè´¥n tin t?c ',
-            'content_news.required' => 'Vui lè´“ng nh?p mè´‘ t? tin t?c ',
-//            'fileToUpload.required' => 'Vui lè´“ng ch?n hè´¿nh ?nh è©¬?i di?n cho s?n ph?m',
-//            'fileToUpload.mimes' => 'Vui lè´“ng ch?n hè´¿nh l?i è©¬?nh d?ng file ?nh',
+            'title_news.required' => 'Vui l√≤ng nh·∫≠p t√™n tin t·ª©c',
+            'content_news.required' => 'Vui l√≤ng nh·∫≠p n·ªôi dung tin t·ª©c ',
+            'description_news.required' => 'Vui l√≤ng nh·∫≠p m√¥ t·∫£ tin t·ª©c ',
         ];
 
     }

@@ -46,6 +46,29 @@
 
             <div class="col-md-6" style="margin-top: 15px">
                 <label>Mô tả về tin tức ( Tiếng Việt )<span style="color: red">(*)</span></label>
+                <textarea name="description_news[0]" rows="7" class="form-control">{{old('description_news.0')}}</textarea>
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Mô tả về tin tức ( Tiếng Anh)</label>
+                <textarea name="description_news[1]" rows="7" class="form-control">{{old('description_news.1')}}</textarea>
+            </div>
+
+            <div class="col-md-12 ">
+                <div class="col-md-6" style="padding-left: 0px">
+                    @if ($errors->has('description_news.0'))
+                        <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.0') }}</p>
+                    @endif
+                </div>
+                <div class="col-md-6">
+                    @if ($errors->has('description_news.1'))
+                        <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.1') }}</p>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Nội dung ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <textarea id="editor1" name="content_news[0]" rows="7" class="form-control ckeditor">{{old('content_news.0')}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
@@ -55,7 +78,7 @@
             </div>
 
             <div class="col-md-6" style="margin-top: 15px">
-                <label>Mô tả về tin tức ( Tiếng Anh)</label>
+                <label>Nội dung ( Tiếng Anh)</label>
                 <textarea id="editor2" name="content_news[1]" rows="7" class="form-control ckeditor">{{old('content_news.1')}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 

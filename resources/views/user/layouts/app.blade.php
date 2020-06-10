@@ -92,7 +92,7 @@
                                            data-nav-id="home">{{ trans('messages.home') }}</a>
                                     </li>
                                     <li class="">
-                                        <a href="index.html" class=" " title="Trang chủ" data-xf-key="1"
+                                        <a href="/" class=" " title="Trang chủ" data-xf-key="1"
                                            data-nav-id="home">{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
@@ -108,7 +108,7 @@
                                     </li>
 
                                     <li class="">
-                                        <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
+                                        <a href="#" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
                                            data-nav-id="home">Lĩnh vực hoạt động</a>
                                     </li>
 
@@ -174,10 +174,10 @@
             <div class="bocongthuong">
 
                 <a href="#" target="_blank">
-                    <img alt="" border="0" class="img-editor" src="styles/image/bocongthuong.png">
+                    <img alt="" border="0" class="img-editor" src="/styles/image/bocongthuong.png">
                 </a>
 
-                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="index.html">Tập đoàn amavet</a></div>
+                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="#">Tập đoàn amavet</a></div>
                 <div class="design"><a href="http://bicweb.vn/" target="_blank">Thiết kế website</a> bởi <a href=""
                                                                                                             target="_blank">BICWeb.vn&trade;</a>
                 </div>
@@ -192,11 +192,11 @@
             <ul class="menu">
 
                 <li class="">
-                    <a href="index.html" class=" " title="Trang chủ" data-nav-id="">Trang chủ</a>
+                    <a href="/" class=" " title="Trang chủ" data-nav-id="">Trang chủ</a>
                 </li>
 
                 <li class="">
-                    <a href="linhvuchoatdong.html" class=" " title="Lĩnh vực hoạt động" data-nav-id="">Lĩnh vực hoạt động</a>
+                    <a href="/" class=" " title="Lĩnh vực hoạt động" data-nav-id="">Lĩnh vực hoạt động</a>
                 </li>
 
                 <li class=" menu-item-has-children">

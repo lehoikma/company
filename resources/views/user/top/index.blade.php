@@ -66,7 +66,7 @@
                 <div id="content-home">
                     <div id="code_widget-3" class="widget">
                         <div class="widget-wrap">
-                            <h4 class="widgettitle"><span>Sản phẩm</span></h4>
+                            <h4 class="widgettitle"><span>{{trans('messages.products')}}</span></h4>
                             <div class="product-home">
 
                                 <div class="item-product-home" style="width: 50%">

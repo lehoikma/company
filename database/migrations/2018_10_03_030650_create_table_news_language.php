@@ -19,6 +19,7 @@ class CreateTableNewsLanguage extends Migration
             $table->integer('news_id');
             $table->integer('languages_id');
             $table->string('title')->nullable();
+            $table->text('description')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();
             $table->softDeletes();

@@ -45,7 +45,8 @@ class NewsController extends Controller
                     'languages_id' => $i+1,
                     'content' => $request['content_news'][$i],
                     'image' => $filename,
-                    'title' => $request['title_news'][$i]
+                    'title' => $request['title_news'][$i],
+                    'description' => $request['description_news'][$i]
                 ]);
             }
 
@@ -74,8 +75,8 @@ class NewsController extends Controller
     public function showEditNews($id)
     {
         $news = NewsLanguage::where('news_id', $id)->get();
-
         $categoryNews = CategoriesNewsLanguage::admin()->get();
+
         if (isset($news) && !empty($news)) {
 
             return view('admin.news.edit_news', [
@@ -103,6 +104,7 @@ class NewsController extends Controller
             for ($i=0; $i<2; $i++) {
                 $newsEdit = NewsLanguage::where('id', $request['news_id'][$i])->update([
                     'content' => $request['content_news'][$i],
+                    'description' => $request['description_news'][$i],
                     'category_news_id' => $request['select_cate_news'],
                     'title' => $request['title_news'][$i],
                     'image' => $filename

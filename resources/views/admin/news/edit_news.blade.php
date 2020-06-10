@@ -31,13 +31,29 @@
                 <select class="form-control" id="sel1" name="select_cate_news">
                     <option value=""></option>
                     @foreach($categoryNews as $value)
-                        <option value="{{$value['news_category_id']}}" {{ $value['category_news_id']==$news[0]['news_category_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
+                        <option value="{{$value['news_category_id']}}" {{ $value['news_category_id']==$news[0]['category_news_id'] ? 'selected' : ''}}>{{$value['name']}}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="col-md-6" style="margin-top: 15px">
                 <label>Mô tả về tin tức ( Tiếng Việt )<span style="color: red">(*)</span></label>
+                <textarea name="description_news[0]" rows="7" class="form-control">{{$news[0]['description']}}</textarea>
+                @if ($errors->has('description_news.0'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.0') }}</p>
+                @endif
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Mô tả về tin tức ( Tiếng Anh)</label>
+                <textarea name="description_news[1]" rows="7" class="form-control">{{$news[1]['description']}}</textarea>
+                @if ($errors->has('description_news.1'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.1') }}</p>
+                @endif
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Nội dung tin tức ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <textarea id="editor1" name="content_news[0]" rows="7" class="form-control ckeditor">{{$news[0]['content']}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
@@ -49,7 +65,7 @@
                 @endif
             </div>
             <div class="col-md-6" style="margin-top: 15px">
-                <label>Mô tả về tin tức ( Tiếng Anh)</label>
+                <label>Nội dung tin tức ( Tiếng Anh)</label>
                 <textarea id="editor2" name="content_news[1]" rows="7" class="form-control ckeditor">{{$news[1]['content']}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 

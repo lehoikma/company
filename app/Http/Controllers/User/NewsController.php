@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoriesNewsLanguage;
 use App\Models\CategoryProductsLanguages;
 use App\Models\NewsLanguage;
 use App\Models\ProductsLanguages;
@@ -21,9 +22,10 @@ class NewsController extends Controller
 
     public function listCategory($title, $id) {
         $listNewsCategory = NewsLanguage::User()->where('category_news_id', $id)->paginate(20);
+        $categoryName = CategoriesNewsLanguage::User()->where('news_category_id', $id)->first();
         return view('user.news.list',[
-            'title' => $title,
-            'listNewsCategory' => $listNewsCategory
+            'listNewsCategory' => $listNewsCategory,
+            'categoryName' => $categoryName
         ]);
     }
 
