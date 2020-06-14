@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-md-12 col-xs-12 col-sm-12 mf-textarea-field">
                                 <p>
-                                    <textarea name="message" cols="40" rows="4" placeholder="Nội dung..."></textarea>
+                                    <textarea name="message" cols="40" rows="4" placeholder="Nội dung..." style="height: auto"></textarea>
                                 </p>
                             </div>
                             <div class="text-center mf-submit col-md-12 col-xs-12 col-sm-12">
