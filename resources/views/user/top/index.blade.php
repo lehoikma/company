@@ -128,52 +128,25 @@
                         <div class="widget-wrap">
                             <h4 class="widgettitle"><span>Tin AMAVET</span></h4>
                             <div class="main-posts">
-                                <div class="post entry">
+                                @foreach($newsAmavet as $value)
+                                    <div class="post entry">
                                     <a href="#" title="" class="alignleft">
-                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
+                                        <img width="320" src="upload/{{$value['image']}}" style="height: 110px"/>
                                     </a>
                                     <h3 class="widget-item-title">
                                         <a href="#">
-                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
+                                            {{$value['title']}}
                                         </a>
                                     </h3>
-                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
+                                    <p class="byline post-info">Ngày đăng : <span class="date time">{{date_format($value['created_at'],"Y-m-d")}}</span>
                                     </p>
-                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
+                                    <p>{{$value['description']}}</p>
                                     <div class="clear"></div>
                                 </div>
-
-                                <div class="post entry">
-                                    <a href="#" title="" class="alignleft">
-                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
-                                    </a>
-                                    <h3 class="widget-item-title">
-                                        <a href="#">
-                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
-                                        </a>
-                                    </h3>
-                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
-                                    </p>
-                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
-                                    <div class="clear"></div>
-                                </div>
-
-                                <div class="post entry">
-                                    <a href="#" title="" class="alignleft">
-                                        <img width="320" height="240" src="styles/image/0e729ee22b22d17c8833-min-320x240.jpg"/>
-                                    </a>
-                                    <h3 class="widget-item-title">
-                                        <a href="#">
-                                            Dược Phẩm Hoa Linh chung tay cùng cộng đồng đẩy lùi Covid-19
-                                        </a>
-                                    </h3>
-                                    <p class="byline post-info">Ngày đăng : <span class="date time" title="2020-05-08T10:30:18+07:00">08/05/2020</span>
-                                    </p>
-                                    <p>Trước những diễn biến phức tạp của dịch Covid-19, với mục đích chung tay cùng cộng đồng chống dịch,</p>
-                                    <div class="clear"></div>
-                                </div>
+                                @endforeach
                             </div>
-                            <p class="more-from-category"><a href="#" title="Tin công ty">Xem thêm</a>
+                            <p class="more-from-category">
+                                <a href="{{route('news_list_ctg',['title' => 'tin-amavet', 'id' => 1])}}">Xem thêm</a>
                             </p>
                         </div>
                     </div>
@@ -196,82 +169,29 @@
                             </a>
                         </h2>
                     </div>
-                    <div class="n-items owl-carousel">
 
-                        <article class="n-item first">
-                            <div class="item-box">
-                                <figure>
-                                    <a href="#" title="" target="_self">
-                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
-                                    </a>
-                                </figure>
-                                <div class="n-title">
-                                    <a href="#" title="" class="title" target="_self">
-                                        <h3>Tặng gà giống hỗ trợ sinh kế cho nông dân</h3>
-                                    </a>
-                                </div>
-                                <div class="n-desc">
-                                    Ngày 18/5/2020, Tập đoàn amavet đã trao tặng gà giống cho các hộ nông dân nghèo xã
-                                    Kháng Nhật (Tuyên Quang) nhằm hỗ trợ sinh kế và phát triển chăn nuôi.
-                                    <p>
-                                        <a class="more-link" href="#">
-                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
-                                        </a>
-                                    </p>
-                                </div>
+                    <article class="n-item first">
+                        <div class="item-box">
+                            <figure>
+                                <a href="#" title="" target="_self">
+                                    <img src="upload/{{$newsSocial['image']}}" class="img-responsive">
+                                </a>
+                            </figure>
+                            <div class="n-title">
+                                <a href="#" title="" class="title" target="_self">
+                                    <h3>{{$newsSocial['title']}}</h3>
+                                </a>
                             </div>
-                        </article>
-
-                        <article class="n-item normal">
-                            <div class="item-box">
-                                <figure>
-                                    <a href="#" title="" target="_self">
-                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
+                            <div class="n-desc">
+                                {{$newsSocial['description']}}
+                                <p>
+                                    <a class="more-link" href="#">
+                                        Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
                                     </a>
-                                </figure>
-                                <div class="n-title">
-                                    <a href="#" title="" class="title" target="_self">
-                                        <h3>amavet tiếp sức phòng chống dịch Covid 19</h3>
-                                    </a>
-                                </div>
-                                <div class="n-desc">
-                                    Ngày 8/4/2020, Công ty TNHH Liên Doanh amavet Austfeed  đã trao tặng số tiền 20 triệu
-                                    đồng cho lãnh đạo huyện Châu Thành - tỉnh Đồng Tháp, tiếp sức cho công tác phòng
-                                    chống dịch Covid...
-                                    <p>
-                                        <a class="more-link" href="">
-                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
-                                        </a>
-                                    </p>
-                                </div>
+                                </p>
                             </div>
-                        </article>
-
-                        <article class="n-item normal">
-                            <div class="item-box">
-                                <figure>
-                                    <a href="#" title="" target="_self">
-                                        <img src="styles/image/thumb-img__fotor_2.jpg" class="img-responsive">
-                                    </a>
-                                </figure>
-                                <div class="n-title">
-                                    <a href="#" title="" class="title" target="_self">
-                                        <h3>amavet tiếp sức phòng chống dịch Covid 19</h3>
-                                    </a>
-                                </div>
-                                <div class="n-desc">
-                                    Ngày 8/4/2020, Công ty TNHH Liên Doanh amavet Austfeed  đã trao tặng số tiền 20 triệu
-                                    đồng cho lãnh đạo huyện Châu Thành - tỉnh Đồng Tháp, tiếp sức cho công tác phòng
-                                    chống dịch Covid...
-                                    <p>
-                                        <a class="more-link" href="">
-                                            Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-gallery">
@@ -286,10 +206,7 @@
 
                     <div class="group-library">
                         <div class="gall-items">
-
-                            <iframe width="100%" height="285" src="https://www.youtube.com/embed/RwCNos-k5OM" frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen=""></iframe>
+                            {!! $videos['videos'] !!}
                             <div class="owl-carousel"></div>
 
                         </div>

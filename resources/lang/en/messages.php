@@ -12,4 +12,5 @@ return [
     'order' => 'Order',
     'image' => 'Image',
     'WORKING_TIME' => 'WORKING TIME',
+    'phone' => 'Phone',
 ];

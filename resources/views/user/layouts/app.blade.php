@@ -131,7 +131,7 @@
                                     </li>
 
                                     <li class="">
-                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
+                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
                                            data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
                                     </li>
 

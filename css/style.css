@@ -2956,3 +2956,110 @@ img {
 .slick-arrow.slick-hidden {
     display: none;
 }
+.group-library iframe {
+    width: 100%;
+    height: 280px;
+}
+
+.contactpage .icon-banner .svg-icon {
+    color: #fff443;
+    font-size: 65px
+}
+
+.contactpage .grd-banner {
+    margin-top: 70px;
+    margin-bottom: 70px
+}
+
+.contact-pagebox {
+    padding: 45px 30px 40px;
+    border: 1px solid #ddd;
+}
+
+.contactpage .grd-banner-style-2 .image {
+    float: none
+}
+
+.contact-pagebox {
+    clear: both;
+    background-size: cover;
+    margin-bottom: 30px
+}
+
+.contactpage-form{
+    padding:42px 30px;
+    border:1px solid #ddd}
+
+.contactpage-form .error {
+    color: #9cc212
+}
+
+.contactpage-form input[type="text"],
+.contactpage-form input[type="email"],
+.contactpage-form select,
+.contactpage-form textarea {
+    width: 100%;
+    border: 1px solid #f2f2f2;
+    height: 40px;
+    border-radius: 0;
+    padding: 10px;
+}
+
+.grd-contact-box ul {
+    padding: 0
+}
+
+.grd-contact-box ul li {
+    list-style: none
+}
+
+.grd-contact-box ul li .name {
+    width: 100%;
+    color: #2e2e2e;
+    font-family: 'Noto Sans', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-weight: 500
+}
+
+.grd-contact-box ul li .value {
+    width: 100%;
+    margin-bottom: 0
+}
+
+.grd-contact-box ul li .value .text-green {
+    color: #9cc212
+}
+
+.grd-contact-box ul li .seasons {
+    margin-bottom: 0;
+    margin-top: 10px;
+    color: #2e2e2e;
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif
+}
+
+.grd-contact-box ul li:last-child .value {
+    margin-bottom: 0
+}
+
+.grd-contact-box ul li:nth-child(1),
+.grd-contact-box ul li:nth-child(2) {
+    margin-bottom: 40px
+}
+.btn-style-two {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background: #fff;
+    color: #9cc212;
+    -webkit-border-radius: 35px;
+    border-radius: 35px;
+    border: 2px solid #9cc212;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 5px 17px;
+    outline: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+}

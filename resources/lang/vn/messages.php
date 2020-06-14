@@ -12,4 +12,5 @@ return [
     'order' => 'Đặt Hàng',
     'image' => 'Hình Ảnh',
     'WORKING_TIME' => 'THỜI GIAN LÀM VIỆC',
+    'phone' => 'Điện thoại',
 ];
