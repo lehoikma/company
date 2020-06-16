@@ -3,9 +3,9 @@
 
     <!--Slider-->
     <div class="slider sliderBanner">
-        <img src="https://hanofeed.com/data/mjct/o/0/224.jpg?1573113905" style="width: 100%; height: 100%"/>
-        <img src="https://hanofeed.com/data/mjct/o/0/166.jpg?1555244698" style="width: 100%; height: 100%"/>
-        <img src="https://hanofeed.com/data/mjct/o/0/226.jpg?1573114105" style="width: 100%; height: 100%"/>
+        @foreach($sliders as $value)
+        <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
+        @endforeach
     </div>
 
     <div class="introduction">
@@ -130,11 +130,11 @@
                             <div class="main-posts">
                                 @foreach($newsAmavet as $value)
                                     <div class="post entry">
-                                    <a href="#" title="" class="alignleft">
+                                    <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" class="alignleft">
                                         <img width="320" src="upload/{{$value['image']}}" style="height: 110px"/>
                                     </a>
                                     <h3 class="widget-item-title">
-                                        <a href="#">
+                                        <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">
                                             {{$value['title']}}
                                         </a>
                                     </h3>
@@ -173,19 +173,19 @@
                     <article class="n-item first">
                         <div class="item-box">
                             <figure>
-                                <a href="#" title="" target="_self">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
                                     <img src="upload/{{$newsSocial['image']}}" class="img-responsive">
                                 </a>
                             </figure>
                             <div class="n-title">
-                                <a href="#" title="" class="title" target="_self">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
                                     <h3>{{$newsSocial['title']}}</h3>
                                 </a>
                             </div>
                             <div class="n-desc">
                                 {{$newsSocial['description']}}
                                 <p>
-                                    <a class="more-link" href="#">
+                                    <a class="more-link" href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">
                                         Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
                                     </a>
                                 </p>

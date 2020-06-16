@@ -2722,7 +2722,7 @@ img {
 }
 
 .page-content {
-    padding: 40px 0;
+    padding: 10px 0;
 }
 
 .article-detail .title-article {
@@ -3051,10 +3051,10 @@ img {
     -webkit-appearance: button;
     cursor: pointer;
     background: #fff;
-    color: #9cc212;
+    color: #089346;
     -webkit-border-radius: 35px;
     border-radius: 35px;
-    border: 2px solid #9cc212;
+    border: 2px solid #089346;
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 500;

@@ -69,6 +69,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/sua-hinh-anh/{id}', 'ImagesController@showEditImage')->name('show_edit_image');
     Route::post('/sua-hinh-anh', 'ImagesController@editImage')->name('edit_image');
     Route::get('/xoa-hinh-anh/{id}', 'ImagesController@deleteImage')->name('delete_image');
+
+    //Sliders
+    Route::get('/tao-slider', 'SlidersController@registerSlider')->name('register_slider');
+    Route::post('/luu-slider', 'SlidersController@saveSlider')->name('save_register_slider');
+    Route::get('/danh-sach-slider', 'SlidersController@listSlider')->name('list_slider');
+    Route::get('/sua-slider/{id}', 'SlidersController@showEditSlider')->name('show_edit_slider');
+    Route::post('/sua-slider', 'SlidersController@editSlider')->name('edit_slider');
+    Route::get('/xoa-slider/{id}', 'SlidersController@deleteSlider')->name('delete_slider');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -85,6 +93,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
     Route::get('tim-kiem', 'SearchController@index')->name('search');
     Route::get('/hinh-anh', 'ImageController@listImage')->name('list_image');
+
 
     Route::get('/videos', 'VideosController@listVideos')->name('videos');
 });

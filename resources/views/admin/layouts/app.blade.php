@@ -117,6 +117,18 @@
                     </ul>
                 </li>
                 <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Sliders</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('register_slider')}}"><i class="fa fa-circle-o"></i> Tạo Sliders</a></li>
+                        <li><a href="{{route('list_slider')}}"><i class="fa fa-circle-o"></i> Tất cả Sliders</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
                     <a href="">
                         <i class="fa fa-laptop"></i>
                         <span>Hình Ảnh</span>
