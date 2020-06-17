@@ -1,5 +1,14 @@
 @extends('user.layouts.app')
 
+@section('title', '')
+@section('meta-description', '')
+@section('keywords', '')
+@section('meta-fb-title', '')
+@section('meta-fb-type', '')
+@section('meta-fb-url', '')
+@section('meta-fb-image', '')
+@section('meta-fb-description', '')
+
 @section('content')
     <!--    navigate-->
     <section class="navigate-container">

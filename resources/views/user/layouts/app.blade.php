@@ -5,7 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amavet</title>
+    <title>@yield('title')</title>
+
+    <meta name="description" content="@yield('meta-description')">
+    <meta name="author" content="amavet">
+    <meta name="keywords" content="@yield('keywords')"/>
+    <!--facebook-->
+    <meta property="og:title" content="@yield('meta-fb-title')">
+    <meta property="og:type" content="@yield('meta-fb-type')">
+    <meta property="og:url" content="@yield('meta-fb-url')">
+    <meta property="og:image" content="@yield('meta-fb-image')">
+    <meta property="og:site_name" content="amavet">
+    <meta property="og:description" content="@yield('meta-fb-description')">
 
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
