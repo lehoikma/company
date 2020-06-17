@@ -13,4 +13,9 @@ return [
     'image' => 'Image',
     'WORKING_TIME' => 'WORKING TIME',
     'phone' => 'Phone',
+    'scope_of_activities' => 'Scope of activities',
+    'social_activities' => 'Social Activities',
+    'lich_su' => 'History',
+    'su_menh' => 'Mission',
+    'tam_nhin' => 'Vision',
 ];

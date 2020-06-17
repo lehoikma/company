@@ -20,7 +20,9 @@
 <body class="full-width-content home header-v1 hide-topbar-mobile" data-template="mjcms_index">
 
 <div id="page" class="hfeed site">
-
+<?php
+$categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+?>
     <!--    navbar-->
     <header id="masthead" class="site-header ">
         <div class="header-main clearfix">
@@ -96,24 +98,31 @@
                                            data-nav-id="home">{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
-                                                <a href="#" data-nav-id="2">Lịch sử</a>
+                                                <a href="#" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="#" data-nav-id="3">Sứ mệnh</a>
+                                                <a href="#" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="#" data-nav-id="3">Tầm nhìn</a>
+                                                <a href="#" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
                                             </li>
                                         </ul>
                                     </li>
 
                                     <li class="">
                                         <a href="#" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
-                                           data-nav-id="home">Lĩnh vực hoạt động</a>
+                                           data-nav-id="home">{{ trans('messages.scope_of_activities') }}</a>
                                     </li>
 
                                     <li class=" has-children">
                                         <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">{{ trans('messages.products') }}</a>
+                                        <ul class="sub-menu">
+                                            @foreach($categoryProducts as $value)
+                                                <li class="">
+                                                    <a href="#" data-nav-id="0">{{$value['name']}}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </li>
 
                                     <li class=" has-children">
@@ -148,8 +157,8 @@
         </div>
         <div class="col-xs-12 language-custom" style="text-align: center;padding: 5px;display: none">
             <div>
-                <a href="http://vanxuanphongthuy.com/change-language/en"><img src="/image/en.jpg"></a>&nbsp;
-                <a href="http://vanxuanphongthuy.com/change-language/vn"><img src="/image/vn.jpg"></a>
+                <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
+                <a href="{{route('user.change-language','en')}}"><img src="/image/vn.jpg"></a>
             </div>
         </div>
     </header>
@@ -178,9 +187,6 @@
                 </a>
 
                 <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="#">Tập đoàn amavet</a></div>
-                <div class="design"><a href="http://bicweb.vn/" target="_blank">Thiết kế website</a> bởi <a href=""
-                                                                                                            target="_blank">BICWeb.vn&trade;</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -192,74 +198,52 @@
             <ul class="menu">
 
                 <li class="">
-                    <a href="/" class=" " title="Trang chủ" data-nav-id="">Trang chủ</a>
+                    <a href="/" title="Trang chủ" data-nav-id="">{{ trans('messages.home') }}</a>
                 </li>
-
-                <li class="">
-                    <a href="/" class=" " title="Lĩnh vực hoạt động" data-nav-id="">Lĩnh vực hoạt động</a>
-                </li>
-
-                <li class=" menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">Sản Phẩm</a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="#" data-nav-id="0">Cám gà Hanofeed</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="1">Cám lợn Hanofeed</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="2">Cám vịt ngan Hanofeed</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="3">Cám cá Hanofeed</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class=" menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="">Tin tức & sự kiện</a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="#" data-nav-id="0">Tin ngành</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="1">Tin amavet</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="2">amavet với công đồng</a>
-                        </li>
-                        <li class="">
-                            <a href="#" data-nav-id="3">Góc báo chí</a>
-                        </li>
-                    </ul>
-                </li>
-
 
                 <li class="menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">Tin
-                        tức</a>
+                    <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">{{ trans('messages.introduce') }}</a>
                     <ul class="sub-menu">
                         <li class="">
-                            <a href="#" data-nav-id="0">Truyền thông HanoFeed</a>
+                            <a href="#" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
                         </li>
-
                         <li class="">
-                            <a href="#" data-nav-id="1">Góc kỹ thuật</a>
+                            <a href="#" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
                         </li>
-
                         <li class="">
-                            <a href="#" data-nav-id="2">Tuyển Dụng</a>
-                        </li>
-
-                        <li class="">
-                            <a href="#" data-nav-id="mjReviews">Chia Sẻ</a>
+                            <a href="#" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
                         </li>
                     </ul>
                 </li>
 
                 <li class="">
-                    <a href="#" class="" data-nav-id="">Liên Hệ</a>
+                    <a href="/" class=" " title="Lĩnh vực hoạt động" data-nav-id="">{{ trans('messages.scope_of_activities') }}</a>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
+                    <ul class="sub-menu">
+                        @foreach($categoryProducts as $value)
+                        <li class="">
+                            <a href="#" data-nav-id="0">{{$value['name']}}</a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </li>
+
+                <li class=" menu-item-has-children">
+                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="">{{ trans('messages.news') }}</a>
+                    <ul class="sub-menu">
+                        @foreach($categoryNews as $value)
+                            <li class="">
+                                <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2">{{$value['name']}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </li>
+
+                <li class="">
+                    <a href="{{route('contacts')}}" class="" data-nav-id="">{{ trans('messages.contact') }}</a>
                 </li>
 
             </ul>
@@ -267,34 +251,35 @@
     </div>
     <!--nav mobie-->
 
-    <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
-
 </div>
-
+<div id="fb-root"></div>
+<!-- footer -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '1538328022993159',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="fb-customerchat" page_id="104623037966408"></div>
 
 </body>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/touchSwipe.js" type="text/javascript"></script>
-<script src="/js/custom.js" type='text/javascript'></script>
 <script src="/js/navbar.min.js" type='text/javascript'></script>
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
-<script>
-    jQuery(document).ready(function($) {
-        $('.sliderBanner').slick({
-            dots: false,
-            infinite: true,
-            speed: 3000,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            arrows: false,
-
-        });
-    });
-
-</script>
+<script src="/js/custom.js" type='text/javascript'></script>
 
 <style>
 </style>

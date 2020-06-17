@@ -13,4 +13,9 @@ return [
     'image' => 'Hình Ảnh',
     'WORKING_TIME' => 'THỜI GIAN LÀM VIỆC',
     'phone' => 'Điện thoại',
+    'scope_of_activities' => 'Lĩnh vực hoạt động',
+    'social_activities' => 'Hoạt Động Xã Hội',
+    'lich_su' => 'Lịch sử',
+    'su_menh' => 'Sứ mệnh',
+    'tam_nhin' => 'Tầm nhìn',
 ];

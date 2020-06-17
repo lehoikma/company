@@ -282,4 +282,5 @@
         </section>
     </div>
     <!--    brands-->
+
 @endsection
