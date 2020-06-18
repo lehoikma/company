@@ -11,10 +11,26 @@ use Illuminate\Support\Facades\DB;
 
 class IntroducesController extends Controller
 {
-    public function index()
+    public function indexHistory()
     {
         $introduces = IntroducesLanguages::all();
-        return view('admin.introduces.index', [
+        return view('admin.introduces.indexHistory', [
+            'introduces' => $introduces
+        ]);
+    }
+
+    public function indexMission()
+    {
+        $introduces = IntroducesLanguages::all();
+        return view('admin.introduces.indexMission', [
+            'introduces' => $introduces
+        ]);
+    }
+
+    public function indexVision()
+    {
+        $introduces = IntroducesLanguages::all();
+        return view('admin.introduces.indexVision', [
             'introduces' => $introduces
         ]);
     }

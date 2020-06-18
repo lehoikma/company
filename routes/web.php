@@ -24,8 +24,16 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/top', 'IndexController@top')->name('admin_top');
-    Route::get('/tao-gioi-thieu', 'IntroducesController@index')->name('introduces');
-    Route::post('/save-gioi-thieu', 'IntroducesController@saveIntroduces')->name('save_introduces');
+
+    Route::get('/tao-lich-su', 'IntroducesController@indexHistory')->name('index_history');
+    Route::post('/save-lich-su', 'IntroducesController@saveHistory')->name('save_history');
+
+    Route::get('/tao-su-menh', 'IntroducesController@indexMission')->name('index_mission');
+    Route::post('/save-su-menh', 'IntroducesController@saveMission')->name('save_mission');
+
+    Route::get('/tao-tam-nhin', 'IntroducesController@indexVision')->name('index_vision');
+    Route::post('/save-tam-nhin', 'IntroducesController@saveVision')->name('save_vision');
+
     Route::get('/tao-danh-muc', 'CategoryProductsController@index')->name('category_prd_index');
     Route::post('/luu-danh-muc', 'CategoryProductsController@save')->name('category_prd_save');
     Route::get('/sua-danh-muc/{id}', 'CategoryProductsController@edit')->name('category_prd_edit');

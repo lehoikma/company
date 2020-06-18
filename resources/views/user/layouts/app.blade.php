@@ -105,8 +105,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                            data-nav-id="home">{{ trans('messages.home') }}</a>
                                     </li>
                                     <li class="">
-                                        <a href="/" class=" " title="Trang chủ" data-xf-key="1"
-                                           data-nav-id="home">{{ trans('messages.introduce') }}</a>
+                                        <a title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
                                                 <a href="#" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
@@ -121,12 +120,11 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </li>
 
                                     <li class="">
-                                        <a href="#" class=" " title="Lĩnh vực hoạt động" data-xf-key="1"
-                                           data-nav-id="home">{{ trans('messages.scope_of_activities') }}</a>
+                                        <a href="#" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>
                                     </li>
 
                                     <li class=" has-children">
-                                        <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="mjsProduct">{{ trans('messages.products') }}</a>
+                                        <a class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
                                         <ul class="sub-menu">
                                             @foreach($categoryProducts as $value)
                                                 <li class="">
@@ -137,7 +135,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </li>
 
                                     <li class=" has-children">
-                                        <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="mjsProduct">{{ trans('messages.news') }}</a>
+                                        <a class="dropdown-toggle " title="{{ trans('messages.news') }}" >{{ trans('messages.news') }}</a>
                                         <?php
                                         $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
                                         ?>

@@ -39,14 +39,14 @@
                             <li>
                                 <p class="name">{{trans('messages.phone')}}</p>
                                 <p class="value">
-                                    <a href="tel:0971093355" title="phone">0971 09 33 55</a>
+                                    <a href="tel:0971093355" title="phone">0971 99 88 77</a>
                                 </p>
                             </li>
                             <li>
                                 <p class="name">Email</p>
                                 <p class="value">
-                                    <a href="mailto:info@hanofeed.com" title="email">
-                                        <span class="p-navgroup-linkText">info@hanofeed.com</span>
+                                    <a href="mailto:info@amavet.com.vn" title="email">
+                                        <span class="p-navgroup-linkText">info@amavet.com.vn</span>
                                     </a>
                                 </p>
                             </li>
