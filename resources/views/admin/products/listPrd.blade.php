@@ -22,9 +22,6 @@
                                                 Hình Ảnh
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
-                                                Giá
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                 Ngày tạo
                                             </th>
                                             <th></th>
@@ -35,7 +32,6 @@
                                             <tr role="row">
                                                 <td>{{$value['name']}}</td>
                                                 <td>{!! $value['image'] ? '<img src="/upload/'.$value['image'].'" width="100">' : '' !!}</td>
-                                                <td>{{$value['price']}}</td>
                                                 <td>{{$value['created_at']}}</td>
                                                 <td>
                                                     <a href="{{route('prd_edit', $value['products_id'])}}">
@@ -67,6 +63,7 @@
     <script>
         $(function () {
             $("#example1").DataTable({
+                "order": [[ 3, "desc" ]],
                 "pageLength": 10,
                 "paging": true,
                 "info" : false

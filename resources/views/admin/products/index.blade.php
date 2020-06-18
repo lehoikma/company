@@ -65,15 +65,6 @@
                     <p class="help-block text-left" style="color: red">{{ $errors->first('content.0') }}</p>
                 @endif
             </div>
-            <div class="col-md-6" style="margin-top: 15px">
-                <label>Giá Bán :</label>
-                <div class="form-group">
-                    <input type="text" name="price" class="form-control" placeholder="Nhập giá" value="{{old('price')}}">
-                </div>
-                @if ($errors->has('price'))
-                    <p class="help-block text-left" style="color: red">{{ $errors->first('price') }}</p>
-                @endif
-            </div>
             <div class=" col-md-12" style="margin-top: 10px">
                 <label>Hình ảnh đại diện <span style="color: red">(*)</span></label>
                 <input type="file" name="fileToUpload">

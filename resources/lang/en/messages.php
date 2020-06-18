@@ -18,4 +18,5 @@ return [
     'lich_su' => 'History',
     'su_menh' => 'Mission',
     'tam_nhin' => 'Vision',
+    'news_amavet' => 'News Amavet',
 ];

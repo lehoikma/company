@@ -17,6 +17,6 @@ class Products extends Base
      * @var array
      */
     protected $fillable = [
-        'name', 'image', 'price', 'content', 'status'
+        'name', 'image', 'content', 'status'
     ];
 }

@@ -78,65 +78,25 @@
                         <div class="widget-wrap">
                             <h4 class="widgettitle"><span>{{trans('messages.products')}}</span></h4>
                             <div class="product-home">
-
-                                <div class="item-product-home" style="width: 50%">
+                                @foreach($products as $value)
+                                    <div class="item-product-home" style="width: 50%">
                                     <div class="img-product">
-                                        <a href="#" title="">
-                                            <img width="250" height="250" src="styles/image/e8317b90062bfe75a73a.jpg" class="" alt=""/>
+                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="{{$value['name']}}">
+                                            <img width="250" height="250" src="/upload/{{$value['image']}}" class="" alt=""/>
                                         </a>
                                     </div>
                                     <p class="text-center ">
-                                        <a href="#" title=""> Nước Rửa Tay Ngọc Thảo
-                                        </a>
+                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="">{{$value['name']}}</a>
                                     </p>
                                 </div>
-
-                                <div class="item-product-home" style="width: 50%">
-                                    <div class="img-product">
-                                        <a href="#" title="">
-                                            <img width="250" height="227" src="styles/image/trai-huong-bien-264x240.png" class="" alt=""/>
-                                        </a>
-                                    </div>
-                                    <p class="text-center ">
-                                        <a href="#" title="">
-                                            Nước Súc Miệng Hương Biển
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="item-product-home" style="width: 50%">
-                                    <div class="img-product">
-                                        <a href="#" title="">
-                                            <img width="250" height="208" src="styles/image/2-288x240.jpg" class="" alt=""/>
-                                        </a>
-                                    </div>
-                                    <p class="text-center ">
-                                        <a href="#" title="">
-                                            Nước Súc Miệng Dược Liệu Ngọc Châu
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="item-product-home" style="width: 50%">
-                                    <div class="img-product">
-                                        <a href="#" title="">
-                                            <img width="250" height="208" src="styles/image/2-288x240.jpg" class="" alt=""/>
-                                        </a>
-                                    </div>
-                                    <p class="text-center ">
-                                        <a href="#" title="">
-                                            Nước Súc Miệng Dược Liệu Ngọc Châu
-                                        </a>
-                                    </p>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>
 
                     <div class="widget caia-post-list-widget">
                         <div class="widget-wrap">
-                            <h4 class="widgettitle"><span>Tin AMAVET</span></h4>
+                            <h4 class="widgettitle"><span>{{trans('messages.news_amavet')}}</span></h4>
                             <div class="main-posts">
                                 @foreach($newsAmavet as $value)
                                     <div class="post entry">
@@ -175,7 +135,7 @@
                     <div class="box-title">
                         <h2>
                             <a class="text" href="#" target="_self">
-                                Hoạt động xã hội
+                                {{trans('messages.social_activities')}}
                             </a>
                         </h2>
                     </div>

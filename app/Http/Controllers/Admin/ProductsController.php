@@ -44,22 +44,18 @@ class ProductsController extends Controller
                     'languages_id' => $i+1,
                     'name' => $request['name'][$i],
                     'content' => $request['content'][$i],
-                    'price' => $request['price'],
                     'image' => $filename,
                     'status' => 1
                 ]);
             }
+            \Session::flash('alert-success', 'Tạo Sản Phẩm Thành Công');
             DB::commit();
 
         } catch (\Exception $e) {
+            \Session::flash('alert-warning', 'Tạo Sản Phẩm Lỗi');
             DB::rollback();
         }
 
-        if ($saveProducts) {
-            \Session::flash('alert-success', 'Tạo Sản Phẩm Thành Công');
-        } else {
-            \Session::flash('alert-warning', 'Tạo Sản Phẩm Lỗi');
-        }
         return redirect()->route('prd_listPrd');
     }
 
@@ -105,7 +101,6 @@ class ProductsController extends Controller
                     'name' => $request['name'][$i],
                     'category_product_id' => $request['select_cate_prd'],
                     'content' => $request['content'][$i],
-                    'price' => $request['price'],
                     'image' => $filename,
                     'status' => 1
                 ]);

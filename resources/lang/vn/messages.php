@@ -18,4 +18,5 @@ return [
     'lich_su' => 'Lịch sử',
     'su_menh' => 'Sứ mệnh',
     'tam_nhin' => 'Tầm nhìn',
+    'news_amavet' => 'Tin Amavet',
 ];

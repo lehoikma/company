@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\CookTable;
 use App\Models\NewsLanguage;
+use App\Models\ProductsLanguages;
 use App\Models\Sliders;
 use App\Models\Slides;
 use App\Models\Videos;
@@ -24,11 +25,13 @@ class TopController extends Controller
             ->orderBy('id', 'desc')->first();
         $videos = Videos::orderBy('id', 'desc')->first();
         $sliders = Sliders::all();
+        $products = ProductsLanguages::User()->orderBy('created_at', 'desc')->take(10)->get();
         return view('user.top.index',[
             'newsAmavet' => $newsAmavet,
             'newsSocial' => $newsSocial,
             'videos' => $videos,
             'sliders' => $sliders,
+            'products' => $products,
         ]);
     }
 }
