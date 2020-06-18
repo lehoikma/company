@@ -188,7 +188,7 @@
                                         <img src="styles/image/Images-anh_cat_bang_kt.jpg">
                                     </a>
                                 </figure>
-                                <a class="text" href="#">
+                                <a class="text album" href="#">
                                     <h4>Thư viện ảnh</h4>
                                 </a>
                             </div>
@@ -199,18 +199,7 @@
                                         <img src="styles/image/Images-anh_cat_bang_kt.jpg">
                                     </a>
                                 </figure>
-                                <a class="text" href="#">
-                                    <h4>Thư viện ảnh</h4>
-                                </a>
-                            </div>
-
-                            <div class="item">
-                                <figure>
-                                    <a href="#">
-                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
-                                    </a>
-                                </figure>
-                                <a class="text" href="#">
+                                <a class="text album" href="#">
                                     <h4>Thư viện ảnh</h4>
                                 </a>
                             </div>
