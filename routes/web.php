@@ -85,6 +85,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/sua-slider/{id}', 'SlidersController@showEditSlider')->name('show_edit_slider');
     Route::post('/sua-slider', 'SlidersController@editSlider')->name('edit_slider');
     Route::get('/xoa-slider/{id}', 'SlidersController@deleteSlider')->name('delete_slider');
+
+    Route::get('/danh-sach-lien-he', 'ContactsController@listContacts')->name('list_contacts');
+    Route::get('/update-status-contacts/{id}', 'ContactsController@updateStatusContacts')->name('update_status_contacts');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -95,12 +98,13 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
     Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list_ctg');
 
-    Route::get('lich-su', 'IntroducesController@indexLichSu')->name('lich_su_user');
-    Route::get('su-menh', 'IntroducesController@indexSumenh')->name('su_menh_user');
-    Route::get('tam-nhin', 'IntroducesController@indexTamNhin')->name('tam_nhin_user');
+    Route::get('gioi-thieu/lich-su', 'IntroducesController@indexLichSu')->name('lich_su_user');
+    Route::get('gioi-thieu/su-menh', 'IntroducesController@indexSumenh')->name('su_menh_user');
+    Route::get('gioi-thieu/tam-nhin', 'IntroducesController@indexTamNhin')->name('tam_nhin_user');
 
     Route::get('san-pham', 'ProductsController@listProduct')->name('products_list');
     Route::get('lien-he', 'ContactsController@index')->name('contacts');
+    Route::post('send-lien-he', 'ContactsController@sendContacts')->name('send_contacts');
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
     Route::get('tim-kiem', 'SearchController@index')->name('search');
     Route::get('/hinh-anh', 'ImageController@listImage')->name('list_image');

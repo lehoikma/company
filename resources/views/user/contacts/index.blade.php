@@ -28,7 +28,13 @@
                     </li>
                 </ol>
             </div>
-
+            <div class="col-md-12">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(Session::has('alert-' . $msg))
+                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                    @endif
+                @endforeach
+            </div>
             <div class="col-sm-5">
                 <div class="contact-pagebox">
                     <div class="grd-contact-box">
@@ -62,28 +68,28 @@
             </div>
             <div class="col-sm-7">
 
-                <form action="#" method="post" class="block contactForm" data-xf-init="ajax-submit" data-force-flash-message="true">
-
+                <form action="{{route('send_contacts')}}" method="post" class="block contactForm" >
+                    {{csrf_field()}}
                     <div class="contactpage-form">
                         <div class="row">
                             <div class="col-md-6 col-xs-12 col-sm-12">
                                 <p>
-                                    <input name="fullname" value="" size="40" placeholder="Họ &amp; Tên*" type="text">
+                                    <input name="fullname" value="" size="40" placeholder="Họ &amp; Tên*" type="text" required>
                                 </p>
                             </div>
                             <div class="col-md-6 col-xs-12 col-sm-12">
                                 <p>
-                                    <input name="email" value="" size="40" placeholder="Email*" type="email">
+                                    <input name="email" value="" size="40" placeholder="Email*" type="email" required>
                                 </p>
                             </div>
                             <div class="col-md-12 col-xs-12 col-sm-12">
                                 <p>
-                                    <input name="phone" value="" size="40" placeholder="{{trans('messages.phone')}}" type="text">
+                                    <input name="phone" value="" size="40" placeholder="{{trans('messages.phone')}}" type="text" required>
                                 </p>
                             </div>
                             <div class="col-md-12 col-xs-12 col-sm-12 mf-textarea-field">
                                 <p>
-                                    <textarea name="message" cols="40" rows="4" placeholder="Nội dung..." style="height: auto"></textarea>
+                                    <textarea name="message" cols="40" rows="4" placeholder="Nội dung..." style="height: auto" required></textarea>
                                 </p>
                             </div>
                             <div class="text-center mf-submit col-md-12 col-xs-12 col-sm-12">
@@ -91,11 +97,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-message"></div>
-
                 </form>
-
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(function () {
+            $(".alert" ).fadeOut(10000);
+        });
+    </script>
 @endsection

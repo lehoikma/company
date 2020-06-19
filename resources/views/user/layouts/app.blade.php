@@ -289,7 +289,5 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
 <script src="/js/custom.js" type='text/javascript'></script>
-
-<style>
-</style>
+@yield('script')
 </html>

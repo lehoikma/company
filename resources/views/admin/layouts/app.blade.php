@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -140,6 +139,18 @@
                         <li><a href="{{route('create_category_image')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Hình Ảnh</a></li>
                         <li><a href="{{route('register_image')}}"><i class="fa fa-circle-o"></i> Tạo Hình Ảnh</a></li>
                         <li><a href="{{route('list_images')}}"><i class="fa fa-circle-o"></i> Tất cả Hình Ảnh</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-laptop"></i>
+                        <span>Liên Hệ</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Danh Sách Liên Hệ</a></li>
                     </ul>
                 </li>
                 <li class="header"> </li>
