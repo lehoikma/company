@@ -108,13 +108,13 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <a title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
-                                                <a href="#" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
+                                                <a href="{{route('lich_su_user')}}">{{ trans('messages.lich_su') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="#" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
+                                                <a href="{{route('su_menh_user')}}">{{ trans('messages.su_menh') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="#" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
+                                                <a href="{{route('tam_nhin_user')}}">{{ trans('messages.tam_nhin') }}</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -214,13 +214,13 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                     <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">{{ trans('messages.introduce') }}</a>
                     <ul class="sub-menu">
                         <li class="">
-                            <a href="#" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
+                            <a href="{{route('lich_su_user')}}" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
                         </li>
                         <li class="">
-                            <a href="#" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
+                            <a href="{{route('su_menh_user')}}" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
                         </li>
                         <li class="">
-                            <a href="#" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
+                            <a href="{{route('tam_nhin_user')}}" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
                         </li>
                     </ul>
                 </li>

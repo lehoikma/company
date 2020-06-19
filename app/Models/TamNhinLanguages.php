@@ -19,4 +19,9 @@ class TamNhinLanguages extends Base
     protected $fillable = [
         'tam_nhin_id', 'languages_id', 'content'
     ];
+
+    public function scopeUser($query) {
+        $locateId = $this->getLocate(config('app.locale'));
+        return $query->where('languages_id', $locateId);
+    }
 }
