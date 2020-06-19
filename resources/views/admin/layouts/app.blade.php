@@ -73,9 +73,9 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('introduces')}}"><i class="fa fa-circle-o"></i> Lịch Sử</a></li>
-                        <li><a href="{{route('introduces')}}"><i class="fa fa-circle-o"></i> Sứ mệnh</a></li>
-                        <li><a href="{{route('introduces')}}"><i class="fa fa-circle-o"></i> Tầm nhìn</a></li>
+                        <li><a href="{{route('index_history')}}"><i class="fa fa-circle-o"></i> Lịch Sử</a></li>
+                        <li><a href="{{route('index_mission')}}"><i class="fa fa-circle-o"></i> Sứ mệnh</a></li>
+                        <li><a href="{{route('index_vision')}}"><i class="fa fa-circle-o"></i> Tầm nhìn</a></li>
                     </ul>
                 </li>
 

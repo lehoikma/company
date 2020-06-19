@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tạo, Sửa Giới Thiệu
+    Tạo, Sửa Sứ Mệnh
 @endsection
 @section('content')
     <div class="col-md-12 flash-message">
@@ -11,7 +11,7 @@
         @endforeach
     </div> <!-- end .flash-message -->
     <div class="col-md-12">
-        <form action="{{route('save_introduces')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('save_mission')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <input name="id[0]" value="{{$introduces[0]['id'] or ''}}" type="hidden">
             <input name="id[1]" value="{{$introduces[1]['id'] or ''}}" type="hidden">

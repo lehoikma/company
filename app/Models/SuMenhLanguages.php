@@ -10,7 +10,7 @@ class SuMenhLanguages extends Base
 {
     use SoftDeletes;
 
-    protected $table = 'tam_nhin_languages';
+    protected $table = 'su_menh_languages';
     /**
      * The attributes that are mass assignable.
      *

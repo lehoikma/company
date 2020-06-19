@@ -21,7 +21,7 @@ class SaveIntroducesRequest extends Request
     public function messages()
     {
         return [
-            'content.0.required' => 'Vui lòng nhập giới thiệu',
+            'content.0.required' => 'Vui lòng nhập nội dung',
         ];
 
     }
