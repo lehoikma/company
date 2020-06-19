@@ -45,7 +45,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                         </a>
 
                         <h2 class="site-description">Với tôn chỉ duy nhất: “LÀM HÀI LÒNG KHÁCH HÀNG LÀ GIÁ TRỊ SỐNG CÒN
-                            CỦA DOANH NGHIỆP” HANOFEED cam kết sẽ mang đến cho khách hàng những dịch vụ tốt nhất và chất
+                            CỦA DOANH NGHIỆP” AMAVET cam kết sẽ mang đến cho khách hàng những dịch vụ tốt nhất và chất
                             lượng phục vụ hoàn hảo</h2>
                     </div>
                     <div class="header-content col-lg-9 col-md-12 col-xs-12 pull-right">

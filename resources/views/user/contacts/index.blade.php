@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', '')
+@section('title', 'Liên Hệ')
 @section('meta-description', '')
 @section('keywords', '')
 @section('meta-fb-title', '')
@@ -13,14 +13,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 navigate" style="margin: 10px 0px">
-                <ol itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a class="home" itemprop="item" href="/vi/home.h.html">
+                <ol itemscope="">
+                    <li itemprop="itemListElement" itemscope="">
+                        <a class="home" itemprop="item">
                             <span itemprop="name">{{trans('messages.home')}}&nbsp;&gt;&nbsp;</span>
                         </a>
                         <meta itemprop="position" content="1">
                     </li>
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <li itemprop="itemListElement">
                         <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3">
                             <span itemprop="name">{{trans('messages.contact')}}<span></span></span>
                         </a>

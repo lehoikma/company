@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\SaveHotelRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SaveIntroducesRequest;
-use App\Models\Introduces;
-use App\Models\IntroducesLanguages;
 use App\Models\Lichsu;
 use App\Models\LichSuLanguages;
 use App\Models\SuMenh;
