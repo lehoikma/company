@@ -108,8 +108,8 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
     Route::get('tim-kiem', 'SearchController@index')->name('search');
     Route::get('/hinh-anh', 'ImageController@listImage')->name('list_image');
-
-
     Route::get('/videos', 'VideosController@listVideos')->name('videos');
+
+    Route::get('/linh-vuc-hoat-dong', 'ScopeOfActivitiesController@listActivities')->name('list_activities');
 });
 
