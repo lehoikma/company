@@ -124,11 +124,11 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </li>
 
                                     <li class=" has-children">
-                                        <a class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
+                                        <a href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
                                         <ul class="sub-menu">
                                             @foreach($categoryProducts as $value)
                                                 <li class="">
-                                                    <a href="#" data-nav-id="0">{{$value['name']}}</a>
+                                                    <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0">{{$value['name']}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>

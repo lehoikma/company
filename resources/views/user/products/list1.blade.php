@@ -11,11 +11,6 @@
                             <span itemprop="name">{{trans('messages.home')}}&nbsp;&nbsp;&gt;&nbsp;&nbsp;{{trans('messages.products')}}&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement">
-                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3">
-                            <span itemprop="name">{{$title}}<span></span></span>
-                        </a>
-                    </li>
                 </ol>
             </div>
         </div>
@@ -29,12 +24,12 @@
                 <div class="box-title">
                     <h2>
                         <a class="text" href="#" target="_self">
-                            {{$title}}
+                            TẤT CẢ SẢN PHẨM
                         </a>
                     </h2>
                 </div>
                 <div class="n-items row">
-                    @foreach($listProductCategory as $value)
+                    @foreach($data as $value)
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
                 <div class="post-thumb">
                     <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}">
@@ -54,5 +49,5 @@
         </div>
     </section>
 
-    <div class="text-center">{{$listProductCategory->links()}}</div>
+    <div class="text-center">{{$data->links()}}</div>
 @endsection

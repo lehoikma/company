@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', '')
+@section('title', 'Trang Chủ')
 @section('meta-description', '')
 @section('keywords', '')
 @section('meta-fb-title', '')
@@ -26,8 +26,8 @@
                                                                                                   target="_blank">Từ Nông
                         trại tới Bàn ăn</a>”</strong>. <br>Sứ mệnh của chúng tôi là cung cấp những sản phẩm<br><strong>“<a
                             href="#">Sạch từ nguồn</a>”</strong>;
-                mang lại cuộc sống hạnh phúc và<br>trọn vẹn cho khách hàng. Ở bất kỳ lĩnh vực hoạt động nào, <br>amavet
-                cũng đã và đang làm hết mình vì lợi ích<br>của khách hàng, xã hội, vì sự phát triển bền vững<br>của
+                mang lại cuộc sống hạnh phúc và<br>trọn vẹn cho khách hàng. Ở bất kỳ lĩnh vực <br> hoạt động nào, amavet
+                cũng đã và đang làm hết <br>mình vì lợi ích của khách hàng, xã hội, <br>vì sự phát triển bền vững<br> của
                 ngành Nông nghiệp Việt Nam.
             </div>
             <div class="menu-items">
@@ -35,7 +35,7 @@
                 <div class="item item0">
                     <figure>
                         <a class="text" href='#' title=''>
-                            <img alt="" src="styles/image/thucancn.png"/>
+                            <img alt="" src="styles/image/Thuoc-thu-y2.png"/>
                         </a>
                     </figure>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="item item1">
                     <figure>
                         <a class="text" href='#' title=''>
-                            <img alt="" src="styles/image/channuoi.png"/>
+                            <img alt="" src="styles/image/duc-giong.png"/>
                         </a>
                     </figure>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="item item2">
                     <figure>
                         <a class="text" href='#' title=''>
-                            <img alt="" src="styles/image/duocthuy.png"/>
+                            <img alt="" src="styles/image/vacxin-LMLM.png"/>
                         </a>
                     </figure>
                 </div>
@@ -59,7 +59,7 @@
                 <div class="item item3">
                     <figure>
                         <a class="text" href='#' title=''>
-                            <img alt="" src="styles/image/tpcb.png"/>
+                            <img alt="" src="styles/image/vacxin-chung.png"/>
                         </a>
                     </figure>
                 </div>
@@ -131,15 +131,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-event">
-
                     <div class="box-title">
                         <h2>
-                            <a class="text" href="#" target="_self">
+                            <a class="text" href="{{route('news_list_ctg',['title' => str_slug(trans('messages.social_activities')), 'id' => 4])}}" target="_self">
                                 {{trans('messages.social_activities')}}
                             </a>
                         </h2>
                     </div>
-
                     <article class="n-item first">
                         <div class="item-box">
                             <figure>

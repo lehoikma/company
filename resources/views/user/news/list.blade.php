@@ -68,4 +68,6 @@
 
         </div>
     </section>
+
+    <div class="text-center">{{$listNewsCategory->links()}}</div>
 @endsection
