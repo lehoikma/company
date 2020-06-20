@@ -80,6 +80,21 @@
 
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-th"></i> <span>Lĩnh Vực Hoạt Động</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('index_thuoc_thu_y')}}"><i class="fa fa-circle-o"></i> Thuốc thú y</a></li>
+                        <li><a href="{{route('index_duc_giong')}}"><i class="fa fa-circle-o"></i> Đực giống</a></li>
+                        <li><a href="{{route('index_vac_xin_oie')}}"><i class="fa fa-circle-o"></i> Vacxin OIE</a></li>
+                        <li><a href="{{route('index_vac_xin_fmd')}}"><i class="fa fa-circle-o"></i> Vacxin FMD</a></li>
+                    </ul>
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-th"></i> <span>Sản Phẩm</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>

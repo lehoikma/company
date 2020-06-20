@@ -88,6 +88,19 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::get('/danh-sach-lien-he', 'ContactsController@listContacts')->name('list_contacts');
     Route::get('/update-status-contacts/{id}', 'ContactsController@updateStatusContacts')->name('update_status_contacts');
+
+    // Linh Vuc Hoat Dong
+    Route::get('/tao-thuoc-thu-y', 'LinhVucHoatDongController@indexThuocThuY')->name('index_thuoc_thu_y');
+    Route::post('/save-thuoc-thu-y', 'LinhVucHoatDongController@saveThuocThuY')->name('save_thuoc_thu_y');
+
+    Route::get('/tao-duc-giong', 'LinhVucHoatDongController@indexDucGiong')->name('index_duc_giong');
+    Route::post('/save-duc-giong', 'LinhVucHoatDongController@saveDucGiong')->name('save_duc_giong');
+
+    Route::get('/tao-vac-xin-oie', 'LinhVucHoatDongController@indexVacXinOie')->name('index_vac_xin_oie');
+    Route::post('/save-vac-xin-oie', 'LinhVucHoatDongController@saveVacXinOie')->name('save_vac_xin_oie');
+
+    Route::get('/tao-vac-xin-fmd', 'LinhVucHoatDongController@indexVacXinFmd')->name('index_vac_xin_fmd');
+    Route::post('/save-vac-xin-fmd', 'LinhVucHoatDongController@saveVacXinFmd')->name('save_vac_xin_fmd');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
