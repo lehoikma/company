@@ -120,19 +120,19 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </li>
 
                                     <li class="">
-                                        <a href="#" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>
+                                        <a href="{{route('list_activities')}}" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
-                                                <a href="#">Thuốc thú y</a>
+                                                <a href="{{route('detail_thuoc_thu_y')}}">Thuốc thú y</a>
                                             </li>
                                             <li class="">
-                                                <a href="#">Đực giống</a>
+                                                <a href="{{route('detail_duc_giong')}}">Đực giống</a>
                                             </li>
                                             <li class="">
-                                                <a href="#">Vacxin OIE</a>
+                                                <a href="{{route('detail_vac_xin_oie')}}">Vacxin OIE</a>
                                             </li>
                                             <li class="">
-                                                <a href="#">Vacxin FMD</a>
+                                                <a href="{{route('detail_vac_xin_fmd')}}">Vacxin FMD</a>
                                             </li>
                                         </ul>
                                     </li>

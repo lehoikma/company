@@ -124,5 +124,9 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/videos', 'VideosController@listVideos')->name('videos');
 
     Route::get('/linh-vuc-hoat-dong', 'ScopeOfActivitiesController@listActivities')->name('list_activities');
+    Route::get('/thuoc-thu-y', 'ScopeOfActivitiesController@detailThuocThuY')->name('detail_thuoc_thu_y');
+    Route::get('/duc-giong', 'ScopeOfActivitiesController@detailDucGiong')->name('detail_duc_giong');
+    Route::get('/vac-xin-oie', 'ScopeOfActivitiesController@detailVacXinOie')->name('detail_vac_xin_oie');
+    Route::get('/vac-xin-fmd', 'ScopeOfActivitiesController@detailVacXinFmd')->name('detail_vac_xin_fmd');
 });
 
