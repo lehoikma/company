@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\EditImagesRequest;
+use App\Http\Requests\SaveCategoryImageRequest;
 use App\Http\Requests\SaveImageRequest;
 use App\Models\CategoriesImages;
 use App\Models\Images;
@@ -20,14 +21,16 @@ class ImagesController extends Controller
         ]);
     }
 
-    public function saveCategoryImage(Request $request)
+    public function saveCategoryImage(SaveCategoryImageRequest $request)
     {
-        if ($request['name_category_image'] == '') {
-            return redirect()->route('create_category_image');
-        }
+        $image = $request->file('fileToUpload');
+        $filename = time() . '.' . $image->extension();
+        $image->move('upload/', $filename);
+
         CategoriesImages::create([
             'name' => $request['name_category_image'],
             'slug' => str_slug($request['name_category_image']),
+            'image' => $filename
         ]);
         return redirect()->route('create_category_image');
     }
@@ -56,12 +59,24 @@ class ImagesController extends Controller
 
     public function editCategoryImage(Request $request)
     {
+        if (!empty($request->file('fileToUpload'))) {
+            $image = $request->file('fileToUpload');
+            $filename = time() . '.' . $image->extension();
+            $image->move('upload/', $filename);
+        } else {
+            $editImage = Images::where('id', $request['image_id'])->first();
+            $filename = $editImage['image'];
+        }
+
         $categoryProduct = CategoriesImages::where('id', $request['id_category_image'])->first();
         if (empty($categoryProduct)) {
             return redirect()->route('admin_top');
         }
         CategoriesImages::where('id', $request['id_category_image'])
-            ->update(['name' => $request['name_category_image']]);
+            ->update([
+                'name' => $request['name_category_image'],
+                'image' => $filename
+            ]);
 
         return redirect()->route('create_category_image');
     }

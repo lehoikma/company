@@ -151,7 +151,7 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{route('create_category_image')}}"><i class="fa fa-circle-o"></i> Tạo Danh Mục Hình Ảnh</a></li>
+                        <li><a href="{{route('create_category_image')}}"><i class="fa fa-circle-o"></i> Tạo Bài Viết Hình Ảnh</a></li>
                         <li><a href="{{route('register_image')}}"><i class="fa fa-circle-o"></i> Tạo Hình Ảnh</a></li>
                         <li><a href="{{route('list_images')}}"><i class="fa fa-circle-o"></i> Tất cả Hình Ảnh</a></li>
                     </ul>
