@@ -104,6 +104,19 @@
         margin: 15% auto 0;
     }
 
+    .contact-footer {
+        width: 100%;
+    }
+
+    .bocongthuong {
+        text-align: center;
+        width: 50%;
+    }
+
+    .web-views {
+        width: 50%;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -207,9 +220,23 @@
         padding: 30px 0 0;
         width: 100%;
     }
+
+    .contact-footer {
+        width: 100%;
+    }
+
+    .bocongthuong {
+        text-align: center;
+        width: 50%;
+    }
+
+    .web-views {
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 667px) {
+
 
     /*about-home*/
     .video-home {
@@ -225,6 +252,19 @@
     /*service*/
     .service {
         display: none;
+    }
+
+    .contact-footer {
+        width: 100%;
+    }
+
+    .bocongthuong {
+        text-align: center;
+        width: 50%;
+    }
+
+    .web-views {
+        width: 50%;
     }
 
 }
@@ -490,6 +530,19 @@
 
     .contact-info .main-item .title {
         font-size: 20px;
+    }
+
+    .contact-footer {
+        width: 100%;
+    }
+
+    .bocongthuong {
+        text-align: center;
+        width: 100%;
+    }
+
+    .web-views {
+        width: 100%;
     }
 }
 
