@@ -12,7 +12,7 @@
 
 
 .img-editor {
-    max-width: 100%;
+    max-width: 80%;
 }
 
 
@@ -406,13 +406,39 @@
     color: #fff;
     padding-top: 25px;
     float: left;
-    width: 67%;
+    width: 50%;
 }
 
 .bocongthuong {
     float: left;
-    width: 33%;
-    padding-top: 25px;
+    width: 25%;
+    padding: 25px 15px 0 15px;
+}
+
+.web-views {
+    float: left;
+    width: 25%;
+    padding: 25px 15px 0 15px;
+}
+
+.amount-view {
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.title-view {
+    font-size: 15px;
+}
+
+.count-view {
+    font-weight: bold;
+}
+
+.title-footer {
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .brand {

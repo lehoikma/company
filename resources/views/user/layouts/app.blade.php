@@ -194,7 +194,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
             <div class="contact-footer">
 
                 <div class="main-item-ft">
-                    <div class="title">CÔNG TY CỔ PHẦN TẬP ĐOÀN amavet</div>
+                    <div class="title title-footer">CÔNG TY CỔ PHẦN TẬP ĐOÀN amavet</div>
                     <address><span class="add">VPĐD: Tầng 8 Tòa nhà Hudland số 6 Nguyễn Hữu Thọ, phường Hoàng Liệt, quận Hoàng Mai, Thành phố Hà Nội</span>
                         <span class="add"><br>ĐC (viết hóa đơn): Thị tứ Bô Thời, Hồng Tiến, Khoái Châu, Hưng Yên.</span>
                         <span class="phone"> <span><br>T: 0243 2033 666</span> <span>F: 0243 2033 111</span> <span><br>E: info@amavet-group.com</span> <span>W: www.amavet-group.com</span> </span>
@@ -210,6 +210,27 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                 </a>
 
                 <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="#">Tập đoàn amavet</a></div>
+            </div>
+
+            <div class="web-views">
+
+                <div class="main-item-ft">
+                    <div class="title-footer">THỐNG KÊ LƯỢT TRUY CẬP</div>
+
+                    <div class="amount-view">
+                        <span class="title-view">Tổng số truy cập:</span>
+                        <span class="count-view">1000</span>
+                    </div>
+                    <div class="amount-view">
+                        <span class="title-view">Đang truy cập:</span>
+                        <span class="count-view">1000</span>
+                    </div>
+                    <div class="amount-view">
+                        <span class="title-view">Số lượt truy cập trong ngày:</span>
+                        <span class="count-view">1000</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </footer>
