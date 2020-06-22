@@ -34,7 +34,7 @@
 
                 <div class="item item0">
                     <figure>
-                        <a class="text" href='#' title=''>
+                        <a class="text" href='{{route('detail_thuoc_thu_y')}}' title=''>
                             <img alt="" src="styles/image/Thuoc-thu-y2.png"/>
                         </a>
                     </figure>
@@ -42,7 +42,7 @@
 
                 <div class="item item1">
                     <figure>
-                        <a class="text" href='#' title=''>
+                        <a class="text" href='{{route('detail_duc_giong')}}' title=''>
                             <img alt="" src="styles/image/duc-giong.png"/>
                         </a>
                     </figure>
@@ -50,7 +50,7 @@
 
                 <div class="item item2">
                     <figure>
-                        <a class="text" href='#' title=''>
+                        <a class="text" href='{{route('detail_vac_xin_oie')}}' title=''>
                             <img alt="" src="styles/image/vacxin-LMLM.png"/>
                         </a>
                     </figure>
@@ -58,7 +58,7 @@
 
                 <div class="item item3">
                     <figure>
-                        <a class="text" href='#' title=''>
+                        <a class="text" href='{{route('detail_vac_xin_fmd')}}' title=''>
                             <img alt="" src="styles/image/vacxin-chung.png"/>
                         </a>
                     </figure>
