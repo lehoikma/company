@@ -6,7 +6,7 @@
 @section('meta-fb-title'){{$product['name']}}@endsection
 @section('meta-fb-type', '')
 @section('meta-fb-url'){{url()->current()}}@endsection
-@section('meta-fb-image', asset('/upload/'.$product->image))
+@section('meta-fb-image', '/upload/'.$product->image)
 @section('meta-fb-description', '')
 
 @section('content')
