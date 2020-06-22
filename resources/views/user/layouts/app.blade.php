@@ -194,11 +194,11 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
             <div class="contact-footer">
 
                 <div class="main-item-ft">
-                    <div class="title title-footer">CÔNG TY CỔ PHẦN TẬP ĐOÀN amavet</div>
-                    <address><span class="add">VPĐD: Tầng 8 Tòa nhà Hudland số 6 Nguyễn Hữu Thọ, phường Hoàng Liệt, quận Hoàng Mai, Thành phố Hà Nội</span>
-                        <span class="add"><br>ĐC (viết hóa đơn): Thị tứ Bô Thời, Hồng Tiến, Khoái Châu, Hưng Yên.</span>
-                        <span class="phone"> <span><br>T: 0243 2033 666</span> <span>F: 0243 2033 111</span> <span><br>E: info@amavet-group.com</span> <span>W: www.amavet-group.com</span> </span>
-                        <span class="site"> <span><br> Giấy phép đăng ký kinh doanh số 0900841823 - Ngày cấp: 3/7/2012 - Nơi cấp: Sở Kế hoạch và Đầu tư tỉnh Hưng Yên.</span> </span>
+                    <div class="title title-footer">CÔNG TY CỔ PHẦN KINH DOANH THUỐC THÚ Y AMAVET</div>
+                    <address><span class="add">ĐKKD: AD03 - 11 đường Anh Đào, khu đô thị Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội</span>
+                        <span class="add"><br>Địa chỉ nhà máy : Lô CN 06-8, KCN Ninh Hiệp, Gia Lâm, Hà Nội</span>
+                        <span class="add"><br>Đại diện pháp luật: Nguyễn Văn Bách</span>
+                        <span class="phone"> <span><br>T: 024 3676 2933</span> <span>F: 0243 2033 111</span> <span><br>E: info@amavet.com.vn</span> <span>W: www.amavet.com.vn & amavet.vn</span> </span>
                     </address>
                 </div>
 
@@ -209,7 +209,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                     <img alt="" border="0" class="img-editor" src="/styles/image/bocongthuong.png">
                 </a>
 
-                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="#">Tập đoàn amavet</a></div>
+                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="/">AMAVET</a></div>
             </div>
 
             <div class="web-views">
