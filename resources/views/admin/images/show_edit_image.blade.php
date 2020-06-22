@@ -8,7 +8,7 @@
             {{csrf_field()}}
             <input type="hidden" name="image_id" value="{{$image['id']}}">
             <div class="col-md-8">
-                <label>Danh Mục Hình Ảnh:<span style="color: red">(*)</span></label>
+                <label>Danh Mục Bài Viết Hình Ảnh:<span style="color: red">(*)</span></label>
                 <select class="form-control" id="sel1" name="select_cate_image">
                     <option value=""></option>
                     @foreach($categoriesImages as $value)
