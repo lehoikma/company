@@ -1,16 +1,15 @@
 @extends('user.layouts.app')
+@section('title', 'Hình Ảnh')
 @section('content')
     <section class="navigate-container">
         <div class="container">
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href=""><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="" target="_self"><span>Thư viện tư liệu&nbsp; &gt;&nbsp; <span></span></span></a>
-                    <li>
-                        <a href="" target="_self"><span >Thư viện ảnh <span></span></span></a>
+                        <a href="" target="_self"><span>Thư viện ảnh<span></span></span></a>
                     </li>
                 </ol>
             </div>
@@ -25,97 +24,23 @@
             </div>
             <div class="gallery-listing">
                 <div class="row" id="gall-list">
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
+                    @foreach($categoryImage as $category)
+                        <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
+                                <a href="{{route('detail_image', ['title' => str_slug($category['name']), 'id' => $category['id']])}}">
+                                    <img src="/upload/{{$category['image']}}"></a>
                             </figure>
                             <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
+                                <a class="gall-title" href="{{route('detail_image', ['title' => str_slug($category['name']), 'id' => $category['id']])}}" target="_self">
+                                    <p>{{$category['name']}}</p>
                                 </a>
                             </div>
                         </div>
                     </article>
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
-                        <div class="item-box">
-                            <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
-                            </figure>
-                            <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
-                        <div class="item-box">
-                            <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
-                            </figure>
-                            <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
-                        <div class="item-box">
-                            <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
-                            </figure>
-                            <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
-                        <div class="item-box">
-                            <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
-                            </figure>
-                            <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
-                        <div class="item-box">
-                            <figure style="width: 100%; height: 213.514px;">
-                                <a href="">
-                                    <img src="upload/1537773999.jpeg"></a>
-                            </figure>
-                            <div class="gall-content">
-                                <a class="gall-title" href="" target="_self">
-                                    <p>Mavin liên kết đào tạo với Học viện Nông nghiệp Việt Nam</p>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
+                    @endforeach
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <a class="btn btn-loading" href="javascript:void(0)"><i class="fa fa-spinner"></i>Xem thêm</a>
-                    </div>
-                </div>
+                <div class="text-center">{{$categoryImage->links()}}</div>
             </div>
         </div>
     </section>

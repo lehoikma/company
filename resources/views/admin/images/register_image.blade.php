@@ -7,7 +7,7 @@
         <form action="{{route('save_register_image')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="col-md-8">
-                <label>Danh Mục Hình Ảnh:<span style="color: red">(*)</span></label>
+                <label>Danh Mục Bài Viết Hình Ảnh:<span style="color: red">(*)</span></label>
                 <select class="form-control" id="sel1" name="select_cate_image">
                     <option value=""></option>
                     @foreach($categoriesImages as $value)

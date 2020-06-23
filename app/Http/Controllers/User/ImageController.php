@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\CategoriesImages;
 use App\Models\Images;
+use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
@@ -15,11 +16,18 @@ class ImageController extends Controller
      */
     public function listImage()
     {
-        $listImage = Images::all();
-        $categoryImage = CategoriesImages::all();
+        $categoryImage = CategoriesImages::orderBy('created_at', 'desc')->paginate(18);
+
         return view('user.image.list_image',[
-            'listImage' => $listImage,
-            'categoryImage' => $categoryImage,
+            'categoryImage' => $categoryImage
+        ]);
+    }
+
+    public function detailImage($title, $id) {
+        $images = Images::where('category_image_id', $id)->orderBy('created_at', 'desc')->get();
+        return view('user.image.detail_image',[
+            'images' => $images,
+            'title' => $title
         ]);
     }
 

@@ -1,13 +1,13 @@
 @extends('user.layouts.app')
 
-@section('title', '')
-@section('meta-description', '')
-@section('keywords', '')
-@section('meta-fb-title', '')
+@section('title', $news['title'])
+@section('meta-description', $news['description'])
+@section('keywords', 'tin tuc amavet')
+@section('meta-fb-title', $news['title'])
 @section('meta-fb-type', '')
-@section('meta-fb-url', '')
-@section('meta-fb-image', '')
-@section('meta-fb-description', '')
+@section('meta-fb-url', url()->current())
+@section('meta-fb-image', '/upload/'.$news->image)
+@section('meta-fb-description', $news['description'])
 
 @section('content')
     <section class="navigate-container">
@@ -19,7 +19,7 @@
                             <span itemprop="name">Trang chủ&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                    <li itemprop="itemListElement">
                             <span itemprop="name">{{$news['title']}}<span></span></span>
                     </li>
                 </ol>

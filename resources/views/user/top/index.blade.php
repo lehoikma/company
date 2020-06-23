@@ -142,7 +142,7 @@
                         <div class="item-box">
                             <figure>
                                 <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
-                                    <img src="upload/{{$newsSocial['image']}}" class="img-responsive">
+                                    <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
                                 </a>
                             </figure>
                             <div class="n-title">
@@ -166,7 +166,7 @@
 
                     <div class="box-title">
                         <h2>
-                            <a class="text" href="#" target="_self">
+                            <a class="text" href="{{route('videos')}}">
                                 VIDEOS
                             </a>
                         </h2>
@@ -176,32 +176,20 @@
                         <div class="gall-items">
                             {!! $videos['videos'] !!}
                             <div class="owl-carousel"></div>
-
                         </div>
                         <div class="library">
-
-                            <div class="item">
-                                <figure>
-                                    <a href="#">
-                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
+                            @foreach($images as $image)
+                                <div class="item">
+                                    <figure>
+                                        <a href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">
+                                            <img src="/upload/{{$image['image']}}">
+                                        </a>
+                                    </figure>
+                                    <a class="text album" href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">
+                                        <h4>Thư viện ảnh</h4>
                                     </a>
-                                </figure>
-                                <a class="text album" href="#">
-                                    <h4>Thư viện ảnh</h4>
-                                </a>
-                            </div>
-
-                            <div class="item">
-                                <figure>
-                                    <a href="#">
-                                        <img src="styles/image/Images-anh_cat_bang_kt.jpg">
-                                    </a>
-                                </figure>
-                                <a class="text album" href="#">
-                                    <h4>Thư viện ảnh</h4>
-                                </a>
-                            </div>
-
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 

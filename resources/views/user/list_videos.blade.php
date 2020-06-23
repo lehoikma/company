@@ -1,17 +1,36 @@
 @extends('user.layouts.app')
 @section('content')
-    <div class="row">
-        <div class="col-md-12" style="padding-bottom: 15px;
-    border-bottom: 1px solid #fff3f3;">Trang Chủ > Videos</div>
-        <h3 class="col-md-12" style="margin-bottom: 20px">Videos</h3>
-        @foreach($videos as $video)
-            <h4 class="col-md-12">{{$video['name']}}</h4>
-            <div class="videos-custom col-md-12" style="margin-bottom: 20px">
-                {!! $video['videos'] !!}
+    <section class="navigate-container">
+        <div class="container">
+            <div class="navigate">
+                <ol>
+                    <li>
+                        <a href="/"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                    </li>
+                    <li>
+                        <a href="" target="_self"><span>Videos<span></span></span></a>
+                    </li>
+                </ol>
             </div>
-        @endforeach
-        <div style="text-align: center">
-            {{$videos->render()}}
         </div>
-    </div>
+    </section>
+
+    <section class="page-content page-gallery">
+        <div class="container">
+            <div class="box-title">
+                <h1>
+                    <a class="text" href="" target="_self">Videos</a></h1>
+            </div>
+            <div class="video-listing">
+                <div class="row">
+                    @foreach($videos as $video)
+                        <div class="videos-custom col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 20px">
+                            {!! $video['videos'] !!}
+                            <h5 style="font-weight: 600">{{$video['name']}}</h5>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

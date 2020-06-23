@@ -184,6 +184,7 @@
     margin-bottom: 15px;
     position: relative;
     width: 100%;
+    border: 1px solid #4f97d0;
 }
 
 .library .item:last-of-type {
@@ -3101,4 +3102,15 @@ img {
     outline: 0;
     -webkit-transition: .5s;
     transition: .5s;
+}
+
+@media screen and (max-width: 600px) {
+    .mobile-content img {
+        width: 100% !important;
+        height: auto;
+    }
+    .video-listing iframe {
+        width: 100% !important;
+        height: auto;
+    }
 }
