@@ -65,10 +65,21 @@ class ProductsController extends Controller
     }
 
     public function delete($id) {
-        $prd = Products::find($id);
-        if (!empty($prd)) {
-            $prd->delete();
+        DB::beginTransaction();
+        try {
+            $products = Products::find($id);
+            if (!empty($products)) {
+                ProductsLanguages::where('products_id', $id)->delete();
+                $products->delete();
+            }
+
+            DB::commit();
+            \Session::flash('alert-success', 'Xoá sản phẩm thành công');
+        } catch (\Exception $e) {
+            DB::rollback();
+            \Session::flash('alert-warning', 'Xoá sản phẩm lỗi');
         }
+
         return redirect()->route('prd_listPrd');
     }
 
