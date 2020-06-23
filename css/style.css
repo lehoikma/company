@@ -466,7 +466,7 @@
 
 
 .footer {
-    background: #00559a url(../styles/image/bg_footer.png) no-repeat bottom right;
+    background: #00559a;
     clear: both;
     padding: 25px 0 25px;
 }
