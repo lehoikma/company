@@ -14,7 +14,7 @@
     <!--Slider-->
     <div class="slider sliderBanner">
         @foreach($sliders as $value)
-        <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
+            <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
         @endforeach
     </div>
 
@@ -74,15 +74,15 @@
                             <div class="product-home">
                                 @foreach($products as $value)
                                     <div class="item-product-home" style="width: 50%">
-                                    <div class="img-product">
-                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="{{$value['name']}}">
-                                            <img width="250" height="250" src="/upload/{{$value['image']}}" class="" alt=""/>
-                                        </a>
+                                        <div class="img-product">
+                                            <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="{{$value['name']}}">
+                                                <img width="250" height="250" src="/upload/{{$value['image']}}" class="" alt=""/>
+                                            </a>
+                                        </div>
+                                        <p class="text-center ">
+                                            <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="">{{$value['name']}}</a>
+                                        </p>
                                     </div>
-                                    <p class="text-center ">
-                                        <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="">{{$value['name']}}</a>
-                                    </p>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="widget-wrap">
                             <h4 class="widgettitle"><span>{{trans('messages.news_amavet')}}</span></h4>
                             <div class="main-posts">
-                               <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
+                                <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
                                     <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" title="" class="alignleft">
                                         <img width="320" src="upload/{{$firstNewsAmavet['image']}}"/>
                                     </a>
@@ -111,10 +111,10 @@
                                         @if($key == 0)
                                             @continue
                                         @endif
-                                    <li>
-                                        <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">{{$value['title']}}</a>
-                                        <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
-                                    </li>
+                                        <li>
+                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">{{$value['title']}}</a>
+                                            <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
+                                        </li>
                                     @endforeach
                                 </ul>
 
@@ -149,9 +149,9 @@
                                     <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
                                 </a>
                             </figure>
-                            <div class="n-title">
+                            <div class="n-title" style="padding:0px">
                                 <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
-                                    <h3>{{$newsSocial['title']}}</h3>
+                                    <h3 style="margin: 5px;">{{$newsSocial['title']}}</h3>
                                 </a>
                             </div>
                             <div class="n-desc">
