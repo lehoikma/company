@@ -21,8 +21,10 @@ class TopController extends Controller
      */
     public function index()
     {
+        $firstNewsAmavet = NewsLanguage::User()->where('category_news_id', 1)
+            ->orderBy('created_at', 'desc')->first();
         $newsAmavet = NewsLanguage::User()->where('category_news_id', 1)
-            ->orderBy('id', 'desc')->take(4)->get();
+            ->orderBy('created_at', 'desc')->take(6)->get();
         $newsSocial = NewsLanguage::User()->where('category_news_id', 4)
             ->orderBy('id', 'desc')->first();
         $videos = Videos::orderBy('id', 'desc')->first();
@@ -31,6 +33,7 @@ class TopController extends Controller
         $images = CategoriesImages::orderBy('created_at', 'desc')->take(2)->get();
 
         return view('user.top.index',[
+            'firstNewsAmavet' => $firstNewsAmavet,
             'newsAmavet' => $newsAmavet,
             'newsSocial' => $newsSocial,
             'videos' => $videos,

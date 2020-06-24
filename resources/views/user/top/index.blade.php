@@ -22,13 +22,7 @@
         <div class="container">
 
             <div class="intro-text">
-                Tập đoàn amavet là Doanh nghiệp<br>được tin cậy nhất về chuỗi giá trị <strong>“<a href="#"
-                                                                                                  target="_blank">Từ Nông
-                        trại tới Bàn ăn</a>”</strong>. <br>Sứ mệnh của chúng tôi là cung cấp những sản phẩm<br><strong>“<a
-                            href="#">Sạch từ nguồn</a>”</strong>;
-                mang lại cuộc sống hạnh phúc và<br>trọn vẹn cho khách hàng. Ở bất kỳ lĩnh vực <br> hoạt động nào, amavet
-                cũng đã và đang làm hết <br>mình vì lợi ích của khách hàng, xã hội, <br>vì sự phát triển bền vững<br> của
-                ngành Nông nghiệp Việt Nam.
+                Công ty Cổ phần kinh doanh thuốc thú y <br> <strong>Amavet</strong>, là doanh nghiệp chuyên nhập khẩu và phân phối<br>sản phẩm thuốc thú y, kinh doanh heo giống Đài Loan. <br> Ở bất kỳ lĩnh vực hoạt động nào, <br><strong>Amavet</strong> cũng đã và đang làm hết mình vì lợi <br>ích của khách hàng, xã hội,<br> vì sự phát triển bền vững của<br> ngành Nông nghiệp Việt Nam.
             </div>
             <div class="menu-items">
 
@@ -98,24 +92,34 @@
                         <div class="widget-wrap">
                             <h4 class="widgettitle"><span>{{trans('messages.news_amavet')}}</span></h4>
                             <div class="main-posts">
-                                @foreach($newsAmavet as $value)
-                                    <div class="post entry">
-                                    <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" class="alignleft">
-                                        <img width="320" src="upload/{{$value['image']}}" style="height: 110px"/>
+                               <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
+                                    <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" title="" class="alignleft">
+                                        <img width="320" src="upload/{{$firstNewsAmavet['image']}}"/>
                                     </a>
                                     <h3 class="widget-item-title">
-                                        <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">
-                                            {{$value['title']}}
+                                        <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}">
+                                            {{$firstNewsAmavet['title']}}
                                         </a>
                                     </h3>
-                                    <p class="byline post-info">Ngày đăng : <span class="date time">{{date_format($value['created_at'],"Y-m-d")}}</span>
+                                    <p class="byline post-info">Ngày đăng : <span class="date time">{{date_format($firstNewsAmavet['created_at'],"Y-m-d")}}</span>
                                     </p>
-                                    <p>{{$value['description']}}</p>
+                                    <p>{{$firstNewsAmavet['description']}}</p>
                                     <div class="clear"></div>
                                 </div>
-                                @endforeach
+                                <ul class="more-news">
+                                    @foreach($newsAmavet as $key => $value)
+                                        @if($key == 0)
+                                            @continue
+                                        @endif
+                                    <li>
+                                        <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">{{$value['title']}}</a>
+                                        <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
+                                    </li>
+                                    @endforeach
+                                </ul>
+
                             </div>
-                            <p class="more-from-category">
+                            <p class="more-from-category" style="margin-top: 20px">
                                 <a href="{{route('news_list_ctg',['title' => 'tin-amavet', 'id' => 1])}}">Xem thêm</a>
                             </p>
                         </div>
