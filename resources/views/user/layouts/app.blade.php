@@ -191,6 +191,12 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
 
     <footer class="footer">
         <div class="container">
+            <div class="footer__logo">
+                <a href="#">
+                    <img alt="" border="0" class="imgFooter" src="/image/logo_amavet.png">
+                </a>
+            </div>
+
             <div class="contact-footer">
 
                 <div class="main-item-ft">
@@ -203,14 +209,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                 </div>
 
             </div>
-            <div class="bocongthuong">
 
-                <a href="#" target="_blank">
-                    <img alt="" border="0" class="img-editor" src="/styles/image/bocongthuong.png">
-                </a>
-
-                <div class="copyright">&copy; 2020 Bản quyền thuộc về <a href="/">AMAVET</a></div>
-            </div>
 
             <div class="web-views">
 
