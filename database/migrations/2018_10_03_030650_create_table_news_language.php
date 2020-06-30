@@ -22,6 +22,7 @@ class CreateTableNewsLanguage extends Migration
             $table->text('description')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();
+            $table->integer('view')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

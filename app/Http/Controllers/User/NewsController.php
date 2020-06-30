@@ -12,11 +12,17 @@ class NewsController extends Controller
 {
     public function detail($title, $id) {
         $news = NewsLanguage::User()->where('news_id', $id)->first();
-        $newsFollows = NewsLanguage::User()->where('category_news_id', $news['category_news_id'])->limit(5)->inRandomOrder()->get();
-        return view('user.news.detail', [
-            'news' => $news,
-            'newsFollows' => $newsFollows
-        ]);
+        if (!empty($news)) {
+            $currentCount = $news['view'];
+            $news->view = (int) $currentCount + 1;
+            $news->save();
+
+            $newsFollows = NewsLanguage::User()->where('category_news_id', $news['category_news_id'])->limit(5)->inRandomOrder()->get();
+            return view('user.news.detail', [
+                'news' => $news,
+                'newsFollows' => $newsFollows
+            ]);
+        }
     }
 
     public function listCategory($title, $id) {

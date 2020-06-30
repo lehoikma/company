@@ -24,8 +24,8 @@
     <link rel="stylesheet" href="/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="/owl-carousel/owl.theme.default.css">
 
-    <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/responsive.css"/>
+    <link rel="stylesheet" href="/css/style.css?20200630"/>
+    <link rel="stylesheet" href="/css/responsive.css?20200630"/>
 
 </head>
 <body class="full-width-content home header-v1 hide-topbar-mobile" data-template="mjcms_index">
@@ -218,15 +218,19 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
 
                     <div class="amount-view">
                         <span class="title-view">Tổng số truy cập:</span>
-                        <span class="count-view">1000</span>
+                        <?php
+                            $product = \App\Models\ProductsLanguages::sum('view');
+                            $news = \App\Models\NewsLanguage::sum('view');
+                        ?>
+                        <span class="count-view">{{(int)$product + (int) $news}}</span>
                     </div>
                     <div class="amount-view">
-                        <span class="title-view">Đang truy cập:</span>
-                        <span class="count-view">1000</span>
+                        <span class="title-view">Số lượng truy cập sản phẩm :</span>
+                        <span class="count-view">{{(int)$product}}</span>
                     </div>
                     <div class="amount-view">
-                        <span class="title-view">Số lượt truy cập trong ngày:</span>
-                        <span class="count-view">1000</span>
+                        <span class="title-view">Số lượng truy cập tin tức :</span>
+                        <span class="count-view">{{(int) $news}}</span>
                     </div>
                 </div>
 
@@ -268,7 +272,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                     <ul class="sub-menu">
                         @foreach($categoryProducts as $value)
                         <li class="">
-                            <a href="#" data-nav-id="0">{{$value['name']}}</a>
+                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0">{{$value['name']}}</a>
                         </li>
                         @endforeach
                     </ul>

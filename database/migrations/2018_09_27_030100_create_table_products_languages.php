@@ -22,6 +22,7 @@ class CreateTableProductsLanguages extends Migration
             $table->string('image');
             $table->text('content')->nullable();
             $table->integer('status'); // Còn hàng, hết hàng
+            $table->integer('view')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

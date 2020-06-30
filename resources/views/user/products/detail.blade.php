@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <h3 class="col-md-12" style="margin-bottom: 0px">{{$product['name']}}</h3>
-                <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">{{$product['updated_at']}}</p>
+                <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
                 <div class="col-xs-12 col-md-offset-4 col-md-3">
                     <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}">
                 </div>

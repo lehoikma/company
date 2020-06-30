@@ -34,8 +34,8 @@
                         <h1>
                             <span class="title-article">{{$news['title']}}</span>
                         </h1>
+                        <p style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($news['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$news['view']}}</p>
                     </div>
-
                     <div class="n-desc">
                         {!! $news['content'] !!}
                     </div>
