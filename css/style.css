@@ -402,19 +402,21 @@
 }
 
 /* #region FOOTER */
+.footer__logo {
+    float: left;
+    width: 25%;
+    padding: 70px 15px 0 15px;
+}
+
 .contact-footer {
-    clear: both;
+    /*clear: both;*/
     color: #fff;
     padding-top: 25px;
     float: left;
     width: 50%;
 }
 
-.bocongthuong {
-    float: left;
-    width: 25%;
-    padding: 25px 15px 0 15px;
-}
+
 
 .web-views {
     float: left;

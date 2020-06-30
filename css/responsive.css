@@ -108,9 +108,10 @@
         width: 100%;
     }
 
-    .bocongthuong {
+    .footer__logo {
         text-align: center;
         width: 50%;
+        padding: 0px 15px 0 15px;
     }
 
     .web-views {
@@ -225,9 +226,10 @@
         width: 100%;
     }
 
-    .bocongthuong {
+    .footer__logo {
         text-align: center;
         width: 50%;
+        padding: 0px 15px 0 15px;
     }
 
     .web-views {
@@ -258,9 +260,10 @@
         width: 100%;
     }
 
-    .bocongthuong {
+    .footer__logo {
         text-align: center;
         width: 50%;
+        padding: 0px 15px 0 15px;
     }
 
     .web-views {
@@ -536,9 +539,10 @@
         width: 100%;
     }
 
-    .bocongthuong {
+    .footer__logo {
         text-align: center;
         width: 100%;
+        padding: 0px 15px 0 15px;
     }
 
     .web-views {
