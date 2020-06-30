@@ -44,7 +44,7 @@
                                                 <td>{{$value['title']}}</td>
                                                 <td>{!! $value['image'] ? '<img src="/upload/'.$value['image'].'" width="100">' : '' !!}</td>
                                                 <td>{{$value['author'] or 'Admin'}}</td>
-                                                <td>{{$value['created_at']}}</td>
+                                                <td>{{$value['updated_at']}}</td>
                                                 <td>
                                                     <a href="{{route('show_edit_news', $value['news_id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
@@ -77,6 +77,7 @@
     <script>
         $(function () {
             $("#example1").DataTable({
+                "order": [[ 3, "desc" ]],
                 "pageLength": 10,
                 "paging": true,
                 "info" : false

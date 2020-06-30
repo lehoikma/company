@@ -55,19 +55,13 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                 <div class="widget">
                                     <ul class="socials">
                                         <li>
-                                            <a target="_blank" rel="nofollow" href="#" title="facebook">
+                                            <a target="_blank" rel="nofollow" href="https://www.facebook.com/thuocthuyamavet/" title="facebook">
                                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                                             </a>
                                         </li>
 
                                         <li>
-                                            <a target="_blank" rel="nofollow" href="#" title="google plus">
-                                                <i class="fa fa-google" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a target="_blank" rel="nofollow" href="#" title="youtube">
+                                            <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UChZzgZwtK3hfCYEet1o7QvA?fbclid=IwAR3mIkpEp61yCse8z7mU68bLJYgMJPENS99wIqdOMP639lWtwwoKR7jm_qw" title="youtube">
                                                 <i class="fa fa-youtube" aria-hidden="true"></i>
                                             </a>
                                         </li>
@@ -160,6 +154,11 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                                 </li>
                                             @endforeach
                                         </ul>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>
                                     </li>
 
                                     <li class="">

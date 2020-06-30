@@ -36,7 +36,7 @@
                                         @foreach($images as $value)
                                             <tr role="row">
                                                 <td>{!!  '<img src="/upload/'.$value['image'].'" width="500">' !!}</td>
-                                                <td>{{$value['created_at']}}</td>
+                                                <td>{{$value['updated_at']}}</td>
                                                 <td>
                                                     <a href="{{route('show_edit_slider', $value['id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
@@ -68,6 +68,7 @@
     <script>
       $(function () {
         $("#example1").DataTable({
+          "order": [[ 1, "desc" ]],
           "pageLength": 10,
           "paging": true,
           "info" : false

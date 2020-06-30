@@ -2,7 +2,7 @@
 return [
     'home' => 'Trang Chủ',
     'introduce' => 'Giới Thiệu',
-    'news' => 'Tin Tức & Sự kiện',
+    'news' => 'Tin Tức',
     'products' => 'Sản Phẩm',
     'contact' => 'Liên Hệ',
     'link-page' => 'Trang Liên Kết',

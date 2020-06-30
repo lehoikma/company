@@ -41,7 +41,7 @@
                                             <tr role="row">
                                                 <td>{{$value['categories_image_name'] or null}}</td>
                                                 <td>{!!  '<img src="/upload/'.$value['image'].'" width="100">' !!}</td>
-                                                <td>{{$value['created_at']}}</td>
+                                                <td>{{$value['updated_at']}}</td>
                                                 <td>
                                                     <a href="{{route('show_edit_image', $value['id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
@@ -73,6 +73,7 @@
     <script>
       $(function () {
         $("#example1").DataTable({
+            "order": [[ 2, "desc" ]],
           "pageLength": 10,
           "paging": true,
           "info" : false

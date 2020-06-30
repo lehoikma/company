@@ -45,7 +45,7 @@
                                                 <td>{{$value['id']}}</td>
                                                 <td>{{$value['name']}}</td>
                                                 <td style="width: 200px">{!! $value['videos'] !!}</td>
-                                                <td>{{$value['created_at']}}</td>
+                                                <td>{{$value['updated_at']}}</td>
                                                 <td>
                                                     <a href="{{route('form_edit_videos', $value['id'])}}">
                                                         <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Sửa</button>
@@ -80,6 +80,7 @@
     <script>
       $(function () {
         $("#example1").DataTable({
+          "order": [[ 3, "desc" ]],
           "pageLength": 10,
           "paging": true,
           "info" : false
