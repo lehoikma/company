@@ -22,7 +22,9 @@
         <div class="container">
 
             <div class="intro-text">
-                Công ty Cổ phần kinh doanh thuốc thú y <br> <strong>Amavet</strong>, là doanh nghiệp chuyên nhập khẩu và phân phối<br>sản phẩm thuốc thú y, kinh doanh heo giống Đài Loan. <br> Ở bất kỳ lĩnh vực hoạt động nào, <br><strong>Amavet</strong> cũng đã và đang làm hết mình vì lợi <br>ích của khách hàng, xã hội,<br> vì sự phát triển bền vững của<br> ngành Nông nghiệp Việt Nam.
+                AMAVET là doanh nghiệp nhập khẩu phân phối <br>độc quyền vaccine lở mồm long móng FMD chủng O1 Campos<br> thị phần số 1 Việt Nam.
+                Vaccine FMD Aftogen Oleo O1<br> Campos của AMAVET có khả năng bảo hộ chéo cơ bản các<br> chủng virus lở mồm long móng đang lưu hành tại <br>Việt Nam.
+                AMAVET đồng thời cũng là <br>doanh nghiệp uy tín tốp đầu tại Việt <br>Nam về phân phối các sản phẩm <br>thuốc thú y, vaccine và đấu giá lợn <br>đực giống.
             </div>
             <div class="menu-items">
 
