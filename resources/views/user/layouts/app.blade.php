@@ -74,7 +74,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </div>
                                     <div class="pull-right">
                                         <div class="title">{{ trans('messages.WORKING_TIME') }}</div>
-                                        <div class="sub-title">T.Hai - T.Bảy: 7.30 to 17.00</div>
+                                        <div class="sub-title">T.Hai - T.Bảy: 7h45 to 16h45</div>
                                     </div>
                                 </div>
                                 <div class="widget">
@@ -102,13 +102,13 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <a title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
-                                                <a href="{{route('lich_su_user')}}">{{ trans('messages.lich_su') }}</a>
+                                                <a href="{{route('lich_su_user')}}" style="text-transform: uppercase;">{{ trans('messages.lich_su') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="{{route('su_menh_user')}}">{{ trans('messages.su_menh') }}</a>
+                                                <a href="{{route('su_menh_user')}}" style="text-transform: uppercase;">{{ trans('messages.su_menh') }}</a>
                                             </li>
                                             <li class="">
-                                                <a href="{{route('tam_nhin_user')}}">{{ trans('messages.tam_nhin') }}</a>
+                                                <a href="{{route('tam_nhin_user')}}" style="text-transform: uppercase;">{{ trans('messages.tam_nhin') }}</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -117,16 +117,16 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <a href="{{route('list_activities')}}" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>
                                         <ul class="sub-menu">
                                             <li class="">
-                                                <a href="{{route('detail_thuoc_thu_y')}}">Thuốc thú y</a>
+                                                <a href="{{route('detail_thuoc_thu_y')}}" style="text-transform: uppercase;">Thuốc thú y</a>
                                             </li>
                                             <li class="">
-                                                <a href="{{route('detail_duc_giong')}}">Đực giống</a>
+                                                <a href="{{route('detail_duc_giong')}}" style="text-transform: uppercase;">Đực giống</a>
                                             </li>
                                             <li class="">
-                                                <a href="{{route('detail_vac_xin_oie')}}">Vacxin OIE</a>
+                                                <a href="{{route('detail_vac_xin_oie')}}" style="text-transform: uppercase;">Vacxin OIE</a>
                                             </li>
                                             <li class="">
-                                                <a href="{{route('detail_vac_xin_fmd')}}">Vacxin FMD</a>
+                                                <a href="{{route('detail_vac_xin_fmd')}}" style="text-transform: uppercase;">Vacxin FMD</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -136,7 +136,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <ul class="sub-menu">
                                             @foreach($categoryProducts as $value)
                                                 <li class="">
-                                                    <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0">{{$value['name']}}</a>
+                                                    <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -150,7 +150,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <ul class="sub-menu">
                                             @foreach($categoryNews as $value)
                                                 <li class="">
-                                                    <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2">{{$value['name']}}</a>
+                                                    <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2" style="text-transform: uppercase;">{{$value['name']}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -200,10 +200,12 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
 
                 <div class="main-item-ft">
                     <div class="title title-footer">CÔNG TY CỔ PHẦN KINH DOANH THUỐC THÚ Y AMAVET</div>
-                    <address><span class="add">ĐKKD: AD03 - 11 đường Anh Đào, khu đô thị Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội</span>
-                        <span class="add"><br>Địa chỉ nhà máy : Lô CN 06-8, KCN Ninh Hiệp, Gia Lâm, Hà Nội</span>
-                        <span class="add"><br>Đại diện pháp luật: Nguyễn Văn Bách</span>
-                        <span class="phone"> <span><br>T: 024 3676 2933</span> <span>F: 0243 2033 111</span> <span><br>E: info@amavet.com.vn</span> <span>W: www.amavet.com.vn & amavet.vn</span> </span>
+                    <address><span class="add">Địa chỉ: Trụ sở: AD03 - 11 đường Anh Đào, khu đô thị Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội</span>
+                        <span class="add"><br>VPGD: Lô CN 06-8, KCN Ninh Hiệp, Gia Lâm, Hà Nội</span>
+                        <span class="add"><br>Điện thoại: 024 3676 2933</span>
+                        <span class="add"><br>Fax: 0243 2033 111</span>
+                        <span class="add"><br>Email: info@amavet.com.vn</span>
+                        <span class="add"><br>Website: www.amavet.com.vn & amavet.vn</span>
                     </address>
                 </div>
 
