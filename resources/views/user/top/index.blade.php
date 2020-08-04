@@ -20,48 +20,18 @@
 
     <div class="introduction">
         <div class="container">
-
-            <div class="intro-text">
-                AMAVET là doanh nghiệp nhập khẩu phân phối <br>độc quyền vaccine lở mồm long móng FMD chủng O1 Campos<br> thị phần số 1 Việt Nam.
-                Vaccine FMD Aftogen Oleo O1<br> Campos của AMAVET có khả năng bảo hộ chéo cơ bản các<br> chủng virus lở mồm long móng đang lưu hành tại <br>Việt Nam.
-                AMAVET đồng thời cũng là <br>doanh nghiệp uy tín tốp đầu tại Việt <br>Nam về phân phối các sản phẩm <br>thuốc thú y, vaccine và đấu giá lợn <br>đực giống.
+            <div class="banner-content col-lg-9 col-md-9 col-xs-9">
+                <div class="banner-video">
+                    <iframe src="https://www.youtube.com/embed/tn6gU27VfiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="menu-items">
-
-                <div class="item item0">
-                    <figure>
-                        <a class="text" href='{{route('detail_thuoc_thu_y')}}' title=''>
-                            <img alt="" src="styles/image/Thuoc-thu-y2.png"/>
-                        </a>
-                    </figure>
+            <div class="banner-content col-lg-3 col-md-3 col-xs-3">
+                <div class="banner-text">
+                    <label>
+                        lelellelelelellelelelelllelelelellelelelellelelellelelelellelelellelelelelell
+                    </label>
                 </div>
-
-                <div class="item item1">
-                    <figure>
-                        <a class="text" href='{{route('detail_duc_giong')}}' title=''>
-                            <img alt="" src="styles/image/duc-giong.png"/>
-                        </a>
-                    </figure>
-                </div>
-
-                <div class="item item2">
-                    <figure>
-                        <a class="text" href='{{route('detail_vac_xin_oie')}}' title=''>
-                            <img alt="" src="styles/image/vacxin-LMLM.png"/>
-                        </a>
-                    </figure>
-                </div>
-
-                <div class="item item3">
-                    <figure>
-                        <a class="text" href='{{route('detail_vac_xin_fmd')}}' title=''>
-                            <img alt="" src="styles/image/vacxin-chung.png"/>
-                        </a>
-                    </figure>
-                </div>
-
             </div>
-
         </div>
     </div>
 
@@ -136,75 +106,166 @@
     <section class="module-event">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-event">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 article-event">
                     <div class="box-title">
-                        <h2>
-                            <a class="text" href="{{route('news_list_ctg',['title' => str_slug(trans('messages.social_activities')), 'id' => 4])}}" target="_self">
+                        <h2 class="title-social">
+                            <a style="color: #ffffff" href="{{route('news_list_ctg',['title' => str_slug(trans('messages.social_activities')), 'id' => 4])}}" target="_self">
                                 {{trans('messages.social_activities')}}
                             </a>
                         </h2>
                     </div>
-                    <article class="n-item first">
-                        <div class="item-box">
-                            <figure>
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
-                                    <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
-                                </a>
-                            </figure>
+
+                    <div class="hoat-dong-xa-hoi col-lg-4">
+                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
+                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
+                        </a>
+                        <div class="item-social">
                             <div class="n-title" style="padding:0px">
                                 <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
-                                    <h3 style="margin: 5px;">{{$newsSocial['title']}}</h3>
+                                    <h3>{{$newsSocial['title']}}</h3>
                                 </a>
                             </div>
                             <div class="n-desc">
                                 {{$newsSocial['description']}}
-                                <p>
-                                    <a class="more-link" href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">
-                                        Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i>
-                                    </a>
-                                </p>
+                            </div>
+                            <div class="btn-seeMore">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
                             </div>
                         </div>
-                    </article>
 
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-gallery">
-
-                    <div class="box-title">
-                        <h2>
-                            <a class="text" href="{{route('videos')}}">
-                                VIDEOS
-                            </a>
-                        </h2>
                     </div>
 
-                    <div class="group-library">
-                        <div class="gall-items">
-                            {!! $videos['videos'] !!}
-                            <div class="owl-carousel"></div>
+                    <div class="hoat-dong-xa-hoi col-lg-4">
+                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
+                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
+                        </a>
+                        <div class="item-social">
+                            <div class="n-title" style="padding:0px">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
+                                    <h3>{{$newsSocial['title']}}</h3>
+                                </a>
+                            </div>
+                            <div class="n-desc">
+                                {{$newsSocial['description']}}
+                            </div>
+                            <div class="btn-seeMore">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
+                            </div>
                         </div>
-                        <div class="library">
-                            @foreach($images as $image)
-                                <div class="item">
-                                    <figure>
-                                        <a href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">
-                                            <img src="/upload/{{$image['image']}}">
-                                        </a>
-                                    </figure>
-                                    <a class="text album" href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">
-                                        <h4>Thư viện ảnh</h4>
-                                    </a>
-                                </div>
-                            @endforeach
+
+                    </div>
+
+                    <div class="hoat-dong-xa-hoi col-lg-4">
+                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
+                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
+                        </a>
+                        <div class="item-social">
+                            <div class="n-title" style="padding:0px">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
+                                    <h3>{{$newsSocial['title']}}</h3>
+                                </a>
+                            </div>
+                            <div class="n-desc">
+                                {{$newsSocial['description']}}
+                            </div>
+                            <div class="btn-seeMore">
+                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
+                            </div>
                         </div>
+
                     </div>
 
 
                 </div>
+{{--                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-gallery">--}}
+
+{{--                    <div class="box-title">--}}
+{{--                        <h2>--}}
+{{--                            <a class="text" href="{{route('videos')}}">--}}
+{{--                                VIDEOS--}}
+{{--                            </a>--}}
+{{--                        </h2>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="group-library">--}}
+{{--                        <div class="gall-items">--}}
+{{--                            {!! $videos['videos'] !!}--}}
+{{--                            <div class="owl-carousel"></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="library">--}}
+{{--                            @foreach($images as $image)--}}
+{{--                                <div class="item">--}}
+{{--                                    <figure>--}}
+{{--                                        <a href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">--}}
+{{--                                            <img src="/upload/{{$image['image']}}">--}}
+{{--                                        </a>--}}
+{{--                                    </figure>--}}
+{{--                                    <a class="text album" href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">--}}
+{{--                                        <h4>Thư viện ảnh</h4>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+
+{{--                </div>--}}
             </div>
         </div>
     </section>
     <!--    video-->
+
+    <section class="module-event">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 article-event">
+                    <div class="box-title col-lg-4">
+                        <div class="box-title">
+                            <h2 class="title-social">
+                                <a style="color: #ffffff" href="#" target="_self">Video</a>
+                            </h2>
+                        </div>
+
+                        <div class="gall-video">
+                            {!! $videos['videos'] !!}
+                            <div class="owl-carousel"></div>
+                        </div>
+                    </div>
+
+                    <div class="box-title col-lg-4">
+
+                        <div class="box-title">
+                            <h2 class="title-social">
+                                <a style="color: #ffffff" href="#" target="_self">Hình ảnh</a>
+                            </h2>
+                        </div>
+
+                        <div class="item">
+                            <figure>
+                                <a href="{{route('detail_image', ['title' => str_slug($images[0]['name']), 'id' => $images[0]['id']])}}">
+                                    <img src="/upload/{{$images[0]['image']}}">
+                                </a>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                    <div class="box-title col-lg-4">
+                        <div class="box-title">
+                            <h2 class="title-social">
+                                <a style="color: #ffffff" href="#" target="_self">Map</a>
+                            </h2>
+                        </div>
+
+                        <div id="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.62043552199!2d105.77182893444666!3d21.00645785784283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134535103d68d8d%3A0x12421609bea07753!2zTeG7hSBUcsOsLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1596361977848!5m2!1svi!2s" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!--    brands-->
     <div class="container">

@@ -19,10 +19,10 @@
     text-indent: -9999px
 }
 
-.site-header {
-    border-bottom: 1px solid #e1e1e1;
-    background: url('../styles/menu/menu-bg.png') no-repeat center top;
-}
+/*.site-header {*/
+/*    border-bottom: 1px solid #e1e1e1;*/
+/*    background: url('../styles/menu/menu-bg.png') no-repeat center top;*/
+/*}*/
 
 .header-content {
     line-height: 1
@@ -754,7 +754,7 @@
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    height: 75px;
+    height: 175px;
     position: relative;
     top: -3px;
     line-height: 1;

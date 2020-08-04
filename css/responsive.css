@@ -548,6 +548,15 @@
     .web-views {
         width: 100%;
     }
+
+    .banner-content {
+        width: 100%;
+    }
+
+    .banner-content .banner-video iframe{
+        height: 200px !important;
+        padding-bottom: 20px !important;
+    }
 }
 
 @media screen and (min-width: 0px) and (max-width: 399px) {
