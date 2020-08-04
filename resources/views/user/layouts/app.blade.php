@@ -39,59 +39,38 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
         <div class="header-main clearfix">
             <div class="container">
                 <div class="row menu-row">
-                    <div class="site-logo col-lg-3 col-xs-9">
+                    <div class="site-logo">
                         <a href="/" class="logo">
                             <img src="/image/logo_amavet.png" class="logo" width="250"/>
                         </a>
-
-                        <h2 class="site-description">Với tôn chỉ duy nhất: “LÀM HÀI LÒNG KHÁCH HÀNG LÀ GIÁ TRỊ SỐNG CÒN
-                            CỦA DOANH NGHIỆP” AMAVET cam kết sẽ mang đến cho khách hàng những dịch vụ tốt nhất và chất
-                            lượng phục vụ hoàn hảo</h2>
                     </div>
-                    <div class="header-content col-lg-9 col-md-12 col-xs-12 pull-right">
+
+                    <div class="header-content col-lg-12 col-md-12 col-xs-12">
                         <!-- top bar -->
-                        <div id="topbar" class="topbar ">
-                            <div class="topbar-widgets clearfix">
-                                <div class="widget">
-                                    <ul class="socials">
-                                        <li>
-                                            <a target="_blank" rel="nofollow" href="https://www.facebook.com/thuocthuyamavet/" title="facebook">
-                                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
+                        <div id="topbar" class="topbar col-lg-12 col-md-12 col-xs-12">
 
-                                        <li>
-                                            <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UChZzgZwtK3hfCYEet1o7QvA?fbclid=IwAR3mIkpEp61yCse8z7mU68bLJYgMJPENS99wIqdOMP639lWtwwoKR7jm_qw" title="youtube">
-                                                <i class="fa fa-youtube" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="site-logo col-lg-4 col-md-4 col-xs-4">
+                                        <a href="/" class="logo">
+                                            <img src="/image/logo_amavet.png" class="logo" width="250"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-xs-7">
+                                        <a href="/">
+                                            <img src="/image/top_banner.gif"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-xs-1">
+                                        <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
+                                        <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
+                                    </div>
+                                </div>
 
-                                    </ul>
-                                </div>
-                                <div class="widget">
-                                    <div class="pull-left">
-                                        <span class="svg-icon"><i class="flaticon-timer"></i></span>
-                                    </div>
-                                    <div class="pull-right">
-                                        <div class="title">{{ trans('messages.WORKING_TIME') }}</div>
-                                        <div class="sub-title">T.Hai - T.Bảy: 7h45 to 16h45</div>
-                                    </div>
-                                </div>
-                                <div class="widget">
-                                    <div class="pull-left">
-                                        <span class="svg-icon"><i class="flaticon-call-answer"></i></span>
-                                    </div>
-                                    <div class="pull-right">
-                                        <div>
-                                            <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
-                                            <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- top bar -->
-                        <div class="site-menu">
+                        <div class="site-menu col-lg-12 col-md-12 col-xs-12">
                             <nav id="site-navigation" class="main-nav primary-nav nav">
                                 <ul class="menu">
                                     <li class="">
@@ -171,6 +150,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                             </nav>
                         </div>
                     </div>
+
                     <div class="navbar-toggle col-xs-3">
                         <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
                     </div>
@@ -207,6 +187,23 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                         <span class="add"><br>Email: info@amavet.com.vn</span>
                         <span class="add"><br>Website: www.amavet.com.vn & amavet.vn</span>
                     </address>
+                </div>
+
+                <div class="widget">
+                    <ul class="socials">
+                        <li>
+                            <a target="_blank" rel="nofollow" href="https://www.facebook.com/thuocthuyamavet/" title="facebook">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a target="_blank" rel="nofollow" href="https://www.youtube.com/channel/UChZzgZwtK3hfCYEet1o7QvA?fbclid=IwAR3mIkpEp61yCse8z7mU68bLJYgMJPENS99wIqdOMP639lWtwwoKR7jm_qw" title="youtube">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                    </ul>
                 </div>
 
             </div>
