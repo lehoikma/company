@@ -70,7 +70,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                             </div>
                         </div>
                         <!-- top bar -->
-                        <div class="site-menu col-lg-12 col-md-12 col-xs-12">
+                        <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346">
                             <nav id="site-navigation" class="main-nav primary-nav nav">
                                 <ul class="menu">
                                     <li class="">
