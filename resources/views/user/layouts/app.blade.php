@@ -39,11 +39,6 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
         <div class="header-main clearfix">
             <div class="container">
                 <div class="row menu-row">
-                    <div class="site-logo">
-                        <a href="/" class="logo">
-                            <img src="/image/logo_amavet.png" class="logo" width="250"/>
-                        </a>
-                    </div>
 
                     <div class="header-content col-lg-12 col-md-12 col-xs-12">
                         <!-- top bar -->
@@ -151,8 +146,18 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                         </div>
                     </div>
 
-                    <div class="navbar-toggle col-xs-3">
-                        <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
+                    <div class="navbar-toggle col-xs-11">
+                        <div class="col-xs-6">
+                            <a href="/" class="logo">
+                                <img src="/image/amavet_logo.png" class="logo" width="100"/>
+                            </a>
+                        </div>
+
+                        <div class="col-xs-6" style="padding: 15% 0 0 0;">
+                            <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -172,7 +177,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
         <div class="container">
             <div class="footer__logo">
                 <a href="#">
-                    <img alt="" border="0" class="imgFooter" src="/image/logo_amavet.png">
+                    <img alt="" border="0" class="imgFooter" src="/image/amavet_logo.png">
                 </a>
             </div>
 
