@@ -26,7 +26,7 @@ class TopController extends Controller
         $newsAmavet = NewsLanguage::User()->where('category_news_id', 1)
             ->orderBy('created_at', 'desc')->take(6)->get();
         $newsSocial = NewsLanguage::User()->where('category_news_id', 4)
-            ->orderBy('id', 'desc')->first();
+            ->orderBy('id', 'desc')->take(3)->get();
         $videos = Videos::orderBy('id', 'desc')->first();
         $sliders = Sliders::all();
         $products = ProductsLanguages::User()->orderBy('created_at', 'desc')->take(10)->get();

@@ -287,7 +287,7 @@
 .n-item .n-desc {
     color: #606060;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
     padding: 0 15px 10px 15px;
     text-align: justify;
@@ -468,9 +468,8 @@
 
 
 .footer {
-    background: #00559a;
+    background: #009244;
     clear: both;
-    padding: 25px 0 25px;
 }
 
 .subscribe {

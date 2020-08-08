@@ -27,9 +27,11 @@
             </div>
             <div class="banner-content col-lg-3 col-md-3 col-xs-3">
                 <div class="banner-text">
-                    <label>
-                        lelellelelelellelelelelllelelelellelelelellelelellelelelellelelellelelelelell
-                    </label>
+                    <h3 style="text-align: center;margin-top: 0px;">GIỚI THIỆU AMAVET</h3>
+                    <p>ád káh káh káhd káhd kjahsd kjahsd ád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsd</p>
+                    <p style="text-align: center">
+                        <a href="http://company.local/danh-sach-tin-tuc/tin-amavet/1" style="background: #009245;color: #fff;display: inline-block;font-size: 13px;padding: 8px;">Xem thêm</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -114,102 +116,28 @@
                             </a>
                         </h2>
                     </div>
-
-                    <div class="hoat-dong-xa-hoi col-lg-4">
-                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
-                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
+                    @foreach($newsSocial as $value)
+                        <div class="hoat-dong-xa-hoi col-lg-4">
+                        <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" target="_self">
+                            <img src="/upload/{{$value['image']}}" class="img-responsive" style="height: 200px;width: 100%;object-fit: cover;">
                         </a>
                         <div class="item-social">
                             <div class="n-title" style="padding:0px">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
-                                    <h3>{{$newsSocial['title']}}</h3>
+                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" class="title" target="_self">
+                                    <h3>{{$value['title']}}</h3>
                                 </a>
                             </div>
                             <div class="n-desc">
-                                {{$newsSocial['description']}}
+                                {{$value['description']}}
                             </div>
                             <div class="btn-seeMore">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
+                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">Xem thêm</a>
                             </div>
                         </div>
 
                     </div>
-
-                    <div class="hoat-dong-xa-hoi col-lg-4">
-                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
-                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
-                        </a>
-                        <div class="item-social">
-                            <div class="n-title" style="padding:0px">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
-                                    <h3>{{$newsSocial['title']}}</h3>
-                                </a>
-                            </div>
-                            <div class="n-desc">
-                                {{$newsSocial['description']}}
-                            </div>
-                            <div class="btn-seeMore">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="hoat-dong-xa-hoi col-lg-4">
-                        <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" target="_self">
-                            <img src="/upload/{{$newsSocial['image']}}" class="img-responsive">
-                        </a>
-                        <div class="item-social">
-                            <div class="n-title" style="padding:0px">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}" title="" class="title" target="_self">
-                                    <h3>{{$newsSocial['title']}}</h3>
-                                </a>
-                            </div>
-                            <div class="n-desc">
-                                {{$newsSocial['description']}}
-                            </div>
-                            <div class="btn-seeMore">
-                                <a href="{{route('news_detail', ['title'=>str_slug($newsSocial['title']), 'id'=> $newsSocial['news_id']])}}">Xem thêm</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-
+                    @endforeach
                 </div>
-{{--                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 article-gallery">--}}
-
-{{--                    <div class="box-title">--}}
-{{--                        <h2>--}}
-{{--                            <a class="text" href="{{route('videos')}}">--}}
-{{--                                VIDEOS--}}
-{{--                            </a>--}}
-{{--                        </h2>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="group-library">--}}
-{{--                        <div class="gall-items">--}}
-{{--                            {!! $videos['videos'] !!}--}}
-{{--                            <div class="owl-carousel"></div>--}}
-{{--                        </div>--}}
-{{--                        <div class="library">--}}
-{{--                            @foreach($images as $image)--}}
-{{--                                <div class="item">--}}
-{{--                                    <figure>--}}
-{{--                                        <a href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">--}}
-{{--                                            <img src="/upload/{{$image['image']}}">--}}
-{{--                                        </a>--}}
-{{--                                    </figure>--}}
-{{--                                    <a class="text album" href="{{route('detail_image', ['title' => str_slug($image['name']), 'id' => $image['id']])}}">--}}
-{{--                                        <h4>Thư viện ảnh</h4>--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-
-{{--                </div>--}}
             </div>
         </div>
     </section>
