@@ -271,25 +271,25 @@
     <div class="container">
         <section class="customer-logos slider">
             <div class="slide">
-                <img src="/image/Deasung.gif" >
+                <img src="/image/biogenesis_bago_logo.png" >
             </div>
             <div class="slide">
-                <img src="/image/Innotech.png" >
+                <img src="/image/dae_sung_logo.png" >
             </div>
             <div class="slide">
-                <img src="/image/Formosa.jpg" >
+                <img src="/image/dutch_farmlogo.png" >
             </div>
             <div class="slide">
-                <img src="/image/Dutchfarm.jpg" >
+                <img src="/image/Formosa_bio.png" >
             </div>
             <div class="slide">
-                <img src="/image/Samu.gif" >
+                <img src="/image/innotech_logo.png" >
             </div>
             <div class="slide">
-                <img src="/image/biogne.jpg" >
+                <img src="/image/samu_logo.png" >
             </div>
             <div class="slide">
-                <img src="/image/schauman.gif" >
+                <img src="/image/schaumann_logo.png" >
             </div>
         </section>
     </div>
