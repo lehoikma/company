@@ -73,37 +73,37 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                            data-nav-id="home">{{ trans('messages.home') }}</a>
                                     </li>
                                     <li class="">
-                                        <a title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
-                                        <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="{{route('lich_su_user')}}" style="text-transform: uppercase;">{{ trans('messages.lich_su') }}</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="{{route('su_menh_user')}}" style="text-transform: uppercase;">{{ trans('messages.su_menh') }}</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="{{route('tam_nhin_user')}}" style="text-transform: uppercase;">{{ trans('messages.tam_nhin') }}</a>
-                                            </li>
-                                        </ul>
+                                        <a href="{{route('lich_su_user')}}" title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
+{{--                                        <ul class="sub-menu">--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('lich_su_user')}}" style="text-transform: uppercase;">{{ trans('messages.lich_su') }}</a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('su_menh_user')}}" style="text-transform: uppercase;">{{ trans('messages.su_menh') }}</a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('tam_nhin_user')}}" style="text-transform: uppercase;">{{ trans('messages.tam_nhin') }}</a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
                                     </li>
 
-                                    <li class="">
-                                        <a href="{{route('list_activities')}}" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>
-                                        <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="{{route('detail_thuoc_thu_y')}}" style="text-transform: uppercase;">Thuốc thú y</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="{{route('detail_duc_giong')}}" style="text-transform: uppercase;">Đực giống</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="{{route('detail_vac_xin_oie')}}" style="text-transform: uppercase;">Vacxin OIE</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="{{route('detail_vac_xin_fmd')}}" style="text-transform: uppercase;">Vacxin FMD</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('list_activities')}}" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>--}}
+{{--                                        <ul class="sub-menu">--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('detail_thuoc_thu_y')}}" style="text-transform: uppercase;">Thuốc thú y</a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('detail_duc_giong')}}" style="text-transform: uppercase;">Đực giống</a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('detail_vac_xin_oie')}}" style="text-transform: uppercase;">Vacxin OIE</a>--}}
+{{--                                            </li>--}}
+{{--                                            <li class="">--}}
+{{--                                                <a href="{{route('detail_vac_xin_fmd')}}" style="text-transform: uppercase;">Vacxin FMD</a>--}}
+{{--                                            </li>--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
 
                                     <li class=" has-children">
                                         <a href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
@@ -136,6 +136,11 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     <li class="">
                                         <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
                                            data-nav-id="mjcmsContact">Tuyển Dụng</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                                           data-nav-id="mjcmsContact">Hình Ảnh</a>
                                     </li>
 
                                     <li class="">

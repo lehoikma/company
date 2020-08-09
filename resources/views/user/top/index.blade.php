@@ -28,9 +28,11 @@
             <div class="banner-content col-lg-3 col-md-3 col-xs-3">
                 <div class="banner-text">
                     <h3 style="text-align: center;margin-top: 0px;">GIỚI THIỆU AMAVET</h3>
-                    <p>ád káh káh káhd káhd kjahsd kjahsd ád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsdád káh káh káhd káhd kjahsd kjahsd</p>
+                    <p>
+                        {{$introduces['description']}}
+                    </p>
                     <p style="text-align: center">
-                        <a href="http://company.local/danh-sach-tin-tuc/tin-amavet/1" style="background: #009245;color: #fff;display: inline-block;font-size: 13px;padding: 8px;">Xem thêm</a>
+                        <a href="{{route('lich_su_user')}}" style="background: #009245;color: #fff;display: inline-block;font-size: 13px;padding: 8px;">Xem thêm</a>
                     </p>
                 </div>
             </div>

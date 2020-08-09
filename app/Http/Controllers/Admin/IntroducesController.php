@@ -45,13 +45,14 @@ class IntroducesController extends Controller
             if (!empty($request['id'][0]) || !empty($request['id'][1])) {
                 for ($i=0 ; $i<2; $i++) {
                     $editIntroduce = LichSuLanguages::where('id', $request['id'][$i])->update([
-                        'content' => $request['content'][$i]
+                        'content' => $request['content'][$i],
+                        'description' => $request['description'][$i]
                     ]);
                 }
                 if ($editIntroduce) {
-                    \Session::flash('alert-success', 'Sửa Lịch Sử Thành Công');
+                    \Session::flash('alert-success', 'Sửa Giới Thiệu Thành Công');
                 } else {
-                    \Session::flash('alert-warning', 'Sửa Lịch Sử Lỗi');
+                    \Session::flash('alert-warning', 'Sửa Giới Thiệu Lỗi');
                 }
             } else {
                 $products = Lichsu::create();
@@ -59,13 +60,14 @@ class IntroducesController extends Controller
                     $saveIntroduce = LichSuLanguages::create([
                         'lich_su_id' => $products['id'],
                         'languages_id' => $i+1,
-                        'content' => $request['content'][$i]
+                        'content' => $request['content'][$i],
+                        'description' => $request['description'][$i],
                     ]);
                 }
                 if ($saveIntroduce) {
-                    \Session::flash('alert-success', 'Tạo Lịch Sử Thành Công');
+                    \Session::flash('alert-success', 'Tạo Giới Thiệu Thành Công');
                 } else {
-                    \Session::flash('alert-warning', 'Tạo Lịch Sử Lỗi');
+                    \Session::flash('alert-warning', 'Tạo Giới Thiệu Lỗi');
                 }
             }
             DB::commit();

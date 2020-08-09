@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CategoriesImages;
 use App\Models\CookTable;
 use App\Models\Images;
+use App\Models\LichSuLanguages;
 use App\Models\NewsLanguage;
 use App\Models\ProductsLanguages;
 use App\Models\Sliders;
@@ -29,8 +30,9 @@ class TopController extends Controller
             ->orderBy('id', 'desc')->take(3)->get();
         $videos = Videos::orderBy('id', 'desc')->first();
         $sliders = Sliders::all();
-        $products = ProductsLanguages::User()->orderBy('created_at', 'desc')->take(10)->get();
+        $products = ProductsLanguages::User()->orderBy('created_at', 'desc')->where('display_top', 1)->take(10)->get();
         $images = CategoriesImages::orderBy('created_at', 'desc')->take(2)->get();
+        $introduces = LichSuLanguages::User()->first();
 
         return view('user.top.index',[
             'firstNewsAmavet' => $firstNewsAmavet,
@@ -40,6 +42,7 @@ class TopController extends Controller
             'sliders' => $sliders,
             'products' => $products,
             'images' => $images,
+            'introduces' => $introduces,
         ]);
     }
 }

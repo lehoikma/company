@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tạo, Sửa Lịch Sử
+    Tạo, Sửa Giới Thiệu
 @endsection
 @section('content')
     <div class="col-md-12 flash-message">
@@ -15,8 +15,24 @@
             {{csrf_field()}}
             <input name="id[0]" value="{{$introduces[0]['id'] or ''}}" type="hidden">
             <input name="id[1]" value="{{$introduces[1]['id'] or ''}}" type="hidden">
-            <div class="col-md-12" style="margin-top: 15px">
-                <label>Mô tả ( Tiếng Việt ):  <span style="color: red">(*)</span></label>
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Mô tả về giới thiệu ( Tiếng Việt )<span style="color: red">(*)</span></label>
+                <textarea name="description[0]" rows="7" class="form-control">{{$introduces[0]['description']}}</textarea>
+                @if ($errors->has('description_news.0'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.0') }}</p>
+                @endif
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Mô tả về giới thiệu ( Tiếng Anh)</label>
+                <textarea name="description[1]" rows="7" class="form-control">{{$introduces[1]['description']}}</textarea>
+                @if ($errors->has('description_news.1'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('description_news.1') }}</p>
+                @endif
+            </div>
+
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Nội dung ( Tiếng Việt ):  <span style="color: red">(*)</span></label>
                 <textarea id="editor1" name="content[0]" rows="7" class="form-control ckeditor">{{$introduces[0]['content'] or ''}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
@@ -28,8 +44,8 @@
                 @endif
             </div>
 
-            <div class="col-md-12" style="margin-top: 15px">
-                <label>Mô tả ( Tiếng Anh ):  <span style="color: red">(*)</span></label>
+            <div class="col-md-6" style="margin-top: 15px">
+                <label>Nội dung ( Tiếng Anh ):  <span style="color: red">(*)</span></label>
                 <textarea id="editor2" name="content[1]" rows="7" class="form-control ckeditor">{{$introduces[1]['content'] or ''}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 

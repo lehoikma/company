@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <span itemprop="name">{{trans('messages.lich_su')}}<span></span></span>
+                        <span itemprop="name">{{ trans('messages.introduce') }}<span></span></span>
                     </li>
                 </ol>
             </div>

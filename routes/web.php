@@ -111,7 +111,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('san-pham/{title}/{id}', 'ProductsController@detail')->name('products_detail');
     Route::get('danh-muc-san-pham/{title}/{id}', 'ProductsController@listCategory')->name('products_list_ctg');
 
-    Route::get('gioi-thieu/lich-su', 'IntroducesController@indexLichSu')->name('lich_su_user');
+    Route::get('gioi-thieu', 'IntroducesController@indexLichSu')->name('lich_su_user');
     Route::get('gioi-thieu/su-menh', 'IntroducesController@indexSumenh')->name('su_menh_user');
     Route::get('gioi-thieu/tam-nhin', 'IntroducesController@indexTamNhin')->name('tam_nhin_user');
 

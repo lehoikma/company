@@ -18,6 +18,7 @@ class CreateTableHistoryLanguage extends Migration
             $table->integer('lich_su_id');
             $table->integer('languages_id');
             $table->text('content')->nullable();
+            $table->text('description')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

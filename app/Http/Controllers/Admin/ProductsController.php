@@ -45,7 +45,8 @@ class ProductsController extends Controller
                     'name' => $request['name'][$i],
                     'content' => $request['content'][$i],
                     'image' => $filename,
-                    'status' => 1
+                    'status' => 1,
+                    'display_top' => $request['display_top'] == 'on' ? 1 : 0,
                 ]);
             }
             \Session::flash('alert-success', 'Tạo Sản Phẩm Thành Công');
@@ -113,7 +114,8 @@ class ProductsController extends Controller
                     'category_product_id' => $request['select_cate_prd'],
                     'content' => $request['content'][$i],
                     'image' => $filename,
-                    'status' => 1
+                    'status' => 1,
+                    'display_top' => $request['display_top'] == 'on' ? 1 : 0,
                 ]);
             }
         }

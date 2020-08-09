@@ -17,7 +17,7 @@ class LichSuLanguages extends Base
      * @var array
      */
     protected $fillable = [
-        'lich_su_id', 'languages_id', 'content'
+        'lich_su_id', 'languages_id', 'content', 'description'
     ];
 
     public function scopeUser($query) {
