@@ -134,13 +134,18 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                            data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
                                     </li>
                                     <li class="">
-                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
                                            data-nav-id="mjcmsContact">Tuyển Dụng</a>
                                     </li>
 
                                     <li class="">
                                         <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
                                            data-nav-id="mjcmsContact">Hình Ảnh</a>
+                                    </li>
+
+                                    <li class="">
+                                        <a href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                                           data-nav-id="mjcmsContact">Videos</a>
                                     </li>
 
                                     <li class="">
@@ -173,7 +178,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
         <div class="col-xs-12 language-custom" style="text-align: center;padding: 5px;display: none">
             <div>
                 <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
-                <a href="{{route('user.change-language','en')}}"><img src="/image/vn.jpg"></a>
+                <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
             </div>
         </div>
     </header>
@@ -260,23 +265,23 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Tin tức" data-nav-id="">{{ trans('messages.introduce') }}</a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="{{route('lich_su_user')}}" data-nav-id="2">{{ trans('messages.lich_su') }}</a>
-                        </li>
-                        <li class="">
-                            <a href="{{route('su_menh_user')}}" data-nav-id="3">{{ trans('messages.su_menh') }}</a>
-                        </li>
-                        <li class="">
-                            <a href="{{route('tam_nhin_user')}}" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>
-                        </li>
-                    </ul>
+                    <a href="{{route('lich_su_user')}}" class="dropdown-toggle " title="Tin tức" data-nav-id="">{{ trans('messages.introduce') }}</a>
+{{--                    <ul class="sub-menu">--}}
+{{--                        <li class="">--}}
+{{--                            <a href="{{route('lich_su_user')}}" data-nav-id="2">{{ trans('messages.lich_su') }}</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="{{route('su_menh_user')}}" data-nav-id="3">{{ trans('messages.su_menh') }}</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a href="{{route('tam_nhin_user')}}" data-nav-id="3">{{ trans('messages.tam_nhin') }}</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
                 </li>
 
-                <li class="">
-                    <a href="/" class=" " title="Lĩnh vực hoạt động" data-nav-id="">{{ trans('messages.scope_of_activities') }}</a>
-                </li>
+{{--                <li class="">--}}
+{{--                    <a href="/" class=" " title="Lĩnh vực hoạt động" data-nav-id="">{{ trans('messages.scope_of_activities') }}</a>--}}
+{{--                </li>--}}
 
                 <li class=" menu-item-has-children">
                     <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
@@ -301,7 +306,27 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                 </li>
 
                 <li class="">
-                    <a href="{{route('contacts')}}" class="" data-nav-id="">{{ trans('messages.contact') }}</a>
+                    <a href="#" class=""
+                       data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
+                </li>
+                <li class="">
+                    <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
+                       data-nav-id="mjcmsContact">Tuyển Dụng</a>
+                </li>
+
+                <li class="">
+                    <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                       data-nav-id="mjcmsContact">Hình Ảnh</a>
+                </li>
+
+                <li class="">
+                    <a href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                       data-nav-id="mjcmsContact">Videos</a>
+                </li>
+
+                <li class="">
+                    <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                       data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
                 </li>
 
             </ul>
