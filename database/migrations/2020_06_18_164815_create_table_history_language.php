@@ -19,6 +19,7 @@ class CreateTableHistoryLanguage extends Migration
             $table->integer('languages_id');
             $table->text('content')->nullable();
             $table->text('description')->nullable();
+            $table->text('videos')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
