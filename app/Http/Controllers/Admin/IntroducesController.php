@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SaveGioiThieuRequest;
 use App\Http\Requests\SaveIntroducesRequest;
 use App\Models\Lichsu;
 use App\Models\LichSuLanguages;
@@ -38,7 +39,7 @@ class IntroducesController extends Controller
         ]);
     }
 
-    public function saveHistory(SaveIntroducesRequest $request)
+    public function saveHistory(SaveGioiThieuRequest $request)
     {
         DB::beginTransaction();
         try {
@@ -46,7 +47,8 @@ class IntroducesController extends Controller
                 for ($i=0 ; $i<2; $i++) {
                     $editIntroduce = LichSuLanguages::where('id', $request['id'][$i])->update([
                         'content' => $request['content'][$i],
-                        'description' => $request['description'][$i]
+                        'description' => $request['description'][$i],
+                        'videos' => $request['videos']
                     ]);
                 }
                 if ($editIntroduce) {
@@ -62,6 +64,7 @@ class IntroducesController extends Controller
                         'languages_id' => $i+1,
                         'content' => $request['content'][$i],
                         'description' => $request['description'][$i],
+                        'videos' => $request['videos'],
                     ]);
                 }
                 if ($saveIntroduce) {

@@ -15,6 +15,19 @@
             {{csrf_field()}}
             <input name="id[0]" value="{{$introduces[0]['id'] or ''}}" type="hidden">
             <input name="id[1]" value="{{$introduces[1]['id'] or ''}}" type="hidden">
+            <div class="col-md-12" style="margin-top: 15px">
+                <label>Videos:  <span style="color: red">(*)</span></label>
+                <textarea id="editor0" name="videos" rows="7" class="form-control ckeditor">{{$introduces[0]['videos'] or ''}}</textarea>
+                <script src="/ckeditor/ckeditor.js"></script>
+
+                <script type="text/javascript">
+                    CKEDITOR.replace( 'editor0' );
+                </script>
+                @if ($errors->has('videos'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('videos') }}</p>
+                @endif
+            </div>
+
             <div class="col-md-6" style="margin-top: 15px">
                 <label>Mô tả về giới thiệu ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <textarea name="description[0]" rows="7" class="form-control">{{$introduces[0]['description']}}</textarea>

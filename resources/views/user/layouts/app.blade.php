@@ -53,7 +53,7 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                     </div>
                                     <div class="col-lg-7 col-md-7 col-xs-7">
                                         <a href="/">
-                                            <img src="/image/top_banner.gif"/>
+                                            <img src="/image/amavet_top.gif"/>
                                         </a>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-xs-1">

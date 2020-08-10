@@ -22,7 +22,7 @@
         <div class="container">
             <div class="banner-content col-lg-9 col-md-9 col-xs-9">
                 <div class="banner-video">
-                    <iframe src="https://www.youtube.com/embed/tn6gU27VfiU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    {!! $introduces['videos'] !!}
                 </div>
             </div>
             <div class="banner-content col-lg-3 col-md-3 col-xs-3">
@@ -173,7 +173,7 @@
                         <div class="item">
                             <figure>
                                 <a href="{{route('detail_image', ['title' => str_slug($images[0]['name']), 'id' => $images[0]['id']])}}">
-                                    <img src="/upload/{{$images[0]['image']}}">
+                                    <img src="/image/hinh_anh_amave2t.jpg">
                                 </a>
                             </figure>
                         </div>
@@ -188,7 +188,7 @@
                         </div>
 
                         <div id="map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14898.62043552199!2d105.77182893444666!3d21.00645785784283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134535103d68d8d%3A0x12421609bea07753!2zTeG7hSBUcsOsLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1596361977848!5m2!1svi!2s" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.0171560965646!2d105.94787361533261!3d21.071976991676507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a815cd7ded85%3A0x31dc1fe90866ee85!2sAmavet%20J.S.C!5e0!3m2!1svi!2s!4v1597029004405!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                     </div>
                 </div>
