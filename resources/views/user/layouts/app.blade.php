@@ -32,7 +32,8 @@
 
 <div id="page" class="hfeed site">
 <?php
-$categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+$categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+
 ?>
     <!--    navbar-->
     <header id="masthead" class="site-header ">
@@ -109,8 +110,20 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                                         <a href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
                                         <ul class="sub-menu">
                                             @foreach($categoryProducts as $value)
+                                                <?php
+                                                $subMenuData = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+                                                ?>
                                                 <li class="">
-                                                    <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                                    <a data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                                @if(!empty($subMenuData))
+                                                    <ul class="sub-menu" style="left: 101%">
+                                                        @foreach($subMenuData as $subMenu)
+                                                            <li class="">
+                                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$subMenu['name']}}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -287,9 +300,23 @@ $categoryProducts = \App\Models\CategoryProductsLanguages::where('languages_id',
                     <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
                     <ul class="sub-menu">
                         @foreach($categoryProducts as $value)
-                        <li class="">
-                            <a href="{{route('products_list_ctg', ['title' => str_slug($value['name']), 'id' => $value['category_products_id']])}}" data-nav-id="0">{{$value['name']}}</a>
-                        </li>
+                            <?php
+                            $subMenuData1 = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+                            ?>
+
+
+                                <li class=" menu-item-has-children">
+                                <a class="dropdown-toggle " data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                @if(!empty($subMenuData1))
+                                    <ul class="sub-menu" style="left: 101%">
+                                        @foreach($subMenuData1 as $subMenu)
+                                            <li class="">
+                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$subMenu['name']}}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </li>
                         @endforeach
                     </ul>
                 </li>

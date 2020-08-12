@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Base;
 
-class CategoryProductsLanguages extends Base
+class CategoryDanhMucSanPhamCap1Languages extends Base
 {
     use SoftDeletes;
 
-    protected $table = 'category_products_languages';
+    protected $table = 'categories_cap_1_language';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'category_products_id', 'categories_cap_1', 'languages_id', 'name'
+        'categories_cap_1_id', 'languages_id', 'name'
     ];
 
     public function scopeAdmin($query) {

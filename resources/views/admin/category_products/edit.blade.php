@@ -13,6 +13,19 @@
     <div class="col-md-12">
         <form action="{{route('category_prd_edit_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
+            <div class="col-md-7" style="padding-bottom: 10px">
+                <label>Danh Mục Sản Phẩm Cấp 1:</label>
+                <select class="form-control" id="sel1" name="select_cate_danh_muc_cap_1">
+                    <option value=""></option>
+                    @foreach($categoryDanhMucSanPhamCap1 as $value)
+                        <option value="{{$value['categories_cap_1_id']}}" {{ $value['categories_cap_1_id']==$category[0]['categories_cap_1'] ? 'selected' : ''}}>{{$value['name']}}</option>
+                    @endforeach
+                </select>
+                @if ($errors->has('select_cate_danh_muc_cap_1'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('select_cate_danh_muc_cap_1') }}</p>
+                @endif
+            </div>
+
             <div class="col-md-6">
                 <label>Tên Danh Mục ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <div class="form-group">
@@ -59,6 +72,9 @@
                                                     Name
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
+                                                    Danh Mục Cấp 1
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                     Ngày tạo
                                                 </th>
                                                 <th></th>
@@ -66,8 +82,16 @@
                                             </thead>
                                             <tbody>
                                             @foreach($categoryList as $value)
+                                                <?php
+                                                if (!empty($value['categories_cap_1'])) {
+                                                    $data = App\Models\CategoryDanhMucSanPhamCap1Languages::where('categories_cap_1_id', $value['categories_cap_1'])->admin()->first()['name'];
+                                                } else {
+                                                    $data = '';
+                                                }
+                                                ?>
                                                 <tr role="row">
                                                     <td>{{$value['name']}}</td>
+                                                    <td>{{$data}}</td>
                                                     <td>{{$value['created_at']}}</td>
                                                     <td>
                                                         <a href="{{route('category_prd_edit', $value['category_products_id'])}}">

@@ -30,7 +30,10 @@
                 <select class="form-control" id="sel1" name="select_cate_prd">
                     <option value=""></option>
                     @foreach($categoryProducts as $value)
-                        <option value="{{$value['category_products_id']}}">{{$value['name']}}</option>
+                        <?php
+                        $name = App\Models\CategoryDanhMucSanPhamCap1Languages::where('categories_cap_1_id', $value['categories_cap_1'])->admin()->first()['name'];
+                        ?>
+                        <option value="{{$value['category_products_id']}}">{{$value['name']." -- ". $name}}</option>
                     @endforeach
                 </select>
                 @if ($errors->has('select_cate_news'))
