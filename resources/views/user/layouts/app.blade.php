@@ -297,7 +297,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 {{--                </li>--}}
 
                 <li class=" menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
+                    <a href="{{route('products_list')}}" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
                     <ul class="sub-menu">
                         @foreach($categoryProducts as $value)
                             <?php
@@ -306,7 +306,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 
 
                                 <li class=" menu-item-has-children">
-                                <a class="dropdown-toggle " data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" class="dropdown-toggle " data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
                                 @if(!empty($subMenuData1))
                                     <ul class="sub-menu" style="left: 101%">
                                         @foreach($subMenuData1 as $subMenu)
