@@ -25,7 +25,7 @@
             </div>
             <div class="gallery-listing">
                 <div class="row" id="gall-list">
-                    <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gall-item">
+                    <article class="col-lg-3 col-md-3 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
                                 <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Sản Phẩm cho Lợn'), 'id' => 3])}}">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gall-item">
+                    <article class="col-lg-3 col-md-3 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
                                 <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Sản Phẩm cho chó, Mèo'), 'id' => 4])}}">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gall-item">
+                    <article class="col-lg-3 col-md-3 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
                                 <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Sản Phẩm cho gia súc'), 'id' => 1])}}">
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-6 col-md-6 col-sm-6 col-xs-12 gall-item">
+                    <article class="col-lg-3 col-md-3 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
                                 <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Sản Phẩm cho Gia Cầm'), 'id' => 2])}}">
