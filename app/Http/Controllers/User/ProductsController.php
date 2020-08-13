@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoryDanhMucSanPhamCap1Languages;
 use App\Models\CategoryProductsLanguages;
 use App\Models\ProductsLanguages;
 
@@ -35,6 +36,16 @@ class ProductsController extends Controller
         $data = ProductsLanguages::User()->paginate(30);
         return view('user.products.list1',[
             'data' => $data
+        ]);
+    }
+
+    public function listCategoryDanhMuc2($title, $id) {
+        $ctgPrdId = CategoryProductsLanguages::User()->where('categories_cap_1', $id)->pluck('category_products_id')->toArray();
+        $nameCtg = CategoryDanhMucSanPhamCap1Languages::User()->where('categories_cap_1_id', $id)->first();
+        $data = ProductsLanguages::User()->whereIn('category_product_id', $ctgPrdId)->paginate(30);
+        return view('user.products.list2',[
+            'data' => $data,
+            'nameCtg' => $nameCtg['name']
         ]);
     }
 }

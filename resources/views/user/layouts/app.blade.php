@@ -66,7 +66,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             </div>
                         </div>
                         <!-- top bar -->
-                        <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346">
+                        <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346; padding-left: 0px">
                             <nav id="site-navigation" class="main-nav primary-nav nav">
                                 <ul class="menu">
                                     <li class="">
@@ -114,7 +114,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                                                 $subMenuData = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
                                                 ?>
                                                 <li class="">
-                                                    <a data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                                    <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
                                                 @if(!empty($subMenuData))
                                                     <ul class="sub-menu" style="left: 101%">
                                                         @foreach($subMenuData as $subMenu)

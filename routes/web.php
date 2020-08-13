@@ -116,6 +116,8 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('gioi-thieu/tam-nhin', 'IntroducesController@indexTamNhin')->name('tam_nhin_user');
 
     Route::get('san-pham', 'ProductsController@listProduct')->name('products_list');
+    Route::get('san-pham/d/{title}/{id}', 'ProductsController@listCategoryDanhMuc2')->name('list_category_danh_muc_2'); // danh muc cap 2
+
     Route::get('lien-he', 'ContactsController@index')->name('contacts');
     Route::post('send-lien-he', 'ContactsController@sendContacts')->name('send_contacts');
     Route::get('tin-tuc', 'NewsController@listNews')->name('news_list');
