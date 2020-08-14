@@ -80,7 +80,7 @@
                     <article class="col-lg-4 col-md-4 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
-                                <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Dinh Dưỡng'), 'id' => 2])}}">
+                                <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Dinh Dưỡng'), 'id' => 5])}}">
                                     <img src="/styles/image/dinh_duong.jpg"></a>
                             </figure>
                             <div class="gall-content">
@@ -93,7 +93,7 @@
                     <article class="col-lg-4 col-md-4 col-sm-6 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 300px;">
-                                <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Thuốc sát trùng'), 'id' => 2])}}">
+                                <a href="{{route('list_category_danh_muc_2', ['title' => str_slug('Thuốc sát trùng'), 'id' => 6])}}">
                                     <img src="/styles/image/thuoc_sat_trung.jpg"></a>
                             </figure>
                             <div class="gall-content">
