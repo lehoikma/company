@@ -23,11 +23,17 @@ class DanhMucSanPhamCap1Seeder extends Seeder
         DB::table('categories_cap_1')->insert([
             'id' => '4',
         ]);
+        DB::table('categories_cap_1')->insert([
+            'id' => '5',
+        ]);
+        DB::table('categories_cap_1')->insert([
+            'id' => '6',
+        ]);
 
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '1',
             'languages_id' => '1',
-            'name' => 'Gia Súc',
+            'name' => 'Gia Súc Lớn',
         ]);
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '1',
@@ -47,7 +53,7 @@ class DanhMucSanPhamCap1Seeder extends Seeder
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '3',
             'languages_id' => '1',
-            'name' => 'Lợn',
+            'name' => 'Heo',
         ]);
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '3',
@@ -57,12 +63,32 @@ class DanhMucSanPhamCap1Seeder extends Seeder
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '4',
             'languages_id' => '1',
-            'name' => 'Chó, Mèo',
+            'name' => 'Thú cưng',
         ]);
         DB::table('categories_cap_1_language')->insert([
             'categories_cap_1_id' => '4',
             'languages_id' => '2',
-            'name' => 'Dogs and cats',
+            'name' => 'pet',
+        ]);
+        DB::table('categories_cap_1_language')->insert([
+            'categories_cap_1_id' => '5',
+            'languages_id' => '1',
+            'name' => 'Dinh dưỡng',
+        ]);
+        DB::table('categories_cap_1_language')->insert([
+            'categories_cap_1_id' => '5',
+            'languages_id' => '2',
+            'name' => 'Nutrition',
+        ]);
+        DB::table('categories_cap_1_language')->insert([
+            'categories_cap_1_id' => '6',
+            'languages_id' => '1',
+            'name' => 'Thuốc sát trùng',
+        ]);
+        DB::table('categories_cap_1_language')->insert([
+            'categories_cap_1_id' => '6',
+            'languages_id' => '2',
+            'name' => 'Insecticide',
         ]);
     }
 }
