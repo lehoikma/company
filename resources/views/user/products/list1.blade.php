@@ -7,10 +7,10 @@
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href="/"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/" style="color: black"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="" target="_self"><span>Danh Mục Sản Phẩm<span></span></span></a>
+                        <a href="" target="_self" style="color: black"><span>Danh Mục Sản Phẩm<span></span></span></a>
                     </li>
                 </ol>
             </div>
@@ -20,8 +20,9 @@
     <section class="page-content page-gallery">
         <div class="container">
             <div class="box-title">
-                <h1>
-                    <a class="text" href="" target="_self">Danh Mục Sản Phẩm</a></h1>
+                <h1 style="margin-top: 0px">
+                    <a class="text" href="" target="_self" style="color: #009244">Danh Mục Sản Phẩm</a>
+                </h1>
             </div>
             <div class="gallery-listing">
                 <div class="row" id="gall-list">
@@ -33,7 +34,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('heo'), 'id' => 3])}}" target="_self">
-                                    <p>HEO</p>
+                                    <p style="text-align: center">HEO</p>
                                 </a>
                             </div>
                         </div>
@@ -46,7 +47,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('Thú cưng'), 'id' => 4])}}" target="_self">
-                                    <p>Thú Cưng</p>
+                                    <p style="text-align: center">Thú Cưng</p>
                                 </a>
                             </div>
                         </div>
@@ -59,7 +60,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('gia súc lớn'), 'id' => 1])}}" target="_self">
-                                    <p>GIA SÚC LỚN</p>
+                                    <p style="text-align: center">GIA SÚC LỚN</p>
                                 </a>
                             </div>
                         </div>
@@ -72,7 +73,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('Gia Cầm'), 'id' => 2])}}" target="_self">
-                                    <p>Gia Cầm</p>
+                                    <p style="text-align: center">Gia Cầm</p>
                                 </a>
                             </div>
                         </div>
@@ -85,7 +86,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('Dinh Dưỡng'), 'id' => 5])}}" target="_self">
-                                    <p>Dinh Dưỡng</p>
+                                    <p style="text-align: center">Dinh Dưỡng</p>
                                 </a>
                             </div>
                         </div>
@@ -98,7 +99,7 @@
                             </figure>
                             <div class="gall-content">
                                 <a class="gall-title" href="{{route('list_category_danh_muc_2', ['title' => str_slug('Thuốc sát trùng'), 'id' => 6])}}" target="_self">
-                                    <p>Thuốc sát trùng</p>
+                                    <p style="text-align: center">Thuốc sát trùng</p>
                                 </a>
                             </div>
                         </div>

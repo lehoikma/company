@@ -15,13 +15,13 @@
             <div class="col-md-12 navigate" style="margin: 10px 0px">
                 <ol itemscope="">
                     <li itemprop="itemListElement" itemscope="">
-                        <a class="home" itemprop="item">
+                        <a class="home" itemprop="item" style="color: black">
                             <span itemprop="name">{{trans('messages.home')}}&nbsp;&gt;&nbsp;</span>
                         </a>
                         <meta itemprop="position" content="1">
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3">
+                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3" style="color: black">
                             <span itemprop="name">{{trans('messages.contact')}}<span></span></span>
                         </a>
                         <meta itemprop="position" content="2">
@@ -45,14 +45,14 @@
                             <li>
                                 <p class="name">{{trans('messages.phone')}}</p>
                                 <p class="value">
-                                    <a href="tel:0971093355" title="phone">0971 99 88 77</a>
+                                    <a href="tel:0971093355" title="phone" style="color: #009244">0971 99 88 77</a>
                                 </p>
                             </li>
                             <li>
                                 <p class="name">Email</p>
                                 <p class="value">
                                     <a href="mailto:info@amavet.com.vn" title="email">
-                                        <span class="p-navgroup-linkText">info@amavet.com.vn</span>
+                                        <span class="p-navgroup-linkText" style="color: #009244">info@amavet.com.vn</span>
                                     </a>
                                 </p>
                             </li>

@@ -26,8 +26,10 @@ class ProductsController extends Controller
 
     public function listCategory($title, $id) {
         $listProductCategory = ProductsLanguages::User()->where('category_product_id', $id)->paginate(20);
+        $categoryName = CategoryProductsLanguages::User()->where('category_products_id', $id)->first();
+
         return view('user.products.list',[
-            'title' => $title,
+            'title' => $categoryName['name'],
             'listProductCategory' => $listProductCategory
         ]);
     }

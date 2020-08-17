@@ -15,17 +15,17 @@
             <div class="navigate">
                 <ol itemscope="">
                     <li itemprop="itemListElement">
-                        <a class="home" href="/">
+                        <a class="home" href="/" style="color: black">
                             <span itemprop="name">{{trans('messages.home')}}&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a class="" href="/">
+                        <a class="" href="/" style="color: black">
                             <span itemprop="name">{{trans('messages.products')}}&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
-                    <li itemprop="itemListElement">
-                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3">
+                    <li itemprop="itemListElement" >
+                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3" style="color: black">
                             <span itemprop="name">{{$product['name']}}<span></span></span>
                         </a>
                     </li>
@@ -40,6 +40,14 @@
                 <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
                 <div class="col-xs-12 col-md-3">
                     <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}">
+                    <p id="compartido" style="text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 15.5px;">Chia Sẻ</p>
+                    <div id="barra-xs" style="margin-bottom: 20px;">
+                        <a href="#" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 facebook" id="fb-share-button">
+                        </a>
+
+                        <a href="#" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 facebook print" target="_blank">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-offset-2 col-md-7">
                     {!! $product['content'] !!}
@@ -65,4 +73,19 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script>
+        var fbButton = document.getElementById('fb-share-button');
+        var url = window.location.href;
+
+        fbButton.addEventListener('click', function() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+                'facebook-share-dialog',
+                'width=626,height=436'
+            );
+
+            return false;
+        });
+    </script>
 @endsection

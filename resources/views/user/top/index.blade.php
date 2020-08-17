@@ -152,7 +152,7 @@
                     <div class="box-title col-lg-4">
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #009245" href="#" target="_self">Video</a>
+                                <a style="color: #009245" href="{{route('videos')}}" target="_self">Video</a>
                             </h2>
                         </div>
 
@@ -166,7 +166,7 @@
 
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #009245" href="#" target="_self">Hình ảnh</a>
+                                <a style="color: #009245" href="{{route('list_image')}}" target="_self">Hình ảnh</a>
                             </h2>
                         </div>
 

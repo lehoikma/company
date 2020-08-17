@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+    <link href="/image/logo_amavet.png" rel="shortcut icon" />
 
     <meta name="description" content="@yield('meta-description')">
     <meta name="author" content="amavet">
@@ -54,7 +55,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                                     </div>
                                     <div class="col-lg-8 col-md-8 col-xs-8">
                                         <a href="/">
-                                            <img src="/image/amavet_top.gif"/>
+                                            <img src="/image/amavet_top.gif" style="border-radius: 10px;"/>
                                         </a>
                                     </div>
                                     <div class="col-lg-1 col-md-1 col-xs-1" style="text-align: right; padding-right: 5px">
@@ -146,10 +147,10 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                                         <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
                                            data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
                                     </li>
-                                    <li class="">
-                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>
-                                    </li>
+{{--                                    <li class="">--}}
+{{--                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>--}}
+{{--                                    </li>--}}
 
                                     <li class="">
                                         <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
@@ -341,10 +342,10 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                     <a href="#" class=""
                        data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
                 </li>
-                <li class="">
-                    <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
-                       data-nav-id="mjcmsContact">Tuyển Dụng</a>
-                </li>
+{{--                <li class="">--}}
+{{--                    <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                       data-nav-id="mjcmsContact">Tuyển Dụng</a>--}}
+{{--                </li>--}}
 
                 <li class="">
                     <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"

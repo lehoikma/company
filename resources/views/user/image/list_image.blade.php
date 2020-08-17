@@ -6,10 +6,10 @@
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href="/"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/" style="color: black"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="" target="_self"><span>Thư viện ảnh<span></span></span></a>
+                        <a href="" target="_self" style="color: black"><span>Thư viện ảnh<span></span></span></a>
                     </li>
                 </ol>
             </div>
@@ -19,8 +19,8 @@
     <section class="page-content page-gallery">
         <div class="container">
             <div class="box-title">
-                <h1>
-                    <a class="text" href="" target="_self">Thư viện ảnh</a></h1>
+                <h1 style="margin-top: 0px;">
+                    <a class="text" href="" target="_self" style="color: #009244">Thư viện ảnh</a></h1>
             </div>
             <div class="gallery-listing">
                 <div class="row" id="gall-list">

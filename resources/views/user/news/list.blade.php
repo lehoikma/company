@@ -16,12 +16,12 @@
             <div class="navigate">
                 <ol itemscope="">
                     <li itemprop="itemListElement">
-                        <a class="home" href="/">
+                        <a class="home" href="/" style="color: black">
                             <span itemprop="name">{{trans('messages.home')}}&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3">
+                        <a href="#" itemprop="item" target="_self" class="arr firt" id="menu3" style="color: black">
                             <span itemprop="name">{{$categoryName['name']}}<span></span></span>
                         </a>
                     </li>
@@ -36,8 +36,8 @@
 
             <div class="article-listing">
                 <div class="box-title">
-                    <h2>
-                        <a class="text" href="#" target="_self">
+                    <h2 style="margin-top: 0px">
+                        <a class="text" href="#" target="_self" style="color: #009244">
                             {{$categoryName['name']}}
                         </a>
                     </h2>
@@ -52,7 +52,8 @@
                                 </a>
                             </figure>
                             <div class="n-title">
-                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title='' class='title' target='_self'>
+                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title='' class='title' target='_self'
+                                style="color: #009244">
                                     {{$value['title']}}
                                 </a>
                             </div>

@@ -16,7 +16,7 @@
                 <ol itemscope="">
                     <li itemprop="itemListElement">
                         <a class="home" itemprop="item" href="/">
-                            <span itemprop="name">Trang chủ&nbsp;&nbsp;&gt;&nbsp;</span>
+                            <span itemprop="name" style="color: black">Trang chủ&nbsp;&nbsp;&gt;&nbsp;</span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">

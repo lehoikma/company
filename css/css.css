@@ -150,7 +150,7 @@
 }
 
 .main-nav li li:hover > a {
-    color: #9cc212
+    color: #009244
 }
 
 .main-nav li li:hover > ul {
@@ -196,11 +196,11 @@
 }
 
 .main-nav ul.menu > li.current-menu-item > a, .main-nav ul.menu > li.current-menu-parent > a, .main-nav ul.menu > li.current-menu-ancestor > a, .main-nav ul.menu > li:hover > a {
-    color: #9cc212
+    color: #009244
 }
 
 .main-nav ul.menu > li.active > a, .main-nav ul.menu > li:hover > a {
-    color: #9cc212
+    color: #009244
 }
 
 .main-nav > ul.menu {
@@ -246,7 +246,7 @@
 }
 
 .main-nav > ul.menu > li.current_page_item > a, .main-nav > ul.menu > li:hover > a {
-    color: #9cc212
+    color: #009244
 }
 
 .main-nav li:hover > ul {
@@ -523,11 +523,11 @@
 }
 
 .primary-mobile-nav ul.menu li > a:hover {
-    color: #9cc212
+    color: #009244
 }
 
 .primary-mobile-nav ul.menu li.active > a {
-    color: #9cc212
+    color: #009244
 }
 
 .primary-mobile-nav ul.menu li.active > a .toggle-menu-children:before {
@@ -535,7 +535,7 @@
 }
 
 .primary-mobile-nav ul.menu li.current_page_parent > a, .primary-mobile-nav ul.menu li.current-menu-item > a, .primary-mobile-nav ul.menu li.current-menu-ancestor > a, .primary-mobile-nav ul.menu li.current-menu-parent > a {
-    color: #9cc212
+    color: #009244
 }
 
 .primary-mobile-nav ul.menu ul {
@@ -669,7 +669,7 @@
 
 .widget ul li a:hover {
     text-decoration: none;
-    color: #9cc212
+    color: #009244
 }
 
 .widget table, .widget select {
@@ -728,7 +728,7 @@
 }
 
 .topbar a:hover {
-    color: #9cc212
+    color: #009244
 }
 
 .topbar ul {
@@ -744,7 +744,7 @@
 }
 
 .topbar ul li a:hover {
-    color: #9cc212
+    color: #009244
 }
 
 .header-v1 .topbar {
@@ -809,7 +809,7 @@
 }
 
 .header-v1 .topbar .widget .pull-left i {
-    color: #9cc212;
+    color: #009244;
     font-size: 1.25em;
     margin: .5em .9em 0 0;
     line-height: 36px
@@ -839,7 +839,7 @@
 
 .header-v1 .topbar .socials li a:hover {
     border: 1px solid #fff;
-    color: #9cc212
+    color: #009244
 }
 
 .header-v1 .header-main .menu-row {
@@ -889,7 +889,7 @@
 
 .socials a:hover {
     border: 0;
-    color: #9cc212
+    color: #009244
 }
 
 .socials a i {
