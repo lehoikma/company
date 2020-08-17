@@ -253,7 +253,7 @@
     color: #04569c;
     display: block;
     float: left;
-    font-family: -webkit-pictograph;
+    /*font-family: -webkit-pictograph;*/
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
@@ -268,7 +268,7 @@
 .n-item .n-title .date, .article-detail .date {
     color: #333333;
     display: inline-block;
-    font-family: -webkit-pictograph;
+    /*font-family: -webkit-pictograph;*/
     font-size: 13px;
     padding-bottom: 5px;
     text-transform: uppercase;
@@ -571,7 +571,7 @@
 .box-title .text {
     color: #00559a;
     display: inline-block;
-    font-family: -webkit-pictograph;
+    /*font-family: -webkit-pictograph;*/
     font-size: 40px;
     line-height: 30px;
     position: relative;
@@ -805,7 +805,7 @@
 
 .main-nav a {
     font-weight: 600;
-    font-size: 1.02em;
+    font-size: 1.08em;
     color: #2e2e2e;
     display: block;
 }
@@ -899,7 +899,7 @@
 }
 
 .main-nav li li a {
-    font-size: 16px;
+    font-size: 14px;
     padding: 18px 0;
     font-weight: 500;
     color: #2e2e2e;
@@ -1405,7 +1405,7 @@
 }
 
 .widget .widget-title {
-    font-family: 'Noto Sans', sans-serif;
+    /*font-family: 'Noto Sans', sans-serif;*/
     font-weight: 600;
     font-size: 20px;
     color: #2e2e2e;
@@ -1580,7 +1580,7 @@
 }
 
 .header-v1 .topbar .widget .pull-right > div:first-child {
-    font-family: 'Noto Sans', sans-serif;
+    /*font-family: 'Noto Sans', sans-serif;*/
     font-weight: 500;
     color: #fff;
     text-transform: uppercase;
@@ -1909,7 +1909,7 @@ h6,
 p,
 textarea {
     /*color: #333;*/
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
     /*font-size: 15px;*/
     /*font-weight: 400;*/
     /*line-height: 1.5625;*/
@@ -1923,7 +1923,7 @@ input,
 label,
 textarea {
     /*color: #333;*/
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
     /*font-size: 13px;*/
     /*font-weight: 300;*/
 }
@@ -1967,6 +1967,7 @@ a img {
 
 body {
     background-color: #fff;
+    font-family: "Times New Roman", Times, serif;
 }
 
 
@@ -1986,7 +1987,7 @@ body {
 
 
 #title {
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
     font-size: 36px;
     line-height: 1.25;
     margin: 0;
@@ -2783,7 +2784,7 @@ img {
 .article-detail .title-article {
     color: #00559a;
     display: block;
-    font-family: -webkit-pictograph;
+    /*font-family: -webkit-pictograph;*/
     font-size: 24px;
     font-weight: bold;
     line-height: 1.2;
@@ -2798,7 +2799,7 @@ img {
     border-bottom: 1px solid #dfdfdf;
     color: #1a1a1a;
     float: left;
-    font-family: -webkit-pictograph;
+    /*font-family: -webkit-pictograph;*/
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 20px;
@@ -2825,8 +2826,8 @@ img {
 .box-title .text {
     color: #00559a;
     display: inline-block;
-    font-family: -webkit-pictograph;
-    font-size: 40px;
+    /*font-family: -webkit-pictograph;*/
+    font-size: 20px;
     line-height: 30px;
     position: relative;
     text-transform: uppercase;
@@ -3071,7 +3072,7 @@ img {
 .grd-contact-box ul li .name {
     width: 100%;
     color: #2e2e2e;
-    font-family: 'Noto Sans', sans-serif;
+    /*font-family: 'Noto Sans', sans-serif;*/
     text-transform: uppercase;
     margin-bottom: 0;
     font-weight: 500
@@ -3091,7 +3092,7 @@ img {
     margin-top: 10px;
     color: #2e2e2e;
     font-weight: 500;
-    font-family: 'Noto Sans', sans-serif
+    /*font-family: 'Noto Sans', sans-serif*/
 }
 
 .grd-contact-box ul li:last-child .value {
@@ -3127,6 +3128,9 @@ img {
     .video-listing iframe {
         width: 100% !important;
         height: auto;
+    }
+    .page-article table{
+        width: auto !important;
     }
 }
 

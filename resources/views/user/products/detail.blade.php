@@ -38,10 +38,10 @@
             <div class="row">
                 <h3 class="col-md-12" style="margin-bottom: 0px">{{$product['name']}}</h3>
                 <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
-                <div class="col-xs-12 col-md-offset-4 col-md-3">
+                <div class="col-xs-12 col-md-3">
                     <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}">
                 </div>
-                <div class="col-xs-12 col-md-offset-2 col-md-8">
+                <div class="col-xs-12 col-md-offset-2 col-md-7">
                     {!! $product['content'] !!}
                 </div>
                 <p class="col-md-12" style="font-weight: bold;border-top: 1px solid #d4d4d4;padding-top: 10px;">SẢN PHẨM TƯƠNG TỰ</p>
