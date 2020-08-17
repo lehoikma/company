@@ -27,7 +27,7 @@
             </div>
             <div class="banner-content col-lg-3 col-md-3 col-xs-3">
                 <div class="banner-text">
-                    <h3 style="text-align: center;margin-top: 0px;">GIỚI THIỆU AMAVET</h3>
+                    <h3 style="text-align: center;margin-top: 0px; color: #009245">GIỚI THIỆU AMAVET</h3>
                     <p>
                         {{$introduces['description']}}
                     </p>
@@ -88,7 +88,7 @@
                                             @continue
                                         @endif
                                         <li>
-                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}">{{$value['title']}}</a>
+                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" style="font-weight: 600">{{$value['title']}}</a>
                                             <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
                                         </li>
                                     @endforeach
@@ -113,7 +113,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 article-event">
                     <div class="box-title">
                         <h2 class="title-social">
-                            <a style="color: #ffffff" href="{{route('news_list_ctg',['title' => str_slug(trans('messages.social_activities')), 'id' => 4])}}" target="_self">
+                            <a style="color: #009245" href="{{route('news_list_ctg',['title' => str_slug(trans('messages.social_activities')), 'id' => 4])}}" target="_self">
                                 {{trans('messages.social_activities')}}
                             </a>
                         </h2>
@@ -126,7 +126,7 @@
                         <div class="item-social">
                             <div class="n-title" style="padding:0px">
                                 <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" class="title" target="_self">
-                                    <h3>{{$value['title']}}</h3>
+                                    <h3 style="color: black; font-size: 18px">{{$value['title']}}</h3>
                                 </a>
                             </div>
                             <div class="n-desc">
@@ -152,7 +152,7 @@
                     <div class="box-title col-lg-4">
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #ffffff" href="#" target="_self">Video</a>
+                                <a style="color: #009245" href="#" target="_self">Video</a>
                             </h2>
                         </div>
 
@@ -166,7 +166,7 @@
 
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #ffffff" href="#" target="_self">Hình ảnh</a>
+                                <a style="color: #009245" href="#" target="_self">Hình ảnh</a>
                             </h2>
                         </div>
 
@@ -183,7 +183,7 @@
                     <div class="box-title col-lg-4">
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #ffffff" href="#" target="_self">Map</a>
+                                <a style="color: #009245" href="#" target="_self">Map</a>
                             </h2>
                         </div>
 

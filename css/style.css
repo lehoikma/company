@@ -805,7 +805,7 @@
 
 .main-nav a {
     font-weight: 600;
-    font-size: 1.08em;
+    font-size: 18px;
     color: #2e2e2e;
     display: block;
 }
@@ -985,7 +985,7 @@
 
 .main-nav > ul.menu > li {
     position: relative;
-    padding: 0 1.4em 1.6em;
+    padding: 0 0.9em 1.2em;
     margin-bottom: 0
 }
 
@@ -2103,9 +2103,9 @@ img {
     font-size: 28px;
     text-align: center;
     padding: 11px;
-    color: #ffffff;
+    color: #009245;
     text-transform: uppercase;
-    background: #009245;
+    /*background: #009245;*/
     font-weight: 500;
 }
 
@@ -3206,9 +3206,9 @@ img {
     font-size: 28px;
     text-align: center;
     padding: 11px;
-    color: #ffffff;
+    color: #009245;
     text-transform: uppercase;
-    background: #009245;
+    /*background: #009245;*/
     font-weight: 500;
 }
 

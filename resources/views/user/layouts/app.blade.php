@@ -47,17 +47,17 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 
                             <div class="container">
                                 <div class="row">
-                                    <div class="site-logo col-lg-4 col-md-4 col-xs-4">
+                                    <div class="site-logo col-lg-3 col-md-3 col-xs-3">
                                         <a href="/" class="logo">
                                             <img src="/image/logo_amavet.png" class="logo" width="250"/>
                                         </a>
                                     </div>
-                                    <div class="col-lg-7 col-md-7 col-xs-7">
+                                    <div class="col-lg-8 col-md-8 col-xs-8">
                                         <a href="/">
                                             <img src="/image/amavet_top.gif"/>
                                         </a>
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-xs-1">
+                                    <div class="col-lg-1 col-md-1 col-xs-1" style="text-align: right; padding-right: 5px">
                                         <a href="{{route('user.change-language','en')}}"><img src="/image/en.jpg"></a>&nbsp;
                                         <a href="{{route('user.change-language','vn')}}"><img src="/image/vn.jpg"></a>
                                     </div>
