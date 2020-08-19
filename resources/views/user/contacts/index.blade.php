@@ -39,7 +39,7 @@
                 <div class="contact-pagebox">
                     <div class="grd-contact-box">
                         <div class="grd-section-title  grd_title-type-2 margbtm20">
-                            <h3 class="title  fsize30">{{trans('messages.contact')}}</h3>
+                            <h3 class="title  fsize30" style="font-weight: 600; font-family: 'Roboto Condensed',sans-serif;">{{trans('messages.contact')}}</h3>
                         </div>
                         <ul>
                             <li>

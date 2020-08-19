@@ -36,11 +36,11 @@
     <section class="page-content page-article">
         <div class="container">
             <div class="row">
-                <h3 class="col-md-12" style="margin-bottom: 0px">{{$product['name']}}</h3>
+                <h3 class="col-md-12" style="margin-bottom: 0px; font-weight: 600">{{$product['name']}}</h3>
                 <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
-                <div class="col-xs-12 col-md-3">
+                <div class="col-xs-12 col-md-5">
                     <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}">
-                    <p id="compartido" style="text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 15.5px;">Chia Sẻ</p>
+                    <p id="compartido" style="font-weight:600;text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 18px;">CHIA SẺ</p>
                     <div id="barra-xs" style="margin-bottom: 20px;">
                         <a href="#" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 facebook" id="fb-share-button">
                         </a>
@@ -49,7 +49,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-offset-2 col-md-7">
+                <div class="col-xs-12 col-md-7">
                     {!! $product['content'] !!}
                 </div>
                 <p class="col-md-12" style="font-weight: bold;border-top: 1px solid #d4d4d4;padding-top: 10px;">SẢN PHẨM TƯƠNG TỰ</p>

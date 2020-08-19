@@ -37,7 +37,7 @@
             <div class="article-listing">
                 <div class="box-title">
                     <h2 style="margin-top: 0px">
-                        <a class="text" href="#" target="_self" style="color: #009244">
+                        <a class="text" href="#" target="_self" style="color: #009244; font-weight: 600; font-family: 'Roboto Condensed',sans-serif;">
                             {{$categoryName['name']}}
                         </a>
                     </h2>

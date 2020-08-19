@@ -38,7 +38,7 @@
                             </div>
 
                             <h5 class="small-font" style="text-align: center;margin-top: 10px;">
-                                <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a">
+                                <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a; font-size: 18px;font-weight: 600">
                                     {{$value['name']}}
                                 </a>
                             </h5>

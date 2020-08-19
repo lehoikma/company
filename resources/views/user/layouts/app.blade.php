@@ -280,11 +280,11 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
             <ul class="menu">
 
                 <li class="">
-                    <a href="/" title="Trang chủ" data-nav-id="">{{ trans('messages.home') }}</a>
+                    <a href="/" title="Trang chủ" data-nav-id="" style="text-transform: uppercase;">{{ trans('messages.home') }}</a>
                 </li>
 
                 <li class="menu-item-has-children">
-                    <a href="{{route('lich_su_user')}}" class="dropdown-toggle " title="Tin tức" data-nav-id="">{{ trans('messages.introduce') }}</a>
+                    <a href="{{route('lich_su_user')}}" class="dropdown-toggle " title="Tin tức" data-nav-id="" style="text-transform: uppercase;">{{ trans('messages.introduce') }}</a>
 {{--                    <ul class="sub-menu">--}}
 {{--                        <li class="">--}}
 {{--                            <a href="{{route('lich_su_user')}}" data-nav-id="2">{{ trans('messages.lich_su') }}</a>--}}
@@ -303,7 +303,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 {{--                </li>--}}
 
                 <li class=" menu-item-has-children">
-                    <a href="{{route('products_list')}}" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="">{{ trans('messages.products') }}</a>
+                    <a href="{{route('products_list')}}" class="dropdown-toggle " title="Sản Phẩm" data-nav-id="" style="text-transform: uppercase;">{{ trans('messages.products') }}</a>
                     <ul class="sub-menu">
                         @foreach($categoryProducts as $value)
                             <?php
@@ -328,19 +328,18 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                 </li>
 
                 <li class=" menu-item-has-children">
-                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="">{{ trans('messages.news') }}</a>
+                    <a href="#" class="dropdown-toggle " title="Tin tức & sự kiện" data-nav-id="" style="text-transform: uppercase;">{{ trans('messages.news') }}</a>
                     <ul class="sub-menu">
                         @foreach($categoryNews as $value)
                             <li class="">
-                                <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2">{{$value['name']}}</a>
+                                <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2" style="text-transform: uppercase;">{{$value['name']}}</a>
                             </li>
                         @endforeach
                     </ul>
                 </li>
 
                 <li class="">
-                    <a href="#" class=""
-                       data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
+                    <a href="#" class="" data-nav-id="mjcmsContact" style="text-transform: uppercase;">Đấu Giá Lợn Giống</a>
                 </li>
 {{--                <li class="">--}}
 {{--                    <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
@@ -349,17 +348,17 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 
                 <li class="">
                     <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                       data-nav-id="mjcmsContact">Hình Ảnh</a>
+                       data-nav-id="mjcmsContact" style="text-transform: uppercase;">Hình Ảnh</a>
                 </li>
 
                 <li class="">
                     <a href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                       data-nav-id="mjcmsContact">Videos</a>
+                       data-nav-id="mjcmsContact" style="text-transform: uppercase;">Videos</a>
                 </li>
 
                 <li class="">
                     <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                       data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
+                       data-nav-id="mjcmsContact" style="text-transform: uppercase;">{{ trans('messages.contact') }}</a>
                 </li>
 
             </ul>

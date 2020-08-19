@@ -19,7 +19,7 @@
         <div class="container">
             <div class="box-title">
                 <h1 style="margin-top: 0px">
-                    <a class="text" href="" target="_self" style="color: #009244">Videos</a></h1>
+                    <a class="text" href="" target="_self" style="color: #009244; font-weight: 600; font-family: 'Roboto Condensed',sans-serif;">Videos</a></h1>
             </div>
             <div class="video-listing">
                 <div class="row">

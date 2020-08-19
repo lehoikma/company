@@ -20,7 +20,7 @@
         <div class="container">
             <div class="box-title">
                 <h1 style="margin-top: 0px;">
-                    <a class="text" href="" target="_self" style="color: #009244">Thư viện ảnh</a></h1>
+                    <a class="text" href="" target="_self" style="color: #009244; font-weight: 600; font-family: 'Roboto Condensed',sans-serif;">Thư viện ảnh</a></h1>
             </div>
             <div class="gallery-listing">
                 <div class="row" id="gall-list">

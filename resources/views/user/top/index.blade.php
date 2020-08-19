@@ -55,7 +55,7 @@
                                                 <img width="250" height="250" src="/upload/{{$value['image']}}" class="" alt=""/>
                                             </a>
                                         </div>
-                                        <p class="text-center ">
+                                        <p class="text-center " style="font-size: 16px; font-weight: 600">
                                             <a href="{{route('products_detail', ['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" title="">{{$value['name']}}</a>
                                         </p>
                                     </div>
@@ -73,7 +73,7 @@
                                         <img width="320" src="upload/{{$firstNewsAmavet['image']}}"/>
                                     </a>
                                     <h3 class="widget-item-title">
-                                        <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}">
+                                        <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" style="font-weight: 600; font-size: 18px">
                                             {{$firstNewsAmavet['title']}}
                                         </a>
                                     </h3>
@@ -88,7 +88,7 @@
                                             @continue
                                         @endif
                                         <li>
-                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" style="font-weight: 600">{{$value['title']}}</a>
+                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" style="font-weight: 600; font-size: 18px">{{$value['title']}}</a>
                                             <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
                                         </li>
                                     @endforeach
