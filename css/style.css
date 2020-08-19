@@ -1392,7 +1392,8 @@
 }
 
 .header-v1 .main-nav > ul.menu {
-    margin-top: 1.6em
+    margin-top: 1.6em;
+    font-family: 'Roboto Condensed',sans-serif;
 }
 
 .container {
@@ -2106,7 +2107,8 @@ img {
     color: #009245;
     text-transform: uppercase;
     /*background: #009245;*/
-    font-weight: 500;
+    font-weight: 600;
+    font-family: 'Roboto Condensed',sans-serif;
 }
 
 #content-home .widget {
@@ -3209,7 +3211,8 @@ img {
     color: #009245;
     text-transform: uppercase;
     /*background: #009245;*/
-    font-weight: 500;
+    font-weight: 600;
+    font-family: 'Roboto Condensed',sans-serif;
 }
 
 .box-title .gall-video iframe{

@@ -27,7 +27,7 @@
             </div>
             <div class="banner-content col-lg-3 col-md-3 col-xs-3">
                 <div class="banner-text">
-                    <h3 style="text-align: center;margin-top: 0px; color: #009245">GIỚI THIỆU AMAVET</h3>
+                    <h3 style="text-align: center;margin-top: 0px; color: #009245;font-weight: 600;font-family: 'Roboto Condensed',sans-serif;">GIỚI THIỆU AMAVET</h3>
                     <p>
                         {{$introduces['description']}}
                     </p>
