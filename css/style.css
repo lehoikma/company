@@ -2181,7 +2181,7 @@ img {
 .item-product-home .img-product img {
     width: 165px;
     margin: 0 auto;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     height: 300px;
 }
 

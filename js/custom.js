@@ -118,9 +118,9 @@
             dots: true,
             speed: 600,
             autoplay: true,
-            autoplaySpeed: 5000,
-            slidesToShow: 2,
-            slidesToScroll: 2,
+            autoplaySpeed: 50000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
             prevArrow: false,
             nextArrow: false,
             responsive: [
@@ -128,7 +128,7 @@
                     breakpoint: 961,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 2,
+                        slidesToScroll: 1,
                     }
                 },
                 {

@@ -12,7 +12,7 @@
 @section('content')
 
     <!--Slider-->
-    <div class="slider sliderBanner">
+    <div class="slider sliderBanner" style="padding-top: 15px;">
         @foreach($sliders as $value)
             <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
         @endforeach
