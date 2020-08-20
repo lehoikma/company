@@ -901,7 +901,7 @@
 
 .main-nav li li a {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     padding: 18px 0;
     color: #2e2e2e;
     position: relative;
@@ -940,14 +940,17 @@
     float: left;
     position: relative;
     text-align: left;
-    padding: 27px 22px;
+    /*padding: 0px 23px;*/
     margin-bottom: 0
 }
 
 .main-nav ul.menu > li:first-child > ul {
     left: 0
 }
-
+.main-nav ul.menu > li > a.active {
+    background: #8fcc6d;
+    color: black !important;
+}
 .main-nav ul.menu > li > a {
     text-transform: uppercase;
     position: relative;
@@ -986,7 +989,7 @@
 
 .main-nav > ul.menu > li {
     position: relative;
-    padding: 0 0.9em 1.2em;
+    /*padding: 0 1.7em 1.2em;*/
     margin-bottom: 0
 }
 
@@ -999,14 +1002,20 @@
 }
 
 .main-nav > ul.menu > li > a {
+    transition: .5s;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
     text-transform: uppercase;
     position: relative;
-    -webkit-transition: .5s;
-    transition: .5s
+    line-height: 55px;
+    font-weight: bold;
+    padding: 0px 23px;
 }
 
 .main-nav > ul.menu > li.current_page_item > a, .main-nav > ul.menu > li:hover > a {
-    color: #009244
+    background: #8fcc6d;
+    color: black;
 }
 
 .main-nav li:hover > ul {
@@ -1309,7 +1318,7 @@
 }
 
 .primary-mobile-nav ul.menu ul li a {
-    font-size: 14px;
+    font-size: 16px;
     display: block
 }
 
@@ -1393,7 +1402,7 @@
 }
 
 .header-v1 .main-nav > ul.menu {
-    margin-top: 1.6em;
+    /*margin-top: 1.6em;*/
     font-family: 'Roboto Condensed',sans-serif;
 }
 

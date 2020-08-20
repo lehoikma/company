@@ -41,7 +41,6 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
         <div class="header-main clearfix">
             <div class="container">
                 <div class="row menu-row">
-
                     <div class="header-content col-lg-12 col-md-12 col-xs-12">
                         <!-- top bar -->
                         <div id="topbar" class="topbar col-lg-12 col-md-12 col-xs-12">
@@ -67,15 +66,15 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             </div>
                         </div>
                         <!-- top bar -->
-                        <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346; padding-left: 0px">
-                            <nav id="site-navigation" class="main-nav primary-nav nav">
-                                <ul class="menu">
-                                    <li class="">
-                                        <a href="/" class=" " title="Trang chủ" data-xf-key="1"
-                                           data-nav-id="home">{{ trans('messages.home') }}</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="{{route('lich_su_user')}}" title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
+{{--                        <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346; padding-left: 0px">--}}
+{{--                            <nav id="site-navigation" class="main-nav primary-nav nav">--}}
+{{--                                <ul class="menu">--}}
+{{--                                    <li class="">--}}
+{{--                                        <a href="/" class=" " title="Trang chủ" data-xf-key="1"--}}
+{{--                                           data-nav-id="home">{{ trans('messages.home') }}</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('lich_su_user')}}" title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>--}}
 {{--                                        <ul class="sub-menu">--}}
 {{--                                            <li class="">--}}
 {{--                                                <a href="{{route('lich_su_user')}}" style="text-transform: uppercase;">{{ trans('messages.lich_su') }}</a>--}}
@@ -87,7 +86,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 {{--                                                <a href="{{route('tam_nhin_user')}}" style="text-transform: uppercase;">{{ trans('messages.tam_nhin') }}</a>--}}
 {{--                                            </li>--}}
 {{--                                        </ul>--}}
-                                    </li>
+{{--                                    </li>--}}
 
 {{--                                    <li class="">--}}
 {{--                                        <a href="{{route('list_activities')}}" title="{{ trans('messages.scope_of_activities') }}">{{ trans('messages.scope_of_activities') }}</a>--}}
@@ -107,86 +106,166 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 {{--                                        </ul>--}}
 {{--                                    </li>--}}
 
-                                    <li class=" has-children">
-                                        <a href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
-                                        <ul class="sub-menu">
-                                            @foreach($categoryProducts as $value)
-                                                <?php
-                                                $subMenuData = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
-                                                ?>
-                                                <li class="">
-                                                    <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
-                                                @if(!empty($subMenuData))
-                                                    <ul class="sub-menu" style="left: 101%">
-                                                        @foreach($subMenuData as $subMenu)
-                                                            <li class="">
-                                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$subMenu['name']}}</a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                @endif
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
+{{--                                    <li class=" has-children">--}}
+{{--                                        <a href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>--}}
+{{--                                        <ul class="sub-menu">--}}
+{{--                                            @foreach($categoryProducts as $value)--}}
+{{--                                                <?php--}}
+{{--                                                $subMenuData = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();--}}
+{{--                                                ?>--}}
+{{--                                                <li class="">--}}
+{{--                                                    <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>--}}
+{{--                                                @if(!empty($subMenuData))--}}
+{{--                                                    <ul class="sub-menu" style="left: 101%">--}}
+{{--                                                        @foreach($subMenuData as $subMenu)--}}
+{{--                                                            <li class="">--}}
+{{--                                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase; font-size: 14px">{{$subMenu['name']}}</a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endforeach--}}
+{{--                                                    </ul>--}}
+{{--                                                @endif--}}
+{{--                                                </li>--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
 
-                                    <li class=" has-children">
-                                        <a class="dropdown-toggle " title="{{ trans('messages.news') }}" >{{ trans('messages.news') }}</a>
-                                        <?php
-                                        $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
-                                        ?>
-                                        <ul class="sub-menu">
-                                            @foreach($categoryNews as $value)
-                                                <li class="">
-                                                    <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2" style="text-transform: uppercase;">{{$value['name']}}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    <li class="">
-                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
-                                    </li>
+{{--                                    <li class=" has-children">--}}
+{{--                                        <a class="dropdown-toggle " title="{{ trans('messages.news') }}" >{{ trans('messages.news') }}</a>--}}
+{{--                                        <?php--}}
+{{--                                        $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();--}}
+{{--                                        ?>--}}
+{{--                                        <ul class="sub-menu">--}}
+{{--                                            @foreach($categoryNews as $value)--}}
+{{--                                                <li class="">--}}
+{{--                                                    <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2" style="text-transform: uppercase;">{{$value['name']}}</a>--}}
+{{--                                                </li>--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                                           data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>--}}
+{{--                                    </li>--}}
 {{--                                    <li class="">--}}
 {{--                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
 {{--                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>--}}
 {{--                                    </li>--}}
 
-                                    <li class="">
-                                        <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">Hình Ảnh</a>
-                                    </li>
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                                           data-nav-id="mjcmsContact">Hình Ảnh</a>--}}
+{{--                                    </li>--}}
 
-                                    <li class="">
-                                        <a href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">Videos</a>
-                                    </li>
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                                           data-nav-id="mjcmsContact">Videos</a>--}}
+{{--                                    </li>--}}
 
-                                    <li class="">
-                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                                           data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
-                                    </li>
+{{--                                    <li class="">--}}
+{{--                                        <a href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"--}}
+{{--                                           data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>--}}
+{{--                                    </li>--}}
 
-                                    <li id="mf-active-menu" class="mf-active-menu"></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
-                    <div class="navbar-toggle col-xs-11">
-                        <div class="col-xs-6">
-                            <a href="/" class="logo">
-                                <img src="/image/amavet_logo.png" class="logo" width="100"/>
-                            </a>
-                        </div>
-
-                        <div class="col-xs-6" style="padding: 15% 0 0 0;">
-                            <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
-                        </div>
-
-
+{{--                                    <li id="mf-active-menu" class="mf-active-menu"></li>--}}
+{{--                                </ul>--}}
+{{--                            </nav>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
+            </div>
+            <div class="site-menu col-lg-12 col-md-12 col-xs-12" style="border-top: 1px dotted #089346; padding-left: 0px;background: #089346;">
+                <div class="container">
+                <nav id="site-navigation" class="main-nav primary-nav nav">
+                    <ul class="menu">
+                        <li class="">
+                            <a class="menu-active" href="/" class=" " title="Trang chủ" data-xf-key="1"
+                               data-nav-id="home">{{ trans('messages.home') }}</a>
+                        </li>
+                        <li class="">
+                            <a class="menu-active" href="{{route('lich_su_user')}}" title="{{ trans('messages.introduce') }}" >{{ trans('messages.introduce') }}</a>
+                        </li>
+
+                        <li class=" has-children">
+                            <a class="menu-active" href="{{route('products_list')}}" class="dropdown-toggle " title="{{ trans('messages.products') }}">{{ trans('messages.products') }}</a>
+                            <ul class="sub-menu">
+                                @foreach($categoryProducts as $value)
+                                    <?php
+                                    $subMenuData = \App\Models\CategoryProductsLanguages::where('categories_cap_1', $value['categories_cap_1_id'])->where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+                                    ?>
+                                    <li class="">
+                                        <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                        @if(!empty($subMenuData))
+                                            <ul class="sub-menu" style="left: 101%">
+                                                @foreach($subMenuData as $subMenu)
+                                                    <li class="">
+                                                        <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase; font-size: 14px">{{$subMenu['name']}}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+
+                        <li class=" has-children">
+                            <a class="dropdown-toggle menu-active" title="{{ trans('messages.news') }}" >{{ trans('messages.news') }}</a>
+                            <?php
+                            $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
+                            ?>
+                            <ul class="sub-menu">
+                                @foreach($categoryNews as $value)
+                                    <li class="">
+                                        <a href="{{route('news_list_ctg',['title' => str_slug($value['name']), 'id' => $value['news_category_id']])}}" data-nav-id="2" style="text-transform: uppercase;">{{$value['name']}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="{{route('contacts')}}" class="menu-active" title="Liên Hệ" data-xf-key="5"
+                               data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
+                        </li>
+                        {{--                                    <li class="">--}}
+                        {{--                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
+                        {{--                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>--}}
+                        {{--                                    </li>--}}
+
+                        <li class="">
+                            <a class="menu-active" href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                               data-nav-id="mjcmsContact">Hình Ảnh</a>
+                        </li>
+
+                        <li class="">
+                            <a class="menu-active" href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                               data-nav-id="mjcmsContact">Videos</a>
+                        </li>
+
+                        <li class="">
+                            <a class="menu-active" href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                               data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
+                        </li>
+
+                        <li id="mf-active-menu" class="mf-active-menu"></li>
+                    </ul>
+                </nav>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row menu-row">
+                <div class="navbar-toggle col-xs-11">
+                    <div class="col-xs-6">
+                        <a href="/" class="logo">
+                            <img src="/image/amavet_logo.png" class="logo" width="100"/>
+                        </a>
+                    </div>
+
+                    <div class="col-xs-6" style="padding: 15% 0 0 0;">
+                        <span id="mf-navbar-toggle" class="navbar-icon"> <span class="navbars-line"></span> </span>
+                    </div>
+
+
+                </div>
+            </div>
             </div>
         </div>
         <div class="col-xs-12 language-custom" style="text-align: center;padding: 5px;display: none">
@@ -314,10 +393,10 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                                 <li class=" menu-item-has-children">
                                 <a href="{{route('list_category_danh_muc_2', ['title' => str_slug($value['name']), 'id' => $value['categories_cap_1_id']])}}" class="dropdown-toggle " data-nav-id="0" style="text-transform: uppercase;">{{$value['name']}}</a>
                                 @if(!empty($subMenuData1))
-                                    <ul class="sub-menu" style="left: 101%">
+                                    <ul class="sub-menu" style="left: 101%;">
                                         @foreach($subMenuData1 as $subMenu)
                                             <li class="">
-                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;">{{$subMenu['name']}}</a>
+                                                <a href="{{route('products_list_ctg', ['title' => str_slug($subMenu['name']), 'id' => $subMenu['category_products_id']])}}" data-nav-id="0" style="text-transform: uppercase;font-size: 14px">{{$subMenu['name']}}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -395,5 +474,16 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
 <script src="/js/custom.js" type='text/javascript'></script>
+<script>
+    $(function() {
+        var href = window.location.href;
+        $('a.menu-active').each(function(e,i) {
+            if (href.indexOf($(this).attr('href')) >= 0) {
+                $('a.active').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
 @yield('script')
 </html>
