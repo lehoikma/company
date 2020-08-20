@@ -48,6 +48,17 @@
                         <a href="#" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 facebook print" target="_blank">
                         </a>
                     </div>
+                    <p id="compartido" style="font-weight:600;text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 18px; margin-bottom: 20px;">TÌM KIẾM SẢN PHẨM</p>
+                    <div class="col-md-8 col-md-offset-2">
+                        <form>
+                            <input class="form-control form-control-sm mr-3 w-75 d-flex justify-content-center" type="text" placeholder="Search" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-md-1">
+                        <a style="font-size: 20px">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-7">
                     {!! $product['content'] !!}
