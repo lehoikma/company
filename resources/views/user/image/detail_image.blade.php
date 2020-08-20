@@ -6,13 +6,13 @@
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href="/"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/" style="color: black"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="{{route('list_image')}}"><span>Thư viện ảnh&nbsp;&gt;&nbsp;</span></a>
+                        <a href="{{route('list_image')}}" style="color: black"><span>Thư viện ảnh&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="" target="_self"><span>{{$title}}<span></span></span></a>
+                        <a href="" target="_self" style="color: black"><span>{{$title}}<span></span></span></a>
                     </li>
                 </ol>
             </div>
@@ -22,8 +22,8 @@
     <section class="page-content page-gallery">
         <div class="container">
             <div class="box-title">
-                <h1>
-                    <a class="text">{{$title}}</a>
+                <h1 style="margin-top: 0px">
+                    <a class="text" style="color: #009245;font-weight: 600;font-family: 'Roboto Condensed',sans-serif;">{{$title}}</a>
                 </h1>
             </div>
             <div class="gallery-listing">

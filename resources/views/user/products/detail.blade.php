@@ -39,7 +39,7 @@
                 <h3 class="col-md-12" style="margin-bottom: 0px; font-weight: 600">{{$product['name']}}</h3>
                 <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
                 <div class="col-xs-12 col-md-5">
-                    <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}">
+                    <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}" style="width: 100%">
                     <p id="compartido" style="font-weight:600;text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 18px;">CHIA SẺ</p>
                     <div id="barra-xs" style="margin-bottom: 20px;">
                         <a href="#" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 facebook" id="fb-share-button">
