@@ -38,7 +38,7 @@
             <div class="row">
                 <h3 class="col-md-12" style="margin-bottom: 0px; font-weight: 600">{{$product['name']}}</h3>
                 <p class="col-md-12" style=" color: #aaaaaa; font-size: 12px">Ngày Đăng : {{date_format($product['updated_at'], 'Y-m-d')}}&nbsp;/&nbsp;View: {{$product['view']}}</p>
-                <div class="col-xs-12 col-md-5">
+                <div class="col-xs-12 col-md-5" style="margin-bottom: 20px">
                     <img src="/upload/{{$product['image']}}" alt="" title="{{$product['name']}}" style="width: 100%">
                     <p id="compartido" style="font-weight:600;text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 18px;">CHIA SẺ</p>
                     <div id="barra-xs" style="margin-bottom: 20px;">
@@ -49,21 +49,23 @@
                         </a>
                     </div>
                     <p id="compartido" style="font-weight:600;text-align: center;padding-top: 10px;padding-bottom: 1.5%;line-height: 25px;color: #009244;margin: 0;font-size: 18px; margin-bottom: 20px;">TÌM KIẾM SẢN PHẨM</p>
-                    <div class="col-md-8 col-md-offset-2">
-                        <form>
-                            <input class="form-control form-control-sm mr-3 w-75 d-flex justify-content-center" type="text" placeholder="Search" aria-label="Search">
-                        </form>
-                    </div>
-                    <div class="col-md-1">
-                        <a style="font-size: 20px">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                    <form method="get" action="{{route('search')}}" id="form-id">
+                        <div class="col-xs-10 col-md-8 col-md-offset-2">
+                                <input class="form-control form-control-sm mr-3 w-75 d-flex justify-content-center" type="text" placeholder="Tìm kiếm" name="key_word" aria-label="Search">
+                        </div>
+                        <div class="col-xs-2 col-md-1" style="padding-left: 0px;">
+                            <a style="font-size: 24px" href="#" onclick="document.getElementById('form-id').submit();">
+                                <i class="fa fa-search" aria-hidden="true" style="color: #009244;"></i>
+                            </a>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-xs-12 col-md-7">
                     {!! $product['content'] !!}
                 </div>
-                <p class="col-md-12" style="font-weight: bold;border-top: 1px solid #d4d4d4;padding-top: 10px;">SẢN PHẨM TƯƠNG TỰ</p>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="border-top: 1px solid #d4d4d4;padding-top: 10px; font-weight: 600; font-size: 18px">SẢN PHẨM TƯƠNG TỰ</div>
                 <div class="col-md-12">
                     @foreach($prdFollows as$value)
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 single-post" style="margin-bottom: 30px;overflow-x: hidden;">
@@ -74,7 +76,7 @@
                             </div>
 
                             <h5 class="small-font" style="text-align: center;margin-top: 10px;">
-                                <a href="{{route('products_detail',['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a">
+                                <a href="{{route('products_detail',['title' => str_slug($value['name']), 'id' => $value['products_id']])}}" style="color: #0a0a0a; font-weight: 600; font-size: 16px">
                                     {{$value['name']}}
                                 </a>
                             </h5>
