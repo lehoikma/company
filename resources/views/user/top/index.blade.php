@@ -42,7 +42,7 @@
     <!--product & news-->
     <div id="wrap">
         <div id="inner" class="container">
-            <div id="content-sidebar-wrap">
+            <div id="content-sidebar-wrap" style="border-top: 2px dotted #009245;padding-top: 10px;border-bottom: 2px dotted #009245;padding-bottom: 10px;">
                 <div id="content-home">
                     <div id="code_widget-3" class="widget">
                         <div class="widget-wrap">
@@ -147,6 +147,7 @@
 
     <section class="module-event">
         <div class="container">
+            <div class="col-md-12" style="    border-top: 2px dotted #009245;padding-top: 10px;"></div>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 article-event">
                     <div class="box-title col-lg-4">

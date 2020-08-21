@@ -99,7 +99,7 @@
 
 .introduction {
     clear: both;
-    padding: 40px 0;
+    padding: 30px 0;
     /*text-align: center;*/
 }
 
@@ -141,7 +141,7 @@
 
 .module-event {
     /*background: #009245;*/
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 .module-event .n-item .item-box {
@@ -1987,7 +1987,7 @@ body {
 
 #wrap {
     width: 100%;
-    padding: 40px 0;
+    /*padding: 40px 0;*/
     clear: both;
 }
 
