@@ -43,7 +43,7 @@
                     </h2>
                 </div>
                 <div class="n-items row">
-                    @foreach($listNews as $value)
+                    @foreach($listNews as $key => $value)
                         <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 n-item">
                             <div class="item-box">
                                 <figure>
@@ -63,6 +63,9 @@
                                 </div>
                             </div>
                         </article>
+                        @if(in_array($key,[3,7,11,15,19,23]))
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                        @endif
                     @endforeach
                 </div>
             </div>

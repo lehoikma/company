@@ -35,7 +35,7 @@ class NewsController extends Controller
     }
 
     public function listNews() {
-        $listNews = NewsLanguage::User()->paginate(20);
+        $listNews = NewsLanguage::User()->paginate(24);
         return view('user.news.list1',[
             'listNews' => $listNews
         ]);
