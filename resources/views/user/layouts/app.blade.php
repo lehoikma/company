@@ -104,7 +104,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                         </li>
 
                         <li class=" has-children">
-                            <a class="dropdown-toggle menu-active" title="{{ trans('messages.news') }}" >{{ trans('messages.news') }}</a>
+                            <a class="dropdown-toggle menu-active" title="{{ trans('messages.news') }}" href="{{route('news_list')}}">{{ trans('messages.news') }}</a>
                             <?php
                             $categoryNews = \App\Models\CategoriesNewsLanguage::where('languages_id', config('app.locale') == 'en' ? 2 : 1)->get();
                             ?>
@@ -117,7 +117,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             </ul>
                         </li>
                         <li class="">
-                            <a href="{{route('contacts')}}" class="menu-active" title="Liên Hệ" data-xf-key="5"
+                            <a href="{{route('contacts')}}" class="menu-active" data-xf-key="5"
                                data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
                         </li>
                         {{--                                    <li class="">--}}
@@ -126,17 +126,17 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                         {{--                                    </li>--}}
 
                         <li class="">
-                            <a class="menu-active" href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                               data-nav-id="mjcmsContact">Hình Ảnh</a>
+                            <a class="menu-active" href="{{route('list_image')}}" data-xf-key="5"
+                               data-nav-id="mjcmsContact">{{ trans('messages.image') }}</a>
                         </li>
 
                         <li class="">
-                            <a class="menu-active" href="{{route('videos')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                            <a class="menu-active" href="{{route('videos')}}" data-xf-key="5"
                                data-nav-id="mjcmsContact">Videos</a>
                         </li>
 
                         <li class="">
-                            <a class="menu-active" href="{{route('contacts')}}" class=" " title="Liên Hệ" data-xf-key="5"
+                            <a class="menu-active" href="{{route('contacts')}}" data-xf-key="5"
                                data-nav-id="mjcmsContact">{{ trans('messages.contact') }}</a>
                         </li>
 
@@ -182,8 +182,6 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                     <div class="title title-footer">CÔNG TY CỔ PHẦN KINH DOANH THUỐC THÚ Y AMAVET</div>
                     <address><span class="add">Địa chỉ: Trụ sở: AD03 - 11 đường Anh Đào, khu đô thị Vinhomes Riverside, Phường Việt Hưng, Quận Long Biên, Thành phố Hà Nội</span>
                         <span class="add"><br>VPGD: Lô CN 06-8, KCN Ninh Hiệp, Gia Lâm, Hà Nội</span>
-{{--                        <span class="add"><br>Điện thoại: 024 3676 2933</span>--}}
-{{--                        <span class="add"><br>Fax: 0243 2033 111</span>--}}
                         <span class="add"><br>Email: info@amavet.com.vn</span>
                         <span class="add"><br>Website: www.amavet.com.vn & amavet.vn</span>
                     </address>
@@ -322,7 +320,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 
                 <li class="">
                     <a href="{{route('list_image')}}" class=" " title="Liên Hệ" data-xf-key="5"
-                       data-nav-id="mjcmsContact" style="text-transform: uppercase;">Hình Ảnh</a>
+                       data-nav-id="mjcmsContact" style="text-transform: uppercase;">{{ trans('messages.image') }}</a>
                 </li>
 
                 <li class="">

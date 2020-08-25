@@ -46,7 +46,11 @@
                 <div id="content-home">
                     <div id="code_widget-3" class="widget">
                         <div class="widget-wrap">
-                            <h4 class="widgettitle"><span>{{trans('messages.products')}}</span></h4>
+                            <h4 class="widgettitle">
+                                <a href="{{route('products_list')}}" style="color: #009245">
+                                    <span>{{trans('messages.products')}}</span>
+                                </a>
+                            </h4>
                             <div class="product-home">
                                 @foreach($products as $value)
                                     <div class="item-product-home" style="width: 50%">
@@ -66,7 +70,11 @@
 
                     <div class="widget caia-post-list-widget">
                         <div class="widget-wrap">
-                            <h4 class="widgettitle"><span>{{trans('messages.news_amavet')}}</span></h4>
+                            <h4 class="widgettitle">
+                                <a href="{{route('news_list_ctg',['title' => 'tin-amavet', 'id' => 1])}}" style="color: #009245">
+                                    <span>{{trans('messages.news_amavet')}}</span>
+                                </a>
+                            </h4>
                             <div class="main-posts">
                                 <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
                                     <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" title="" class="alignleft">
