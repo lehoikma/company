@@ -118,7 +118,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                         </li>
                         <li class="">
                             <a href="{{route('contacts')}}" class="menu-active" data-xf-key="5"
-                               data-nav-id="mjcmsContact">Đấu Giá Lợn Giống</a>
+                               data-nav-id="mjcmsContact">{{ trans('messages.dau_gia_lon_giong') }}</a>
                         </li>
                         {{--                                    <li class="">--}}
                         {{--                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
@@ -311,7 +311,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                 </li>
 
                 <li class="">
-                    <a href="#" class="" data-nav-id="mjcmsContact" style="text-transform: uppercase;">Đấu Giá Lợn Giống</a>
+                    <a href="#" class="" data-nav-id="mjcmsContact" style="text-transform: uppercase;">{{ trans('messages.dau_gia_lon_giong') }}</a>
                 </li>
 {{--                <li class="">--}}
 {{--                    <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}

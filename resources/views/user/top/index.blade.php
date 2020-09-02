@@ -175,7 +175,7 @@
 
                         <div class="box-title">
                             <h2 class="title-social">
-                                <a style="color: #009245" href="{{route('list_image')}}" target="_self">Hình ảnh</a>
+                                <a style="color: #009245" href="{{route('list_image')}}" target="_self">{{trans('messages.image')}}</a>
                             </h2>
                         </div>
 

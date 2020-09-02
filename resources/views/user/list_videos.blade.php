@@ -5,7 +5,7 @@
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href="/" style="color: black"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/" style="color: black"><span>{{ trans('messages.home') }}&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
                         <a href="" target="_self" style="color: black"><span>Videos<span></span></span></a>

@@ -6,10 +6,10 @@
             <div class="navigate">
                 <ol>
                     <li>
-                        <a href="/" style="color: black"><span>Trang chủ&nbsp;&gt;&nbsp;</span></a>
+                        <a href="/" style="color: black"><span>{{ trans('messages.home') }}&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
-                        <a href="{{route('list_image')}}" style="color: black"><span>Thư viện ảnh&nbsp;&gt;&nbsp;</span></a>
+                        <a href="{{route('list_image')}}" style="color: black"><span>{{ trans('messages.image') }}&nbsp;&gt;&nbsp;</span></a>
                     </li>
                     <li>
                         <a href="" target="_self" style="color: black"><span>{{$title}}<span></span></span></a>

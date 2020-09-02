@@ -19,4 +19,5 @@ return [
     'su_menh' => 'Mission',
     'tam_nhin' => 'Vision',
     'news_amavet' => 'News Amavet',
+    'dau_gia_lon_giong' => 'Pig breeding',
 ];
