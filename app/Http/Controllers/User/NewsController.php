@@ -35,7 +35,7 @@ class NewsController extends Controller
     }
 
     public function listNews() {
-        $listNews = NewsLanguage::User()->paginate(24);
+        $listNews = NewsLanguage::User()->orderBy('created_at', 'desc')->paginate(24);
         return view('user.news.list1',[
             'listNews' => $listNews
         ]);
