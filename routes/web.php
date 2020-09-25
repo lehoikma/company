@@ -101,6 +101,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::get('/tao-vac-xin-fmd', 'LinhVucHoatDongController@indexVacXinFmd')->name('index_vac_xin_fmd');
     Route::post('/save-vac-xin-fmd', 'LinhVucHoatDongController@saveVacXinFmd')->name('save_vac_xin_fmd');
+
+    Route::get('/tao-tuyen-dung', 'TuyenDungController@indexTuyenDung')->name('index_tuyen_dung');
+    Route::post('/save-tuyen-dung', 'TuyenDungController@saveTuyenDung')->name('save_tuyen_dung');
+    Route::get('/danh-sach-tuyen-dung', 'TuyenDungController@listTuyenDung')->name('list_tuyen_dung');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {

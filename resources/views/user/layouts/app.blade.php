@@ -120,10 +120,10 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             <a href="{{route('contacts')}}" class="menu-active" data-xf-key="5"
                                data-nav-id="mjcmsContact">{{ trans('messages.dau_gia_lon_giong') }}</a>
                         </li>
-                        {{--                                    <li class="">--}}
-                        {{--                                        <a href="#" class=" " title="Liên Hệ" data-xf-key="5"--}}
-                        {{--                                           data-nav-id="mjcmsContact">Tuyển Dụng</a>--}}
-                        {{--                                    </li>--}}
+                        <li class="">
+                            <a href="#" class=" " title="Liên Hệ" data-xf-key="5"
+                               data-nav-id="mjcmsContact">Tuyển Dụng</a>
+                        </li>
 
                         <li class="">
                             <a class="menu-active" href="{{route('list_image')}}" data-xf-key="5"

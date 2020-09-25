@@ -168,6 +168,19 @@
                         <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Danh Sách Liên Hệ</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-laptop"></i>
+                        <span>Tuyển dụng</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('index_tuyen_dung')}}"><i class="fa fa-circle-o"></i> Tạo bài viết tuyển dụng</a></li>
+                        <li><a href="{{route('list_tuyen_dung')}}"><i class="fa fa-circle-o"></i> Tất cả bài viết tuyển dụng</a></li>
+                    </ul>
+                </li>
                 <li class="header"> </li>
                 <li>
                     <a href="{{route('admin_logout')}}">

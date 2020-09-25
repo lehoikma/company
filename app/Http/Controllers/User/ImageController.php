@@ -25,9 +25,10 @@ class ImageController extends Controller
 
     public function detailImage($title, $id) {
         $images = Images::where('category_image_id', $id)->orderBy('created_at', 'desc')->get();
+        $titles = CategoriesImages::where('id', $images[0]['category_image_id'])->first();
         return view('user.image.detail_image',[
             'images' => $images,
-            'title' => $title
+            'title' => $titles['name']
         ]);
     }
 
