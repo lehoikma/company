@@ -105,6 +105,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/tao-tuyen-dung', 'TuyenDungController@indexTuyenDung')->name('index_tuyen_dung');
     Route::post('/save-tuyen-dung', 'TuyenDungController@saveTuyenDung')->name('save_tuyen_dung');
     Route::get('/danh-sach-tuyen-dung', 'TuyenDungController@listTuyenDung')->name('list_tuyen_dung');
+    Route::get('/sua-tuyen-dung/{id}', 'TuyenDungController@showEditTuyenDung')->name('show_edit_tuyen_dung');
+    Route::post('/sua-tuyen-dung', 'TuyenDungController@editTuyenDung')->name('edit_tuyen_dung');
+    Route::get('/xoa-tuyen-dung/{id}', 'TuyenDungController@deleteTuyenDung')->name('delete_tuyen_dung');
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -135,5 +138,8 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/duc-giong', 'ScopeOfActivitiesController@detailDucGiong')->name('detail_duc_giong');
     Route::get('/vac-xin-oie', 'ScopeOfActivitiesController@detailVacXinOie')->name('detail_vac_xin_oie');
     Route::get('/vac-xin-fmd', 'ScopeOfActivitiesController@detailVacXinFmd')->name('detail_vac_xin_fmd');
+
+    Route::get('/tuyen-dung', 'TuyenDungController@listTuyenDung')->name('user_list_tuyen_dung');
+    Route::get('/tuyen-dung/{title}/{id}', 'TuyenDungController@detailTuyenDung')->name('user_detail_tuyen_dung');
 });
 

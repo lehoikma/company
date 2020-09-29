@@ -20,4 +20,6 @@ return [
     'tam_nhin' => 'Tầm nhìn',
     'news_amavet' => 'Tin Amavet',
     'dau_gia_lon_giong' => 'Đấu giá lợn giống',
+    'tuyen_dung' => 'Tuyển Dụng',
+
 ];

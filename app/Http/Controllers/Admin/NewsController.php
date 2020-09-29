@@ -139,15 +139,6 @@ class NewsController extends Controller
         }
 
         return redirect()->route('list_news');
-
-        $news = News::find($id);
-        $delete = $news->delete();
-        if ($delete) {
-            \Session::flash('alert-success', 'Xoá tin tức thành công');
-        } else {
-            \Session::flash('alert-warning', 'Xoá tin tức lỗi');
-        }
-        return redirect()->route('list_news');
     }
 
 }
