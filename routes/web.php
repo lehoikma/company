@@ -131,5 +131,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/duc-giong', 'ScopeOfActivitiesController@detailDucGiong')->name('detail_duc_giong');
     Route::get('/vac-xin-oie', 'ScopeOfActivitiesController@detailVacXinOie')->name('detail_vac_xin_oie');
     Route::get('/vac-xin-fmd', 'ScopeOfActivitiesController@detailVacXinFmd')->name('detail_vac_xin_fmd');
+
+    Route::get('/dau-gia', 'DauGiaController@index')->name('dau_gia_index');
 });
 

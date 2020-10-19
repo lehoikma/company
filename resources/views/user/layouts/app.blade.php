@@ -117,7 +117,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             </ul>
                         </li>
                         <li class="">
-                            <a href="{{route('contacts')}}" class="menu-active" data-xf-key="5"
+                            <a href="{{route('dau_gia_index')}}" class="menu-active" data-xf-key="5"
                                data-nav-id="mjcmsContact">{{ trans('messages.dau_gia_lon_giong') }}</a>
                         </li>
                         {{--                                    <li class="">--}}
