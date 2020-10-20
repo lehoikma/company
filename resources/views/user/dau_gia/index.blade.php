@@ -43,6 +43,7 @@
                     <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-06-600.jpg"/>
                     <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-07-600.jpg"/>
                 </div>
+                <h4>THÔNG TIN CHI TIẾT</h4>
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
