@@ -33,13 +33,6 @@
                     </li>
                 </ol>
             </div>
-            <div class="col-md-12">
-                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                    @if(Session::has('alert-' . $msg))
-                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-                    @endif
-                @endforeach
-            </div>
             <div class="col-sm-6">
                 <div class="MagicSlideshow" data-options="width: 600px; height: 281px; selectors: bottom; selectors-style: thumbnails; selectors-size: 60px;">
                     <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-01-600.jpg"/>
@@ -52,36 +45,20 @@
                 </div>
             </div>
             <div class="col-sm-6">
-                <form action="{{route('send_contacts')}}" method="post" class="block contactForm" >
-                    {{csrf_field()}}
-                    <div class="contactpage-form">
-                        <div class="row">
-                            <div class="col-md-6 col-xs-12 col-sm-12">
-                                <p>
-                                    <input name="fullname" value="" size="40" placeholder="Họ &amp; Tên*" type="text" required>
-                                </p>
-                            </div>
-                            <div class="col-md-6 col-xs-12 col-sm-12">
-                                <p>
-                                    <input name="email" value="" size="40" placeholder="Email*" type="email" required>
-                                </p>
-                            </div>
-                            <div class="col-md-12 col-xs-12 col-sm-12">
-                                <p>
-                                    <input name="phone" value="" size="40" placeholder="{{trans('messages.phone')}}" type="text" required>
-                                </p>
-                            </div>
-                            <div class="col-md-12 col-xs-12 col-sm-12 mf-textarea-field">
-                                <p>
-                                    <textarea name="message" cols="40" rows="4" placeholder="Nội dung..." style="height: auto" required></textarea>
-                                </p>
-                            </div>
-                            <div class="text-center mf-submit col-md-12 col-xs-12 col-sm-12">
-                                <button type="submit" class="btn-style-two">Gửi tin nhắn</button>
-                            </div>
-                        </div>
+                <div class="col-sm-12">
+                    <strong>Thời gian còn lại</strong>
+                    <h3 id="demo" style="background: #fff7d2;padding: 10px 0px;color: red; text-align: center"></h3>
+                </div>
+                <div class="col-sm-12">
+                    <strong>Danh Sách Đấu Giá</strong>
+                    <div style="margin-top: 10px;">
+                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
+                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
+                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
+                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
+                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -92,5 +69,28 @@
         $(function () {
             $(".alert" ).fadeOut(10000);
         });
+        // Set the date we're counting down to
+        var countDownDate = new Date("2020-10-21 00:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
     </script>
 @endsection
