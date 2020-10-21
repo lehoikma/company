@@ -9,14 +9,14 @@
             <div class="col-md-6">
                 <label>Tên Tin Tức ( Tiếng Việt )<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="title_news[0]" class="form-control" placeholder="Nhập tên sản phẩm ..." value="{{old('title_news.0')}}">
+                    <input type="text" name="title_news[0]" class="form-control" placeholder="Nhập tên tin tức ..." value="{{old('title_news.0')}}">
                 </div>
             </div>
 
             <div class="col-md-6">
                 <label>Tên Tin Tức ( Tiếng Anh )</label>
                 <div class="form-group">
-                    <input type="text" name="title_news[1]" class="form-control" placeholder="Nhập tên sản phẩm ..." value="{{old('title_news.1')}}">
+                    <input type="text" name="title_news[1]" class="form-control" placeholder="Nhập tên tin tức ..." value="{{old('title_news.1')}}">
                 </div>
             </div>
             <div class="col-md-12 ">

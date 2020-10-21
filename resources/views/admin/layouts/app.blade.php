@@ -168,6 +168,20 @@
                         <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Danh Sách Liên Hệ</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-laptop"></i>
+                        <span>Quản lý đấu giá</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{route('dau_gia_index_form')}}"><i class="fa fa-circle-o"></i> Tạo bài viết đấu giá</a></li>
+                        <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Danh Sách bài viết đấu giá</a></li>
+                        <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Thống Kê</a></li>
+                    </ul>
+                </li>
                 <li class="header"> </li>
                 <li>
                     <a href="{{route('admin_logout')}}">
