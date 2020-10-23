@@ -63,14 +63,16 @@
                     @endif
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-8" style="padding-top: 15px">
                 <label>Giá khởi điểm:<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="title_news[0]" class="form-control" placeholder="Nhập tên tin tức ..." value="{{old('title_news.0')}}">
+                    <input type="text" class="form-control" id="formattedNumberField" placeholder="Nhập giá tiền" value="">
+                    <input type="hidden" name="price" class="formattedNumberField" value="{{old('price')}}">
                 </div>
             </div>
+            <div class="col-md-12"></div>
             <div class="col-md-4">
-                <label>Ngày Bắt Đầu</label>
+                <label>Thời Gian Bắt Đầu</label>
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -85,7 +87,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <label>Ngày Kết Thúc</label>
+                <label>Thời Gian Kết Thúc</label>
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon">
@@ -162,6 +164,13 @@
             });
             date_end.datetimepicker({
                 format:'DD/MM/YYYY HH:mm',
+            });
+
+            //jQuery
+            $("#formattedNumberField").on('keyup', function(){
+                var n = parseInt($(this).val().replace(/\D/g,''),10);
+                $('.formattedNumberField').val(n);
+                $(this).val(n.toLocaleString());
             });
 
             if (window.File && window.FileList && window.FileReader) {
