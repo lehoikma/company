@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('title', 'Liên Hệ')
+@section('title', 'Đấu Giá')
 @section('meta-description', '')
 @section('keywords', '')
 @section('meta-fb-title', '')
@@ -8,8 +8,12 @@
 @section('meta-fb-url', '')
 @section('meta-fb-image', '')
 @section('meta-fb-description', '')
+@section('meta')
+    <meta http-equiv="refresh" content="300">
+@endsection
 
 @section('content')
+
     <!-- link to magicslideshow.css file -->
     <link rel="stylesheet" type="text/css" href="http://www.unipresscorp.com/magicslideshow-commercial3/magicslideshow/magicslideshow.css" media="screen"/>
     <!-- link to magicslideshow.js file -->
@@ -35,15 +39,13 @@
             </div>
             <div class="col-sm-6">
                 <div class="MagicSlideshow" data-options="width: 600px; height: 281px; selectors: bottom; selectors-style: thumbnails; selectors-size: 60px;">
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-01-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-02-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-03-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-04-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-05-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-06-600.jpg"/>
-                    <img src="http://www.unipresscorp.com/magicslideshow-commercial3/images/places-07-600.jpg"/>
+                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_4_.jpg"/>
+                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_1_.jpg"/>
+                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
+                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
                 </div>
-                <h4>THÔNG TIN CHI TIẾT</h4>
+                <h4>THÔNG TIN CHI TIẾT : <strong>{{$dataTime['title']}}</strong></h4>
+                {!! $dataTime['content'] !!}
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
@@ -61,6 +63,8 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" id='startDate' name="startDate" value="{{strtotime($dataTime['start_date'])}}">
+            <input type="hidden" id='endDate' name="endDate" value="{{$dataTime['end_date']}}">
         </div>
     </div>
 @endsection
@@ -71,21 +75,21 @@
             $(".alert" ).fadeOut(10000);
         });
         // Set the date we're counting down to
-        var countDownDate = new Date("2020-10-21 00:00:00").getTime();
+        var countDownDate = new Date($('#endDate').val()).getTime();
         // Update the count down every 1 second
         var x = setInterval(function() {
-
             // Get today's date and time
             var now = new Date().getTime();
             // Find the distance between now and the count down date
             var distance = countDownDate - now;
             // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Output the result in an element with id="demo"
-            document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("demo").innerHTML =  days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây ";
 
             // If the count down is over, write some text
             if (distance < 0) {
@@ -93,5 +97,62 @@
                 document.getElementById("demo").innerHTML = "EXPIRED";
             }
         }, 1000);
+
+        $('.slider-single').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: false,
+            adaptiveHeight: true,
+            infinite: false,
+            useTransform: true,
+            speed: 400,
+            cssEase: 'cubic-bezier(0.77, 0, 0.18, 1)',
+        });
+
+        $('.slider-nav')
+            .on('init', function(event, slick) {
+                $('.slider-nav .slick-slide.slick-current').addClass('is-active');
+            })
+            .slick({
+                slidesToShow: 7,
+                slidesToScroll: 7,
+                dots: false,
+                focusOnSelect: false,
+                infinite: false,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                    }
+                }, {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                }, {
+                    breakpoint: 420,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                }]
+            });
+
+        $('.slider-single').on('afterChange', function(event, slick, currentSlide) {
+            $('.slider-nav').slick('slickGoTo', currentSlide);
+            var currrentNavSlideElem = '.slider-nav .slick-slide[data-slick-index="' + currentSlide + '"]';
+            $('.slider-nav .slick-slide.is-active').removeClass('is-active');
+            $(currrentNavSlideElem).addClass('is-active');
+        });
+
+        $('.slider-nav').on('click', '.slick-slide', function(event) {
+            event.preventDefault();
+            var goToSingleSlide = $(this).data('slick-index');
+
+            $('.slider-single').slick('slickGoTo', goToSingleSlide);
+        });
     </script>
 @endsection

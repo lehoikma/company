@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tin Tức
+    Danh Sách Bài Viết Đấu Giá
 @endsection
 @section('content')
     <div class="col-md-12 flash-message">
@@ -24,7 +24,7 @@
                                         <thead>
                                         <tr role="row">
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
-                                                Name
+                                                Tên bài viết đấu giá
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                 Giá
@@ -34,6 +34,9 @@
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                 Thời gian kết thúc
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
+                                                Ngày tạo
                                             </th>
                                             <th></th>
                                         </tr>
@@ -77,21 +80,11 @@
     <script>
         $(function () {
             $("#example1").DataTable({
-                // "order": [[ 3, "desc" ]],
                 "pageLength": 10,
                 "paging": true,
                 "info" : false
             });
             $(".alert" ).fadeOut(10000);
-//        $('#example2').DataTable({
-//          "pageLength": 3,
-//          "paging": true,
-//          "lengthChange": false,
-//          "searching": false,
-//          "ordering": true,
-//          "info": true,
-//          "autoWidth": false
-//        });
         });
     </script>
 @endsection

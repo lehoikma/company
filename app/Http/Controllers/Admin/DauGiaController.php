@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\DauGiaRequest;
 use App\Http\Controllers\Controller;
 use App\Models\NewsDauGia;
+use Carbon\Carbon;
 
 class DauGiaController extends Controller {
     public function index()
@@ -13,6 +14,14 @@ class DauGiaController extends Controller {
     }
 
     public function save(DauGiaRequest $request) {
+        $nowDate = date('Y/m/d H:i:s', time());
+        $checkExistTime = NewsDauGia::where('end_date','>', $nowDate)
+            ->where('start_date','<', $nowDate)
+            ->count();
+        if ($checkExistTime >= 1) {
+            \Session::flash('alert-warning', 'Tạo đấu giá lỗi, thời gian này đang có sản phẩm đấu giá');
+            return redirect()->route('dau_gia_index_form');
+        }
         $save = NewsDauGia::create([
             'title' => $request['title'],
             'content' => $request['content'],

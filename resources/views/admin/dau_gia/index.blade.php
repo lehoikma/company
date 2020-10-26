@@ -1,8 +1,15 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tạo Bài viết đấu giá
+    Tạo bài viết đấu giá
 @endsection
 @section('content')
+    <div class="col-md-12 flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if(Session::has('alert-' . $msg))
+                <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+            @endif
+        @endforeach
+    </div> <!-- end .flash-message -->
     <div class="col-md-12">
         <form action="{{route('dau_gia_save')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}

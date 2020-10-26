@@ -207,7 +207,7 @@
         </section>
     </div>
     <footer class="main-footer">
-        <strong>Copyright &copy; 2017-2018 <a href="#">Hoi Le</a>.</strong> All rights
+        <strong>Copyright &copy; 2020-2021 <a href="#">Hoi Le</a>.</strong> All rights
         reserved.
     </footer>
     <aside class="control-sidebar control-sidebar-dark">
