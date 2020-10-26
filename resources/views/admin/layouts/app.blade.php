@@ -178,7 +178,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{route('dau_gia_index_form')}}"><i class="fa fa-circle-o"></i> Tạo bài viết đấu giá</a></li>
-                        <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Danh Sách bài viết đấu giá</a></li>
+                        <li><a href="{{route('dau_gia_list')}}"><i class="fa fa-circle-o"></i> Danh Sách bài viết đấu giá</a></li>
                         <li><a href="{{route('list_contacts')}}"><i class="fa fa-circle-o"></i> Thống Kê</a></li>
                     </ul>
                 </li>

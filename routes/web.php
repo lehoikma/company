@@ -104,6 +104,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::get('/tao-bai-viet-dau-gia', 'DauGiaController@index')->name('dau_gia_index_form');
     Route::post('/save-bai-viet-dau-gia', 'DauGiaController@save')->name('dau_gia_save');
+    Route::get('/list-bai-viet-dau-gia', 'DauGiaController@listNews')->name('dau_gia_list');
+    Route::get('/xoa-bai-viet-dau-gia/{id}', 'DauGiaController@deleteNews')->name('dau_gia_delete');
 
 });
 
