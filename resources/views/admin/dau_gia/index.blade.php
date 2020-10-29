@@ -82,41 +82,47 @@
                     @endif
                 </div>
             </div>
-
-            <style type="text/css">
-
-                input[type="file"] {
-                    display: block;
-                }
-                .imageThumb {
-                    max-height: 75px;
-                    border: 1px solid;
-                    padding: 1px;
-                    cursor: pointer;
-                }
-                .pip {
-                    display: inline-block;
-                    margin: 10px 10px 0 0;
-                }
-                .remove {
-                    display: block;
-                    background: #444;
-                    border: 1px solid black;
-                    color: white;
-                    text-align: center;
-                    cursor: pointer;
-                }
-                .remove:hover {
-                    background: white;
-                    color: black;
-                }
-
-            </style>
-            <div class=" col-md-8" style="margin-top: 10px">
-                <label>Hình ảnh <span style="color: red">(*)</span></label>
-                <input type="file" id="files" name="files[]" multiple />
-                @if ($errors->has('fileToUpload'))
-                    <p class="help-block text-left" style="color: red">{{ $errors->first('fileToUpload') }}</p>
+            <div class=" col-md-12" style="margin-top: 10px"></div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 1 <span style="color: red">(*)</span></label>
+                <input type="file" id="files1" name="files1" />
+                @if ($errors->has('files1'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files1') }}</p>
+                @endif
+            </div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 2 <span style="color: red">(*)</span></label>
+                <input type="file" id="files2" name="files2" />
+                @if ($errors->has('files2'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files2') }}</p>
+                @endif
+            </div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 3 <span style="color: red">(*)</span></label>
+                <input type="file" id="files3" name="files3" />
+                @if ($errors->has('files3'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files3') }}</p>
+                @endif
+            </div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 4 <span style="color: red">(*)</span></label>
+                <input type="file" id="files4" name="files4" />
+                @if ($errors->has('files4'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files4') }}</p>
+                @endif
+            </div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 5 <span style="color: red">(*)</span></label>
+                <input type="file" id="files5" name="files5" />
+                @if ($errors->has('files5'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files5') }}</p>
+                @endif
+            </div>
+            <div class=" col-md-2" style="margin-top: 10px">
+                <label>Hình ảnh 6 <span style="color: red">(*)</span></label>
+                <input type="file" id="files6" name="files6" />
+                @if ($errors->has('files6'))
+                    <p class="help-block text-left" style="color: red">{{ $errors->first('files6') }}</p>
                 @endif
             </div>
 
@@ -152,30 +158,6 @@
                 $(this).val(n.toLocaleString());
             });
 
-            if (window.File && window.FileList && window.FileReader) {
-                $("#files").on("change", function(e) {
-                    var files = e.target.files,
-                        filesLength = files.length;
-                    for (var i = 0; i < filesLength; i++) {
-                        var f = files[i]
-                        var fileReader = new FileReader();
-                        fileReader.onload = (function(e) {
-                            var file = e.target;
-                            $("<span class=\"pip\">" +
-                                "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-                                "<br/><span class=\"remove\">Xóa Hình Ảnh</span>" +
-                                "</span>").insertAfter("#files");
-                            $(".remove").click(function(){
-                                $(this).parent(".pip").remove();
-                            });
-
-                        });
-                        fileReader.readAsDataURL(f);
-                    }
-                });
-            } else {
-                alert("Your browser doesn't support to File API")
-            }
         });
     </script>
 

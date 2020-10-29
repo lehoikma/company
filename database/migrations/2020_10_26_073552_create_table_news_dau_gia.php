@@ -20,6 +20,12 @@ class CreateTableNewsDauGia extends Migration
             $table->integer('price')->nullable();
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
+            $table->string('image5')->nullable();
+            $table->string('image6')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -44,8 +44,6 @@
                     <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
                     <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
                 </div>
-                <h4>THÔNG TIN CHI TIẾT : <strong>{{$dataTime['title']}}</strong></h4>
-                {!! $dataTime['content'] !!}
             </div>
             <div class="col-sm-6">
                 <div class="col-sm-12">
@@ -62,14 +60,7 @@
                         <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <div style="text-align: center; padding-top: 15px">
-                        <button type="submit" class="btn btn-success">Nhấn vào để đấu giá</button>
-                    </div>
-                </div>
             </div>
-            <input type="hidden" id='startDate' name="startDate" value="{{strtotime($dataTime['start_date'])}}">
-            <input type="hidden" id='endDate' name="endDate" value="{{$dataTime['end_date']}}">
         </div>
     </div>
 @endsection

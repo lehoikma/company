@@ -13,7 +13,12 @@ class DauGiaController extends Controller
         $dataTime = NewsDauGia::where('end_date','>', $nowDate)
             ->where('start_date','<', $nowDate)
             ->first();
-
+        if (empty($dataTime)) {
+            $data = NewsDauGia::orderBy('created_at', 'desc')->get();
+            return view('user.dau_gia.list', [
+                'data' => $data
+            ]);
+        }
         return view('user.dau_gia.index', [
             'dataTime' => $dataTime
         ]);
