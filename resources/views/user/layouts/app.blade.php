@@ -21,6 +21,8 @@
     <meta property="og:description" content="@yield('meta-fb-description')">
 
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+{{--    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />--}}
+{{--    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>--}}
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/owl-carousel/owl.carousel.min.css">
@@ -368,6 +370,8 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
 <script src="/js/custom.js" type='text/javascript'></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" type='text/javascript'></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     $(function() {
         var href = window.location.href;

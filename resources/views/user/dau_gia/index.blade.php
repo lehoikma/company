@@ -44,7 +44,8 @@
                     <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
                     <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
                 </div>
-                <h4>THÔNG TIN CHI TIẾT : <strong>{{$dataTime['title']}}</strong></h4>
+                <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">200.000.000 VNĐ</strong></h4>
+                <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$dataTime['title']}}</strong></h4>
                 {!! $dataTime['content'] !!}
             </div>
             <div class="col-sm-6">
@@ -64,12 +65,71 @@
                 </div>
                 <div class="col-sm-12">
                     <div style="text-align: center; padding-top: 15px">
-                        <button type="submit" class="btn btn-success">Nhấn vào để đấu giá</button>
+                        <button data-toggle="modal" data-target="#exampleModal" data-whatever="49" data-project-id="46" type="button" class="btn btn-danger" style="margin-top: 20px;padding: 5px;border-radius: 5px;font-size: 12px;">Nhấn vào để đấu giá</button>
+
                     </div>
                 </div>
             </div>
             <input type="hidden" id='startDate' name="startDate" value="{{strtotime($dataTime['start_date'])}}">
             <input type="hidden" id='endDate' name="endDate" value="{{$dataTime['end_date']}}">
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Nhập thông tin đấu giá</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Tên: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Số điện thoại: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Email: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Tỉnh: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Huyện: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Xã: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Số tiền: <span style="color: red">(*)</span></label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"></label>
+                            <div class="col-sm-10">
+                                <div class="g-recaptcha" data-sitekey="6Lcvb90ZAAAAANRSUJGShgESPQ7EeHeIVL44sP3Z"></div>
+{{--                                site key : 6Lcvb90ZAAAAANRSUJGShgESPQ7EeHeIVL44sP3Z--}}
+{{--                                secret key: 6Lcvb90ZAAAAAJpbqpwf1ZEDsF8IpB7CWHjl7tDn--}}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <p class="help-block text-left" style="color: red">{{ $errors->first('g-recaptcha-response') }}</p>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
@@ -79,6 +139,10 @@
         $(function () {
             $(".alert" ).fadeOut(10000);
         });
+        $('#exampleModal').on('show.bs.modal', function (e) {
+            $(this).find('#group_id').attr('value', $(e.relatedTarget).data('whatever'));
+            $(this).find('#project_id').attr('value', $(e.relatedTarget).data('project-id'));
+        })
         // Set the date we're counting down to
         var countDownDate = new Date($('#endDate').val()).getTime();
         // Update the count down every 1 second
