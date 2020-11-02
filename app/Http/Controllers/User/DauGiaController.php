@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DauGiaUserRequest;
+use App\Models\Booking;
 use App\Models\NewsDauGia;
 use Illuminate\Http\Request;
 
@@ -10,17 +12,42 @@ class DauGiaController extends Controller
 {
     public function index() {
         $nowDate = date('Y/m/d H:i:s', time());
-        $dataTime = NewsDauGia::where('end_date','>', $nowDate)
+        $dangDauGia = NewsDauGia::where('end_date','>', $nowDate)
             ->where('start_date','<', $nowDate)
             ->first();
-        if (empty($dataTime)) {
-            $data = NewsDauGia::orderBy('created_at', 'desc')->get();
-            return view('user.dau_gia.list', [
-                'data' => $data
-            ]);
+        if (!empty($dangDauGia)) {
+            $booking = Booking::where('news_dau_gia', $dangDauGia['id'])->orderBy('price', 'desc')->get();
         }
+        $daDauGia = NewsDauGia::where('end_date','<', $nowDate)
+            ->get();
+        $sapDauGia = NewsDauGia::where('start_date','>', $nowDate)
+            ->first();
+
         return view('user.dau_gia.index', [
-            'dataTime' => $dataTime
+            'dangDauGia' => $dangDauGia,
+            'daDauGia' => $daDauGia,
+            'sapDauGia' => $sapDauGia,
+            'booking' => $booking,
         ]);
+    }
+
+    public function saveDauGia(Request $request) {
+        $save = Booking::create([
+            'news_dau_gia' => $request['id'],
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'tinh' => $request['tinh'],
+            'huyen' => $request['huyen'],
+            'xa' => $request['xa'],
+            'price' => $request['price']
+        ]);
+        if ($save) {
+            \Session::flash('alert-danger', 'Đấu Giá Thành Công');
+        } else {
+            \Session::flash('alert-warning', 'Đấu Giá Lỗi');
+        }
+
+        return redirect()->route('dau_gia_index');
     }
 }

@@ -13,7 +13,6 @@
 @endsection
 
 @section('content')
-
     <!-- link to magicslideshow.css file -->
     <link rel="stylesheet" type="text/css" href="http://www.unipresscorp.com/magicslideshow-commercial3/magicslideshow/magicslideshow.css" media="screen"/>
     <!-- link to magicslideshow.js file -->
@@ -21,6 +20,14 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-md-12 flash-message" style="padding-top: 20px">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                    @if(Session::has('alert-' . $msg))
+                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                    @endif
+                @endforeach
+            </div> <!-- end .flash-message -->
+
             <div class="col-md-12 navigate" style="margin: 10px 0px">
                 <ol itemscope="">
                     <li itemprop="itemListElement" itemscope="">
@@ -37,41 +44,99 @@
                     </li>
                 </ol>
             </div>
-            <div class="col-sm-6">
-                <div class="MagicSlideshow" data-options="width: 600px; height: 281px; selectors: bottom; selectors-style: thumbnails; selectors-size: 60px;">
-                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_4_.jpg"/>
-                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_1_.jpg"/>
-                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
-                    <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
-                </div>
-                <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">200.000.000 VNĐ</strong></h4>
-                <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$dataTime['title']}}</strong></h4>
-                {!! $dataTime['content'] !!}
-            </div>
-            <div class="col-sm-6">
-                <div class="col-sm-12">
-                    <strong>Thời gian còn lại</strong>
-                    <h3 id="demo" style="background: #fff7d2;padding: 10px 0px;color: red; text-align: center"></h3>
-                </div>
-                <div class="col-sm-12">
-                    <strong>Danh Sách Đấu Giá</strong>
-                    <div style="margin-top: 10px;">
-                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
-                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
-                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
-                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
-                        <p>Nguyễn Văn A - QB đấu giá : <strong>20.000.000</strong> vào lúc 11:00:22 (20-11-2020)</p>
+            @if(!empty($dangDauGia))
+                <div class="col-sm-6">
+                    <div class="MagicSlideshow" data-options="width: 600px; height: 281px; selectors: bottom; selectors-style: thumbnails; selectors-size: 60px;">
+                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_4_.jpg"/>
+                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_1_.jpg"/>
+                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
+                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
                     </div>
+                    <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">200.000.000 VNĐ</strong></h4>
+                    <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$dangDauGia['title']}}</strong></h4>
+                    {!! $dangDauGia['content'] !!}
                 </div>
-                <div class="col-sm-12">
-                    <div style="text-align: center; padding-top: 15px">
-                        <button data-toggle="modal" data-target="#exampleModal" data-whatever="49" data-project-id="46" type="button" class="btn btn-danger" style="margin-top: 20px;padding: 5px;border-radius: 5px;font-size: 12px;">Nhấn vào để đấu giá</button>
+                <div class="col-sm-6">
+                    <div class="col-sm-12">
+                        <strong>Thời gian còn lại</strong>
+                        <h3 id="demo" style="background: #fff7d2;padding: 10px 0px;color: red; text-align: center"></h3>
+                    </div>
+                    <div class="col-sm-12">
+                        <strong>Danh Sách Đấu Giá</strong>
+                        @if(!empty($booking))
+                            <div style="margin-top: 10px;">
+                                @foreach($booking as $value)
+                                    <p style="font-size: 16px">{{$value['name']}} - {{$value['tinh']}} đấu giá : <strong>{{number_format($value['price'])}}</strong> VNĐ vào lúc {{$value['created_at']}}</p>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                    <div class="col-sm-12">
+                        <div style="text-align: center; padding-top: 15px">
+                            <button data-toggle="modal" data-target="#exampleModal" data-whatever="49" data-project-id="46" type="button" class="btn btn-danger" style="margin-top: 20px;padding: 10px;border-radius: 5px;font-size: 15px;margin-bottom: 20px;">Nhấn vào để đấu giá</button>
 
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id='startDate' name="startDate" value="{{strtotime($dangDauGia['start_date'])}}">
+                <input type="hidden" id='endDate' name="endDate" value="{{$dangDauGia['end_date']}}">
+            @endif
+        </div>
+        @if(!empty($sapDauGia))
+            <div class="row">
+                <div class="box-title">
+                    <h5 class="title-social" style="font-size: 20px; text-align: left; border-top: 1px dotted #009244;">
+                        <a style="color: #009245" href="#" target="_self">
+                            Sản Phẩm Sắp Đấu Giá
+                        </a>
+                    </h5>
+                </div>
+                <div class="gallery-listing">
+                    <div class="row" id="gall-list">
+                        <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
+                            <div class="item-box">
+                                <figure style="width: 100%; height: 213.514px;">
+                                    <a href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2">
+                                        <img src="/upload/1592873451.jpeg"></a>
+                                </figure>
+                                <div class="gall-content">
+                                    <a class="gall-title" href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2" target="_self">
+                                        <p>{{$sapDauGia['title']}}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-            <input type="hidden" id='startDate' name="startDate" value="{{strtotime($dataTime['start_date'])}}">
-            <input type="hidden" id='endDate' name="endDate" value="{{$dataTime['end_date']}}">
+        @endif
+        <div class="row">
+            <div class="box-title">
+                <h5 class="title-social" style="font-size: 20px; text-align: left; border-top: 1px dotted #009244;">
+                    <a style="color: #009245" href="#" target="_self">
+                        Sản Phẩm Đã Đấu Giá
+                    </a>
+                </h5>
+            </div>
+            <div class="gallery-listing">
+                <div id="gall-list">
+                    @foreach($daDauGia as $value)
+                        <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 gall-item">
+                        <div class="item-box">
+                            <figure style="width: 100%; height: 213.514px;">
+                                <a href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2">
+                                    <img src="/upload/1592873451.jpeg"></a>
+                            </figure>
+                            <div class="gall-content">
+                                <a class="gall-title" href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2" target="_self">
+                                    <p>{{$value['title']}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 
@@ -82,40 +147,42 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="exampleModalLabel">Nhập thông tin đấu giá</h4>
                 </div>
+                <form action="{{route('luu_thong_tin_dau_gia')}}" method="post" id="myForm">
                 <div class="modal-body">
-                    <form>
+                        {{csrf_field()}}
+                        <input type="hidden" name="id" value="{{$dangDauGia['id']}}">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Tên: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Số điện thoại: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="number" class="form-control" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Email: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="email" class="form-control" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Tỉnh: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" name="tinh" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Huyện: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" name="huyen" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Xã: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" name="xa" required>
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Số tiền: <span style="color: red">(*)</span></label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" name="price" required>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
-                                <div class="g-recaptcha" data-sitekey="6Lcvb90ZAAAAANRSUJGShgESPQ7EeHeIVL44sP3Z"></div>
+                                <div class="g-recaptcha" data-sitekey="6Lcvb90ZAAAAANRSUJGShgESPQ7EeHeIVL44sP3Z" data-callback="correctCaptcha"></div>
 {{--                                site key : 6Lcvb90ZAAAAANRSUJGShgESPQ7EeHeIVL44sP3Z--}}
 {{--                                secret key: 6Lcvb90ZAAAAAJpbqpwf1ZEDsF8IpB7CWHjl7tDn--}}
                                 @if ($errors->has('g-recaptcha-response'))
@@ -123,12 +190,12 @@
                                 @endif
                             </div>
                         </div>
-                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                <div class="modal-footer" style="text-align: center;">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                    <button id="btn-sbmit" type="submit" class="btn btn-primary">Gửi đấu giá</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -136,9 +203,17 @@
 
 @section('script')
     <script>
-        $(function () {
-            $(".alert" ).fadeOut(10000);
+        $(document).ready(function(){
+            $("form").each(function() {
+                $('#btn-sbmit').prop('disabled', true);
+            });
         });
+        function correctCaptcha() {
+            $("form").each(function() {
+                $('#btn-sbmit').prop('disabled', false);
+            });
+        }
+
         $('#exampleModal').on('show.bs.modal', function (e) {
             $(this).find('#group_id').attr('value', $(e.relatedTarget).data('whatever'));
             $(this).find('#project_id').attr('value', $(e.relatedTarget).data('project-id'));
@@ -163,7 +238,7 @@
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+                location.reload(true);
             }
         }, 1000);
 

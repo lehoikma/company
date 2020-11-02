@@ -139,5 +139,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/vac-xin-fmd', 'ScopeOfActivitiesController@detailVacXinFmd')->name('detail_vac_xin_fmd');
 
     Route::get('/dau-gia', 'DauGiaController@index')->name('dau_gia_index');
+    Route::post('/luu-thong-tin-dau-gia', 'DauGiaController@saveDauGia')->name('luu_thong_tin_dau_gia');
+
 });
 
