@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('title-content')
-    Tạo bài viết đấu giá
+    Sửa bài viết đấu giá
 @endsection
 @section('content')
     <div class="col-md-12 flash-message">
@@ -11,12 +11,13 @@
         @endforeach
     </div> <!-- end .flash-message -->
     <div class="col-md-12">
-        <form action="{{route('dau_gia_save')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('dau_gia_save_edit_form')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
+            <input type="hidden" name="id" value="{{$data['id']}}">
             <div class="col-md-12">
                 <label>Tên Bài viết đấu giá<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Nhập tên đấu giá ..." value="{{old('title')}}">
+                    <input type="text" name="title" class="form-control" placeholder="Nhập tên đấu giá ..." value="{{$data['title']}}">
                 </div>
             </div>
             <div class="col-md-12 ">
@@ -27,7 +28,7 @@
 
             <div class="col-md-12" style="margin-top: 15px">
                 <label>Nội dung<span style="color: red">(*)</span></label>
-                <textarea id="editor1" name="content" rows="10" class="form-control ckeditor">{{old('content')}}</textarea>
+                <textarea id="editor1" name="content" rows="10" class="form-control ckeditor">{{$data['content']}}</textarea>
                 <script src="/ckeditor/ckeditor.js"></script>
 
                 <script type="text/javascript">
@@ -42,8 +43,8 @@
             <div class="col-md-8" style="padding-top: 15px">
                 <label>Giá khởi điểm:<span style="color: red">(*)</span></label>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="formattedNumberField" placeholder="Nhập giá tiền" value="{{old('price')}}">
-                    <input type="hidden" name="price" class="formattedNumberField" value="{{old('price')}}">
+                    <input type="text" class="form-control" id="formattedNumberField" placeholder="Nhập giá tiền" value="{{$data['price']}}">
+                    <input type="hidden" name="price" class="formattedNumberField" value="{{$data['price']}}">
                 </div>
             </div>
             <div class="col-md-12 ">
@@ -60,7 +61,7 @@
                             <i class="fa fa-calendar">
                             </i>
                         </div>
-                        <input class="form-control" name="start_date" placeholder="DD/MM/YYYY HH:mm" type="text" value="{{old('start_date')}}"/>
+                        <input class="form-control" name="start_date" placeholder="DD/MM/YYYY HH:mm" type="text" value="{{date("d/m/yy H:i", strtotime($data['start_date']))}}"/>
                     </div>
                     @if ($errors->has('start_date'))
                         <p class="help-block text-left" style="color: red;">{{ $errors->first('start_date') }}</p>
@@ -75,7 +76,7 @@
                             <i class="fa fa-calendar">
                             </i>
                         </div>
-                        <input class="form-control" name="end_date" placeholder="DD/MM/YYYY HH:mm" type="text" value="{{old('end_date')}}"/>
+                        <input class="form-control" name="end_date" placeholder="DD/MM/YYYY HH:mm" type="text" value="{{date("d/m/yy H:i", strtotime($data['end_date']))}}"/>
                     </div>
                     @if ($errors->has('end_date'))
                         <p class="help-block text-left" style="color: red;">{{ $errors->first('end_date') }}</p>
@@ -86,6 +87,9 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 1 <span style="color: red">(*)</span></label>
                 <input type="file" id="files1" name="files1" />
+                @if(!empty($data['image1']))
+                    <img src="/upload/{{$data['image1']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files1'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files1') }}</p>
                 @endif
@@ -93,6 +97,9 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 2 <span style="color: red">(*)</span></label>
                 <input type="file" id="files2" name="files2" />
+                @if(!empty($data['image2']))
+                    <img src="/upload/{{$data['image2']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files2'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files2') }}</p>
                 @endif
@@ -100,6 +107,9 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 3 <span style="color: red">(*)</span></label>
                 <input type="file" id="files3" name="files3" />
+                @if(!empty($data['image3']))
+                    <img src="/upload/{{$data['image3']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files3'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files3') }}</p>
                 @endif
@@ -107,6 +117,9 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 4 <span style="color: red">(*)</span></label>
                 <input type="file" id="files4" name="files4" />
+                @if(!empty($data['image4']))
+                    <img src="/upload/{{$data['image4']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files4'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files4') }}</p>
                 @endif
@@ -114,6 +127,9 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 5 <span style="color: red">(*)</span></label>
                 <input type="file" id="files5" name="files5" />
+                @if(!empty($data['image5']))
+                    <img src="/upload/{{$data['image5']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files5'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files5') }}</p>
                 @endif
@@ -121,13 +137,16 @@
             <div class=" col-md-2" style="margin-top: 10px">
                 <label>Hình ảnh 6 <span style="color: red">(*)</span></label>
                 <input type="file" id="files6" name="files6" />
+                @if(!empty($data['image6']))
+                    <img src="/upload/{{$data['image6']}}" style="width: 80%;padding-top: 20px;">
+                @endempty
                 @if ($errors->has('files6'))
                     <p class="help-block text-left" style="color: red">{{ $errors->first('files6') }}</p>
                 @endif
             </div>
 
             <div class=" col-md-12" style="margin-top: 20px">
-                <button type="submit" class="btn btn-primary"> Tạo Bài viết đấu giá</button>
+                <button type="submit" class="btn btn-primary"> Sửa Bài viết đấu giá</button>
             </div>
         </form>
     </div>

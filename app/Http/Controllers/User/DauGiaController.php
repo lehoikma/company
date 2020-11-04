@@ -27,7 +27,7 @@ class DauGiaController extends Controller
             'dangDauGia' => $dangDauGia,
             'daDauGia' => $daDauGia,
             'sapDauGia' => $sapDauGia,
-            'booking' => $booking,
+            'booking' => !empty($booking) ? $booking : null,
         ]);
     }
 

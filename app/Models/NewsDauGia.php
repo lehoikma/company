@@ -16,6 +16,6 @@ class NewsDauGia extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title', 'content', 'price', 'start_date', 'end_date'
+        'id', 'title', 'content', 'price', 'start_date', 'end_date', 'image1', 'image2', 'image3', 'image4', 'image5', 'image6'
     ];
 }

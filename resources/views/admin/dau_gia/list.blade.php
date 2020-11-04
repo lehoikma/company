@@ -48,8 +48,8 @@
                                                 <td>{{date_format(new DateTime($value['start_date']), 'd-m-Y H:i')}}</td>
                                                 <td>{{date_format(new DateTime($value['end_date']), 'd-m-Y H:i')}}</td>
                                                 <td>
-                                                    <a href="{{route('show_edit_news', $value['news_id'])}}">
-                                                        <button class="btn btn-warning btn-sm" data-id="{{$value['id']}}"><i class="fa fa-edit"></i> Xem, Sửa</button>
+                                                    <a href="{{route('dau_gia_edit_form', $value['id'])}}">
+                                                        <button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Xem, Sửa</button>
                                                     </a>
                                                     <a href="{{route('dau_gia_delete', $value['id'])}}">
                                                         <button class="btn btn-danger btn-sm" data-id="{{$value['id']}}"><i class="fa fa-trash"></i> Xoá</button>

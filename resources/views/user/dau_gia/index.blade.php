@@ -150,7 +150,9 @@
                 <form action="{{route('luu_thong_tin_dau_gia')}}" method="post" id="myForm">
                 <div class="modal-body">
                         {{csrf_field()}}
-                        <input type="hidden" name="id" value="{{$dangDauGia['id']}}">
+                        @if(!empty($dangDauGia['id']))
+                            <input type="hidden" name="id" value="{{$dangDauGia['id']}}">
+                        @endif
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Tên: <span style="color: red">(*)</span></label>
                             <input type="text" class="form-control" name="name" required>
