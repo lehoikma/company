@@ -108,6 +108,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::get('/xoa-bai-viet-dau-gia/{id}', 'DauGiaController@deleteNews')->name('dau_gia_delete');
     Route::get('/sua-bai-viet-dau-gia/{id}', 'DauGiaController@edit')->name('dau_gia_edit_form');
     Route::post('/save-sua-bai-viet-dau-gia', 'DauGiaController@saveEdit')->name('dau_gia_save_edit_form');
+
+    Route::get('/thong-ke-dau-gia', 'DauGiaController@thongKe')->name('thong_ke_form');
+
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {

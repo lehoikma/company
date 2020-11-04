@@ -175,4 +175,11 @@ class DauGiaController extends Controller {
         }
         return redirect()->route('dau_gia_list');
     }
+
+    public function thongKe() {
+        $news = NewsDauGia::orderBy('created_at', 'desc')->get();
+        return view('admin.dau_gia.thong_ke', [
+            'news' => $news
+        ]);
+    }
 }

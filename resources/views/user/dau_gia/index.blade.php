@@ -96,11 +96,11 @@
                         <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
                             <div class="item-box">
                                 <figure style="width: 100%; height: 213.514px;">
-                                    <a href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2">
-                                        <img src="/upload/1592873451.jpeg"></a>
+                                    <a href="">
+                                        <img src="/upload/{{$sapDauGia['image1']}}"></a>
                                 </figure>
                                 <div class="gall-content">
-                                    <a class="gall-title" href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2" target="_self">
+                                    <a class="gall-title" href="" target="_self">
                                         <p>{{$sapDauGia['title']}}</p>
                                     </a>
                                 </div>
@@ -124,11 +124,11 @@
                         <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 213.514px;">
-                                <a href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2">
-                                    <img src="/upload/1592873451.jpeg"></a>
+                                <a href="#">
+                                    <img src="/upload/{{$value['image1']}}"></a>
                             </figure>
                             <div class="gall-content">
-                                <a class="gall-title" href="http://company.local/hinh-anh/hoi-thao-hoi-nghi/2" target="_self">
+                                <a class="gall-title" href="#" target="_self">
                                     <p>{{$value['title']}}</p>
                                 </a>
                             </div>
