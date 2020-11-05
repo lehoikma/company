@@ -47,10 +47,25 @@
             @if(!empty($dangDauGia))
                 <div class="col-sm-6">
                     <div class="MagicSlideshow" data-options="width: 600px; height: 281px; selectors: bottom; selectors-style: thumbnails; selectors-size: 60px;">
-                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_4_.jpg"/>
-                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_1_.jpg"/>
-                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_2_.jpg"/>
-                        <img style="padding: 10px;" src="https://cdn.cellphones.com.vn/media/catalog/product/cache/7/image/1000x/040ec09b1e35df139433887a97daa66f/i/p/iphone-11-pro-max_3_.jpg"/>
+                        @empty(!$dangDauGia['image1'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image1']}}"/>
+                        @endempty
+                         @empty(!$dangDauGia['image2'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image2']}}"/>
+                        @endempty
+                         @empty(!$dangDauGia['image3'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image3']}}"/>
+                        @endempty
+                         @empty(!$dangDauGia['image4'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image4']}}"/>
+                        @endempty
+                         @empty(!$dangDauGia['image5'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image5']}}"/>
+                        @endempty
+                         @empty(!$dangDauGia['image6'])
+                        <img style="padding: 10px;" src="/upload/{{$dangDauGia['image6']}}"/>
+                        @endempty
+
                     </div>
                     <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">200.000.000 VNĐ</strong></h4>
                     <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$dangDauGia['title']}}</strong></h4>
@@ -65,8 +80,8 @@
                         <strong>Danh Sách Đấu Giá</strong>
                         @if(!empty($booking))
                             <div style="margin-top: 10px;">
-                                @foreach($booking as $value)
-                                    <p style="font-size: 16px">{{$value['name']}} - {{$value['tinh']}} đấu giá : <strong>{{number_format($value['price'])}}</strong> VNĐ vào lúc {{$value['created_at']}}</p>
+                                @foreach($booking as $key=>$value)
+                                    <p style="font-size: 16px"><strong>{{$key+1}} . </strong>{{$value['name']}} - {{$value['tinh']}} đấu giá : <strong>{{number_format($value['price'])}}</strong> VNĐ vào lúc {{$value['created_at']}}</p>
                                 @endforeach
                             </div>
                         @endif
@@ -124,11 +139,11 @@
                         <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 gall-item">
                         <div class="item-box">
                             <figure style="width: 100%; height: 213.514px;">
-                                <a href="#">
+                                <a href="{{route('dau_gia_detail', $value['id'])}}">
                                     <img src="/upload/{{$value['image1']}}"></a>
                             </figure>
                             <div class="gall-content">
-                                <a class="gall-title" href="#" target="_self">
+                                <a class="gall-title" href="{{route('dau_gia_detail', $value['id'])}}" target="_self">
                                     <p>{{$value['title']}}</p>
                                 </a>
                             </div>

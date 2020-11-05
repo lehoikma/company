@@ -35,9 +35,7 @@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                 Thời gian kết thúc
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
-                                                Ngày tạo
-                                            </th>
+                                            <th></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -79,6 +77,7 @@
     <script>
         $(function () {
             $("#example1").DataTable({
+                "order": [[ 4, "desc" ]],
                 "pageLength": 10,
                 "paging": true,
                 "info" : false

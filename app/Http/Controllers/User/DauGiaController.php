@@ -16,7 +16,7 @@ class DauGiaController extends Controller
             ->where('start_date','<', $nowDate)
             ->first();
         if (!empty($dangDauGia)) {
-            $booking = Booking::where('news_dau_gia', $dangDauGia['id'])->orderBy('price', 'desc')->get();
+            $booking = Booking::where('news_dau_gia', $dangDauGia['id'])->orderByRaw('CONVERT(price, SIGNED) desc')->limit(10)->get();
         }
         $daDauGia = NewsDauGia::where('end_date','<', $nowDate)
             ->get();
@@ -49,5 +49,18 @@ class DauGiaController extends Controller
         }
 
         return redirect()->route('dau_gia_index');
+    }
+
+    public function detail($id) {
+        $nowDate = date('Y/m/d H:i:s', time());
+        $detail = NewsDauGia::find($id);
+        $booking = Booking::where('news_dau_gia', $id)->orderByRaw('CONVERT(price, SIGNED) desc')->limit(10)->get();
+        $daDauGia = NewsDauGia::where('end_date','<', $nowDate)
+            ->get();
+        return view('user.dau_gia.detail', [
+            'detail' => $detail,
+            'daDauGia' => $daDauGia,
+            'booking' => $booking,
+        ]);
     }
 }

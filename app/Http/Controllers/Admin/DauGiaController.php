@@ -119,8 +119,8 @@ class DauGiaController extends Controller {
         $nowDate = date('Y/m/d H:i:s', time());
         $checkExistTime = NewsDauGia::where('end_date','>', $nowDate)
             ->where('start_date','<', $nowDate)
-            ->count();
-        if ($checkExistTime >= 1) {
+            ->first();
+        if (!empty($checkExistTime) && $checkExistTime['id'] != $request['id']) {
             \Session::flash('alert-warning', 'Tạo đấu giá lỗi, thời gian này đang có sản phẩm đấu giá');
             return redirect()->back();
         }
