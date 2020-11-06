@@ -110,6 +110,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
     Route::post('/save-sua-bai-viet-dau-gia', 'DauGiaController@saveEdit')->name('dau_gia_save_edit_form');
 
     Route::get('/thong-ke-dau-gia', 'DauGiaController@thongKe')->name('thong_ke_form');
+    Route::get('/thong-ke-dau-gia/{id}', 'DauGiaController@thongKeDetail')->name('thong_ke_detail');
+
 
 });
 

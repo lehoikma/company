@@ -182,4 +182,11 @@ class DauGiaController extends Controller {
             'news' => $news
         ]);
     }
+
+    public function thongKeDetail($id) {
+        $news = NewsDauGia::orderBy('created_at', 'desc')->get();
+        return view('admin.dau_gia.thong_ke', [
+            'news' => $news
+        ]);
+    }
 }

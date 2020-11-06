@@ -27,7 +27,7 @@
                                                 Tên bài viết đấu giá
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
-                                                Giá
+                                                Giá khởi điểm
                                             </th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1">
                                                 Thời gian bắt đầu
@@ -65,7 +65,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{route('dau_gia_edit_form', $value['id'])}}">
-                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Chi tiết</button>
+                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Chi tiết đấu giá</button>
                                                     </a>
                                                 </td>
                                             </tr>
