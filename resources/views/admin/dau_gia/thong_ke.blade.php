@@ -64,7 +64,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{route('dau_gia_edit_form', $value['id'])}}">
+                                                    <a href="{{route('thong_ke_detail', $value['id'])}}">
                                                         <button class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Chi tiết đấu giá</button>
                                                     </a>
                                                 </td>

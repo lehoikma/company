@@ -54,7 +54,7 @@ class DauGiaController extends Controller
     public function detail($id) {
         $nowDate = date('Y/m/d H:i:s', time());
         $detail = NewsDauGia::find($id);
-        $booking = Booking::where('news_dau_gia', $id)->orderByRaw('CONVERT(price, SIGNED) desc')->limit(10)->get();
+        $booking = Booking::where('news_dau_gia', $id)->orderByRaw('CONVERT(price, SIGNED) desc')->limit(10)->get()->toArray();
         $daDauGia = NewsDauGia::where('end_date','<', $nowDate)
             ->get();
         return view('user.dau_gia.detail', [

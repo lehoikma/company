@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\DauGiaRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EditDauGiaRequest;
+use App\Models\Booking;
 use App\Models\NewsDauGia;
 use Carbon\Carbon;
 
@@ -184,9 +185,14 @@ class DauGiaController extends Controller {
     }
 
     public function thongKeDetail($id) {
-        $news = NewsDauGia::orderBy('created_at', 'desc')->get();
-        return view('admin.dau_gia.thong_ke', [
-            'news' => $news
+        $news = NewsDauGia::find($id);
+        $booking = Booking::where('news_dau_gia', $news['id'])->get();
+        $bookingCao = Booking::where('news_dau_gia', $news['id'])->orderByRaw('CONVERT(price, SIGNED) desc')->first();
+
+        return view('admin.dau_gia.thong_ke_detail', [
+            'news' => $news,
+            'booking' => $booking,
+            'bookingCao' => $bookingCao
         ]);
     }
 }

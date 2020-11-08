@@ -111,11 +111,11 @@
                         <article class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gall-item">
                             <div class="item-box">
                                 <figure style="width: 100%; height: 213.514px;">
-                                    <a href="">
+                                    <a href="{{route('dau_gia_detail', $sapDauGia['id'])}}">
                                         <img src="/upload/{{$sapDauGia['image1']}}"></a>
                                 </figure>
                                 <div class="gall-content">
-                                    <a class="gall-title" href="" target="_self">
+                                    <a class="gall-title" href="{{route('dau_gia_detail', $sapDauGia['id'])}}" target="_self">
                                         <p>{{$sapDauGia['title']}}</p>
                                     </a>
                                 </div>

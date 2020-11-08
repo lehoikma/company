@@ -63,23 +63,27 @@
                          @empty(!$detail['image6'])
                         <img style="padding: 10px;" src="/upload/{{$detail['image6']}}"/>
                         @endempty
-
                     </div>
-                    <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">200.000.000 VNĐ</strong></h4>
+                    <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">{{number_format($detail['price'])}} VNĐ</strong></h4>
                     <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$detail['title']}}</strong></h4>
                     {!! $detail['content'] !!}
                 </div>
                 <div class="col-sm-6">
-                    <div class="col-sm-12">
-                        <strong>Danh Sách Đấu Giá</strong>
-                        @if(!empty($booking))
+                    @if(!empty($booking))
+                        <div class="row col-sm-12">
+                            <strong>Danh Sách Đấu Giá 1</strong>
                             <div style="margin-top: 10px;">
                                 @foreach($booking as $key=>$value)
                                     <p style="font-size: 16px"><strong>{{$key+1}} . </strong>{{$value['name']}} - {{$value['tinh']}} đấu giá : <strong>{{number_format($value['price'])}}</strong> VNĐ vào lúc {{$value['created_at']}}</p>
                                 @endforeach
                             </div>
-                        @endif
-                    </div>
+                        </div>
+                    @else
+                        <div class="row col-sm-12">
+                            <p><strong>Thời gian bắt đầu đấu giá : </strong><span>{{date_format(new DateTime($detail['start_date']), 'd-m-Y H:i')}}</span></p><br>
+                            <p><strong>Thời gian kết thúc đấu giá : </strong><span>{{date_format(new DateTime($detail['end_date']), 'd-m-Y H:i')}}</span></p>
+                        </div>
+                    @endif
                 </div>
             @endif
         </div>
