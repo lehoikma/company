@@ -16,6 +16,6 @@ class Sliders extends Model
      * @var array
      */
     protected $fillable = [
-        'image'
+        'image', 'url'
     ];
 }

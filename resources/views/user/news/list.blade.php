@@ -43,26 +43,29 @@
                     </h2>
                 </div>
                 <div class="n-items row">
-                    @foreach($listNewsCategory as $value)
+                    @foreach($listNewsCategory as $key=>$value)
                         <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 n-item">
-                        <div class="item-box">
-                            <figure>
-                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" target="_self">
-                                    <img src="/upload/{{$value['image']}}" alt="" class="img-responsive" style="height: 170px"/>
-                                </a>
-                            </figure>
-                            <div class="n-title">
-                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title='' class='title' target='_self'
-                                style="color: #009244">
-                                    {{$value['title']}}
-                                </a>
+                            <div class="item-box">
+                                <figure>
+                                    <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" target="_self">
+                                        <img src="/upload/{{$value['image']}}" alt="" class="img-responsive" style="height: 170px; object-fit: cover;"/>
+                                    </a>
+                                </figure>
+                                <div class="n-title">
+                                    <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title='' class='title' target='_self'
+                                    style="color: #009244">
+                                        {{$value['title']}}
+                                    </a>
+                                </div>
+                                <div class="n-desc">
+                                    {{$value['description']}} ...
+                                    <p><a class="more-link" href="#">Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
+                                </div>
                             </div>
-                            <div class="n-desc">
-                                {{$value['description']}} ...
-                                <p><a class="more-link" href="#">Chi tiết<i class="fa fa-caret-right" aria-hidden="true"></i></a></p>
-                            </div>
-                        </div>
-                    </article>
+                        </article>
+                        @if(in_array($key,[3,7,11,15,19,23]))
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                        @endif
                     @endforeach
                 </div>
             </div>

@@ -48,7 +48,7 @@
                             <div class="item-box">
                                 <figure>
                                     <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" title="" target="_self">
-                                        <img src="/upload/{{$value['image']}}" alt="" class="img-responsive" style="height: 170px"/>
+                                        <img src="/upload/{{$value['image']}}" alt="" class="img-responsive" style="height: 170px; object-fit: cover;"/>
                                     </a>
                                 </figure>
                                 <div class="n-title">
