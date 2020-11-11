@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    @yield('meta')
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,6 +21,8 @@
     <meta property="og:description" content="@yield('meta-fb-description')">
 
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+{{--    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />--}}
+{{--    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>--}}
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/owl-carousel/owl.carousel.min.css">
@@ -117,7 +120,7 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
                             </ul>
                         </li>
                         <li class="">
-                            <a href="{{route('contacts')}}" class="menu-active" data-xf-key="5"
+                            <a href="{{route('dau_gia_index')}}" class="menu-active" data-xf-key="5"
                                data-nav-id="mjcmsContact">{{ trans('messages.dau_gia_lon_giong') }}</a>
                         </li>
                         {{--                                    <li class="">--}}
@@ -367,6 +370,8 @@ $categoryProducts = \App\Models\CategoryDanhMucSanPhamCap1Languages::where('lang
 <script src='/js/slick.js' type='text/javascript'></script>
 <script src="/owl-carousel/owl.carousel.js"></script>
 <script src="/js/custom.js" type='text/javascript'></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" type='text/javascript'></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     $(function() {
         var href = window.location.href;

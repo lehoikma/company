@@ -101,6 +101,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 
     Route::get('/tao-vac-xin-fmd', 'LinhVucHoatDongController@indexVacXinFmd')->name('index_vac_xin_fmd');
     Route::post('/save-vac-xin-fmd', 'LinhVucHoatDongController@saveVacXinFmd')->name('save_vac_xin_fmd');
+
+    Route::get('/tao-bai-viet-dau-gia', 'DauGiaController@index')->name('dau_gia_index_form');
+    Route::post('/save-bai-viet-dau-gia', 'DauGiaController@save')->name('dau_gia_save');
+    Route::get('/list-bai-viet-dau-gia', 'DauGiaController@listNews')->name('dau_gia_list');
+    Route::get('/xoa-bai-viet-dau-gia/{id}', 'DauGiaController@deleteNews')->name('dau_gia_delete');
+    Route::get('/sua-bai-viet-dau-gia/{id}', 'DauGiaController@edit')->name('dau_gia_edit_form');
+    Route::post('/save-sua-bai-viet-dau-gia', 'DauGiaController@saveEdit')->name('dau_gia_save_edit_form');
+
+    Route::get('/thong-ke-dau-gia', 'DauGiaController@thongKe')->name('thong_ke_form');
+    Route::get('/thong-ke-dau-gia/{id}', 'DauGiaController@thongKeDetail')->name('thong_ke_detail');
+
+
 });
 
 Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
@@ -131,5 +143,10 @@ Route::group(['namespace' => 'User', 'middleware' => 'locale'], function () {
     Route::get('/duc-giong', 'ScopeOfActivitiesController@detailDucGiong')->name('detail_duc_giong');
     Route::get('/vac-xin-oie', 'ScopeOfActivitiesController@detailVacXinOie')->name('detail_vac_xin_oie');
     Route::get('/vac-xin-fmd', 'ScopeOfActivitiesController@detailVacXinFmd')->name('detail_vac_xin_fmd');
+
+    Route::get('/dau-gia', 'DauGiaController@index')->name('dau_gia_index');
+    Route::get('/dau-gia/{id}', 'DauGiaController@detail')->name('dau_gia_detail');
+    Route::post('/luu-thong-tin-dau-gia', 'DauGiaController@saveDauGia')->name('luu_thong_tin_dau_gia');
+
 });
 

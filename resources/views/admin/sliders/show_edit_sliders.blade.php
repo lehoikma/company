@@ -15,7 +15,10 @@
                     <p class="help-block text-left" style="color: red">{{ $errors->first('fileToUpload') }}</p>
                 @endif
             </div>
-
+            <div class=" col-md-8" style="margin-top: 20px">
+                <label>URL : </label>
+                <input type="text" name="url" class="form-control" value="{{$image['url']}}">
+            </div>
             <div class=" col-md-8" style="margin-top: 20px">
                 <button type="submit" class="btn btn-primary"> Sửa Slider</button>
             </div>

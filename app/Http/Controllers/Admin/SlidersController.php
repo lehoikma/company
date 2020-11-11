@@ -23,7 +23,8 @@ class SlidersController extends Controller
         $image->move('upload/', $filename);
 
         $saveImage = Sliders::create([
-            'image' => $filename
+            'image' => $filename,
+            'url' => $request['url'],
         ]);
         if ($saveImage) {
             \Session::flash('alert-success', 'Tạo Slider Thành Công');
@@ -69,6 +70,7 @@ class SlidersController extends Controller
         $productEdit = Sliders::where('id', $request['image_id'])
             ->update([
                 'image' => $filename,
+                'url' => $request['url']
             ]);
         if ($productEdit) {
             \Session::flash('alert-success', 'Sửa Slider Thành Công');

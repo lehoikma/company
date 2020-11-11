@@ -16,6 +16,7 @@ class CreateTableSliderTop extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('image');
+            $table->string('url');
             $table->softDeletes();
             $table->timestamps();
         });

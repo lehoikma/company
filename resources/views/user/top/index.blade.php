@@ -14,7 +14,13 @@
     <!--Slider-->
     <div class="slider sliderBanner" style="padding-top: 15px;">
         @foreach($sliders as $value)
-            <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
+            @if(!empty($value['url']))
+                    <a href="{{$value['url']}}">
+                        <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
+                    </a>
+                @else
+                    <img src="/upload/{{$value['image']}}" style="width: 100%; height: 100%"/>
+                @endif
         @endforeach
     </div>
 
