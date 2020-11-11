@@ -67,7 +67,7 @@
                         @endempty
 
                     </div>
-                    <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">{{number_format($detail['price'])}} VNĐ</strong></h4>
+                    <h4>GIÁ KHỞI ĐIỂM : <strong style="color: red">{{number_format($dangDauGia['price'])}} VNĐ</strong></h4>
                     <h4 style="padding-top: 10px">THÔNG TIN CHI TIẾT : <strong>{{$dangDauGia['title']}}</strong></h4>
                     {!! $dangDauGia['content'] !!}
                 </div>
