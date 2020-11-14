@@ -35,7 +35,11 @@ class NewsController extends Controller
             $image = $request->file('fileToUpload');
             $filename = time() . '.' . $image->extension();
             $image->move('upload/', $filename);
-
+            if ($request['select_cate_news'] == 4) {
+                $display_top = 0;
+            } else {
+                $display_top = $request['display_top'] == 'on' ? 1 : 0;
+            }
             $news = News::create();
             for ($i=0 ; $i<2; $i++) {
 
@@ -46,7 +50,8 @@ class NewsController extends Controller
                     'content' => $request['content_news'][$i],
                     'image' => $filename,
                     'title' => $request['title_news'][$i],
-                    'description' => $request['description_news'][$i]
+                    'description' => $request['description_news'][$i],
+                    'display_top' => $display_top
                 ]);
             }
 
@@ -101,13 +106,20 @@ class NewsController extends Controller
                 $filename = $news['image'];
             }
 
+            if ($request['select_cate_news'] == 4) {
+                $display_top = 0;
+            } else {
+                $display_top = $request['display_top'] == 'on' ? 1 : 0;
+            }
+
             for ($i=0; $i<2; $i++) {
                 $newsEdit = NewsLanguage::where('id', $request['news_id'][$i])->update([
                     'content' => $request['content_news'][$i],
                     'description' => $request['description_news'][$i],
                     'category_news_id' => $request['select_cate_news'],
                     'title' => $request['title_news'][$i],
-                    'image' => $filename
+                    'image' => $filename,
+                    'display_top' => $display_top
                 ]);
             }
         }

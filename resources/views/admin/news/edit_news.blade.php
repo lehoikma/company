@@ -77,7 +77,7 @@
                 @endif
             </div>
 
-            <div class=" col-md-8" style="margin-top: 10px">
+            <div class=" col-md-6" style="margin-top: 10px">
                 <label>Hình ảnh đại diện <span style="color: red">(*)</span></label>
                 <input type="file" name="fileToUpload">
                 <img id="image" src="/upload/{{$news[0]['image']}}" style="width: 150px; margin-top: 10px">
@@ -85,6 +85,17 @@
                     <p class="help-block text-left" style="color: red">{{ $errors->first('fileToUpload') }}</p>
                 @endif
             </div>
+
+
+            <div class="col-md-6" style="margin-top: 10px">
+                <label>Tích chọn hiển thị trang chủ :</label>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" class="form-check-input" name="display_top" style="transform: scale(1.3);margin-right: 5px;" @if($news[0]['display_top'] == 1) checked @endif>Tích Chọn
+                    </label>
+                </div>
+            </div>
+
 
             <div class=" col-md-8" style="margin-top: 20px">
                 <button type="submit" class="btn btn-primary"> Sửa Tin Tức</button>

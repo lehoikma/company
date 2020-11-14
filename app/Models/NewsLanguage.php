@@ -17,7 +17,7 @@ class NewsLanguage extends Base
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'category_news_id', 'content', 'image', 'news_id', 'languages_id', 'view'
+        'title', 'description', 'category_news_id', 'content', 'image', 'news_id', 'languages_id', 'view', 'display_top'
     ];
 
     public function scopeAdmin($query) {

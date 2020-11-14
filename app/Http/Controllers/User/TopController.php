@@ -22,10 +22,17 @@ class TopController extends Controller
      */
     public function index()
     {
-        $firstNewsAmavet = NewsLanguage::User()->where('category_news_id', 1)
-            ->orderBy('created_at', 'desc')->first();
-        $newsAmavet = NewsLanguage::User()->where('category_news_id', 1)
-            ->orderBy('created_at', 'desc')->take(6)->get();
+        $firstNewsAmavet = NewsLanguage::User()
+//            ->where('category_news_id', 1)
+            ->where('display_top', 1)
+            ->orderBy('display_top', 'desc')
+            ->orderBy('updated_at', 'desc')->first();
+
+        $newsAmavet = NewsLanguage::User()
+//            ->where('category_news_id', 1)
+            ->where('display_top', 1)
+            ->orderBy('updated_at', 'desc')->take(6)->get();
+
         $newsSocial = NewsLanguage::User()->where('category_news_id', 4)
             ->orderBy('id', 'desc')->take(3)->get();
         $videos = Videos::orderBy('id', 'desc')->first();
