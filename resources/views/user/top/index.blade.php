@@ -82,32 +82,35 @@
                                 </a>
                             </h4>
                             <div class="main-posts">
-                                <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
-                                    <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" title="" class="alignleft">
-                                        <img width="320" src="upload/{{$firstNewsAmavet['image']}}"/>
-                                    </a>
-                                    <h3 class="widget-item-title">
-                                        <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" style="font-weight: 600; font-size: 18px">
-                                            {{$firstNewsAmavet['title']}}
+                                @if(!empty($firstNewsAmavet))
+                                    <div class="post entry" style="border-bottom: 1px dashed #b0b0b0;padding-bottom: 15px;">
+                                        <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" title="" class="alignleft">
+                                            <img width="320" src="upload/{{$firstNewsAmavet['image']}}"/>
                                         </a>
-                                    </h3>
-                                    <p class="byline post-info">Ngày đăng : <span class="date time">{{date_format($firstNewsAmavet['created_at'],"Y-m-d")}}</span>
-                                    </p>
-                                    <p>{{$firstNewsAmavet['description']}}</p>
-                                    <div class="clear"></div>
-                                </div>
-                                <ul class="more-news">
-                                    @foreach($newsAmavet as $key => $value)
-                                        @if($key == 0)
-                                            @continue
-                                        @endif
-                                        <li>
-                                            <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" style="font-weight: 600; font-size: 18px">{{$value['title']}}</a>
-                                            <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
-
+                                        <h3 class="widget-item-title">
+                                            <a href="{{route('news_detail', ['title'=>str_slug($firstNewsAmavet['title']), 'id'=> $firstNewsAmavet['news_id']])}}" style="font-weight: 600; font-size: 18px">
+                                                {{$firstNewsAmavet['title']}}
+                                            </a>
+                                        </h3>
+                                        <p class="byline post-info">Ngày đăng : <span class="date time">{{date_format($firstNewsAmavet['created_at'],"Y-m-d")}}</span>
+                                        </p>
+                                        <p>{{$firstNewsAmavet['description']}}</p>
+                                        <div class="clear"></div>
+                                    </div>
+                                @endif
+                                @if(!empty($newsAmavet))
+                                    <ul class="more-news">
+                                        @foreach($newsAmavet as $key => $value)
+                                            @if($key == 0)
+                                                @continue
+                                            @endif
+                                            <li>
+                                                <a href="{{route('news_detail', ['title'=>str_slug($value['title']), 'id'=> $value['news_id']])}}" style="font-weight: 600; font-size: 18px">{{$value['title']}}</a>
+                                                <span class="time-posted">Ngày {{date_format($value['created_at'],"Y-m-d")}}</span>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
                             <p class="more-from-category" style="margin-top: 20px">
                                 <a href="{{route('news_list_ctg',['title' => 'tin-amavet', 'id' => 1])}}">Xem thêm</a>
