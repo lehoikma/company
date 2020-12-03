@@ -26,7 +26,7 @@ class NewsController extends Controller
     }
 
     public function listCategory($title, $id) {
-        $listNewsCategory = NewsLanguage::User()->where('category_news_id', $id)->paginate(20);
+        $listNewsCategory = NewsLanguage::User()->where('category_news_id', $id)->orderBy('created_at', 'desc')->paginate(20);
         $categoryName = CategoriesNewsLanguage::User()->where('news_category_id', $id)->first();
         return view('user.news.list',[
             'listNewsCategory' => $listNewsCategory,
